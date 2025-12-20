@@ -2,117 +2,300 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Nutrition | MinMaxMuscle</title>
-  <link rel="stylesheet" href="style.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MinMaxMuscle – Train With Intent</title>
+
+  <style>
+    :root {
+      --bg-main: #0b0e14;
+      --bg-card: #141926;
+      --bg-hover: #1c2233;
+      --accent: #4da3ff;
+      --text-main: #e6e9ef;
+      --text-muted: #9aa4b2;
+      --border: rgba(255,255,255,0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, sans-serif;
+      background: radial-gradient(circle at top, #11162a, var(--bg-main));
+      color: var(--text-main);
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(to right, #0b0e14, #0f1430);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .brand img {
+      height: 28px;
+      width: auto;
+    }
+
+    nav a {
+      margin-left: 16px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 60px 20px 40px;
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 6vw, 48px);
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto 30px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .hero button {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      padding: 10px 18px;
+      margin: 0 6px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .hero button:hover {
+      background: var(--bg-hover);
+    }
+
+    /* Accordion */
+    .container {
+      max-width: 900px;
+      margin: 0 auto 80px;
+      padding: 0 16px;
+    }
+
+    details {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 14px;
+      overflow: hidden;
+    }
+
+    summary {
+      list-style: none;
+      padding: 16px 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary:hover {
+      background: var(--bg-hover);
+    }
+
+    .dots {
+      color: var(--text-muted);
+      font-size: 20px;
+    }
+
+    .content {
+      padding: 18px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .content h4 {
+      color: var(--text-main);
+      margin-top: 18px;
+    }
+
+    .exercise {
+      margin-bottom: 10px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px 16px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 600px) {
+      summary {
+        font-size: 16px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header class="navbar">
-    <div class="logo-left">
-      <img src="img/logo-white.svg" alt="MinMaxMuscle" class="nav-logo" />
-      <span class="brand">MINMAXMUSCLE</span>
+
+<header>
+  <div class="brand">
+    <img src="assets/img/logo.png" alt="MinMaxMuscle Logo" />
+    <span>MINMAXMUSCLE</span>
+  </div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Training</a>
+    <a href="#">Nutrition</a>
+    <a href="#">Coaching</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Train With Intent</h1>
+  <p>This is not a random split. This is a system engineered to maximize progress while minimizing wasted effort.</p>
+  <button onclick="expandAll()">Expand All</button>
+  <button onclick="collapseAll()">Collapse All</button>
+</section>
+
+<div class="container">
+
+  <details>
+    <summary>Monday – Legs & Core <span class="dots">•••</span></summary>
+    <div class="content">
+      <h4>Focus</h4>
+      Structural leg strength, joint integrity, fat-loss support.
+      <h4>Workout</h4>
+      <div class="exercise">Warm-up: Stairmaster 5 min progressive + hip openers</div>
+      <div class="exercise">Seated Leg Curl – 4×10–12 (slow eccentrics)</div>
+      <div class="exercise">Leg Press – 4×12–15 (controlled)</div>
+      <div class="exercise">Hack Squat – 4×8–12</div>
+      <div class="exercise">Leg Extension – 4×12–15 (partials last set)</div>
+      <div class="exercise">Crunch Machine – 3×12</div>
+      <div class="exercise">Treadmill Incline Walk – 20–30 min</div>
     </div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="training.html">Training</a></li>
-      <li><a href="nutrition.html" class="active">Nutrition</a></li>
-      <li><a href="coaching.html">Coaching</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </header>
+  </details>
 
-  <main>
-    <section class="hero">
-      <div class="page hero-inner">
-        <div class="hero-left">
-          <p class="hero-subtitle">NO STARVATION GAMES</p>
-          <h1 class="hero-title">Nutrition That Keeps Muscle While You Lean Out.</h1>
-          <p class="hero-text">
-            Protein-heavy, realistic, and built around the way adults actually eat.
-            Macros that flex with travel, kids, and work instead of collapsing at
-            the first social event.
-          </p>
-          <a href="coaching.html" class="hero-btn">Dial In My Macros</a>
-        </div>
-        <div class="hero-right">
-          <img src="img/hero-nutrition.jpg" alt="Nutrition" class="hero-img" />
-        </div>
-      </div>
-    </section>
+  <details>
+    <summary>Tuesday – Upper Torso Maintenance <span class="dots">•••</span></summary>
+    <div class="content">
+      <h4>Focus</h4>
+      Preserve muscle while cutting. Shoulder and elbow health.
+      <h4>Workout</h4>
+      <div class="exercise">Smith Shrugs – 5×6–10</div>
+      <div class="exercise">DB Shrug Holds – 3×30–40s</div>
+      <div class="exercise">Seated Cable Row – 4×10–12</div>
+      <div class="exercise">Lat Pulldown – 4×8–12</div>
+      <div class="exercise">EZ-Bar Curl – 4×8–10</div>
+      <div class="exercise">Rear Delt Fly – 3×15–20</div>
+    </div>
+  </details>
 
-    <div class="page main-content">
-      <section class="section">
-        <div class="section-header">
-          <h2 class="section-title">Guides</h2>
-          <p class="section-kicker">Clear rules. No detox teas.</p>
-        </div>
-        <div class="card-grid">
-          <article class="card">
-            <div class="card-eyebrow">Protein</div>
-            <h3 class="card-title">The MinMax Protein Ladder</h3>
-            <p class="card-body">
-              Stepwise intake levels with example meals so you can actually hit
-              your numbers without living on shakes.
-            </p>
-            <p class="card-meta">Download • PDF + shopping list</p>
-          </article>
-          <article class="card">
-            <div class="card-eyebrow">Cutting</div>
-            <h3 class="card-title">Deficit Without Becoming a Zombie</h3>
-            <p class="card-body">
-              How to combine calorie targets, step goals, and refeeds so your
-              training and mood don’t completely tank.
-            </p>
-            <p class="card-meta">Article • 8 min read</p>
-          </article>
-          <article class="card">
-            <div class="card-eyebrow">Maintenance</div>
-            <h3 class="card-title">Holding the Line After a Cut</h3>
-            <p class="card-body">
-              Reverse-diet without gaining it all back. Simple guardrails and
-              check-ins that keep you honest.
-            </p>
-            <p class="card-meta">Checklist • 5 min read</p>
-          </article>
-        </div>
-      </section>
+  <details>
+    <summary>Wednesday – Posterior Powerhouse <span class="dots">•••</span></summary>
+    <div class="content">
+      <h4>Focus</h4>
+      Glutes, hamstrings, traps. Strength without CNS burnout.
+      <div class="exercise">DB Shrug Holds – Overload sets</div>
+      <div class="exercise">Smith Shrugs – Heavy + back-off</div>
+      <div class="exercise">Hip Thrust – 3×8–12</div>
+      <div class="exercise">Smith Squat – 4×8–15</div>
+      <div class="exercise">Back Extension – 2×10–12</div>
+    </div>
+  </details>
 
-      <section class="section">
-        <div class="section-header">
-          <h2 class="section-title">Habits</h2>
-          <p class="section-kicker">What actually matters over 6–12 months.</p>
-        </div>
-        <div class="card-grid">
-          <article class="card">
-            <div class="card-eyebrow">Daily</div>
-            <h3 class="card-title">The 5 Non-Negotiables</h3>
-            <p class="card-body">
-              Protein, steps, sleep, hydration, and one honest “how did today go”
-              rating. Simple and brutally effective.
-            </p>
-            <p class="card-meta">Framework • All goals</p>
-          </article>
-          <article class="card">
-            <div class="card-eyebrow">GLP-1 Friendly</div>
-            <h3 class="card-title">Lifting While You’re On Pharma Help</h3>
-            <p class="card-body">
-              How to keep muscle and sanity when appetite is blunted but training
-              is still a priority.
-            </p>
-            <p class="card-meta">Article • 7 min read</p>
-          </article>
-        </div>
-      </section>
+  <details>
+    <summary>Thursday – Priority Hypertrophy & Grip <span class="dots">•••</span></summary>
+    <div class="content">
+      <h4>Focus</h4>
+      Arms, traps, forearms. Controlled brutality.
+      <div class="exercise">Chest-Supported DB Shrugs – 3×12–15</div>
+      <div class="exercise">Incline DB Curl – 3×8–10</div>
+      <div class="exercise">Cable Curl – 2–3×12–15</div>
+      <div class="exercise">Incline DB Press – 3×8–10</div>
+      <div class="exercise">Palms-Up Wrist Curl – 2–3 rounds</div>
+    </div>
+  </details>
 
- <footer>
-  <strong>MinMaxMuscle</strong><br>
-  Train with intent. Recover with purpose.
+  <details>
+    <summary>Friday – Active Recovery <span class="dots">•••</span></summary>
+    <div class="content">
+      Walking, mobility, light blood flow. Recovery is training.
+    </div>
+  </details>
+
+  <details>
+    <summary>Saturday – 2-Hour Pull Day <span class="dots">•••</span></summary>
+    <div class="content">
+      <h4>Focus</h4>
+      Trap dominance, arm thickness, grip strength.
+      <div class="exercise">Smith Shrugs – 4 working sets</div>
+      <div class="exercise">Chest-Supported DB Shrugs</div>
+      <div class="exercise">Incline DB Curl – Failure + drop</div>
+      <div class="exercise">EZ-Bar Curl – 3×6–8</div>
+      <div class="exercise">Farmer’s Carries – Heavy timed sets</div>
+    </div>
+  </details>
+
+  <details>
+    <summary>Sunday – 2-Hour Push Day <span class="dots">•••</span></summary>
+    <div class="content">
+      <h4>Focus</h4>
+      Upper chest, shoulders, triceps with joint respect.
+      <div class="exercise">Incline Smith Press – RPE-based sets</div>
+      <div class="exercise">Incline DB Press – Stretch focus</div>
+      <div class="exercise">Lateral Raise – Short rest tension</div>
+      <div class="exercise">Cable Triceps Extensions</div>
+      <div class="exercise">Chest Press Machine – Optional pump</div>
+    </div>
+  </details>
+
+</div>
+
+<footer>
+  © MinMaxMuscle. Discipline builds the body. Systems keep it.
 </footer>
-    </div>
-  </main>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+<script>
+  function expandAll() {
+    document.querySelectorAll('details').forEach(d => d.open = true);
+  }
+
+  function collapseAll() {
+    document.querySelectorAll('details').forEach(d => d.open = false);
+  }
+</script>
+
 </body>
 </html>
