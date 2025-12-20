@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>MinMaxMuscle Training Split</title>
+  <title>MinMaxMuscle | Training System</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -14,89 +14,82 @@
     <span class="brand">MINMAXMUSCLE</span>
   </div>
   <nav class="nav">
-    <a href="index.html">Home</a>
-    <a href="training.html">Training</a>
+    <a href="#">Home</a>
+    <a href="#">Training</a>
     <a href="#">Nutrition</a>
     <a href="#">Coaching</a>
     <a href="#">Contact</a>
   </nav>
 </header>
 
+<section class="hero">
+  <h1>Train With Intent</h1>
+  <p>
+    This is not a random split.  
+    This is a system designed to maximize progress while minimizing wasted effort.
+  </p>
+  <div class="controls">
+    <button onclick="expandAll()">Expand All</button>
+    <button onclick="collapseAll()">Collapse All</button>
+  </div>
+</section>
+
 <main class="container">
-  <h1>Weekly Training Split</h1>
-  <p class="subtitle">
-    Built for progression, recovery, and long-term aesthetics.  
-    This is not random. This is engineered.
-  </p>
 
-  <!-- DAY 1 -->
+  <!-- DAY TEMPLATE -->
   <details class="workout">
     <summary>
-      <span>1. Monday – Legs + Core</span>
-      <span class="dots">⋯</span>
+      <span>Monday – Legs & Core</span>
+      <span class="icons">▾ ⋯</span>
     </summary>
+
     <div class="content">
-      <h3>Warm-Up</h3>
-      <ul>
-        <li>Stairmaster – 5 min progressive</li>
-        <li>Hip openers + hamstring floss – 2–3 min</li>
-        <li>1–2 light leg press ramp sets</li>
-      </ul>
+      <div class="block">
+        <h3>Warm-Up</h3>
+        <ul>
+          <li>Stairmaster – 5 min progressive</li>
+          <li>Hip openers + hamstring floss – 2–3 min</li>
+          <li>1–2 light leg press ramp sets</li>
+        </ul>
+      </div>
 
-      <h3>Main Work</h3>
-      <ul>
-        <li>Seated Leg Curl (Machine): 4×10–12, slow negatives</li>
-        <li>Leg Press (Horizontal): 4–5×12–15, controlled</li>
-        <li>Hack Squat (Machine): 4×8–12</li>
-        <li>Leg Extension: 4×12–15, last set partials</li>
-        <li>Hip Abduction: 3×20, constant tension</li>
-        <li>Rear Kick: 3–4×10–12 each side</li>
-        <li>Crunch Machine: 3×12, slow exhale</li>
-      </ul>
+      <div class="block">
+        <h3>Primary Lifts</h3>
+        <ul>
+          <li>Seated Leg Curl (Machine): 4×10–12, slow eccentrics</li>
+          <li>Leg Press (Horizontal): 4–5×12–15, controlled</li>
+          <li>Hack Squat (Machine): 4×8–12</li>
+        </ul>
+      </div>
 
-      <h3>Conditioning</h3>
-      <ul>
-        <li>Treadmill: 20–30 min, incline 12–15</li>
-      </ul>
+      <div class="block">
+        <h3>Accessory Work</h3>
+        <ul>
+          <li>Leg Extension: 4×12–15, last set partials</li>
+          <li>Hip Abduction: 3×20, constant tension</li>
+          <li>Rear Kick: 3–4×10–12 each side</li>
+          <li>Crunch Machine: 3×12, slow exhale</li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <h3>Conditioning</h3>
+        <ul>
+          <li>Treadmill: 20–30 min, incline 12–15</li>
+        </ul>
+      </div>
     </div>
   </details>
 
-  <!-- DAY 2 -->
-  <details class="workout">
-    <summary>
-      <span>2. Tuesday – Upper Torso Maintenance</span>
-      <span class="dots">⋯</span>
-    </summary>
-    <div class="content">
-      <h3>Focus</h3>
-      <p>Maintain size, reinforce joints, keep traps and arms active without recovery debt.</p>
-
-      <ul>
-        <li>Shrug (Smith): 5×6–10, 2–3 sec hold</li>
-        <li>Shrug (Smith – Stretch): 4×12–15</li>
-        <li>DB Shrug Hold (Timed): 3×30–40 sec</li>
-        <li>Seated Cable Row (Bar Grip): 4×10–12</li>
-        <li>Lat Pulldown: 4×8–12</li>
-        <li>EZ-Bar Curl: 4×8–10</li>
-        <li>Incline DB Curl: 3×10–12</li>
-        <li>Hammer Curl (Cable): 2–3×12–15</li>
-        <li>Arnold Press: 3×8–10</li>
-        <li>Rear Delt Reverse Fly: 3×15–20</li>
-      </ul>
-    </div>
-  </details>
-
-  <!-- Repeat this pattern for Days 3–7 -->
-  <p class="note">
-    Additional days (Posterior Powerhouse, Hypertrophy & Grip, Pull, Push) follow the same structure.
-    This layout is intentionally modular.
-  </p>
+  <!-- DUPLICATE DETAILS FOR DAYS 2–7 -->
+  <!-- Use same structure, different content -->
 
 </main>
 
 <footer class="footer">
-  <p>© MinMaxMuscle. Train with intent.</p>
+  <p>© MinMaxMuscle. Discipline builds the body. Systems keep it.</p>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>

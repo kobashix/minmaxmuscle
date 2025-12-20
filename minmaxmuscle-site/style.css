@@ -1,3 +1,13 @@
+:root {
+  --bg: #0d0f14;
+  --panel: #141824;
+  --panel-hover: #1b2030;
+  --border: #23283a;
+  --text: #e6e6e6;
+  --muted: #9aa0b3;
+  --accent: #ffffff;
+}
+
 * {
   box-sizing: border-box;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
@@ -5,18 +15,20 @@
 
 body {
   margin: 0;
-  background: #0e0f13;
-  color: #e6e6e6;
+  background: var(--bg);
+  color: var(--text);
 }
 
-/* HEADER */
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 14px 24px;
-  background: #07080b;
-  border-bottom: 1px solid #1f2026;
+  background: #07090f;
+  border-bottom: 1px solid var(--border);
 }
 
 .header-left {
@@ -37,92 +49,108 @@ body {
 .nav a {
   margin-left: 18px;
   text-decoration: none;
-  color: #b5b5b5;
+  color: var(--muted);
   font-size: 14px;
 }
 
 .nav a:hover {
-  color: #ffffff;
+  color: var(--accent);
 }
 
-/* MAIN */
+.hero {
+  text-align: center;
+  padding: 60px 20px 30px;
+}
+
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  color: var(--muted);
+  max-width: 600px;
+  margin: 0 auto 20px;
+}
+
+.controls button {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 8px 14px;
+  margin: 0 6px;
+  cursor: pointer;
+}
+
+.controls button:hover {
+  background: var(--panel-hover);
+}
+
 .container {
   max-width: 900px;
-  margin: 40px auto;
+  margin: 0 auto 60px;
   padding: 0 20px;
 }
 
-h1 {
-  font-size: 32px;
-  margin-bottom: 6px;
-}
-
-.subtitle {
-  color: #9a9a9a;
-  margin-bottom: 30px;
-}
-
-/* WORKOUT DROPDOWNS */
 .workout {
-  background: #12141a;
-  border: 1px solid #1f2230;
-  border-radius: 8px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
   margin-bottom: 14px;
   overflow: hidden;
 }
 
 .workout summary {
-  cursor: pointer;
-  list-style: none;
-  padding: 16px 18px;
+  padding: 18px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
   font-weight: 600;
+}
+
+.workout summary:hover {
+  background: var(--panel-hover);
 }
 
 .workout summary::-webkit-details-marker {
   display: none;
 }
 
-.dots {
-  color: #777;
-  font-size: 20px;
+.icons {
+  color: var(--muted);
 }
 
 .workout[open] summary {
-  background: #181b24;
+  background: var(--panel-hover);
 }
 
 .content {
-  padding: 18px;
-  border-top: 1px solid #1f2230;
+  padding: 20px;
+  border-top: 1px solid var(--border);
 }
 
-.content h3 {
-  margin-top: 0;
+.block {
+  margin-bottom: 18px;
 }
 
-.content ul {
+.block h3 {
+  margin: 0 0 8px;
+}
+
+.block ul {
   padding-left: 18px;
 }
 
-.content li {
+.block li {
   margin-bottom: 6px;
-  color: #d0d0d0;
+  color: #d2d6e0;
 }
 
-.note {
-  margin-top: 30px;
-  color: #777;
-  font-size: 14px;
-}
-
-/* FOOTER */
 .footer {
   text-align: center;
   padding: 20px;
-  border-top: 1px solid #1f2026;
-  color: #666;
+  border-top: 1px solid var(--border);
+  color: #6e7488;
   font-size: 13px;
 }
