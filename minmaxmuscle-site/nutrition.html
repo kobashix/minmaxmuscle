@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Nutrition | MinMaxMuscle</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo-left">
+      <img src="img/logo-white.svg" alt="MinMaxMuscle" class="nav-logo" />
+      <span class="brand">MINMAXMUSCLE</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="training.html">Training</a></li>
+      <li><a href="nutrition.html" class="active">Nutrition</a></li>
+      <li><a href="coaching.html">Coaching</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="page hero-inner">
+        <div class="hero-left">
+          <p class="hero-subtitle">NO STARVATION GAMES</p>
+          <h1 class="hero-title">Nutrition That Keeps Muscle While You Lean Out.</h1>
+          <p class="hero-text">
+            Protein-heavy, realistic, and built around the way adults actually eat.
+            Macros that flex with travel, kids, and work instead of collapsing at
+            the first social event.
+          </p>
+          <a href="coaching.html" class="hero-btn">Dial In My Macros</a>
+        </div>
+        <div class="hero-right">
+          <img src="img/hero-nutrition.jpg" alt="Nutrition" class="hero-img" />
+        </div>
+      </div>
+    </section>
+
+    <div class="page main-content">
+      <section class="section">
+        <div class="section-header">
+          <h2 class="section-title">Guides</h2>
+          <p class="section-kicker">Clear rules. No detox teas.</p>
+        </div>
+        <div class="card-grid">
+          <article class="card">
+            <div class="card-eyebrow">Protein</div>
+            <h3 class="card-title">The MinMax Protein Ladder</h3>
+            <p class="card-body">
+              Stepwise intake levels with example meals so you can actually hit
+              your numbers without living on shakes.
+            </p>
+            <p class="card-meta">Download • PDF + shopping list</p>
+          </article>
+          <article class="card">
+            <div class="card-eyebrow">Cutting</div>
+            <h3 class="card-title">Deficit Without Becoming a Zombie</h3>
+            <p class="card-body">
+              How to combine calorie targets, step goals, and refeeds so your
+              training and mood don’t completely tank.
+            </p>
+            <p class="card-meta">Article • 8 min read</p>
+          </article>
+          <article class="card">
+            <div class="card-eyebrow">Maintenance</div>
+            <h3 class="card-title">Holding the Line After a Cut</h3>
+            <p class="card-body">
+              Reverse-diet without gaining it all back. Simple guardrails and
+              check-ins that keep you honest.
+            </p>
+            <p class="card-meta">Checklist • 5 min read</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-header">
+          <h2 class="section-title">Habits</h2>
+          <p class="section-kicker">What actually matters over 6–12 months.</p>
+        </div>
+        <div class="card-grid">
+          <article class="card">
+            <div class="card-eyebrow">Daily</div>
+            <h3 class="card-title">The 5 Non-Negotiables</h3>
+            <p class="card-body">
+              Protein, steps, sleep, hydration, and one honest “how did today go”
+              rating. Simple and brutally effective.
+            </p>
+            <p class="card-meta">Framework • All goals</p>
+          </article>
+          <article class="card">
+            <div class="card-eyebrow">GLP-1 Friendly</div>
+            <h3 class="card-title">Lifting While You’re On Pharma Help</h3>
+            <p class="card-body">
+              How to keep muscle and sanity when appetite is blunted but training
+              is still a priority.
+            </p>
+            <p class="card-meta">Article • 7 min read</p>
+          </article>
+        </div>
+      </section>
+
+      <footer>
+        <span>© <span id="year"></span> MinMaxMuscle.</span>
+        <span><a href="coaching.html" style="color:var(--accent-soft); text-decoration:none;">Need nutrition plus training? →</a></span>
+      </footer>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact | MinMaxMuscle</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo-left">
+      <img src="img/logo-white.svg" alt="MinMaxMuscle" class="nav-logo" />
+      <span class="brand">MINMAXMUSCLE</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="training.html">Training</a></li>
+      <li><a href="nutrition.html">Nutrition</a></li>
+      <li><a href="coaching.html">Coaching</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="page hero-inner">
+        <div class="hero-left">
+          <p class="hero-subtitle">COACHING APPLICATION</p>
+          <h1 class="hero-title">Tell Me What You’re Actually Chasing.</h1>
+          <p class="hero-text">
+            Fill this out with as much detail as you can. No fluff, no essays.
+            Just honest context so the plan matches your reality.
+          </p>
+        </div>
+        <div class="hero-right">
+          <img src="img/hero-contact.jpg" alt="Contact" class="hero-img" />
+        </div>
+      </div>
+    </section>
+
+    <div class="page main-content">
+      <section class="section">
+        <div class="section-header">
+          <h2 class="section-title">Application</h2>
+          <p class="section-kicker">
+            Form goes nowhere yet. Hook it to whatever backend you want later.
+          </p>
+        </div>
+        <form class="form">
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input id="name" type="text" placeholder="First and last name" />
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="you@example.com" />
+          </div>
+          <div class="form-row">
+            <label for="goal">Main goal</label>
+            <input id="goal" type="text" placeholder="e.g. drop 20 lbs without losing strength" />
+          </div>
+          <div class="form-row">
+            <label for="history">Training background</label>
+            <textarea id="history" placeholder="How long you’ve lifted, injuries, programs you’ve run, etc."></textarea>
+          </div>
+          <div class="form-row">
+            <label for="schedule">Weekly schedule</label>
+            <textarea id="schedule" placeholder="How many days and how long you can realistically train."></textarea>
+          </div>
+          <div class="form-row">
+            <label for="notes">Anything else I should know?</label>
+            <textarea id="notes"></textarea>
+          </div>
+          <button type="submit" class="hero-btn">Submit Application</button>
+        </form>
+      </section>
+
+      <footer>
+        <span>© <span id="year"></span> MinMaxMuscle.</span>
+        <span>Prefer email? Just send your answers to <strong>mmm@minmaxmuscle.com</strong>.</span>
+      </footer>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -3,952 +3,198 @@
 <head>
   <meta charset="UTF-8" />
   <title>MinMaxMuscle | Minimize Fluff. Maximize Muscle.</title>
+  <link rel="stylesheet" href="style.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    :root {
-      --bg: #050812;
-      --bg-alt: #0a0f1a;
-      --bg-card: #0f1725;
-      --bg-card-alt: #121a29;
-      --border-subtle: #1b2332;
-      --accent: #ff7a1a;
-      --accent-soft: #ffb449;
-      --text-main: #f9fafb;
-      --text-muted: #b4b7c2;
-      --text-soft: #8b8fa0;
-      --pill-bg: #111827;
-      --radius-lg: 18px;
-      --shadow-soft: 0 24px 60px rgba(0, 0, 0, 0.55);
-      --shadow-card: 0 18px 40px rgba(0, 0, 0, 0.45);
-      --max-width: 1180px;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-        "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #111827 0, #050812 55%);
-      color: var(--text-main);
-      min-height: 100vh;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .page {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 20px 20px 64px;
-    }
-
-    /* HEADER / NAV */
-
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 8px 0 22px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-      margin-bottom: 26px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .brand-mark {
-      width: 32px;
-      height: 32px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 0, #ffb449, #ff7a1a 35%, #b3380f 90%);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.6);
-    }
-
-    .brand-mark svg {
-      width: 22px;
-      height: 22px;
-      fill: #ffffff;
-    }
-
-    .brand-name {
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      font-size: 0.86rem;
-      color: var(--text-soft);
-    }
-
-    nav a {
-      position: relative;
-      padding-bottom: 2px;
-    }
-
-    nav a:hover {
-      color: var(--text-main);
-    }
-
-    nav a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -4px;
-      width: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--accent), var(--accent-soft));
-      transition: width 0.18s ease-out;
-    }
-
-    nav a:hover::after {
-      width: 100%;
-    }
-
-    .nav-cta {
-      padding: 7px 14px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, #ff7a1a, #ffb449);
-      color: #050812;
-      font-weight: 600;
-      font-size: 0.8rem;
-      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.7);
-    }
-
-    .nav-cta:hover {
-      filter: brightness(1.05);
-    }
-
-    /* HERO */
-
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-      gap: 28px;
-      padding: 26px 0 14px;
-      align-items: center;
-    }
-
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 3px 10px;
-      border-radius: 999px;
-      background: rgba(17, 24, 39, 0.9);
-      border: 1px solid rgba(148, 163, 184, 0.32);
-      font-size: 0.76rem;
-      color: var(--text-soft);
-      margin-bottom: 12px;
-    }
-
-    .hero-eyebrow span {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: var(--accent);
-      box-shadow: 0 0 12px rgba(255, 122, 26, 0.8);
-    }
-
-    .hero-title {
-      font-size: clamp(2.3rem, 3vw, 2.9rem);
-      line-height: 1.05;
-      margin-bottom: 14px;
-    }
-
-    .hero-title .accent {
-      color: var(--accent-soft);
-    }
-
-    .hero-subtitle {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      max-width: 34rem;
-      margin-bottom: 18px;
-    }
-
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      align-items: center;
-      margin-bottom: 20px;
-      color: var(--text-soft);
-      font-size: 0.8rem;
-    }
-
-    .hero-meta strong {
-      color: var(--text-main);
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 12px;
-    }
-
-    .btn-primary {
-      padding: 11px 20px;
-      border-radius: 999px;
-      border: none;
-      cursor: pointer;
-      background: linear-gradient(90deg, #ff7a1a, #ffb449);
-      color: #050812;
-      font-weight: 600;
-      font-size: 0.92rem;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .btn-primary:hover {
-      filter: brightness(1.06);
-    }
-
-    .btn-ghost {
-      padding: 10px 18px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.25);
-      background: transparent;
-      color: var(--text-main);
-      font-weight: 500;
-      font-size: 0.88rem;
-      cursor: pointer;
-    }
-
-    .btn-ghost:hover {
-      border-color: rgba(203, 213, 225, 0.9);
-      background: rgba(15, 23, 42, 0.9);
-    }
-
-    .hero-footnote {
-      font-size: 0.78rem;
-      color: var(--text-soft);
-    }
-
-    .hero-aside {
-      border-radius: 24px;
-      background: radial-gradient(circle at 10% 0, #ffb449 0, #ff7a1a 30%, #4b1b0a 100%);
-      padding: 18px 18px 20px;
-      position: relative;
-      box-shadow: var(--shadow-soft);
-      overflow: hidden;
-    }
-
-    .hero-aside-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 12px;
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: rgba(5, 8, 18, 0.85);
-      font-weight: 700;
-    }
-
-    .hero-aside-tag {
-      padding: 4px 8px;
-      border-radius: 999px;
-      background: rgba(5, 8, 18, 0.07);
-      border: 1px solid rgba(5, 8, 18, 0.2);
-      font-size: 0.64rem;
-    }
-
-    .hero-logo-wrap {
-      display: flex;
-      justify-content: center;
-      padding: 8px 0 4px;
-    }
-
-    .hero-logo-circle {
-      width: 190px;
-      height: 190px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 0, #ffe0b2, #ffb449 30%, #ff7a1a 55%, #7b210a 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 26px 70px rgba(0, 0, 0, 0.75);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-    }
-
-    .hero-logo-circle svg {
-      width: 115px;
-      height: 115px;
-      fill: #ffffff;
-      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.6));
-    }
-
-    .hero-aside-footer {
-      margin-top: 12px;
-      padding-top: 10px;
-      border-top: 1px solid rgba(5, 8, 18, 0.16);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.76rem;
-      color: rgba(5, 8, 18, 0.9);
-    }
-
-    .hero-aside-footer strong {
-      font-size: 0.82rem;
-    }
-
-    .hero-aside-footer span {
-      opacity: 0.8;
-    }
-
-    /* GENERIC SECTION */
-
-    .section {
-      margin-top: 36px;
-    }
-
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 16px;
-    }
-
-    .section-title {
-      font-size: 1.1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-
-    .section-kicker {
-      font-size: 0.8rem;
-      color: var(--text-soft);
-    }
-
-    .section-header a {
-      font-size: 0.78rem;
-      color: var(--accent-soft);
-    }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-      gap: 20px;
-    }
-
-    /* FEATURED GRID */
-
-    .featured-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
-      gap: 18px;
-    }
-
-    .feature-main {
-      border-radius: var(--radius-lg);
-      background: linear-gradient(135deg, var(--bg-card), var(--bg-card-alt));
-      padding: 18px 18px 16px;
-      box-shadow: var(--shadow-card);
-      border: 1px solid var(--border-subtle);
-    }
-
-    .feature-label {
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      color: var(--accent-soft);
-      letter-spacing: 0.16em;
-      margin-bottom: 6px;
-    }
-
-    .feature-title {
-      font-size: 1.25rem;
-      margin-bottom: 6px;
-    }
-
-    .feature-meta {
-      font-size: 0.78rem;
-      color: var(--text-soft);
-      margin-bottom: 10px;
-    }
-
-    .feature-body {
-      font-size: 0.86rem;
-      color: var(--text-muted);
-      margin-bottom: 12px;
-    }
-
-    .feature-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      font-size: 0.72rem;
-    }
-
-    .feature-tags span {
-      padding: 4px 8px;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.8);
-      border: 1px solid rgba(148, 163, 184, 0.2);
-      color: var(--text-soft);
-    }
-
-    .feature-side-list {
-      display: grid;
-      gap: 10px;
-    }
-
-    .feature-side-card {
-      display: grid;
-      grid-template-columns: 90px minmax(0, 1fr);
-      gap: 12px;
-      border-radius: 14px;
-      background: rgba(10, 15, 26, 0.9);
-      border: 1px solid var(--border-subtle);
-      padding: 8px;
-      align-items: center;
-    }
-
-    .thumb {
-      border-radius: 10px;
-      background: radial-gradient(circle at 0 0, #ffb449, #ff7a1a, #111827);
-      height: 70px;
-    }
-
-    .feature-side-title {
-      font-size: 0.9rem;
-      margin-bottom: 4px;
-    }
-
-    .feature-side-meta {
-      font-size: 0.75rem;
-      color: var(--text-soft);
-    }
-
-    /* CARD GRIDS */
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .card {
-      border-radius: var(--radius-lg);
-      background: rgba(10, 15, 26, 0.9);
-      border: 1px solid var(--border-subtle);
-      padding: 14px 13px 12px;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .card-eyebrow {
-      font-size: 0.68rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--accent-soft);
-    }
-
-    .card-title {
-      font-size: 0.94rem;
-    }
-
-    .card-body {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    .card-meta {
-      font-size: 0.76rem;
-      color: var(--text-soft);
-      margin-top: 4px;
-    }
-
-    .card-tag-row {
-      margin-top: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.74rem;
-      color: var(--text-soft);
-    }
-
-    .pill {
-      padding: 4px 8px;
-      border-radius: 999px;
-      background: var(--pill-bg);
-      border: 1px solid rgba(148, 163, 184, 0.32);
-    }
-
-    /* COACHING SECTION */
-
-    .coaching {
-      border-radius: 22px;
-      background: linear-gradient(135deg, #111827, #020617);
-      padding: 18px 16px 16px;
-      border: 1px solid var(--border-subtle);
-      display: grid;
-      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
-      gap: 20px;
-      margin-top: 28px;
-    }
-
-    .coaching h3 {
-      font-size: 1.1rem;
-      margin-bottom: 6px;
-    }
-
-    .coaching p {
-      font-size: 0.86rem;
-      color: var(--text-muted);
-      margin-bottom: 12px;
-    }
-
-    .coaching ul {
-      list-style: none;
-      display: grid;
-      gap: 4px;
-      font-size: 0.8rem;
-      color: var(--text-soft);
-      margin-bottom: 10px;
-    }
-
-    .coaching ul li::before {
-      content: "• ";
-      color: var(--accent-soft);
-    }
-
-    .coaching-right {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 10px;
-    }
-
-    .coaching-metrics {
-      display: flex;
-      gap: 16px;
-      font-size: 0.8rem;
-      color: var(--text-soft);
-    }
-
-    .coaching-metrics div strong {
-      display: block;
-      font-size: 1rem;
-      color: var(--text-main);
-    }
-
-    /* FOOTER */
-
-    footer {
-      border-top: 1px solid rgba(15, 23, 42, 0.9);
-      margin-top: 40px;
-      padding-top: 14px;
-      font-size: 0.78rem;
-      color: var(--text-soft);
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    footer a {
-      color: var(--accent-soft);
-      font-size: 0.78rem;
-    }
-
-    /* RESPONSIVE */
-
-    @media (max-width: 900px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-      }
-
-      nav {
-        gap: 14px;
-        flex-wrap: wrap;
-      }
-
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .hero-aside {
-        order: -1;
-      }
-
-      .two-col,
-      .featured-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .card-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .coaching {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    @media (max-width: 640px) {
-      .page {
-        padding-inline: 16px;
-      }
-
-      .card-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      nav {
-        display: none; /* You can replace this with a mobile menu later */
-      }
-    }
-  </style>
 </head>
 <body>
-  <div class="page">
-    <header>
-      <div class="brand">
-        <div class="brand-mark" aria-hidden="true">
-          <!-- compact logo mark -->
-          <svg viewBox="0 0 100 100">
-            <path d="M50 82c-5-7-9-12-13-15-8-7-14-12-18-19-3-6-4-12-2-18 2-6 7-10 13-11 8-1 13 4 16 8 3-4 8-9 16-8 6 1 11 5 13 11 2 6 1 12-2 18-4 7-10 12-18 19-4 3-8 8-13 15z" />
-          </svg>
-        </div>
-        <span class="brand-name">MinMaxMuscle</span>
-      </div>
-      <nav>
-        <a href="#training">Training</a>
-        <a href="#nutrition">Nutrition</a>
-        <a href="#method">Method</a>
-        <a href="#coaching">Coaching</a>
-        <a href="#about">About</a>
-        <a href="#contact" class="nav-cta">Get Started</a>
-      </nav>
-    </header>
+  <header class="navbar">
+    <div class="logo-left">
+      <img src="img/logo-white.svg" alt="MinMaxMuscle" class="nav-logo" />
+      <span class="brand">MINMAXMUSCLE</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="training.html">Training</a></li>
+      <li><a href="nutrition.html">Nutrition</a></li>
+      <li><a href="coaching.html">Coaching</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </header>
 
-    <main>
-      <!-- HERO -->
-      <section class="hero">
-        <div>
-          <div class="hero-eyebrow">
-            <span></span>
-            Evidence-driven strength, not influencer fluff.
-          </div>
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="page hero-inner">
+        <div class="hero-left">
+          <p class="hero-subtitle">NO FLUFF. JUST RESULTS.</p>
           <h1 class="hero-title">
-            Minimize <span class="accent">Fluff.</span><br />
-            Maximize <span class="accent">Muscle.</span>
+            MINIMIZE FLUFF.<br />
+            MAXIMIZE MUSCLE.
           </h1>
-          <p class="hero-subtitle">
-            MinMaxMuscle is where training, nutrition, and data actually meet.
-            No 30-day miracles. No “toning.” Just systems that work for people who
-            lift, parent, work, and still want abs.
+          <p class="hero-text">
+            Evidence-driven strength training and nutrition for people who lift,
+            work, parent, and still want abs. No influencers, no gimmicks, no
+            30-day miracle nonsense. Just systems that work in the real world.
           </p>
-
-          <div class="hero-meta">
-            <div><strong>Smart programming</strong> built around real life.</div>
-            <div>Track lifts, weight, sleep, and habits that actually move the needle.</div>
-          </div>
-
-          <div class="hero-actions">
-            <button class="btn-primary">Start Coaching Application</button>
-            <button class="btn-ghost">View Training Framework</button>
-          </div>
-
-          <div class="hero-footnote">
-            Built for lifters who care more about progress photos than gym selfies.
-          </div>
+          <a href="coaching.html" class="hero-btn">Start Coaching</a>
+          <a href="training.html" class="hero-btn-outline">View Training Framework</a>
         </div>
 
-        <aside class="hero-aside" aria-label="Brand feature">
-          <div class="hero-aside-header">
-            <span>MinMax Playbook</span>
-            <span class="hero-aside-tag">Strength • Data • Discipline</span>
-          </div>
+        <div class="hero-right">
+          <img src="img/hero-main.jpg" alt="Physique training" class="hero-img" />
+        </div>
+      </div>
+    </section>
 
-          <div class="hero-logo-wrap">
-            <div class="hero-logo-circle">
-              <!-- full logo, white -->
-              <svg viewBox="0 0 300 300" aria-hidden="true">
-                <path d="M149.9,250c-3-6-7.3-11.9-11.7-17.2c-4.5-5.4-9.3-10.1-13.7-14c-4.4-3.9-8.3-7-11.1-9.2
-                  c-2.8-2.3-4.4-3.6-4.4-3.6s-4.6-3.6-10.6-8.9c-6-5.3-13.2-12.2-19.6-19.9c-6.4-7.7-11.9-16.2-15.3-24.7
-                  c-3.5-8.5-4.9-17-4.3-24.5c0.6-7.6,3-14.2,6.8-19.7c3.8-5.5,9-9.7,14.9-12.3c5.9-2.6,12.7-3.6,19.3-2.7
-                  c6.6,0.9,13,3.6,18.4,7.5c5.4,4,9.8,9.2,13,15.5c0,0,3.4-6.3,8.8-11.7c5.4-5.4,12.8-9.8,21-11c8.3-1.3,17.4,0.6,24.7,4.8
-                  c7.4,4.2,13,10.6,16.5,18.1c3.5,7.5,4.8,16.1,4,24.5c-0.9,8.4-3.8,16.7-7.9,24.3c-4.1,7.6-9.5,14.4-15.4,20.8
-                  c-5.9,6.4-12.4,12.4-18.3,17.3c-5.9,4.9-11.1,8.8-14.8,11.6c-3.7,2.9-5.9,4.6-5.9,4.6s-1.7,1.3-4.7,3.6
-                  c-3,2.3-7.1,5.6-11.4,9.5c-4.3,3.9-8.9,8.5-13.2,13.8C156.2,239.2,152.7,244.7,149.9,250z" />
-              </svg>
-            </div>
-          </div>
-
-          <div class="hero-aside-footer">
-            <div>
-              <strong>Built for lifters, not influencers.</strong>
-              <span><br />Cycles optimized around real work, family, and sleep.</span>
-            </div>
-            <div>
-              <span>Start with</span><br />
-              <strong>One 12-Week Block</strong>
-            </div>
-          </div>
-        </aside>
-      </section>
-
-      <!-- FEATURED SECTION -->
-      <section class="section" id="training">
+    <!-- CONTENT -->
+    <div class="page main-content">
+      <section class="section">
         <div class="section-header">
-          <div>
-            <div class="section-title">Featured</div>
-            <div class="section-kicker">Training strategies that actually scale past week four.</div>
-          </div>
-          <a href="#">View all articles →</a>
+          <h2 class="section-title">Featured</h2>
+          <p class="section-kicker">
+            Training strategies that actually scale past week four.
+          </p>
         </div>
-
-        <div class="featured-grid">
-          <article class="feature-main">
-            <div class="feature-label">Anchor Article</div>
-            <h2 class="feature-title">
-              The MinMax Base Phase: Building Strength Without Living in the Gym
-            </h2>
-            <div class="feature-meta">
-              4-day split • 60–75 minutes • Designed around real work and family.
-            </div>
-            <p class="feature-body">
-              Forget “blast and cruise” chaos. The Base Phase is a structured 12-week block that
-              drives strength and muscle while keeping joints, sleep, and your schedule intact.
-              Progression is baked in. So is recovery.
+        <div class="card-grid">
+          <article class="card">
+            <div class="card-eyebrow">Anchor Article</div>
+            <h3 class="card-title">The MinMax Base Phase</h3>
+            <p class="card-body">
+              A structured 12-week block that builds real strength without
+              living in the gym. 4 days per week. 60–75 minutes per session.
             </p>
-            <div class="feature-tags">
-              <span>4-Day Training</span>
-              <span>Evidence-Driven</span>
-              <span>Periodization</span>
-            </div>
+            <p class="card-meta">Upper / Lower • Intermediate • Spreadsheet included</p>
           </article>
 
-          <div class="feature-side-list">
-            <article class="feature-side-card">
-              <div class="thumb" aria-hidden="true"></div>
-              <div>
-                <div class="feature-side-title">
-                  How to Program Accessories So They Actually Matter
-                </div>
-                <div class="feature-side-meta">Hypertrophy • 7 minute read</div>
-              </div>
-            </article>
-            <article class="feature-side-card">
-              <div class="thumb" aria-hidden="true"></div>
-              <div>
-                <div class="feature-side-title">
-                  Strength With a Deficit: Keeping Muscle While Dropping Fat
-                </div>
-                <div class="feature-side-meta">Cutting • 6 minute read</div>
-              </div>
-            </article>
-            <article class="feature-side-card">
-              <div class="thumb" aria-hidden="true"></div>
-              <div>
-                <div class="feature-side-title">
-                  Weekend Warrior? Here’s Your Two-Day “Non-Embarrassing” Split
-                </div>
-                <div class="feature-side-meta">Busy Schedules • 5 minute read</div>
-              </div>
-            </article>
-          </div>
+          <article class="card">
+            <div class="card-eyebrow">Accessories</div>
+            <h3 class="card-title">How to Program Accessories So They Actually Matter</h3>
+            <p class="card-body">
+              Turn accessory work from random pump sets into targeted muscle
+              gain that supports your main lifts.
+            </p>
+            <p class="card-meta">Hypertrophy • 7 min read</p>
+          </article>
+
+          <article class="card">
+            <div class="card-eyebrow">Cutting</div>
+            <h3 class="card-title">Keeping Muscle While Running a Deficit</h3>
+            <p class="card-body">
+              Practical rules for calories, steps, and training volume so you
+              don't flatten out while the scale drops.
+            </p>
+            <p class="card-meta">Nutrition • 6 min read</p>
+          </article>
         </div>
       </section>
 
-      <!-- TRAINING / NUTRITION GRIDS -->
-      <section class="section" id="method">
+      <section class="section">
         <div class="two-col">
           <div>
             <div class="section-header">
-              <div>
-                <div class="section-title">Training</div>
-                <div class="section-kicker">Clear templates, scalable effort.</div>
-              </div>
+              <h2 class="section-title">Training</h2>
+              <p class="section-kicker">Clear templates, scalable effort.</p>
             </div>
             <div class="card-grid">
               <article class="card">
                 <div class="card-eyebrow">Strength</div>
-                <h3 class="card-title">Posterior Priority: Lats, Traps, and Real Back Thickness</h3>
+                <h3 class="card-title">Posterior Priority</h3>
                 <p class="card-body">
-                  A pull-heavy template that respects elbow health, fatigue, and recovery
-                  while still hammering the muscles that actually make you look strong.
+                  Lats, traps, and glutes first. A pull-heavy template that
+                  respects joints while still hammering the muscles that make
+                  you look strong.
                 </p>
-                <div class="card-meta">Upper / Lower • 4x per week</div>
-                <div class="card-tag-row">
-                  <span class="pill">Spreadsheet + PDF</span>
-                  <span>Intermediate</span>
-                </div>
+                <p class="card-meta">4x per week • Intermediate</p>
               </article>
-
               <article class="card">
-                <div class="card-eyebrow">Hypertrophy</div>
-                <h3 class="card-title">Abs First, Fluff Last: Core-Centered Programming</h3>
+                <div class="card-eyebrow">Core</div>
+                <h3 class="card-title">Abs First, Fluff Last</h3>
                 <p class="card-body">
-                  Core work programmed like a main lift, not an afterthought. Designed to fit
-                  into realistic training windows with progressive overload.
+                  Core programmed like a main lift instead of an afterthought.
+                  Works even in tight 45-minute sessions.
                 </p>
-                <div class="card-meta">Core + Full-Body • 3x per week</div>
-                <div class="card-tag-row">
-                  <span class="pill">Includes video demos</span>
-                  <span>All levels</span>
-                </div>
-              </article>
-
-              <article class="card">
-                <div class="card-eyebrow">Conditioning</div>
-                <h3 class="card-title">10-Minute Treadmill Protocols That Don’t Kill Your Lifts</h3>
-                <p class="card-body">
-                  Low-impact protocols stacked at the end of sessions so you can improve work
-                  capacity without turning leg day into cardio purgatory.
-                </p>
-                <div class="card-meta">Conditioning • Add-on</div>
-                <div class="card-tag-row">
-                  <span class="pill">RPE-based</span>
-                  <span>Cut-Friendly</span>
-                </div>
+                <p class="card-meta">3x per week • All levels</p>
               </article>
             </div>
           </div>
 
-          <div id="nutrition">
+          <div>
             <div class="section-header">
-              <div>
-                <div class="section-title">Nutrition</div>
-                <div class="section-kicker">Macros for people who like real food.</div>
-              </div>
+              <h2 class="section-title">Nutrition</h2>
+              <p class="section-kicker">Macros for people who like real food.</p>
             </div>
             <div class="card-grid">
               <article class="card">
                 <div class="card-eyebrow">Protein</div>
                 <h3 class="card-title">The MinMax Protein Ladder</h3>
                 <p class="card-body">
-                  Simple intake tiers that scale with training volume and bodyweight. No
-                  spreadsheet PhD required.
+                  Simple intake tiers that scale with bodyweight and training,
+                  not fantasy macros.
                 </p>
-                <div class="card-meta">Guide + sample days</div>
-                <div class="card-tag-row">
-                  <span class="pill">Download</span>
-                  <span>Includes shopping list</span>
-                </div>
+                <p class="card-meta">Guide • Downloadable PDF</p>
               </article>
-
-              <article class="card">
-                <div class="card-eyebrow">Cutting</div>
-                <h3 class="card-title">Running a Deficit Without Becoming a Zombie</h3>
-                <p class="card-body">
-                  How to use refeeds, step targets, and sane calorie drops to keep strength
-                  while the scale moves down.
-                </p>
-                <div class="card-meta">Article • 8 minute read</div>
-                <div class="card-tag-row">
-                  <span class="pill">Evidence-driven</span>
-                  <span>GLP-1 compatible</span>
-                </div>
-              </article>
-
               <article class="card">
                 <div class="card-eyebrow">Habits</div>
-                <h3 class="card-title">The 5 Non-Negotiables for Lifters Over 30</h3>
+                <h3 class="card-title">Five Non-Negotiables for Lifters Over 30</h3>
                 <p class="card-body">
-                  Sleep, stress, steps, protein, and one brutally honest weekly check-in.
+                  Sleep, stress, steps, protein, and one weekly honest check-in.
                   Everything else is optional.
                 </p>
-                <div class="card-meta">Checklist • PDF</div>
-                <div class="card-tag-row">
-                  <span class="pill">Habit stack</span>
-                  <span>Low friction</span>
-                </div>
+                <p class="card-meta">Checklist • 5 min read</p>
               </article>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- COACHING -->
-      <section class="section" id="coaching">
+      <section class="section">
         <div class="section-header">
-          <div>
-            <div class="section-title">Coaching</div>
-            <div class="section-kicker">One-on-one for people who actually do the work.</div>
-          </div>
+          <h2 class="section-title">Coaching</h2>
+          <p class="section-kicker">One-on-one for people who actually do the work.</p>
         </div>
-
-        <div class="coaching">
+        <div class="two-col">
           <div>
-            <h3>MinMax 1:1 Coaching</h3>
-            <p>
-              For lifters who want structure, accountability, and a second brain focused on
-              their progress. Training, nutrition, and habits handled in one system.
+            <p class="card-body">
+              MinMax 1:1 Coaching is built for lifters who want structure,
+              accountability, and a second brain focused on their progress.
+              Training, nutrition, and habits handled in one system.
             </p>
-            <ul>
-              <li>Custom training blocks built around your schedule and equipment.</li>
-              <li>Macro targets that flex with travel, kids, and life.</li>
-              <li>Weekly check-ins with objective trends, not just feelings.</li>
-              <li>Form review and video feedback where it actually matters.</li>
-            </ul>
-            <button class="btn-primary">Apply for Coaching</button>
+            <p class="card-body">
+              No 6-week detoxes. No “tone & tighten.” Just blocks, check-ins,
+              and ruthless consistency.
+            </p>
+            <a href="coaching.html" class="hero-btn" style="margin-top:12px;">
+              Learn About Coaching
+            </a>
           </div>
-          <div class="coaching-right">
-            <div class="coaching-metrics">
-              <div>
-                <strong>12+</strong>
-                months average client retention
-              </div>
-              <div>
-                <strong>3–5</strong>
-                training days programmed per week
-              </div>
-              <div>
-                <strong>1</strong>
-                data-driven plan instead of 10 random programs
-              </div>
-            </div>
-            <p class="hero-footnote">
-              Not a 6-week challenge. Not a detox. Just sustainable, ruthless consistency.
-            </p>
+          <div class="card-grid">
+            <article class="card">
+              <div class="card-eyebrow">Stats</div>
+              <h3 class="card-title">12+ months</h3>
+              <p class="card-body">Average client retention. Not a quick fix.</p>
+            </article>
+            <article class="card">
+              <div class="card-eyebrow">Structure</div>
+              <h3 class="card-title">3–5 days</h3>
+              <p class="card-body">Training days programmed per week based on your life.</p>
+            </article>
+            <article class="card">
+              <div class="card-eyebrow">Clarity</div>
+              <h3 class="card-title">1 system</h3>
+              <p class="card-body">Instead of 10 random programs and a broken MyFitnessPal log.</p>
+            </article>
           </div>
         </div>
       </section>
-    </main>
 
-    <footer id="about">
-      <div>
-        © <span id="year"></span> MinMaxMuscle. Built for people who lift and live in
-        the real world.
-      </div>
-      <div>
-        <a href="#contact">Coaching inquiries</a>
-      </div>
-    </footer>
-  </div>
+      <footer>
+        <span>© <span id="year"></span> MinMaxMuscle. Built for people who lift and live in the real world.</span>
+        <span><a href="contact.html" style="color:var(--accent-soft); text-decoration:none;">Coaching inquiries →</a></span>
+      </footer>
+    </div>
+  </main>
 
   <script>
-    // tiny helper to keep the footer year correct
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>

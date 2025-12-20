@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MinMaxMuscle Weekly Program</title>
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0e0e11;
+      color: #f1f1f1;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #aaa;
+      margin-bottom: 30px;
+    }
+
+    .day {
+      background: #1a1a20;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      overflow: hidden;
+      border: 1px solid #2a2a33;
+    }
+
+    .day-header {
+      padding: 18px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .day-header:hover {
+      background: #222230;
+    }
+
+    .arrow {
+      transition: transform 0.3s ease;
+    }
+
+    .day.open .arrow {
+      transform: rotate(90deg);
+    }
+
+    .day-content {
+      display: none;
+      padding: 18px;
+      border-top: 1px solid #2a2a33;
+      line-height: 1.6;
+      color: #ddd;
+    }
+
+    .day.open .day-content {
+      display: block;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- FRONT PAGE -->
+    <h1>MinMaxMuscle Training Split</h1>
+    <div class="subtitle">
+      Discipline + Intensity + Recovery <br/>
+      Built to progress, not survive workouts
+    </div>
+
+    <!-- DAY 1 -->
+    <div class="day">
+      <div class="day-header">
+        Monday – Legs + Core
+        <span class="arrow">▶</span>
+      </div>
+      <div class="day-content">
+        • Primary lower body strength <br/>
+        • Core stability & bracing <br/>
+        • No ego lifting <br/>
+        <br/>
+        Add full workout details here.
+      </div>
+    </div>
+
+    <!-- DAY 2 -->
+    <div class="day">
+      <div class="day-header">
+        Tuesday – Upper Torso Maintenance
+        <span class="arrow">▶</span>
+      </div>
+      <div class="day-content">
+        • Chest / back maintenance <br/>
+        • Shoulder health <br/>
+        • Low fatigue, clean reps
+      </div>
+    </div>
+
+    <!-- DAY 3 -->
+    <div class="day">
+      <div class="day-header">
+        Wednesday – Posterior Powerhouse
+        <span class="arrow">▶</span>
+      </div>
+      <div class="day-content">
+        • Glutes, hamstrings, spinal erectors <br/>
+        • Heavy hinge patterns <br/>
+        • CNS respect required
+      </div>
+    </div>
+
+    <!-- DAY 4 -->
+    <div class="day">
+      <div class="day-header">
+        Thursday – Priority Hypertrophy & Grip
+        <span class="arrow">▶</span>
+      </div>
+      <div class="day-content">
+        • Traps priority <br/>
+        • Biceps secondary <br/>
+        • Grip earns its keep
+      </div>
+    </div>
+
+    <!-- DAY 5 -->
+    <div class="day">
+      <div class="day-header">
+        Friday – Off / Active Recovery
+        <span class="arrow">▶</span>
+      </div>
+      <div class="day-content">
+        • Walking <br/>
+        • Mobility <br/>
+        • Eat like an adult
+      </div>
+    </div>
+
+    <!-- DAY 6 -->
+    <div class="day">
+      <div class="day-header">
+        Saturday – 2-Hour Pull Day
+        <span class="arrow">▶</span>
+      </div>
+      <div class="day-content">
+        • Back volume <br/>
+        • Heavy shrugs <br/>
+        • Controlled fatigue
+      </div>
+    </div>
+
+    <!-- DAY 7 -->
+    <div class="day">
+      <div class="day-header">
+        Sunday – 2-Hour Push Day
+        <span class="arrow">▶</span>
+      </div>
+      <div class="day-content">
+        • Chest priority <br/>
+        • Shoulder support work <br/>
+        • Triceps finishers
+      </div>
+    </div>
+
+    <div class="footer">
+      © MinMaxMuscle – Built with intent, not vibes
+    </div>
+
+  </div>
+
+  <script>
+    document.querySelectorAll('.day-header').forEach(header => {
+      header.addEventListener('click', () => {
+        header.parentElement.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>
+

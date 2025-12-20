@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Coaching | MinMaxMuscle</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo-left">
+      <img src="img/logo-white.svg" alt="MinMaxMuscle" class="nav-logo" />
+      <span class="brand">MINMAXMUSCLE</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="training.html">Training</a></li>
+      <li><a href="nutrition.html">Nutrition</a></li>
+      <li><a href="coaching.html" class="active">Coaching</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="page hero-inner">
+        <div class="hero-left">
+          <p class="hero-subtitle">1:1 FOR PEOPLE WHO ACTUALLY LIFT</p>
+          <h1 class="hero-title">Coaching That Treats You Like an Adult.</h1>
+          <p class="hero-text">
+            Custom training, sane nutrition, and weekly feedback. No 6-week
+            “tone up” challenge. No generic PDF drop-box. Just a plan that fits
+            your life and moves the metrics that matter.
+          </p>
+          <a href="contact.html" class="hero-btn">Apply for Coaching</a>
+        </div>
+        <div class="hero-right">
+          <img src="img/hero-coaching.jpg" alt="Coaching" class="hero-img" />
+        </div>
+      </div>
+    </section>
+
+    <div class="page main-content">
+      <section class="section">
+        <div class="section-header">
+          <h2 class="section-title">What You Get</h2>
+          <p class="section-kicker">No nonsense, no hand-holding, just guidance.</p>
+        </div>
+        <div class="two-col">
+          <div>
+            <ul class="card-body" style="list-style:none; display:grid; gap:8px;">
+              <li>• Custom programming built around your equipment and schedule.</li>
+              <li>• Macros adjusted as your weight, performance, and life shift.</li>
+              <li>• Weekly check-ins with trend review, not just “how did it feel?”</li>
+              <li>• Form review on key lifts with video feedback.</li>
+              <li>• Access to all MinMax templates and nutrition guides.</li>
+            </ul>
+          </div>
+          <div class="card-grid">
+            <article class="card">
+              <div class="card-eyebrow">Retention</div>
+              <h3 class="card-title">12+ months</h3>
+              <p class="card-body">Average client stays for at least four full training blocks.</p>
+            </article>
+            <article class="card">
+              <div class="card-eyebrow">Focus</div>
+              <h3 class="card-title">3–5 days</h3>
+              <p class="card-body">You pick the time commitment, we structure the work.</p>
+            </article>
+            <article class="card">
+              <div class="card-eyebrow">Clarity</div>
+              <h3 class="card-title">One system</h3>
+              <p class="card-body">Training, macros, and habits in a single plan.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-header">
+          <h2 class="section-title">How It Works</h2>
+          <p class="section-kicker">Simple application. No sales call circus.</p>
+        </div>
+        <ol class="card-body" style="display:grid; gap:8px;">
+          <li><strong>1. Apply.</strong> You fill out a short form with training history, goals, and constraints.</li>
+          <li><strong>2. Review.</strong> If it’s a fit, you get an email with options, pricing, and start date.</li>
+          <li><strong>3. Build.</strong> Your first block is built around your current life, not fantasy-land.</li>
+          <li><strong>4. Iterate.</strong> Weekly adjustments based on data, not vibes.</li>
+        </ol>
+        <a href="contact.html" class="hero-btn" style="margin-top:18px;">Apply Now</a>
+      </section>
+
+      <footer>
+        <span>© <span id="year"></span> MinMaxMuscle.</span>
+        <span>Ready? <a href="contact.html" style="color:var(--accent-soft); text-decoration:none;">Fill out the form →</a></span>
+      </footer>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
