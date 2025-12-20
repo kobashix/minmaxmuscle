@@ -1,156 +1,240 @@
+/* =========================
+   ROOT + RESET
+========================= */
 :root {
-  --bg: #0d0f14;
-  --panel: #141824;
-  --panel-hover: #1b2030;
-  --border: #23283a;
-  --text: #e6e6e6;
-  --muted: #9aa0b3;
-  --accent: #ffffff;
+  --bg-main: #05070d;
+  --bg-panel: #0e1320;
+  --bg-hover: #1b2030;
+  --accent: #bfc6ff;
+  --accent-strong: #ffffff;
+  --text-main: #e6e9f0;
+  --text-muted: #9aa1b5;
+  --border-soft: #1f2535;
+  --danger: #ff5c5c;
+  --radius: 10px;
 }
 
 * {
-  box-sizing: border-box;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-}
-
-body {
   margin: 0;
-  background: var(--bg);
-  color: var(--text);
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
+html, body {
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 14px 24px;
-  background: #07090f;
-  border-bottom: 1px solid var(--border);
+  padding: 18px 40px;
+  background: linear-gradient(to bottom, #0b1020, #05070d);
+  border-bottom: 1px solid var(--border-soft);
 }
 
-.header-left {
+nav .logo {
   display: flex;
   align-items: center;
   gap: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
 }
 
-.logo {
+nav img {
   height: 36px;
 }
 
-.brand {
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
-.nav a {
-  margin-left: 18px;
-  text-decoration: none;
-  color: var(--muted);
-  font-size: 14px;
-}
-
-.nav a:hover {
+nav a {
   color: var(--accent);
+  text-decoration: none;
+  margin-left: 28px;
+  font-weight: 500;
+  position: relative;
 }
 
+nav a:hover {
+  color: var(--accent-strong);
+}
+
+nav a:hover::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--accent-strong);
+}
+
+/* =========================
+   HERO
+========================= */
 .hero {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 60px 20px 30px;
+  padding: 80px 24px;
+  background: radial-gradient(circle at center, #0f1220 0%, #05070d 70%);
+}
+
+.hero-logo {
+  max-width: 420px;
+  margin-bottom: 40px;
+  opacity: 0.95;
 }
 
 .hero h1 {
-  font-size: 36px;
-  margin-bottom: 10px;
+  font-size: 2.6rem;
+  margin-bottom: 14px;
 }
 
 .hero p {
-  color: var(--muted);
-  max-width: 600px;
-  margin: 0 auto 20px;
+  max-width: 720px;
+  color: var(--text-muted);
+  font-size: 1.05rem;
 }
 
-.controls button {
-  background: none;
-  border: 1px solid var(--border);
-  color: var(--text);
-  padding: 8px 14px;
-  margin: 0 6px;
-  cursor: pointer;
-}
-
-.controls button:hover {
-  background: var(--panel-hover);
-}
-
-.container {
+/* =========================
+   WORKOUT LIST
+========================= */
+.workouts {
   max-width: 900px;
-  margin: 0 auto 60px;
+  margin: 60px auto;
   padding: 0 20px;
 }
 
 .workout {
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  margin-bottom: 14px;
+  background: var(--bg-panel);
+  border-radius: var(--radius);
+  margin-bottom: 16px;
+  border: 1px solid var(--border-soft);
   overflow: hidden;
 }
 
 .workout summary {
-  padding: 18px;
+  padding: 20px 24px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  cursor: pointer;
-  font-weight: 600;
 }
 
 .workout summary:hover {
-  background: var(--panel-hover);
+  background: var(--bg-hover);
 }
 
-.workout summary::-webkit-details-marker {
-  display: none;
+.workout summary::after {
+  content: "▾";
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  transition: transform 0.2s ease;
 }
 
-.icons {
-  color: var(--muted);
+.workout[open] summary::after {
+  transform: rotate(180deg);
 }
 
-.workout[open] summary {
-  background: var(--panel-hover);
+.workout-content {
+  padding: 20px 24px 28px;
+  border-top: 1px solid var(--border-soft);
 }
 
-.content {
-  padding: 20px;
-  border-top: 1px solid var(--border);
+.workout-content h4 {
+  margin-bottom: 10px;
 }
 
-.block {
-  margin-bottom: 18px;
+.workout-content p,
+.workout-content li {
+  color: var(--text-muted);
+  font-size: 0.95rem;
 }
 
-.block h3 {
-  margin: 0 0 8px;
-}
-
-.block ul {
+.workout-content ul {
   padding-left: 18px;
+  margin-top: 10px;
 }
 
-.block li {
-  margin-bottom: 6px;
-  color: #d2d6e0;
+/* =========================
+   EXERCISE BLOCKS
+========================= */
+.exercise {
+  padding: 14px 0;
+  border-bottom: 1px dashed var(--border-soft);
 }
 
-.footer {
+.exercise:last-child {
+  border-bottom: none;
+}
+
+.exercise-title {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.exercise-notes {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* =========================
+   CALLOUTS
+========================= */
+.callout {
+  margin-top: 14px;
+  padding: 12px 16px;
+  border-left: 3px solid var(--accent);
+  background: rgba(191, 198, 255, 0.06);
+  font-size: 0.9rem;
+}
+
+.warning {
+  border-left-color: var(--danger);
+  background: rgba(255, 92, 92, 0.08);
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  margin-top: 80px;
+  padding: 30px 20px;
   text-align: center;
-  padding: 20px;
-  border-top: 1px solid var(--border);
-  color: #6e7488;
-  font-size: 13px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border-soft);
+}
+
+footer strong {
+  color: var(--accent-strong);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.1rem;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  nav a {
+    margin-left: 16px;
+  }
 }
