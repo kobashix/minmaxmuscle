@@ -1,202 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MinMaxMuscle Weekly Program</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>7-Day Hypertrophy Training Split</title>
+<style>
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #0e0e11;
+  color: #e5e7eb;
+}
 
-  <style>
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #0e0e11;
-      color: #f1f1f1;
-      margin: 0;
-      padding: 20px;
-    }
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 24px;
+}
 
-    .container {
-      max-width: 900px;
-      margin: auto;
-    }
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
 
-    h1 {
-      text-align: center;
-      margin-bottom: 10px;
-    }
+.subtitle {
+  color: #9ca3af;
+  margin-bottom: 2rem;
+}
 
-    .subtitle {
-      text-align: center;
-      color: #aaa;
-      margin-bottom: 30px;
-    }
+details {
+  background: #16161d;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  padding: 14px 18px;
+}
 
-    .day {
-      background: #1a1a20;
-      border-radius: 10px;
-      margin-bottom: 12px;
-      overflow: hidden;
-      border: 1px solid #2a2a33;
-    }
+summary {
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
 
-    .day-header {
-      padding: 18px;
-      font-size: 18px;
-      font-weight: 600;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+summary::-webkit-details-marker {
+  display: none;
+}
 
-    .day-header:hover {
-      background: #222230;
-    }
+.workout {
+  margin-top: 16px;
+}
 
-    .arrow {
-      transition: transform 0.3s ease;
-    }
+.exercise {
+  margin-bottom: 14px;
+}
 
-    .day.open .arrow {
-      transform: rotate(90deg);
-    }
+.exercise strong {
+  display: block;
+  font-size: 1rem;
+  color: #f9fafb;
+}
 
-    .day-content {
-      display: none;
-      padding: 18px;
-      border-top: 1px solid #2a2a33;
-      line-height: 1.6;
-      color: #ddd;
-    }
+.meta {
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
 
-    .day.open .day-content {
-      display: block;
-    }
-
-    .footer {
-      text-align: center;
-      margin-top: 40px;
-      font-size: 14px;
-      color: #666;
-    }
-  </style>
+footer {
+  margin-top: 40px;
+  font-size: 0.85rem;
+  color: #6b7280;
+  text-align: center;
+}
+</style>
 </head>
 
 <body>
-  <div class="container">
-
-    <!-- FRONT PAGE -->
-    <h1>MinMaxMuscle Training Split</h1>
-    <div class="subtitle">
-      Discipline + Intensity + Recovery <br/>
-      Built to progress, not survive workouts
-    </div>
-
-    <!-- DAY 1 -->
-    <div class="day">
-      <div class="day-header">
-        Monday – Legs + Core
-        <span class="arrow">▶</span>
-      </div>
-      <div class="day-content">
-        • Primary lower body strength <br/>
-        • Core stability & bracing <br/>
-        • No ego lifting <br/>
-        <br/>
-        Add full workout details here.
-      </div>
-    </div>
-
-    <!-- DAY 2 -->
-    <div class="day">
-      <div class="day-header">
-        Tuesday – Upper Torso Maintenance
-        <span class="arrow">▶</span>
-      </div>
-      <div class="day-content">
-        • Chest / back maintenance <br/>
-        • Shoulder health <br/>
-        • Low fatigue, clean reps
-      </div>
-    </div>
-
-    <!-- DAY 3 -->
-    <div class="day">
-      <div class="day-header">
-        Wednesday – Posterior Powerhouse
-        <span class="arrow">▶</span>
-      </div>
-      <div class="day-content">
-        • Glutes, hamstrings, spinal erectors <br/>
-        • Heavy hinge patterns <br/>
-        • CNS respect required
-      </div>
-    </div>
-
-    <!-- DAY 4 -->
-    <div class="day">
-      <div class="day-header">
-        Thursday – Priority Hypertrophy & Grip
-        <span class="arrow">▶</span>
-      </div>
-      <div class="day-content">
-        • Traps priority <br/>
-        • Biceps secondary <br/>
-        • Grip earns its keep
-      </div>
-    </div>
-
-    <!-- DAY 5 -->
-    <div class="day">
-      <div class="day-header">
-        Friday – Off / Active Recovery
-        <span class="arrow">▶</span>
-      </div>
-      <div class="day-content">
-        • Walking <br/>
-        • Mobility <br/>
-        • Eat like an adult
-      </div>
-    </div>
-
-    <!-- DAY 6 -->
-    <div class="day">
-      <div class="day-header">
-        Saturday – 2-Hour Pull Day
-        <span class="arrow">▶</span>
-      </div>
-      <div class="day-content">
-        • Back volume <br/>
-        • Heavy shrugs <br/>
-        • Controlled fatigue
-      </div>
-    </div>
-
-    <!-- DAY 7 -->
-    <div class="day">
-      <div class="day-header">
-        Sunday – 2-Hour Push Day
-        <span class="arrow">▶</span>
-      </div>
-      <div class="day-content">
-        • Chest priority <br/>
-        • Shoulder support work <br/>
-        • Triceps finishers
-      </div>
-    </div>
-
-    <div class="footer">
-      © MinMaxMuscle – Built with intent, not vibes
-    </div>
-
+<div class="container">
+  <h1>7-Day Hypertrophy Training Split</h1>
+  <div class="subtitle">
+    High-intensity, recovery-aware programming focused on long-term progression.
   </div>
 
-  <script>
-    document.querySelectorAll('.day-header').forEach(header => {
-      header.addEventListener('click', () => {
-        header.parentElement.classList.toggle('open');
-      });
-    });
-  </script>
+  <!-- MONDAY -->
+  <details>
+    <summary>Monday – Legs & Core</summary>
+    <div class="workout">
+      <div class="exercise">
+        <strong>Warm-Up</strong>
+        <div class="meta">StairMaster 5 min (progressive) + hip openers & hamstring mobility</div>
+      </div>
+      <div class="exercise">
+        <strong>Seated Leg Curl</strong>
+        <div class="meta">4 × 10–12 • Slow eccentric • Rest 75s</div>
+      </div>
+      <div class="exercise">
+        <strong>Horizontal Leg Press</strong>
+        <div class="meta">5 × 12–15 • Controlled tempo • Rest 90s</div>
+      </div>
+      <div class="exercise">
+        <strong>Hack Squat</strong>
+        <div class="meta">4 × 8–12 • Primary quad stimulus • Rest 60s</div>
+      </div>
+      <div class="exercise">
+        <strong>Leg Extension</strong>
+        <div class="meta">4 × 12–15 • Final set partials • Rest 70s</div>
+      </div>
+      <div class="exercise">
+        <strong>Hip Abduction</strong>
+        <div class="meta">3 × 20 • Constant tension • Rest 65s</div>
+      </div>
+      <div class="exercise">
+        <strong>Machine Rear Kick</strong>
+        <div class="meta">3–4 × 10–12/side • Controlled • Rest 50s</div>
+      </div>
+      <div class="exercise">
+        <strong>Machine Crunch</strong>
+        <div class="meta">3 × 12 • Controlled breathing • Rest 55s</div>
+      </div>
+      <div class="exercise">
+        <strong>Treadmill</strong>
+        <div class="meta">20–30 min incline walk • Fat-loss support</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- TUESDAY -->
+  <details>
+    <summary>Tuesday – Upper Torso Maintenance</summary>
+    <div class="workout">
+      <div class="exercise">
+        <strong>Smith Machine Shrug</strong>
+        <div class="meta">5 × 6–10 • 2–3 sec hold • Rest 90s</div>
+      </div>
+      <div class="exercise">
+        <strong>DB Shrug Hold</strong>
+        <div class="meta">3 × 30–40 sec • Trap endurance</div>
+      </div>
+      <div class="exercise">
+        <strong>Seated Cable Row</strong>
+        <div class="meta">4 × 10–12 • Pause at chest • RPE 7</div>
+      </div>
+      <div class="exercise">
+        <strong>Lat Pulldown</strong>
+        <div class="meta">4 × 8–12 • Final set AMRAP</div>
+      </div>
+      <div class="exercise">
+        <strong>EZ-Bar Curl</strong>
+        <div class="meta">4 × 8–10 • Strict form</div>
+      </div>
+      <div class="exercise">
+        <strong>Rear Delt Cable Fly</strong>
+        <div class="meta">3 × 15–20 • Shoulder health</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- WEDNESDAY -->
+  <details>
+    <summary>Wednesday – Posterior Powerhouse</summary>
+    <div class="workout">
+      <div class="exercise">
+        <strong>DB Shrug Hold</strong>
+        <div class="meta">3 × 20–30 sec • Overload holds</div>
+      </div>
+      <div class="exercise">
+        <strong>Smith Machine Shrug</strong>
+        <div class="meta">3 sets • Heavy + back-off</div>
+      </div>
+      <div class="exercise">
+        <strong>Hip Thrust</strong>
+        <div class="meta">3 × 8–12 • Glute dominant</div>
+      </div>
+      <div class="exercise">
+        <strong>Smith Squat</strong>
+        <div class="meta">4 × 8–15 • Controlled depth</div>
+      </div>
+      <div class="exercise">
+        <strong>Lying Leg Curl</strong>
+        <div class="meta">3 × 8–12 • Slow eccentric</div>
+      </div>
+      <div class="exercise">
+        <strong>Back Extension</strong>
+        <div class="meta">2 × 10–12 • Maintenance</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- THURSDAY -->
+  <details>
+    <summary>Thursday – Priority Hypertrophy & Grip</summary>
+    <div class="workout">
+      <div class="exercise">
+        <strong>Chest-Supported DB Shrug</strong>
+        <div class="meta">3 × 12–15 • 2 sec squeeze</div>
+      </div>
+      <div class="exercise">
+        <strong>Timed DB Shrug Hold</strong>
+        <div class="meta">3 rounds • Trap burnout</div>
+      </div>
+      <div class="exercise">
+        <strong>Incline DB Curl</strong>
+        <div class="meta">3 × 8–10 • Slow negatives</div>
+      </div>
+      <div class="exercise">
+        <strong>Incline DB Press</strong>
+        <div class="meta">3 × 8–10 • RPE 7–8</div>
+      </div>
+      <div class="exercise">
+        <strong>Palms-Up Wrist Curl</strong>
+        <div class="meta">3 × 15–20 • Tendon health</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- FRIDAY -->
+  <details>
+    <summary>Friday – Active Recovery</summary>
+    <div class="workout">
+      <div class="exercise">
+        <strong>Walking / Light Cardio</strong>
+        <div class="meta">Low intensity • Recovery focus</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- SATURDAY -->
+  <details>
+    <summary>Saturday – Pull (2 Hours)</summary>
+    <div class="workout">
+      <div class="exercise">
+        <strong>Smith Machine Shrug</strong>
+        <div class="meta">4 sets • Last set AMRAP</div>
+      </div>
+      <div class="exercise">
+        <strong>Incline DB Curl</strong>
+        <div class="meta">3 sets + drop set</div>
+      </div>
+      <div class="exercise">
+        <strong>EZ-Bar Curl</strong>
+        <div class="meta">3 × 6–8 • Rest-pause last set</div>
+      </div>
+      <div class="exercise">
+        <strong>Farmer’s Carry (Timed)</strong>
+        <div class="meta">3 × 30–45 sec • No straps</div>
+      </div>
+    </div>
+  </details>
+
+  <!-- SUNDAY -->
+  <details>
+    <summary>Sunday – Push (2 Hours)</summary>
+    <div class="workout">
+      <div class="exercise">
+        <strong>Smith Incline Bench</strong>
+        <div class="meta">4 × 5–8 • RPE-based</div>
+      </div>
+      <div class="exercise">
+        <strong>DB Incline Bench</strong>
+        <div class="meta">3 × 8–10 • Rest-pause final set</div>
+      </div>
+      <div class="exercise">
+        <strong>Lateral Raise</strong>
+        <div class="meta">3 × 12–15 • Short rest</div>
+      </div>
+      <div class="exercise">
+        <strong>Triceps Extensions</strong>
+        <div class="meta">2–3 sets • Slow negatives</div>
+      </div>
+    </div>
+  </details>
+
+  <footer>
+    Built for progression, not ego. Consistency wins.
+  </footer>
+</div>
 </body>
 </html>
-
