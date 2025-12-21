@@ -3,226 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MinMaxMuscle – Train With Intent</title>
-
-  <style>
-    :root {
-      --bg-main: #0b0e14;
-      --bg-card: #141926;
-      --bg-hover: #1c2233;
-      --accent: #4da3ff;
-      --text-main: #e6e9ef;
-      --text-muted: #9aa4b2;
-      --border: rgba(255,255,255,0.08);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, sans-serif;
-      background: radial-gradient(circle at top, #11162a, var(--bg-main));
-      color: var(--text-main);
-    }
-
-    /* Header */
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 20px;
-      border-bottom: 1px solid var(--border);
-      background: linear-gradient(to right, #0b0e14, #0f1430);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-
-    .brand img {
-      height: 28px;
-      width: auto;
-    }
-
-    nav a {
-      margin-left: 16px;
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    nav a:hover {
-      color: var(--accent);
-    }
-
-    /* Hero */
-    .hero {
-      text-align: center;
-      padding: 60px 20px 40px;
-    }
-
-    .hero h1 {
-      font-size: clamp(32px, 6vw, 48px);
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      max-width: 700px;
-      margin: 0 auto 30px;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
-    .hero button {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      color: var(--text-main);
-      padding: 10px 18px;
-      margin: 0 6px;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    .hero button:hover {
-      background: var(--bg-hover);
-    }
-
-    /* Accordion */
-    .container {
-      max-width: 900px;
-      margin: 0 auto 80px;
-      padding: 0 16px;
-    }
-
-    details {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      margin-bottom: 14px;
-      overflow: hidden;
-    }
-
-    summary {
-      list-style: none;
-      padding: 16px 18px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 18px;
-      font-weight: 600;
-    }
-
-    summary::-webkit-details-marker {
-      display: none;
-    }
-
-    summary:hover {
-      background: var(--bg-hover);
-    }
-
-    .dots {
-      color: var(--text-muted);
-      font-size: 20px;
-    }
-
-    .content {
-      padding: 18px;
-      border-top: 1px solid var(--border);
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
-    .content h4 {
-      color: var(--text-main);
-      margin-top: 18px;
-    }
-
-    .exercise {
-      margin-bottom: 10px;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 30px 16px;
-      color: var(--text-muted);
-      border-top: 1px solid var(--border);
-    }
-
-    @media (max-width: 600px) {
-      summary {
-        font-size: 16px;
-      }
-    }
-    .goals {
-  max-width: 900px;
-  margin: 3rem auto 2rem;
-  padding: 2rem;
-  background: linear-gradient(180deg, #0f1116, #0b0d12);
-  border-radius: 12px;
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04);
-}
-
-.goals h2 {
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
-  color: #ffffff;
-}
-
-.goals p {
-  color: #cfd3dc;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-
-.goals-list {
-  list-style: none;
-  padding: 0;
-  margin: 1.5rem 0;
-}
-
-.goals-list li {
-  margin-bottom: 1rem;
-  color: #cfd3dc;
-}
-
-.goals-list strong {
-  color: #ffffff;
-}
-
-.goals-footer {
-  margin-top: 1.5rem;
-  font-style: italic;
-  color: #9aa0ad;
-}
-
-  </style>
+  <title>MinMaxMuscle | Home</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
+
 <body>
 
 <header>
-  <div class="brand">
-    <img src="assets/img/logo.png" alt="MinMaxMuscle Logo" />
-    <span>MINMAXMUSCLE</span>
+  <div class="nav-container">
+    <div class="logo">
+      <img src="assets/img/logo.png" alt="MinMaxMuscle Logo" />
+      <span>MINMAXMUSCLE</span>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="training.html">Training</a></li>
+        <li><a href="nutrition.html">Nutrition</a></li>
+        <li><a href="coaching.html">Coaching</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </div>
-  <nav>
-    <a href="#">Home</a>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="coaching.html">Coaching</a>
     <a href="training.html">Training</a>
-    <a href="#">Nutrition</a>
-    <a href="#">Coaching</a>
-    <a href="#">Contact</a>
-  </nav>
+    <a href="nutrition.html">Nutrition</a>
+    <a href="contact.html">Contact</a>
+  </div>
 </header>
+
 
 <section class="hero">
   <h1>Train With Intent</h1>
