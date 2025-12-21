@@ -150,3 +150,76 @@ footer {
     display: flex;
   }
 }
+.contact-page {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.contact-page .intro {
+  color: #b5b5b5;
+  margin-bottom: 2rem;
+}
+
+.contact-form {
+  background: linear-gradient(145deg, #0f1117, #0b0d12);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.label-note {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  background: #0b0d12;
+  border: 1px solid #1f2330;
+  color: #fff;
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #4f6df5;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 0.9rem;
+  background: linear-gradient(135deg, #4f6df5, #3b52c5);
+  border: none;
+  color: white;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.submit-btn:hover {
+  opacity: 0.9;
+}
+
+.form-note {
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 1rem;
+  text-align: center;
+}
