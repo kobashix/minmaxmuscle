@@ -38,3 +38,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+document.querySelectorAll(".nutri-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const mode = btn.dataset.mode;
+
+    // buttons
+    document.querySelectorAll(".nutri-btn").forEach(b =>
+      b.classList.remove("active")
+    );
+    btn.classList.add("active");
+
+    // content
+    document.querySelectorAll(".nutrition-mode").forEach(section =>
+      section.classList.remove("active")
+    );
+    document.getElementById(mode).classList.add("active");
+  });
+});
