@@ -79,3 +79,29 @@ if (nutritionButtons.length && nutritionSections.length) {
     });
   });
 }
+// ==============================
+// Nutrition goal selector logic
+// ==============================
+document.addEventListener("DOMContentLoaded", () => {
+  const buttons = document.querySelectorAll(".nutri-btn");
+  const sections = document.querySelectorAll(".nutrition-mode");
+
+  if (!buttons.length || !sections.length) return;
+
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      const mode = button.dataset.mode;
+
+      // deactivate all buttons
+      buttons.forEach(b => b.classList.remove("active"));
+      button.classList.add("active");
+
+      // hide all sections
+      sections.forEach(section => section.classList.remove("active"));
+
+      // show selected section
+      const target = document.getElementById(mode);
+      if (target) target.classList.add("active");
+    });
+  });
+});
