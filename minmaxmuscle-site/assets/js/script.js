@@ -55,3 +55,27 @@ document.querySelectorAll(".nutri-btn").forEach(btn => {
     document.getElementById(mode).classList.add("active");
   });
 });
+// Nutrition goal toggle
+const nutritionButtons = document.querySelectorAll(".nutri-btn");
+const nutritionSections = document.querySelectorAll(".nutrition-mode");
+
+if (nutritionButtons.length && nutritionSections.length) {
+  nutritionButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const mode = btn.dataset.mode;
+
+      // Reset buttons
+      nutritionButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      // Reset sections
+      nutritionSections.forEach(section => {
+        section.classList.remove("active");
+      });
+
+      // Activate selected section
+      const target = document.getElementById(mode);
+      if (target) target.classList.add("active");
+    });
+  });
+}
