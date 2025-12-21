@@ -3,17 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MinMaxMuscle – Train With Intent</title>
+  <title>MinMaxMuscle | Nutrition Strategy</title>
 
   <style>
     :root {
-      --bg-main: #0b0e14;
-      --bg-card: #141926;
-      --bg-hover: #1c2233;
-      --accent: #4da3ff;
-      --text-main: #e6e9ef;
-      --text-muted: #9aa4b2;
-      --border: rgba(255,255,255,0.08);
+      --bg: #0b0f14;
+      --panel: #111826;
+      --text: #e6e9ef;
+      --muted: #9aa4b2;
+      --accent: #00ff9c;
+      --border: #1f2937;
     }
 
     * {
@@ -22,280 +21,212 @@
 
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, sans-serif;
-      background: radial-gradient(circle at top, #11162a, var(--bg-main));
-      color: var(--text-main);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
     }
 
-    /* Header */
     header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 20px;
-      border-bottom: 1px solid var(--border);
-      background: linear-gradient(to right, #0b0e14, #0f1430);
       position: sticky;
       top: 0;
-      z-index: 100;
-    }
-
-    .brand {
+      z-index: 10;
+      background: rgba(11, 15, 20, 0.9);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 1.25rem;
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-weight: 700;
-      letter-spacing: 1px;
+      gap: 1rem;
     }
 
-    .brand img {
-      height: 28px;
-      width: auto;
+    header img {
+      height: 36px;
     }
 
-    nav a {
-      margin-left: 16px;
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 14px;
+    header h1 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      margin: 0;
     }
 
-    nav a:hover {
-      color: var(--accent);
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
     }
 
-    /* Hero */
     .hero {
-      text-align: center;
-      padding: 60px 20px 40px;
+      margin-bottom: 3rem;
     }
 
-    .hero h1 {
-      font-size: clamp(32px, 6vw, 48px);
-      margin-bottom: 10px;
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
     }
 
     .hero p {
+      color: var(--muted);
       max-width: 700px;
-      margin: 0 auto 30px;
-      color: var(--text-muted);
-      line-height: 1.6;
     }
 
-    .hero button {
-      background: var(--bg-card);
+    section {
+      background: var(--panel);
       border: 1px solid var(--border);
-      color: var(--text-main);
-      padding: 10px 18px;
-      margin: 0 6px;
-      border-radius: 6px;
-      cursor: pointer;
+      border-radius: 12px;
+      padding: 1.75rem;
+      margin-bottom: 2rem;
     }
 
-    .hero button:hover {
-      background: var(--bg-hover);
+    section h3 {
+      margin-top: 0;
+      margin-bottom: 0.75rem;
+      font-size: 1.25rem;
+      color: var(--accent);
     }
 
-    /* Accordion */
-    .container {
-      max-width: 900px;
-      margin: 0 auto 80px;
-      padding: 0 16px;
+    section p {
+      margin: 0.5rem 0 0;
+      color: var(--text);
     }
 
-    details {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      margin-bottom: 14px;
-      overflow: hidden;
+    ul {
+      margin-top: 0.75rem;
+      padding-left: 1.2rem;
     }
 
-    summary {
-      list-style: none;
-      padding: 16px 18px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 18px;
-      font-weight: 600;
+    li {
+      margin-bottom: 0.5rem;
+      color: var(--text);
     }
 
-    summary::-webkit-details-marker {
-      display: none;
+    .muted {
+      color: var(--muted);
     }
 
-    summary:hover {
-      background: var(--bg-hover);
-    }
-
-    .dots {
-      color: var(--text-muted);
-      font-size: 20px;
-    }
-
-    .content {
-      padding: 18px;
-      border-top: 1px solid var(--border);
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
-    .content h4 {
-      color: var(--text-main);
-      margin-top: 18px;
-    }
-
-    .exercise {
-      margin-bottom: 10px;
-    }
-
-    /* Footer */
     footer {
-      text-align: center;
-      padding: 30px 16px;
-      color: var(--text-muted);
       border-top: 1px solid var(--border);
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--muted);
     }
 
     @media (max-width: 600px) {
-      summary {
-        font-size: 16px;
+      .hero h2 {
+        font-size: 1.6rem;
+      }
+
+      section {
+        padding: 1.25rem;
       }
     }
   </style>
 </head>
+
 <body>
+  <!-- Header -->
+  <header>
+    <img src="logo.png" alt="MinMaxMuscle Logo" />
+    <h1>MinMaxMuscle · Nutrition Strategy</h1>
+  </header>
 
-<header>
-  <div class="brand">
-    <img src="assets/img/logo.png" alt="MinMaxMuscle Logo" />
-    <span>MINMAXMUSCLE</span>
-  </div>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Training</a>
-    <a href="#">Nutrition</a>
-    <a href="#">Coaching</a>
-    <a href="#">Contact</a>
-  </nav>
-</header>
-
-<section class="hero">
-  <h1>Train With Intent</h1>
-  <p>This is not a random split. This is a system engineered to maximize progress while minimizing wasted effort.</p>
-  <button onclick="expandAll()">Expand All</button>
-  <button onclick="collapseAll()">Collapse All</button>
-</section>
-
-<div class="container">
-
-  <details>
-    <summary>Monday – Legs & Core <span class="dots">•••</span></summary>
-    <div class="content">
-      <h4>Focus</h4>
-      Structural leg strength, joint integrity, fat-loss support.
-      <h4>Workout</h4>
-      <div class="exercise">Warm-up: Stairmaster 5 min progressive + hip openers</div>
-      <div class="exercise">Seated Leg Curl – 4×10–12 (slow eccentrics)</div>
-      <div class="exercise">Leg Press – 4×12–15 (controlled)</div>
-      <div class="exercise">Hack Squat – 4×8–12</div>
-      <div class="exercise">Leg Extension – 4×12–15 (partials last set)</div>
-      <div class="exercise">Crunch Machine – 3×12</div>
-      <div class="exercise">Treadmill Incline Walk – 20–30 min</div>
+  <!-- Main Content -->
+  <main>
+    <!-- Intro -->
+    <div class="hero">
+      <h2>Nutrition Built to Support Training</h2>
+      <p>
+        This nutrition framework is designed to support high-output training,
+        preserve lean mass, and drive consistent fat loss through structured,
+        repeatable execution. It prioritizes performance, recovery, and long-term
+        adherence over extreme dietary restriction.
+      </p>
     </div>
-  </details>
 
-  <details>
-    <summary>Tuesday – Upper Torso Maintenance <span class="dots">•••</span></summary>
-    <div class="content">
-      <h4>Focus</h4>
-      Preserve muscle while cutting. Shoulder and elbow health.
-      <h4>Workout</h4>
-      <div class="exercise">Smith Shrugs – 5×6–10</div>
-      <div class="exercise">DB Shrug Holds – 3×30–40s</div>
-      <div class="exercise">Seated Cable Row – 4×10–12</div>
-      <div class="exercise">Lat Pulldown – 4×8–12</div>
-      <div class="exercise">EZ-Bar Curl – 4×8–10</div>
-      <div class="exercise">Rear Delt Fly – 3×15–20</div>
-    </div>
-  </details>
+    <!-- Macronutrients -->
+    <section>
+      <h3>Macronutrient Structure</h3>
+      <p>
+        The program follows a <strong>1 : 1 : 0.5 ratio of protein, carbohydrates,
+        and fats</strong>. This structure balances performance needs with caloric
+        control during a cutting phase.
+      </p>
 
-  <details>
-    <summary>Wednesday – Posterior Powerhouse <span class="dots">•••</span></summary>
-    <div class="content">
-      <h4>Focus</h4>
-      Glutes, hamstrings, traps. Strength without CNS burnout.
-      <div class="exercise">DB Shrug Holds – Overload sets</div>
-      <div class="exercise">Smith Shrugs – Heavy + back-off</div>
-      <div class="exercise">Hip Thrust – 3×8–12</div>
-      <div class="exercise">Smith Squat – 4×8–15</div>
-      <div class="exercise">Back Extension – 2×10–12</div>
-    </div>
-  </details>
+      <ul>
+        <li>
+          <strong>Protein:</strong> Prioritized to preserve lean muscle mass
+          during caloric restriction.
+        </li>
+        <li>
+          <strong>Carbohydrates:</strong> Included to sustain training intensity,
+          recovery, and overall output.
+        </li>
+        <li>
+          <strong>Fats:</strong> Moderated to manage total caloric intake while
+          maintaining satiety.
+        </li>
+      </ul>
+    </section>
 
-  <details>
-    <summary>Thursday – Priority Hypertrophy & Grip <span class="dots">•••</span></summary>
-    <div class="content">
-      <h4>Focus</h4>
-      Arms, traps, forearms. Controlled brutality.
-      <div class="exercise">Chest-Supported DB Shrugs – 3×12–15</div>
-      <div class="exercise">Incline DB Curl – 3×8–10</div>
-      <div class="exercise">Cable Curl – 2–3×12–15</div>
-      <div class="exercise">Incline DB Press – 3×8–10</div>
-      <div class="exercise">Palms-Up Wrist Curl – 2–3 rounds</div>
-    </div>
-  </details>
+    <!-- Calories -->
+    <section>
+      <h3>Caloric Intake</h3>
+      <p>
+        The system operates within an approximate
+        <strong>500-calorie daily deficit</strong>. This range is intentional and
+        conservative, allowing fat loss to occur without significantly impairing
+        strength, recovery, or training quality.
+      </p>
 
-  <details>
-    <summary>Friday – Active Recovery <span class="dots">•••</span></summary>
-    <div class="content">
-      Walking, mobility, light blood flow. Recovery is training.
-    </div>
-  </details>
+      <p class="muted">
+        Aggressive deficits are avoided to reduce burnout, preserve muscle, and
+        maintain consistency over time.
+      </p>
+    </section>
 
-  <details>
-    <summary>Saturday – 2-Hour Pull Day <span class="dots">•••</span></summary>
-    <div class="content">
-      <h4>Focus</h4>
-      Trap dominance, arm thickness, grip strength.
-      <div class="exercise">Smith Shrugs – 4 working sets</div>
-      <div class="exercise">Chest-Supported DB Shrugs</div>
-      <div class="exercise">Incline DB Curl – Failure + drop</div>
-      <div class="exercise">EZ-Bar Curl – 3×6–8</div>
-      <div class="exercise">Farmer’s Carries – Heavy timed sets</div>
-    </div>
-  </details>
+    <!-- Timing -->
+    <section>
+      <h3>Nutrient Timing</h3>
+      <p>
+        Macronutrient distribution is adjusted throughout the day based on
+        physiological demand rather than rigid meal rules.
+      </p>
 
-  <details>
-    <summary>Sunday – 2-Hour Push Day <span class="dots">•••</span></summary>
-    <div class="content">
-      <h4>Focus</h4>
-      Upper chest, shoulders, triceps with joint respect.
-      <div class="exercise">Incline Smith Press – RPE-based sets</div>
-      <div class="exercise">Incline DB Press – Stretch focus</div>
-      <div class="exercise">Lateral Raise – Short rest tension</div>
-      <div class="exercise">Cable Triceps Extensions</div>
-      <div class="exercise">Chest Press Machine – Optional pump</div>
-    </div>
-  </details>
+      <ul>
+        <li>
+          <strong>Post-workout meals emphasize carbohydrates</strong> to support
+          glycogen replenishment and recovery.
+        </li>
+        <li>
+          <strong>Evening meals emphasize fats</strong> to improve satiety and
+          adherence during a caloric deficit.
+        </li>
+      </ul>
 
-</div>
+      <p class="muted">
+        Timing enhances the system but does not replace total caloric control.
+      </p>
+    </section>
 
-<footer>
-  © MinMaxMuscle. Discipline builds the body. Systems keep it.
-</footer>
+    <!-- Principles -->
+    <section>
+      <h3>Guiding Principles</h3>
+      <ul>
+        <li>Nutrition exists to support training, not compete with it.</li>
+        <li>Consistency and adherence outweigh short-term optimization.</li>
+        <li>
+          Sustainable structure is favored over extreme or trend-driven diets.
+        </li>
+      </ul>
+    </section>
+  </main>
 
-<script>
-  function expandAll() {
-    document.querySelectorAll('details').forEach(d => d.open = true);
-  }
-
-  function collapseAll() {
-    document.querySelectorAll('details').forEach(d => d.open = false);
-  }
-</script>
-
+  <!-- Footer -->
+  <footer>
+    © MinMaxMuscle · Structured Nutrition for Performance and Fat Loss
+  </footer>
 </body>
 </html>
