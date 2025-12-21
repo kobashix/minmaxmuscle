@@ -2,56 +2,110 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>MinMaxMuscle | Minimize Fluff. Maximize Muscle.</title>
-  <link rel="stylesheet" href="style.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MinMaxMuscle | Train With Intent</title>
+
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
+
 <body>
-<header>
-  <div class="nav-container">
-    <div class="logo">
-      <img src="assets/img/logo.png" alt="MinMaxMuscle Logo" />
-      <span>MINMAXMUSCLE</span>
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header">
+    <div class="nav-container">
+      <div class="logo">
+        <img src="assets/img/logo.png" alt="MinMaxMuscle Logo" />
+        <span>MINMAXMUSCLE</span>
+      </div>
+
+      <nav class="desktop-nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="training.html">Training</a>
+        <a href="nutrition.html">Nutrition</a>
+        <a href="coaching.html">Coaching</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <!-- Mobile Hamburger -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
 
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="training.html">Training</a></li>
-        <li><a href="nutrition.html">Nutrition</a></li>
-        <li><a href="coaching.html">Coaching</a></li>
-        <li><a href="contact.html">Contact</a></li>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="training.html">Training</a>
+      <a href="nutrition.html">Nutrition</a>
+      <a href="coaching.html">Coaching</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Train With Intent</h1>
+      <p>
+        MinMaxMuscle is a system engineered to maximize progress while minimizing
+        wasted effort. Every decision prioritizes performance, aesthetics,
+        recovery, and long-term sustainability.
+      </p>
+
+      <div class="hero-actions">
+        <a href="training.html" class="btn primary">View Training System</a>
+        <a href="nutrition.html" class="btn secondary">View Nutrition Framework</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PHILOSOPHY ================= -->
+  <section class="philosophy">
+    <div class="content">
+      <h2>The MinMax Philosophy</h2>
+
+      <p>
+        This is not random programming. This is not volume for the sake of fatigue.
+        MinMaxMuscle applies deliberate constraints to drive measurable outcomes.
+      </p>
+
+      <ul class="philosophy-list">
+        <li>Progressive overload without joint destruction</li>
+        <li>Recovery treated as a performance variable</li>
+        <li>Systems over motivation</li>
+        <li>Consistency over intensity theatrics</li>
       </ul>
-    </nav>
-
-    <div class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
     </div>
-  </div>
+  </section>
 
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html">Home</a>
-    <a href="coaching.html">Coaching</a>
-    <a href="training.html">Training</a>
-    <a href="nutrition.html">Nutrition</a>
-    <a href="contact.html">Contact</a>
-  </div>
-</header>
+  <!-- ================= SECTIONS GRID ================= -->
+  <section class="home-grid">
+    <a href="training.html" class="grid-card">
+      <h3>Training</h3>
+      <p>Structured weekly splits engineered for hypertrophy, strength, and longevity.</p>
+    </a>
 
+    <a href="nutrition.html" class="grid-card">
+      <h3>Nutrition</h3>
+      <p>Macro-driven nutrition built to support cutting, performance, and adherence.</p>
+    </a>
 
-    <main>
-    <h1>Train With Intent</h1>
-    <p>
-      MinMaxMuscle is a system engineered to maximize progress while minimizing
-      wasted effort. Everything here exists to support long-term performance,
-      aesthetics, and consistency.
-    </p>
-  </main>
+    <a href="coaching.html" class="grid-card">
+      <h3>Coaching</h3>
+      <p>Individualized systems for people who want results, not cheerleading.</p>
+    </a>
 
-  <footer>
-    © MinMaxMuscle. Discipline builds the body. Systems keep it.
+    <a href="contact.html" class="grid-card">
+      <h3>Contact</h3>
+      <p>Apply for coaching or ask relevant questions. Noise gets filtered.</p>
+    </a>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <p>© MinMaxMuscle. Discipline builds the body. Systems keep it.</p>
   </footer>
 
   <script src="assets/js/script.js"></script>
