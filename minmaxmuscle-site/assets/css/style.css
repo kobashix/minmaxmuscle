@@ -205,6 +205,15 @@ section p {
   color: #f8fafc;
 }
 
+.peptide-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.peptide-link:hover {
+  text-decoration: underline;
+}
+
 .peptide-list li::before {
   counter-increment: peptide;
   content: counter(peptide, decimal-leading-zero);
