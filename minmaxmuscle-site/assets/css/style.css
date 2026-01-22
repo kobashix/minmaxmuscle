@@ -180,6 +180,32 @@ section p {
   margin: 0 auto;
 }
 
+.peptide-list ol {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.peptide-list li {
+  margin-bottom: 18px;
+}
+
+.peptide-list h3 {
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+}
+
+.disclaimer-link {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-top: 24px;
+}
+
+.disclaimer-link a {
+  color: inherit;
+  text-decoration: underline;
+}
+
 /* --------------------
    FORMS
 -------------------- */
