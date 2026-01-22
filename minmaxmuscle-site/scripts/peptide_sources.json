@@ -1,0 +1,18 @@
+{
+  "peptides": [
+    {
+      "name": "Semaglutide",
+      "slug": "semaglutide",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Semaglutide"
+      ]
+    },
+    {
+      "name": "BPC-157",
+      "slug": "bpc-157",
+      "sources": [
+        "https://en.wikipedia.org/wiki/BPC-157"
+      ]
+    }
+  ]
+}
