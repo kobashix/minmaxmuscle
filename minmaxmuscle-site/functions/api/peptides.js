@@ -1,22 +1,22 @@
 export async function onRequest(context) {
   try {
-    // Explicitly destructure DB from the environment
+    // Destructure DB from env
     const { DB } = context.env;
-    
+
     const { results } = await DB.prepare(
       "SELECT peptide_name, research_summary, category, slug FROM Peptides ORDER BY rank ASC"
     ).all();
 
     return new Response(JSON.stringify({ data: results || [] }), {
-      headers: { 
+      headers: {
         "Content-Type": "application/json; charset=utf-8",
-        "Access-Control-Allow-Origin": "*" 
+        "Cache-Control": "no-store"
       },
     });
   } catch (error) {
-    return new Response(JSON.stringify({ error: error.message }), { 
-      status: 500, 
-      headers: { "Content-Type": "application/json" } 
+    return new Response(JSON.stringify({ error: "D1 Error", detail: error.message }), {
+      status: 500,
+      headers: { "Content-Type": "application/json" }
     });
   }
 }
