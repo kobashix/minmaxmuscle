@@ -239,6 +239,12 @@ section p {
   counter-reset: peptide;
 }
 
+.peptide-status {
+  margin-bottom: 18px;
+  font-size: 0.95rem;
+  color: #cbd5f5;
+}
+
 .peptide-tag {
   display: inline-flex;
   align-items: center;
