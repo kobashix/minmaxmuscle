@@ -34,7 +34,7 @@ export async function onRequest(context) {
     }
   }
 
-  if (pathname === "/peptides" || pathname === "/peptides/") {
+  if (pathname === "/peptidesdb" || pathname === "/peptidesdb/") {
     url.pathname = "/peptidesdb.html";
     return context.next(new Request(url.toString(), context.request));
   }
