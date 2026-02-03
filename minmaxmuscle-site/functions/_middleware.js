@@ -2,49 +2,21 @@ export async function onRequest(context) {
   const url = new URL(context.request.url);
   const { pathname } = url;
 
-  if (url.pathname.startsWith("/api/")) {
+  // 1. ABSOLUTE BYPASS: If the URL has "api" in it, DO NOT TOUCH IT.
+  // This forces Cloudflare to look for the file in /functions/api/
+  if (pathname.includes("api")) {
     return context.next();
   }
 
-  if (pathname === "/api/peptides" || pathname === "/api/peptides/") {
-    try {
-      const { results } = await context.env.DB.prepare(
-        "SELECT peptide_name, research_summary, category, slug FROM Peptides ORDER BY rank ASC"
-      ).all();
-      return new Response(JSON.stringify({ data: results || [] }), {
-        headers: {
-          "content-type": "application/json; charset=utf-8",
-        },
-      });
-    } catch (error) {
-      console.log("D1 query failed:", error);
-      return new Response(
-        JSON.stringify({
-          data: [],
-          error: "Failed to load peptides.",
-          detail: error?.message || String(error),
-        }),
-        {
-          status: 500,
-          headers: {
-            "content-type": "application/json; charset=utf-8",
-          },
-        }
-      );
-    }
+  // 2. INTERNAL REWRITE: serve the database page content at the clean URL
+  if (pathname === "/peptides" || pathname === "/peptides/") {
+    return context.env.ASSETS.fetch(new URL("/peptidesdb.html", url));
   }
 
-  if (pathname === "/peptidesdb" || pathname === "/peptidesdb/") {
-    url.pathname = "/peptidesdb.html";
-    return context.next(new Request(url.toString(), context.request));
-  }
-
-  // 4. DYNAMIC SLUGS: /peptides/bpc-157 -> /peptides/bpc-157.html
+  // 3. DYNAMIC SLUGS: /peptides/bpc-157
   if (pathname.startsWith("/peptides/")) {
-    const segments = pathname.split("/").filter(Boolean); // ["peptides", "slug"]
-    const slug = segments[1];
-    
-    if (slug) {
+    const slug = pathname.split("/")[2];
+    if (slug && !slug.includes(".")) {
       return context.env.ASSETS.fetch(new URL(`/peptides/${slug}.html`, url));
     }
   }
