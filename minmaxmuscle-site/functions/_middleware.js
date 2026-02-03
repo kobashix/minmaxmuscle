@@ -39,19 +39,14 @@ export async function onRequest(context) {
     return context.next(new Request(url.toString(), context.request));
   }
 
+  // 4. DYNAMIC SLUGS: /peptides/bpc-157 -> /peptides/bpc-157.html
   if (pathname.startsWith("/peptides/")) {
-    if (pathname.endsWith(".html")) {
-      const cleanPath = pathname.replace(/\.html$/, "");
-      return Response.redirect(new URL(cleanPath, url), 301);
+    const segments = pathname.split("/").filter(Boolean); // ["peptides", "slug"]
+    const slug = segments[1];
+    
+    if (slug) {
+      return context.env.ASSETS.fetch(new URL(`/peptides/${slug}.html`, url));
     }
-
-    const slug = pathname.replace(/^\/peptides\//, "").replace(/\/$/, "");
-    if (!slug) {
-      return context.next();
-    }
-
-    url.pathname = `/peptides/${slug}.html`;
-    return context.next(new Request(url.toString(), context.request));
   }
 
   return context.next();
