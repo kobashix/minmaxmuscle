@@ -2,6 +2,10 @@ export async function onRequest(context) {
   const url = new URL(context.request.url);
   const { pathname } = url;
 
+  if (url.pathname.startsWith("/api/")) {
+    return context.next();
+  }
+
   if (pathname === "/api/peptides" || pathname === "/api/peptides/") {
     try {
       const { results } = await context.env.DB.prepare(
@@ -30,12 +34,8 @@ export async function onRequest(context) {
     }
   }
 
-  if (pathname.startsWith("/api/")) {
-    return context.next();
-  }
-
-  if (pathname === "/peptides" || pathname === "/peptides/") {
-    url.pathname = "/peptides.html";
+  if (pathname === "/peptidesdb" || pathname === "/peptidesdb/") {
+    url.pathname = "/peptidesdb.html";
     return context.next(new Request(url.toString(), context.request));
   }
 
