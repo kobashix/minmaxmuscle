@@ -7,22 +7,13 @@ export async function onRequest(context) {
     return new Response(JSON.stringify({ data: results || [] }), {
       headers: {
         "content-type": "application/json; charset=utf-8",
+        "Cache-Control": "public, max-age=3600" // Cache for 1 hour
       },
     });
   } catch (error) {
-    console.log("D1 query failed:", error);
-    return new Response(
-      JSON.stringify({
-        data: [],
-        error: "Failed to load peptides.",
-        detail: error?.message || String(error),
-      }),
-      {
+    return new Response(JSON.stringify({ error: error.message }), { 
       status: 500,
-      headers: {
-        "content-type": "application/json; charset=utf-8",
-      },
-      }
-    );
+      headers: { "content-type": "application/json" } 
+    });
   }
 }
