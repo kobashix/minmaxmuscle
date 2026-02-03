@@ -67,108 +67,8 @@
   </section>
 
   <section class="peptide-list">
-    <ol>
-      <li>
-        <h3><a class="peptide-link" href="peptides/semaglutide.html">Semaglutide</a></h3>
-        <p>Known for appetite regulation and bodyweight reduction via GLP-1 activity.</p>
-        <span class="peptide-tag">Metabolic</span>
-      </li>
-      <li>
-        <h3><a class="peptide-link" href="peptides/tirzepatide.html">Tirzepatide</a></h3>
-        <p>Known for dual incretin activity tied to weight loss and glucose regulation.</p>
-        <span class="peptide-tag">Metabolic</span>
-      </li>
-      <li>
-        <h3><a class="peptide-link" href="peptides/retatrutide.html">Retatrutide</a></h3>
-        <p>Known for triple-agonist pathways and notable fat-loss outcomes in trials.</p>
-        <span class="peptide-tag">Metabolic</span>
-      </li>
-      <li>
-        <h3><a class="peptide-link" href="peptides/cagrilintide.html">Cagrilintide</a></h3>
-        <p>Known for amylin-analog appetite suppression and weight management support.</p>
-        <span class="peptide-tag">Metabolic</span>
-      </li>
-      <li>
-        <h3><a class="peptide-link" href="peptides/tesamorelin.html">Tesamorelin</a></h3>
-        <p>Known for growth hormone stimulation and potential body-composition shifts.</p>
-        <span class="peptide-tag">GH Axis</span>
-      </li>
-      <li>
-        <h3><a class="peptide-link" href="peptides/bpc-157.html">BPC-157</a></h3>
-        <p>Known for soft-tissue recovery, tendon resilience, and gut-related support claims.</p>
-        <span class="peptide-tag">Recovery</span>
-      </li>
-      <li>
-        <h3><a class="peptide-link" href="peptides/thymosin-beta-4.html">TB-500 (Thymosin Beta-4)</a></h3>
-        <p>Known for healing support and tissue-regeneration claims.</p>
-        <span class="peptide-tag">Recovery</span>
-      </li>
-      <li>
-        <h3><a class="peptide-link" href="peptides/ipamorelin.html">Ipamorelin</a></h3>
-        <p>Known for growth-hormone secretagogue activity tied to recovery and sleep quality.</p>
-        <span class="peptide-tag">GH Axis</span>
-      </li>
-      <li>
-        <h3><a class="peptide-link" href="peptides/cjc-1295.html">CJC-1295</a></h3>
-        <p>Known for sustained growth-hormone pulse support.</p>
-        <span class="peptide-tag">GH Axis</span>
-      </li>
-      <li>
-        <h3><a class="peptide-link" href="peptides/hexarelin.html">Hexarelin</a></h3>
-        <p>Known for potent GH-release signaling and appetite-related effects.</p>
-        <span class="peptide-tag">GH Axis</span>
-      </li>
-      <li>
-        <h3><a class="peptide-link" href="peptides/ghrp-2-ghrp-6.html">GHRP-2 / GHRP-6</a></h3>
-        <p>Known for GH stimulation and increased hunger signaling.</p>
-        <span class="peptide-tag">GH Axis</span>
-      </li>
-      <li>
-        <h3><a class="peptide-link" href="peptides/aod-9604.html">AOD-9604</a></h3>
-        <p>Known for fat-loss marketing as a growth-hormone fragment.</p>
-        <span class="peptide-tag">Metabolic</span>
-      </li>
-      <li>
-        <h3><a class="peptide-link" href="peptides/pt-141.html">PT-141 (Bremelanotide)</a></h3>
-        <p>Known for libido-related effects via melanocortin pathways.</p>
-        <span class="peptide-tag">Neuro</span>
-      </li>
-      <li>
-        <h3><a class="peptide-link" href="peptides/melanotan-ii.html">Melanotan II</a></h3>
-        <p>Known for tanning effects and appetite suppression claims.</p>
-        <span class="peptide-tag">Dermal</span>
-      </li>
-      <li>
-        <h3><a class="peptide-link" href="peptides/thymosin-alpha-1.html">Thymosin Alpha-1</a></h3>
-        <p>Known for immune-modulation research and recovery-support discussions.</p>
-        <span class="peptide-tag">Immune</span>
-      </li>
-      <li>
-        <h3><a class="peptide-link" href="peptides/ghk-cu.html">GHK-Cu</a></h3>
-        <p>Known for skin health, collagen support, and hair-related claims.</p>
-        <span class="peptide-tag">Dermal</span>
-      </li>
-      <li>
-        <h3><a class="peptide-link" href="peptides/ll-37.html">LL-37</a></h3>
-        <p>Known for antimicrobial activity and immune-support research.</p>
-        <span class="peptide-tag">Immune</span>
-      </li>
-      <li>
-        <h3><a class="peptide-link" href="peptides/mots-c.html">MOTS-c</a></h3>
-        <p>Known for metabolic signaling and endurance-related research.</p>
-        <span class="peptide-tag">Metabolic</span>
-      </li>
-      <li>
-        <h3><a class="peptide-link" href="peptides/epitalon.html">Epitalon</a></h3>
-        <p>Known for longevity-related research and sleep-rhythm claims.</p>
-        <span class="peptide-tag">Longevity</span>
-      </li>
-      <li>
-        <h3><a class="peptide-link" href="peptides/kpv.html">KPV</a></h3>
-        <p>Known for anti-inflammatory and gut-comfort claims.</p>
-        <span class="peptide-tag">Recovery</span>
-      </li>
-    </ol>
+    <p class="peptide-status" id="peptideStatus">Loading the latest peptide directory…</p>
+    <ol id="peptideList"></ol>
   </section>
 
   <section>
@@ -193,5 +93,52 @@
 </footer>
 
 <script src="assets/js/script.js"></script>
+<script>
+  const peptideList = document.getElementById("peptideList");
+  const peptideStatus = document.getElementById("peptideStatus");
+
+  const renderPeptides = (items) => {
+    peptideList.innerHTML = "";
+    items.forEach((item) => {
+      const listItem = document.createElement("li");
+      const link = document.createElement("a");
+      link.className = "peptide-link";
+      link.href = `/peptides/${item.slug}`;
+      link.textContent = item.peptide_name;
+
+      const title = document.createElement("h3");
+      title.appendChild(link);
+
+      const summary = document.createElement("p");
+      summary.textContent = item.research_summary || "No summary available yet.";
+
+      const tag = document.createElement("span");
+      tag.className = "peptide-tag";
+      tag.textContent = item.category || "Research";
+
+      listItem.append(title, summary, tag);
+      peptideList.appendChild(listItem);
+    });
+  };
+
+  const showFallback = (message) => {
+    peptideStatus.textContent = message;
+    peptideStatus.style.display = "block";
+  };
+
+  fetch("/api/peptides")
+    .then((response) => response.json())
+    .then(({ data }) => {
+      if (!data || data.length === 0) {
+        showFallback("No peptides are available right now. Please check back soon.");
+        return;
+      }
+      peptideStatus.style.display = "none";
+      renderPeptides(data);
+    })
+    .catch(() => {
+      showFallback("We couldn't load the peptide directory. Please refresh or try again later.");
+    });
+</script>
 </body>
 </html>
