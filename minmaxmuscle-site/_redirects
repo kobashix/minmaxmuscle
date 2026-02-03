@@ -1,3 +1,7 @@
 /news        /news/index.html   200
 /news/*      /news/index.html   200
 /post/*      /index.html        200
+/peptides /peptides.html 200
+/peptides/ /peptides.html 200
+/peptides/:splat /peptides/:splat.html 200
+/peptides/:splat/ /peptides/:splat.html 200
