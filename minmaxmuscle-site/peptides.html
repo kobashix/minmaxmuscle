@@ -127,7 +127,14 @@
   };
 
   fetch("/api/peptides")
-    .then((response) => response.json())
+    .then(async (response) => {
+      const payload = await response.json();
+      if (!response.ok) {
+        const detail = payload?.detail ? ` (${payload.detail})` : "";
+        throw new Error(`${payload?.error || "Failed to load peptides."}${detail}`);
+      }
+      return payload;
+    })
     .then(({ data }) => {
       if (!data || data.length === 0) {
         showFallback("No peptides are available right now. Please check back soon.");
@@ -136,8 +143,8 @@
       peptideStatus.style.display = "none";
       renderPeptides(data);
     })
-    .catch(() => {
-      showFallback("We couldn't load the peptide directory. Please refresh or try again later.");
+    .catch((error) => {
+      showFallback(`We couldn't load the peptide directory. ${error.message}`);
     });
 </script>
 </body>

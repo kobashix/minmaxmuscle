@@ -11,11 +11,18 @@ export async function onRequest(context) {
     });
   } catch (error) {
     console.log("D1 query failed:", error);
-    return new Response(JSON.stringify({ data: [], error: "Failed to load peptides." }), {
+    return new Response(
+      JSON.stringify({
+        data: [],
+        error: "Failed to load peptides.",
+        detail: error?.message || String(error),
+      }),
+      {
       status: 500,
       headers: {
         "content-type": "application/json; charset=utf-8",
       },
-    });
+      }
+    );
   }
 }
