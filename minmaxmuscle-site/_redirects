@@ -1,3 +1,0 @@
-/news        /news/index.html   200
-/news/*      /news/index.html   200
-/post/*      /index.html        200
