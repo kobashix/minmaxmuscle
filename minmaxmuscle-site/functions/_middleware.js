@@ -2,19 +2,41 @@ export async function onRequest(context) {
   const url = new URL(context.request.url);
   const { pathname } = url;
 
-  // 1. EXIT: API always passes through
-  if (pathname.startsWith("/api/")) {
+  if (url.pathname.startsWith("/api/")) {
     return context.next();
   }
 
-  // 2. EXIT: If the file is already an HTML file or has an extension, don't rewrite it
-  if (pathname.includes(".")) {
-    return context.next();
+  if (pathname === "/api/peptides" || pathname === "/api/peptides/") {
+    try {
+      const { results } = await context.env.DB.prepare(
+        "SELECT peptide_name, research_summary, category, slug FROM Peptides ORDER BY rank ASC"
+      ).all();
+      return new Response(JSON.stringify({ data: results || [] }), {
+        headers: {
+          "content-type": "application/json; charset=utf-8",
+        },
+      });
+    } catch (error) {
+      console.log("D1 query failed:", error);
+      return new Response(
+        JSON.stringify({
+          data: [],
+          error: "Failed to load peptides.",
+          detail: error?.message || String(error),
+        }),
+        {
+          status: 500,
+          headers: {
+            "content-type": "application/json; charset=utf-8",
+          },
+        }
+      );
+    }
   }
 
-  // 3. REWRITE: /peptides -> peptides.html (Only if not already .html)
   if (pathname === "/peptides" || pathname === "/peptides/") {
-    return context.env.ASSETS.fetch(new URL("/peptides.html", url));
+    url.pathname = "/peptidesdb.html";
+    return context.next(new Request(url.toString(), context.request));
   }
 
   // 4. DYNAMIC SLUGS: /peptides/bpc-157 -> /peptides/bpc-157.html
