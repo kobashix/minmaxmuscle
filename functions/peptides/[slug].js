@@ -3,15 +3,11 @@ export async function onRequest(context) {
   const { slug } = context.params;
 
   try {
-    // 1. Get the Data
     const peptide = await DB.prepare("SELECT * FROM Peptides WHERE slug = ?").bind(slug).first();
     
-    // 2. If no peptide found, redirect to the main DB page instead of showing a 404
-    if (!peptide) {
-      return Response.redirect(new URL("/peptidesdb.html", context.request.url), 302);
-    }
+    // Redirect if no peptide exists in DB
+    if (!peptide) return Response.redirect(new URL("/peptidesdb.html", context.request.url), 302);
 
-    // 3. Fetch Related Peptides
     const related = await DB.prepare(
       "SELECT peptide_name, slug FROM Peptides WHERE Category = ? AND slug != ? LIMIT 5"
     ).bind(peptide.Category, slug).all();
@@ -20,17 +16,16 @@ export async function onRequest(context) {
       `<li><a href="/peptides/${p.slug}">${p.peptide_name}</a></li>`
     ).join("");
 
-    // 4. Fetch the Master Assets
+    // ABSOLUTE PATH FETCHING
+    const baseUrl = new URL(context.request.url).origin;
     const [tempRes, headRes, footRes] = await Promise.all([
-      ASSETS.fetch(new URL("/peptidetemplate.html", context.request.url)),
-      ASSETS.fetch(new URL("/header.html", context.request.url)),
-      ASSETS.fetch(new URL("/footer.html", context.request.url))
+      ASSETS.fetch(new URL("/peptidetemplate.html", baseUrl)),
+      ASSETS.fetch(new URL("/header.html", baseUrl)),
+      ASSETS.fetch(new URL("/footer.html", baseUrl))
     ]);
 
-    const headerHtml = await headRes.text();
-    const footerHtml = await footRes.text();
+    const [headerHtml, footerHtml] = await Promise.all([headRes.text(), footRes.text()]);
 
-    // 5. Build JSON-LD
     const schema = {
       "@context": "https://schema.org",
       "@type": "MedicalEntity",
@@ -38,19 +33,23 @@ export async function onRequest(context) {
       "description": peptide.research_summary
     };
 
-    // 6. Inject and Return
     return new HTMLRewriter()
       .on("head", { element(el) { el.append(`<script type="application/ld+json">${JSON.stringify(schema)}</script>`, { html: true }); } })
       .on("header", { element(el) { el.setInnerContent(headerHtml, { html: true }); } })
       .on("footer", { element(el) { el.setInnerContent(footerHtml, { html: true }); } })
       .on("#peptide_name", { element(el) { el.setInnerContent(peptide.peptide_name); } })
+      .on("#category_badge", { element(el) { el.setInnerContent(peptide.Category); } })
       .on("#research_summary", { element(el) { el.setInnerContent(peptide.research_summary); } })
-      // Make sure these IDs exist in your peptidetemplate.html
-      .on("#category_badge", { element(el) { el.setInnerContent(peptide.Category || "Research"); } })
+      .on("#nicknames", { element(el) { el.setInnerContent(peptide.nicknames || "N/A"); } })
+      .on("#primary_focus", { element(el) { el.setInnerContent(peptide.primary_focus); } })
+      .on("#legal_status", { element(el) { el.setInnerContent(peptide.legal || peptide.Status || "Research Only"); } })
+      .on("#rank", { element(el) { el.setInnerContent(String(peptide.rank)); } })
+      .on("#molecular_data", { element(el) { el.setInnerContent(peptide.molecular_data || "N/A"); } })
       .on("#related_list", { element(el) { el.setInnerContent(relatedHtml, { html: true }); } })
+      .on("#as_of_date", { element(el) { el.setInnerContent(`Verified: ${peptide["As Of"] || '2026-02-04'}`); } })
       .transform(tempRes);
 
   } catch (e) {
-    return new Response(`Peptide Link Error: ${e.message}`, { status: 500 });
+    return new Response(`Peptide Engine Error: ${e.message}`, { status: 500 });
   }
 }
