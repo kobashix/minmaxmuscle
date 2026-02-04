@@ -1,33 +1,15 @@
 export async function onRequest(context) {
-  const url = new URL(context.request.url);
-  const { pathname } = url;
-
-  // 1. API BYPASS: Absolute priority.
-  if (pathname.includes("/api/")) {
-    return context.next();
-  }
-
-  // 2. CLEAN URL: Map /peptides to your renamed file
-  if (pathname === "/peptides" || pathname === "/peptides/") {
-    return context.env.ASSETS.fetch(new URL("/peptidesdb.html", url));
-  }
-
-  // 3. ASSET BYPASS: Ignore files with dots (css, js, images)
-  if (pathname.includes(".")) {
-    return context.next();
-  }
-
-  return context.next();
-}
-export async function onRequest(context) {
   const { request, next, env } = context;
   const url = new URL(request.url);
+  const path = url.pathname;
 
-  // Only apply to the homepage
-  if (url.pathname === "/" || url.pathname === "/index.html") {
+  // List of pages that need the Master Header/Footer injected
+  const masterPages = ["/", "/index.html", "/training.html", "/nutrition.html", "/coaching.html", "/peptidesdb.html", "/contact.html"];
+
+  if (masterPages.includes(path)) {
     const res = await next();
     
-    // Fetch Master Components
+    // Fetch Master Components once
     const [headRes, footRes] = await Promise.all([
       env.ASSETS.fetch(new URL("/header.html", request.url)),
       env.ASSETS.fetch(new URL("/footer.html", request.url))
@@ -37,12 +19,8 @@ export async function onRequest(context) {
     const footerHtml = await footRes.text();
 
     return new HTMLRewriter()
-      .on(".site-header", { 
-        element(el) { el.setInnerContent(headerHtml, { html: true }); } 
-      })
-      .on(".site-footer", { 
-        element(el) { el.setInnerContent(footerHtml, { html: true }); } 
-      })
+      .on("header", { element(el) { el.setInnerContent(headerHtml, { html: true }); } })
+      .on("footer", { element(el) { el.setInnerContent(footerHtml, { html: true }); } })
       .transform(res);
   }
 
