@@ -28,20 +28,29 @@ export async function onRequest(context) {
       return templateResponse;
     }
 
+    const peptideName = peptide.peptide_name ?? "Peptide";
+    const researchSummary = peptide.research_summary ?? "No summary available yet.";
+    const molecularData = peptide.molecular_data ?? "Molecular data coming soon.";
+
     return new HTMLRewriter()
+      .on("title", {
+        element(element) {
+          element.setInnerContent(`MinMaxMuscle | ${peptideName}`);
+        },
+      })
       .on("#peptide_name", {
-        text(text) {
-          text.set(peptide.peptide_name ?? "");
+        element(element) {
+          element.setInnerContent(peptideName);
         },
       })
       .on("#research_summary", {
-        text(text) {
-          text.set(peptide.research_summary ?? "");
+        element(element) {
+          element.setInnerContent(researchSummary);
         },
       })
       .on("#molecular_data", {
-        text(text) {
-          text.set(peptide.molecular_data ?? "");
+        element(element) {
+          element.setInnerContent(molecularData);
         },
       })
       .transform(templateResponse);
