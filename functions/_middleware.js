@@ -3,13 +3,14 @@ export async function onRequest(context) {
   const url = new URL(request.url);
   const path = url.pathname;
 
-  // List of pages that need the Master Header/Footer injected
-  const masterPages = ["/", "/index.html", "/training.html", "/nutrition.html", "/coaching.html", "/peptidesdb.html", "/contact.html"];
+  // Use 'startsWith' for stacks to catch all dynamic slugs
+  const isMasterPage = ["/", "/index.html", "/training.html", "/nutrition.html", "/coaching.html", "/peptidesdb.html", "/contact.html"].includes(path) 
+                       || path.startsWith("/stacks/") 
+                       || path.startsWith("/peptides/");
 
-  if (masterPages.includes(path)) {
+  if (isMasterPage) {
     const res = await next();
     
-    // Fetch Master Components once
     const [headRes, footRes] = await Promise.all([
       env.ASSETS.fetch(new URL("/header.html", request.url)),
       env.ASSETS.fetch(new URL("/footer.html", request.url))
