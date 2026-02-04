@@ -4,15 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MinMaxMuscle | Peptide Research</title>
-  <meta name="description" content="Peptide overview with summarized context and molecular data." />
   <link rel="stylesheet" href="/assets/css/style.css" />
   <style>
-    /* Add this mini-CSS to handle the new data grid nicely */
     .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 2rem 0; }
     .spec-card { background: #1a1a1a; padding: 1rem; border-radius: 8px; border: 1px solid #333; }
     .spec-label { display: block; font-size: 0.8rem; color: #888; margin-bottom: 0.5rem; text-transform: uppercase; }
     .spec-value { font-weight: bold; color: #fff; }
     .badge-category { background: #007bff; color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem; vertical-align: middle; margin-left: 10px; }
+    .related-section { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #333; }
+    .related-list { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
+    .related-list li { background: #111; padding: 10px; border-radius: 4px; }
   </style>
 </head>
 
@@ -21,16 +22,12 @@
 <header>
   <div class="nav-container">
     <div class="logo">
-      <img src="/assets/img/logo.png" alt="MinMaxMuscle Logo" />
+      <img src="/assets/img/logo.png" alt="MinMaxMuscle" />
       <span>MINMAXMUSCLE</span>
     </div>
     <nav class="desktop-nav">
       <a href="/index.html">Home</a>
-      <a href="/training.html">Training</a>
-      <a href="/nutrition.html">Nutrition</a>
       <a href="/peptidesdb.html" class="active">Peptides</a>
-      <a href="/coaching.html">Coaching</a>
-      <a href="https://blog.minmaxmuscle.com">Blog</a>
       <a href="/contact.html">Contact</a>
     </nav>
   </div>
@@ -39,15 +36,15 @@
 <main>
   <section class="hero">
     <h1><span id="peptide_name">Peptide Name</span> <span id="category_badge" class="badge-category">Category</span></h1>
-    
     <p style="color: #aaa; font-style: italic; margin-top: -10px;">AKA: <span id="nicknames">Common Names</span></p>
-
-    <p id="research_summary" style="font-size: 1.2rem; margin-top: 1rem;">Research summary loading...</p>
+    
+    <div style="margin-top: 1.5rem; padding: 1rem; background: #151515; border-left: 3px solid #007bff; border-radius: 4px;">
+       <p id="research_summary" style="font-size: 1.1rem; line-height: 1.6; margin: 0;">Research summary loading...</p>
+    </div>
   </section>
 
   <section>
     <h2>Technical Specifications</h2>
-    
     <div class="specs-grid">
         <div class="spec-card">
             <span class="spec-label">Primary Focus</span>
@@ -68,11 +65,17 @@
     </div>
   </section>
 
+  <section class="related-section">
+    <h3>Related Research: <span style="color: #007bff;">Same Category</span></h3>
+    <ul id="related_list" class="related-list">
+        <li>Loading related items...</li>
+    </ul>
+  </section>
+
   <section>
     <h2>Reference Data</h2>
-    <p>This data is aggregated for educational purposes only.</p>
     <p><strong>Source Verified:</strong> <a id="source_link" href="#" target="_blank" style="color: #007bff;">View Primary Citation</a></p>
-    <p style="font-size: 0.8rem; color: gray;" id="as_of_date">As of: 2026-02-03</p>
+    <p style="font-size: 0.8rem; color: gray;" id="as_of_date">As of: 2026-02-04</p>
   </section>
 
   <section>
@@ -89,6 +92,5 @@
   © MinMaxMuscle. Discipline builds the body. Systems keep it.
 </footer>
 
-<script src="/assets/js/script.js"></script>
 </body>
 </html>
