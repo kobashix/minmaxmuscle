@@ -3,76 +3,65 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MinMaxMuscle | Peptide Research</title>
+  <title id="page_title">MinMaxMuscle</title>
   <link rel="stylesheet" href="/assets/css/style.css" />
   <style>
-    .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 2rem 0; }
-    .spec-card { background: #1a1a1a; padding: 1rem; border-radius: 8px; border: 1px solid #333; }
-    .spec-label { display: block; font-size: 0.8rem; color: #888; margin-bottom: 0.5rem; text-transform: uppercase; }
-    .spec-value { font-weight: bold; color: #fff; }
+    .peptide-main { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; text-align: center; }
     .badge-category { background: #007bff; color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem; vertical-align: middle; margin-left: 10px; }
-    .related-section { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #333; }
-    .related-list { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
-    .related-list li { background: #111; padding: 10px; border-radius: 4px; }
+    
+    /* Fixed Alignment for Research Summary */
+    .summary-container { 
+      max-width: 700px; 
+      margin: 1.5rem auto; 
+      padding: 1.5rem; 
+      background: rgba(255, 255, 255, 0.03); 
+      border-left: 3px solid #007bff; 
+      border-radius: 4px; 
+      text-align: left; /* Text remains readable (left), box is centered */
+    }
+
+    .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin: 2rem 0; }
+    .spec-card { background: #1a1a1a; padding: 1rem; border-radius: 8px; border: 1px solid #333; }
+    .spec-label { display: block; font-size: 0.7rem; color: #888; text-transform: uppercase; margin-bottom: 5px; }
+    .spec-value { font-weight: bold; font-size: 0.95rem; }
+
+    .related-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; list-style: none; padding: 0; }
+    .related-list li a { background: #111; padding: 8px 15px; border-radius: 4px; text-decoration: none; color: #fff; border: 1px solid #222; font-size: 0.9rem; }
+    .related-list li a:hover { border-color: #007bff; }
   </style>
 </head>
-
 <body>
 
 <header class="site-header"></header>
 
-<main>
+<main class="peptide-main">
   <section class="hero">
-    <h1><span id="peptide_name">Peptide Name</span> <span id="category_badge" class="badge-category">Category</span></h1>
-    <p style="color: #aaa; font-style: italic; margin-top: -10px;">AKA: <span id="nicknames">Common Names</span></p>
+    <h1><span id="peptide_name"></span> <span id="category_badge" class="badge-category"></span></h1>
+    <p style="color: #aaa; font-style: italic; margin-bottom: 1rem;">AKA: <span id="nicknames"></span></p>
     
-    <div style="margin-top: 1.5rem; padding: 1rem; background: #151515; border-left: 3px solid #007bff; border-radius: 4px;">
-       <p id="research_summary" style="font-size: 1.1rem; line-height: 1.6; margin: 0;">Research summary loading...</p>
+    <div class="summary-container">
+       <p id="research_summary" style="margin: 0; line-height: 1.6;"></p>
     </div>
   </section>
 
   <section>
-    <h2>Technical Specifications</h2>
+    <h3>Technical Specifications</h3>
     <div class="specs-grid">
-        <div class="spec-card">
-            <span class="spec-label">Primary Focus</span>
-            <span class="spec-value" id="primary_focus">Loading...</span>
-        </div>
-        <div class="spec-card">
-            <span class="spec-label">Legal / FDA Status</span>
-            <span class="spec-value" id="legal_status">Loading...</span>
-        </div>
-        <div class="spec-card">
-            <span class="spec-label">Rank</span>
-            <span class="spec-value">#<span id="rank">0</span></span>
-        </div>
-        <div class="spec-card">
-            <span class="spec-label">Molecular Structure</span>
-            <span class="spec-value" id="molecular_data" style="font-family: monospace; font-size: 0.9rem;">Loading...</span>
-        </div>
+        <div class="spec-card"><span class="spec-label">Primary Focus</span><span class="spec-value" id="primary_focus"></span></div>
+        <div class="spec-card"><span class="spec-label">Legal Status</span><span class="spec-value" id="legal_status"></span></div>
+        <div class="spec-card"><span class="spec-label">Rank</span><span class="spec-value">#<span id="rank"></span></span></div>
+        <div class="spec-card"><span class="spec-label">Molecular Structure</span><span class="spec-value" id="molecular_data" style="font-size: 0.8rem;"></span></div>
     </div>
   </section>
 
-  <section class="related-section">
-    <h3>Related Research: <span style="color: #007bff;">Same Category</span></h3>
-    <ul id="related_list" class="related-list">
-        <li>Loading related items...</li>
-    </ul>
+  <section style="margin-top: 3rem; border-top: 1px solid #222; padding-top: 2rem;">
+    <h4 style="margin-bottom: 1rem;">Related Research: <span style="color: #007bff;">Same Category</span></h4>
+    <ul id="related_list" class="related-list"></ul>
   </section>
 
-  <section>
-    <h2>Reference Data</h2>
-    <p><strong>Source Verified:</strong> <a id="source_link" href="#" target="_blank" style="color: #007bff;">View Primary Citation</a></p>
-    <p style="font-size: 0.8rem; color: gray;" id="as_of_date">As of: 2026-02-04</p>
-  </section>
-
-  <section>
-    <div class="resource-grid">
-      <a class="resource-card" href="/peptidesdb.html">
-        <h3>Return to Database</h3>
-        <p>View the full popularity-ranked index.</p>
-      </a>
-    </div>
+  <section style="margin-top: 2rem; font-size: 0.8rem; color: #555;">
+    <p>Source Verified: <a id="source_link" href="#" target="_blank" style="color: #007bff;">View Primary Citation</a></p>
+    <p id="as_of_date"></p>
   </section>
 </main>
 
