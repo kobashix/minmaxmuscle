@@ -3,21 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MinMaxMuscle | Peptide</title>
+  <title>MinMaxMuscle | Peptide Research</title>
   <meta name="description" content="Peptide overview with summarized context and molecular data." />
   <link rel="stylesheet" href="/assets/css/style.css" />
+  <style>
+    /* Add this mini-CSS to handle the new data grid nicely */
+    .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 2rem 0; }
+    .spec-card { background: #1a1a1a; padding: 1rem; border-radius: 8px; border: 1px solid #333; }
+    .spec-label { display: block; font-size: 0.8rem; color: #888; margin-bottom: 0.5rem; text-transform: uppercase; }
+    .spec-value { font-weight: bold; color: #fff; }
+    .badge-category { background: #007bff; color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem; vertical-align: middle; margin-left: 10px; }
+  </style>
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
 <header>
   <div class="nav-container">
     <div class="logo">
       <img src="/assets/img/logo.png" alt="MinMaxMuscle Logo" />
       <span>MINMAXMUSCLE</span>
     </div>
-
     <nav class="desktop-nav">
       <a href="/index.html">Home</a>
       <a href="/training.html">Training</a>
@@ -25,54 +31,60 @@
       <a href="/peptidesdb.html" class="active">Peptides</a>
       <a href="/coaching.html">Coaching</a>
       <a href="https://blog.minmaxmuscle.com">Blog</a>
-      <a href="https://blog.minmaxmuscle.com/forum">Forums</a>
       <a href="/contact.html">Contact</a>
     </nav>
-
-    <div class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </div>
-
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="/index.html">Home</a>
-    <a href="/training.html">Training</a>
-    <a href="/nutrition.html">Nutrition</a>
-    <a href="/peptidesdb.html">Peptides</a>
-    <a href="/coaching.html">Coaching</a>
-    <a href="https://blog.minmaxmuscle.com">Blog</a>
-    <a href="https://blog.minmaxmuscle.com/forum">Forums</a>
-    <a href="/contact.html">Contact</a>
   </div>
 </header>
 
-<!-- ================= MAIN ================= -->
 <main>
   <section class="hero">
-    <h1 id="peptide_name">Peptide</h1>
-    <p id="research_summary">Research summary goes here.</p>
+    <h1><span id="peptide_name">Peptide Name</span> <span id="category_badge" class="badge-category">Category</span></h1>
+    
+    <p style="color: #aaa; font-style: italic; margin-top: -10px;">AKA: <span id="nicknames">Common Names</span></p>
+
+    <p id="research_summary" style="font-size: 1.2rem; margin-top: 1rem;">Research summary loading...</p>
   </section>
 
   <section>
-    <h2>Molecular Data</h2>
-    <pre id="molecular_data">Molecular data goes here.</pre>
+    <h2>Technical Specifications</h2>
+    
+    <div class="specs-grid">
+        <div class="spec-card">
+            <span class="spec-label">Primary Focus</span>
+            <span class="spec-value" id="primary_focus">Loading...</span>
+        </div>
+        <div class="spec-card">
+            <span class="spec-label">Legal / FDA Status</span>
+            <span class="spec-value" id="legal_status">Loading...</span>
+        </div>
+        <div class="spec-card">
+            <span class="spec-label">Rank</span>
+            <span class="spec-value">#<span id="rank">0</span></span>
+        </div>
+        <div class="spec-card">
+            <span class="spec-label">Molecular Structure</span>
+            <span class="spec-value" id="molecular_data" style="font-family: monospace; font-size: 0.9rem;">Loading...</span>
+        </div>
+    </div>
   </section>
 
   <section>
-    <h2>Explore More</h2>
-    <p>Browse the full peptide database for additional compounds.</p>
+    <h2>Reference Data</h2>
+    <p>This data is aggregated for educational purposes only.</p>
+    <p><strong>Source Verified:</strong> <a id="source_link" href="#" target="_blank" style="color: #007bff;">View Primary Citation</a></p>
+    <p style="font-size: 0.8rem; color: gray;" id="as_of_date">As of: 2026-02-03</p>
+  </section>
+
+  <section>
     <div class="resource-grid">
       <a class="resource-card" href="/peptidesdb.html">
-        <h3>Peptides Overview</h3>
-        <p>Return to the main popularity-ranked list.</p>
+        <h3>Return to Database</h3>
+        <p>View the full popularity-ranked index.</p>
       </a>
     </div>
   </section>
 </main>
 
-<!-- ================= FOOTER ================= -->
 <footer>
   © MinMaxMuscle. Discipline builds the body. Systems keep it.
 </footer>
