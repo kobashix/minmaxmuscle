@@ -9,12 +9,24 @@ export async function onRequest(context) {
 
     // 2. Fetch Linked FAQs (The Join)
     // This query pulls any FAQ associated with this peptide through the junction table
-    const faqs = await DB.prepare(`
-      SELECT f.question, f.answer 
-      FROM FAQs f
-      JOIN Peptide_FAQs pf ON f.id = pf.faq_id
-      WHERE pf.peptide_id = ?
-    `).bind(peptide.id).all();
+// ... existing DB logic ...
+const faqs = await DB.prepare(`
+  SELECT f.question, f.answer, f.citation_url 
+  FROM FAQs f
+  JOIN Peptide_FAQs pf ON f.id = pf.faq_id
+  WHERE pf.peptide_id = ?
+`).bind(peptide.id).all();
+
+const faqHtml = faqs.results.map(f => `
+  <div class="faq-item" style="margin-bottom: 2rem;">
+    <h4>${f.question}</h4>
+    <p>${f.answer}</p>
+    <a href="${f.citation_url}" target="_blank" style="font-size: 0.8rem; color: #007bff;">[Source: Peer-Reviewed Research]</a>
+  </div>
+`).join("");
+
+// ... in the HTMLRewriter ...
+  .on("#legal_status", { element(el) { el.setInnerContent(peptide.Status || "Research Only"); } }) // Map Status to the UI slot
 
     // 3. Fetch Related Peptides
     const related = await DB.prepare(
