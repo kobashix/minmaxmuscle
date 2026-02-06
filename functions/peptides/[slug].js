@@ -3,38 +3,48 @@ export async function onRequest(context) {
   const { slug } = context.params;
 
   try {
-    // 1. Fetch Primary Peptide Data
-    const peptide = await DB.prepare("SELECT * FROM Peptides WHERE slug = ?").bind(slug).first();
+    // 1. Fetch Primary Peptide Data (excluding 'legal' as requested)
+    const peptide = await DB.prepare("SELECT id, peptide_name, slug, Category, research_summary, nicknames, primary_focus, Status, rank, molecular_data, Sources, [As Of] FROM Peptides WHERE slug = ?")
+      .bind(slug)
+      .first();
+    
+    // Redirect if no peptide exists in the ledger
     if (!peptide) return Response.redirect(new URL("/peptidesdb.html", context.request.url), 302);
 
-    // 2. Fetch Linked FAQs (The Join)
-    // This query pulls any FAQ associated with this peptide through the junction table
-// ... existing DB logic ...
-const faqs = await DB.prepare(`
-  SELECT f.question, f.answer, f.citation_url 
-  FROM FAQs f
-  JOIN Peptide_FAQs pf ON f.id = pf.faq_id
-  WHERE pf.peptide_id = ?
-`).bind(peptide.id).all();
+    // 2. Fetch Linked FAQs via the Junction Table (The SEO Content Engine)
+    const faqs = await DB.prepare(`
+      SELECT f.question, f.answer 
+      FROM FAQs f
+      JOIN Peptide_FAQs pf ON f.id = pf.faq_id
+      WHERE pf.peptide_id = ?
+    `).bind(peptide.id).all();
 
-const faqHtml = faqs.results.map(f => `
-  <div class="faq-item" style="margin-bottom: 2rem;">
-    <h4>${f.question}</h4>
-    <p>${f.answer}</p>
-    <a href="${f.citation_url}" target="_blank" style="font-size: 0.8rem; color: #007bff;">[Source: Peer-Reviewed Research]</a>
-  </div>
-`).join("");
-
-    // 3. Fetch Related Peptides
+    // 3. Fetch Related Research in the same category
     const related = await DB.prepare(
       "SELECT peptide_name, slug FROM Peptides WHERE Category = ? AND slug != ? LIMIT 5"
     ).bind(peptide.Category, slug).all();
 
-    // 4. HTML Preparation
+    // 4. Build HTML Components
     const relatedHtml = related.results.map(p => 
       `<li><a href="/peptides/${p.slug}">${p.peptide_name}</a></li>`
     ).join("");
-    // 5. Asset Fetching (Absolute Pathing)
+
+    const faqHtml = faqs.results.map(f => `
+      <div class="faq-item" style="margin-bottom: 2rem; border-bottom: 1px solid #111; padding-bottom: 1.5rem;">
+        <h4 style="color: #007bff; margin-bottom: 0.5rem;">${f.question}</h4>
+        <p style="color: #ccc; line-height: 1.7;">${f.answer}</p>
+      </div>
+    `).join("");
+
+    // 5. Build Functional Citation Links from 'Sources' Column
+    const sourceUrls = peptide.Sources ? peptide.Sources.split(',') : [];
+    const sourceLinksHtml = sourceUrls.map((url, index) => {
+      const cleanUrl = url.trim();
+      if (!cleanUrl) return "";
+      return `<a href="${cleanUrl}" target="_blank" rel="noopener noreferrer" style="color: #007bff; text-decoration: underline; margin-right: 12px;">[Source ${index + 1}]</a>`;
+    }).join("");
+
+    // 6. Fetch Master Assets (Absolute Pathing to prevent broken templates)
     const baseUrl = new URL(context.request.url).origin;
     const [tempRes, headRes, footRes] = await Promise.all([
       ASSETS.fetch(new URL("/peptidetemplate.html", baseUrl)),
@@ -44,7 +54,7 @@ const faqHtml = faqs.results.map(f => `
 
     const [headerHtml, footerHtml] = await Promise.all([headRes.text(), footRes.text()]);
 
-    // 6. JSON-LD Schema Construction (SEO Powerhouse)
+    // 7. Structured Data for Google (Rich Snippets)
     const mainSchema = {
       "@context": "https://schema.org",
       "@type": "MedicalEntity",
@@ -63,12 +73,7 @@ const faqHtml = faqs.results.map(f => `
       }))
     };
 
-const sourceUrls = peptide.Sources ? peptide.Sources.split(',') : [];
-const sourceLinksHtml = sourceUrls.map((url, index) => 
-  `<a href="${url.trim()}" target="_blank" style="color: #007bff; text-decoration: underline;">[Citation ${index + 1}]</a>`
-).join(' ');
-
-    // 7. HTMLRewriter Injection
+    // 8. Inject and Transform via HTMLRewriter
     return new HTMLRewriter()
       .on("head", { 
         element(el) { 
@@ -83,16 +88,16 @@ const sourceLinksHtml = sourceUrls.map((url, index) =>
       .on("#research_summary", { element(el) { el.setInnerContent(peptide.research_summary); } })
       .on("#nicknames", { element(el) { el.setInnerContent(peptide.nicknames || "N/A"); } })
       .on("#primary_focus", { element(el) { el.setInnerContent(peptide.primary_focus); } })
-      .on("#legal_status", { element(el) { el.setInnerContent(peptide.Status || "Research Only"); } }) // Map Status to the UI slot
-      .on("#source_link", { element(el) { el.setInnerContent(sourceLinksHtml, { html: true }); } })
+      .on("#legal_status", { element(el) { el.setInnerContent(peptide.Status || "Research Only"); } })
       .on("#rank", { element(el) { el.setInnerContent(String(peptide.rank)); } })
       .on("#molecular_data", { element(el) { el.setInnerContent(peptide.molecular_data || "N/A"); } })
       .on("#related_list", { element(el) { el.setInnerContent(relatedHtml, { html: true }); } })
-      .on("#faq_container", { element(el) { el.setInnerContent(faqHtml, { html: true }); } }) // FAQ Injection Point
-      .on("#as_of_date", { element(el) { el.setInnerContent(`Verified: ${peptide["As Of"] || '2026-02-06'}`); } })
+      .on("#faq_container", { element(el) { el.setInnerContent(faqHtml, { html: true }); } })
+      .on("#source_link", { element(el) { el.setInnerContent(sourceLinksHtml || "Primary Data Pending Verification", { html: true }); } })
+      .on("#as_of_date", { element(el) { el.setInnerContent(`Data Verified: ${peptide["As Of"] || '2026-02-06'}`); } })
       .transform(tempRes);
 
   } catch (e) {
-    return new Response(`Peptide FAQ Engine Error: ${e.message}`, { status: 500 });
+    return new Response(`Peptide Engine Error: ${e.message}`, { status: 500 });
   }
 }
