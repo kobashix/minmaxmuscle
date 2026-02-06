@@ -24,10 +24,6 @@ const faqHtml = faqs.results.map(f => `
     <a href="${f.citation_url}" target="_blank" style="font-size: 0.8rem; color: #007bff;">[Source: Peer-Reviewed Research]</a>
   </div>
 `).join("");
-
-// ... in the HTMLRewriter ...
-  .on("#legal_status", { element(el) { el.setInnerContent(peptide.Status || "Research Only"); } }) // Map Status to the UI slot
-
     // 3. Fetch Related Peptides
     const related = await DB.prepare(
       "SELECT peptide_name, slug FROM Peptides WHERE Category = ? AND slug != ? LIMIT 5"
@@ -94,7 +90,7 @@ const sourceLinksHtml = sourceUrls.map((url, index) =>
       .on("#research_summary", { element(el) { el.setInnerContent(peptide.research_summary); } })
       .on("#nicknames", { element(el) { el.setInnerContent(peptide.nicknames || "N/A"); } })
       .on("#primary_focus", { element(el) { el.setInnerContent(peptide.primary_focus); } })
-      .on("#legal_status", { element(el) { el.setInnerContent(peptide.Status || "Research Only"); } })
+      .on("#legal_status", { element(el) { el.setInnerContent(peptide.Status || "Research Only"); } }) // Map Status to the UI slot
       .on("#source_link", { element(el) { el.setInnerContent(sourceLinksHtml, { html: true }); } })
       .on("#rank", { element(el) { el.setInnerContent(String(peptide.rank)); } })
       .on("#molecular_data", { element(el) { el.setInnerContent(peptide.molecular_data || "N/A"); } })
