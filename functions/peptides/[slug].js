@@ -3,15 +3,14 @@ export async function onRequest(context) {
   const { slug } = context.params;
 
   try {
-    // 1. Fetch Primary Peptide Data (excluding 'legal' as requested)
+    // 1. Fetch Primary Peptide Data (Status mapped to Legal UI)
     const peptide = await DB.prepare("SELECT id, peptide_name, slug, Category, research_summary, nicknames, primary_focus, Status, rank, molecular_data, Sources, [As Of] FROM Peptides WHERE slug = ?")
       .bind(slug)
       .first();
     
-    // Redirect if no peptide exists in the ledger
     if (!peptide) return Response.redirect(new URL("/peptidesdb.html", context.request.url), 302);
 
-    // 2. Fetch Linked FAQs via the Junction Table (The SEO Content Engine)
+    // 2. Fetch Linked FAQs via Junction Table
     const faqs = await DB.prepare(`
       SELECT f.question, f.answer 
       FROM FAQs f
@@ -19,7 +18,7 @@ export async function onRequest(context) {
       WHERE pf.peptide_id = ?
     `).bind(peptide.id).all();
 
-    // 3. Fetch Related Research in the same category
+    // 3. Fetch Related Research
     const related = await DB.prepare(
       "SELECT peptide_name, slug FROM Peptides WHERE Category = ? AND slug != ? LIMIT 5"
     ).bind(peptide.Category, slug).all();
@@ -36,15 +35,21 @@ export async function onRequest(context) {
       </div>
     `).join("");
 
-    // 5. Build Functional Citation Links from 'Sources' Column
-    const sourceUrls = peptide.Sources ? peptide.Sources.split(',') : [];
-    const sourceLinksHtml = sourceUrls.map((url, index) => {
-      const cleanUrl = url.trim();
-      if (!cleanUrl) return "";
-      return `<a href="${cleanUrl}" target="_blank" rel="noopener noreferrer" style="color: #007bff; text-decoration: underline; margin-right: 12px;">[Source ${index + 1}]</a>`;
-    }).join("");
+    // 5. Build Functional Citation Links (Conditional Logic)
+    let sourceSectionHtml = ""; // Default to empty
+    if (peptide.Sources && peptide.Sources.trim() !== "") {
+      const sourceUrls = peptide.Sources.split(',');
+      const links = sourceUrls.map((url, index) => {
+        const cleanUrl = url.trim();
+        if (!cleanUrl) return "";
+        return `<a href="${cleanUrl}" target="_blank" rel="noopener noreferrer" style="color: #007bff; text-decoration: underline; margin-right: 12px;">[Source ${index + 1}]</a>`;
+      }).join("");
+      
+      // Only create the paragraph if links exist
+      sourceSectionHtml = `<strong>Source Verification:</strong> ${links}`;
+    }
 
-    // 6. Fetch Master Assets (Absolute Pathing to prevent broken templates)
+    // 6. Fetch Master Assets (Absolute Pathing)
     const baseUrl = new URL(context.request.url).origin;
     const [tempRes, headRes, footRes] = await Promise.all([
       ASSETS.fetch(new URL("/peptidetemplate.html", baseUrl)),
@@ -54,7 +59,7 @@ export async function onRequest(context) {
 
     const [headerHtml, footerHtml] = await Promise.all([headRes.text(), footRes.text()]);
 
-    // 7. Structured Data for Google (Rich Snippets)
+    // 7. Structured Data
     const mainSchema = {
       "@context": "https://schema.org",
       "@type": "MedicalEntity",
@@ -73,7 +78,7 @@ export async function onRequest(context) {
       }))
     };
 
-    // 8. Inject and Transform via HTMLRewriter
+    // 8. Inject and Transform
     return new HTMLRewriter()
       .on("head", { 
         element(el) { 
@@ -93,7 +98,7 @@ export async function onRequest(context) {
       .on("#molecular_data", { element(el) { el.setInnerContent(peptide.molecular_data || "N/A"); } })
       .on("#related_list", { element(el) { el.setInnerContent(relatedHtml, { html: true }); } })
       .on("#faq_container", { element(el) { el.setInnerContent(faqHtml, { html: true }); } })
-      .on("#source_link", { element(el) { el.setInnerContent(sourceLinksHtml || "Primary Data Pending Verification", { html: true }); } })
+      .on("#source_link", { element(el) { el.setInnerContent(sourceSectionHtml, { html: true }); } })
       .on("#as_of_date", { element(el) { el.setInnerContent(`Data Verified: ${peptide["As Of"] || '2026-02-06'}`); } })
       .transform(tempRes);
 
