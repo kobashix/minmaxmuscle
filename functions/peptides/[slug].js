@@ -74,6 +74,11 @@ const faqHtml = faqs.results.map(f => `
       }))
     };
 
+const sourceUrls = peptide.Sources ? peptide.Sources.split(',') : [];
+const sourceLinksHtml = sourceUrls.map((url, index) => 
+  `<a href="${url.trim()}" target="_blank" style="color: #007bff; text-decoration: underline;">[Citation ${index + 1}]</a>`
+).join(' ');
+
     // 7. HTMLRewriter Injection
     return new HTMLRewriter()
       .on("head", { 
@@ -89,7 +94,8 @@ const faqHtml = faqs.results.map(f => `
       .on("#research_summary", { element(el) { el.setInnerContent(peptide.research_summary); } })
       .on("#nicknames", { element(el) { el.setInnerContent(peptide.nicknames || "N/A"); } })
       .on("#primary_focus", { element(el) { el.setInnerContent(peptide.primary_focus); } })
-      .on("#legal_status", { element(el) { el.setInnerContent(peptide.legal || "Research Only"); } })
+      .on("#legal_status", { element(el) { el.setInnerContent(peptide.Status || "Research Only"); } })
+      .on("#source_link", { element(el) { el.setInnerContent(sourceLinksHtml, { html: true }); } })
       .on("#rank", { element(el) { el.setInnerContent(String(peptide.rank)); } })
       .on("#molecular_data", { element(el) { el.setInnerContent(peptide.molecular_data || "N/A"); } })
       .on("#related_list", { element(el) { el.setInnerContent(relatedHtml, { html: true }); } })
