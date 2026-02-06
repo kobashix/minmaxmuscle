@@ -24,6 +24,7 @@ const faqHtml = faqs.results.map(f => `
     <a href="${f.citation_url}" target="_blank" style="font-size: 0.8rem; color: #007bff;">[Source: Peer-Reviewed Research]</a>
   </div>
 `).join("");
+
     // 3. Fetch Related Peptides
     const related = await DB.prepare(
       "SELECT peptide_name, slug FROM Peptides WHERE Category = ? AND slug != ? LIMIT 5"
@@ -33,14 +34,6 @@ const faqHtml = faqs.results.map(f => `
     const relatedHtml = related.results.map(p => 
       `<li><a href="/peptides/${p.slug}">${p.peptide_name}</a></li>`
     ).join("");
-
-    const faqHtml = faqs.results.map(f => `
-      <div class="faq-item" style="margin-bottom: 1.5rem; border-bottom: 1px solid #222; padding-bottom: 1rem;">
-        <h4 style="color: #007bff; margin-bottom: 0.5rem;">${f.question}</h4>
-        <p style="color: #ccc; line-height: 1.6;">${f.answer}</p>
-      </div>
-    `).join("");
-
     // 5. Asset Fetching (Absolute Pathing)
     const baseUrl = new URL(context.request.url).origin;
     const [tempRes, headRes, footRes] = await Promise.all([
