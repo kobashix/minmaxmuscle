@@ -3,31 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title id="page_title">MinMaxMuscle</title>
+  <title id="page_title">MinMaxMuscle | Peptide Research</title>
   <link rel="stylesheet" href="/assets/css/style.css" />
   <style>
     .peptide-main { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; text-align: center; }
     .badge-category { background: #007bff; color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem; vertical-align: middle; margin-left: 10px; }
     
-    /* Fixed Alignment for Research Summary */
     .summary-container { 
-      max-width: 700px; 
+      max-width: 750px; 
       margin: 1.5rem auto; 
       padding: 1.5rem; 
       background: rgba(255, 255, 255, 0.03); 
       border-left: 3px solid #007bff; 
       border-radius: 4px; 
-      text-align: left; /* Text remains readable (left), box is centered */
+      text-align: left; 
     }
 
-    .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin: 2rem 0; }
-    .spec-card { background: #1a1a1a; padding: 1rem; border-radius: 8px; border: 1px solid #333; }
+    .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 2rem 0; }
+    .spec-card { background: #1a1a1a; padding: 1.5rem; border-radius: 8px; border: 1px solid #333; }
     .spec-label { display: block; font-size: 0.7rem; color: #888; text-transform: uppercase; margin-bottom: 5px; }
-    .spec-value { font-weight: bold; font-size: 0.95rem; }
+    .spec-value { font-weight: bold; font-size: 1.1rem; color: #fff; }
 
-    .related-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; list-style: none; padding: 0; }
-    .related-list li a { background: #111; padding: 8px 15px; border-radius: 4px; text-decoration: none; color: #fff; border: 1px solid #222; font-size: 0.9rem; }
-    .related-list li a:hover { border-color: #007bff; }
+    /* FAQ Section for SEO Weight */
+    .faq-section { text-align: left; max-width: 750px; margin: 4rem auto; border-top: 1px solid #222; pt: 2rem; }
+    .faq-section h2 { margin-bottom: 2rem; font-size: 1.8rem; color: #fff; }
+    .faq-item { margin-bottom: 2rem; }
+    .faq-item h4 { color: #007bff; font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .faq-item p { color: #aaa; line-height: 1.7; font-size: 0.95rem; }
+
+    .related-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; list-style: none; padding: 0; margin-top: 1rem; }
+    .related-list li a { background: #111; padding: 8px 15px; border-radius: 4px; text-decoration: none; color: #fff; border: 1px solid #222; font-size: 0.9rem; transition: 0.3s; }
+    .related-list li a:hover { border-color: #007bff; background: #161616; }
   </style>
 </head>
 <body>
@@ -37,7 +43,7 @@
 <main class="peptide-main">
   <section class="hero">
     <h1><span id="peptide_name"></span> <span id="category_badge" class="badge-category"></span></h1>
-    <p style="color: #aaa; font-style: italic; margin-bottom: 1rem;">AKA: <span id="nicknames"></span></p>
+    <p style="color: #666; font-style: italic; margin-bottom: 1rem;">Common Designations: <span id="nicknames"></span></p>
     
     <div class="summary-container">
        <p id="research_summary" style="margin: 0; line-height: 1.6;"></p>
@@ -45,29 +51,29 @@
   </section>
 
   <section>
-    <h3>Technical Specifications</h3>
+    <h3 style="margin-top: 3rem;">Technical Specifications</h3>
     <div class="specs-grid">
         <div class="spec-card"><span class="spec-label">Primary Focus</span><span class="spec-value" id="primary_focus"></span></div>
-        <div class="spec-card"><span class="spec-label">Legal Status</span><span class="spec-value" id="legal_status"></span></div>
-        <div class="spec-card"><span class="spec-label">Rank</span><span class="spec-value">#<span id="rank"></span></span></div>
-        <div class="spec-card"><span class="spec-label">Molecular Structure</span><span class="spec-value" id="molecular_data" style="font-size: 0.8rem;"></span></div>
+        <div class="spec-card"><span class="spec-label">Legal/FDA Status</span><span class="spec-value" id="legal_status"></span></div>
+        <div class="spec-card"><span class="spec-label">Search Rank</span><span class="spec-value">#<span id="rank"></span></span></div>
+        <div class="spec-card"><span class="spec-label">Molecular Structure</span><span class="spec-value" id="molecular_data" style="font-size: 0.85rem;"></span></div>
     </div>
   </section>
 
-  <section style="margin-top: 3rem; border-top: 1px solid #222; padding-top: 2rem;">
-    <h4 style="margin-bottom: 1rem;">Related Research: <span style="color: #007bff;">Same Category</span></h4>
+  <section class="faq-section">
+    <h2>Research Education & FAQs</h2>
+    <div id="faq_container">
+        </div>
+  </section>
+
+  <section style="margin-top: 4rem; padding: 2rem; background: #0a0a0a; border-radius: 8px;">
+    <h4>Related Research: <span style="color: #007bff;">Same Category</span></h4>
     <ul id="related_list" class="related-list"></ul>
   </section>
 
-<section class="faq-section" style="text-align: left; max-width: 800px; margin: 3rem auto;">
-  <h3>Frequently Asked Questions</h3>
-  <div id="faq_container">
-    </div>
-</section>
-
-  <section style="margin-top: 2rem; font-size: 0.8rem; color: #555;">
-    <p>Source Verified: <a id="source_link" href="#" target="_blank" style="color: #007bff;">View Primary Citation</a></p>
+  <section style="margin-top: 3rem; font-size: 0.8rem; color: #444; border-top: 1px solid #111; padding-top: 1rem;">
     <p id="as_of_date"></p>
+    <p>Source Data: National Center for Biotechnology Information (NCBI) Reference Materials.</p>
   </section>
 </main>
 
