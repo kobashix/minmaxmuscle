@@ -133,7 +133,7 @@
 
       const tag = document.createElement("span");
       tag.className = "peptide-tag";
-      tag.textContent = item.category || "Research";
+      tag.textContent = item.Category || item.category || "Research";
 
       listItem.append(title, summary, tag);
       peptideList.appendChild(listItem);
@@ -143,7 +143,8 @@
   const populateCategories = (items) => {
     const categories = new Set();
     items.forEach(item => {
-      if (item.category) categories.add(item.category);
+      const cat = item.Category || item.category;
+      if (cat) categories.add(cat);
     });
     
     // Sort and add to dropdown
@@ -160,10 +161,11 @@
     const selectedCategory = categoryFilter.value;
 
     const filtered = allPeptides.filter(p => {
+      const cat = p.Category || p.category;
       const matchesSearch = p.peptide_name.toLowerCase().includes(searchTerm) || 
                            (p.research_summary && p.research_summary.toLowerCase().includes(searchTerm)) ||
                            (p.nicknames && p.nicknames.toLowerCase().includes(searchTerm));
-      const matchesCategory = selectedCategory === "all" || p.category === selectedCategory;
+      const matchesCategory = selectedCategory === "all" || cat === selectedCategory;
       return matchesSearch && matchesCategory;
     });
 
