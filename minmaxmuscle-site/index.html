@@ -10,352 +10,493 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
-<body class="selection:bg-blue-500 min-h-screen flex flex-col">
+<body class="selection:bg-blue-500 min-h-screen flex flex-col bg-zinc-950 text-zinc-300">
 
-    <nav class="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
-        <div class="nav-pill rounded-full px-4 py-2 flex items-center justify-between gap-4 w-full max-w-5xl shadow-2xl">
-            <!-- [ISSUE 14] Changed logo to actual image URL -->
-            <button onclick="navigate('/')" class="flex items-center gap-3 group">
-                <img src="https://minmaxmuscle.com/assets/img/logo.png" alt="MinMaxMuscle" class="w-8 h-8 rounded-full bg-white/5 object-contain" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik00IDE1czEtMSA0LTEgNSAyIDggMiA0LTEgNC0xVjNzLTEgMS00IDEtNS0yLTgtMi00IDEtNCAxeiI+PC9wYXRoPjwvc3ZnPg==';">
-                <span class="font-bold hidden md:block italic tracking-tighter">MINMAXMUSCLE</span>
+    <nav class="fixed top-6 left-0 right-0 z-[100] flex justify-center px-4 pointer-events-none">
+        <div class="nav-pill rounded-full px-4 py-2 flex items-center justify-between gap-4 w-full max-w-5xl shadow-2xl pointer-events-auto transition-transform duration-500 hover:scale-[1.02]">
+            <button onclick="navigate('/')" class="flex items-center gap-3 group px-2">
+                <img src="https://minmaxmuscle.com/assets/img/logo.png" alt="MinMaxMuscle" class="w-8 h-8 rounded-full bg-white/5 object-contain transition-transform group-hover:rotate-12" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik00IDE1czEtMSA0LTEgNSAyIDggMiA0LTEgNC0xVjNzLTEgMS00IDEtNS0yLTgtMi00IDEtNCAxeiI+PC9wYXRoPjwvc3ZnPg==';">
+                <span class="font-black hidden md:block italic tracking-tighter text-lg text-white">MINMAXMUSCLE</span>
             </button>
             
-            <!-- [ISSUE 13] Correct Menu Structure (Removed Training/Nutrition) -->
-            <!-- [FORUM & SPA SYNC] Hybrid Navigation -->
-            <!-- [SPA & SEO SYNC] Clean Hybrid Navigation -->
-            <div class="hidden md:flex gap-1 bg-black/20 rounded-full p-1 border border-white/5 overflow-x-auto">
-                <a href="/peptides" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/peptides'); return false; }" class="nav-link px-4 py-1.5 rounded-full text-[10px] font-black uppercase text-gray-400 hover:text-white transition whitespace-nowrap" id="nav-peptides">PEPTIDES</a>
-                <a href="/stacks" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/stacks'); return false; }" class="nav-link px-4 py-1.5 rounded-full text-[10px] font-black uppercase text-gray-400 hover:text-white transition whitespace-nowrap" id="nav-stacks">STACKS</a>
-                <a href="/calculators" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/calculators'); return false; }" class="nav-link px-4 py-1.5 rounded-full text-[10px] font-black uppercase text-gray-400 hover:text-white transition whitespace-nowrap" id="nav-calculators">CALCULATORS</a>
-                <a href="https://blog.minmaxmuscle.com/" class="nav-link px-4 py-1.5 rounded-full text-[10px] font-black uppercase text-gray-400 hover:text-white transition whitespace-nowrap">BLOG</a>
-                <a href="https://blog.minmaxmuscle.com/forum/" class="nav-link px-4 py-1.5 rounded-full text-[10px] font-black uppercase text-gray-400 hover:text-white transition whitespace-nowrap">FORUMS</a>
-                <a href="/coaching" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/coaching'); return false; }" class="nav-link px-4 py-1.5 rounded-full text-[10px] font-black uppercase text-white bg-blue-600 hover:bg-blue-500 transition whitespace-nowrap" id="nav-coaching">COACHING</a>
+            <div class="hidden md:flex gap-1 bg-white/5 rounded-full p-1 border border-white/5 items-center">
+                <a href="/peptides" onclick="navigate('/peptides'); return false;" class="nav-link px-5 py-2 rounded-full text-[11px] font-black uppercase text-zinc-400 hover:text-white hover:bg-white/5 transition whitespace-nowrap" id="nav-peptides">PEPTIDES</a>
+                <a href="/stacks" onclick="navigate('/stacks'); return false;" class="nav-link px-5 py-2 rounded-full text-[11px] font-black uppercase text-zinc-400 hover:text-white hover:bg-white/5 transition whitespace-nowrap" id="nav-stacks">STACKS</a>
+                <a href="/calculators" onclick="navigate('/calculators'); return false;" class="nav-link px-5 py-2 rounded-full text-[11px] font-black uppercase text-zinc-400 hover:text-white hover:bg-white/5 transition whitespace-nowrap" id="nav-calculators">CALCULATORS</a>
+                <div class="w-px h-4 bg-white/10 mx-1"></div>
+                <a href="https://blog.minmaxmuscle.com/" class="nav-link px-5 py-2 rounded-full text-[11px] font-black uppercase text-zinc-400 hover:text-white hover:bg-white/5 transition whitespace-nowrap">BLOG</a>
+                <a href="https://blog.minmaxmuscle.com/forum/" class="nav-link px-5 py-2 rounded-full text-[11px] font-black uppercase text-zinc-400 hover:text-white hover:bg-white/5 transition whitespace-nowrap">FORUMS</a>
             </div>
             
-            <button class="md:hidden text-white" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
-                <i data-feather="menu"></i>
-            </button>
+            <div class="flex items-center gap-2">
+                <a href="/coaching" onclick="navigate('/coaching'); return false;" class="hidden md:block px-6 py-2 rounded-full text-[11px] font-black uppercase text-white bg-blue-600 hover:bg-blue-500 transition shadow-lg shadow-blue-600/20" id="nav-coaching">COACHING</a>
+                <button class="md:hidden text-white p-2 hover:bg-white/5 rounded-full transition" onclick="toggleMobileMenu()">
+                    <i id="menu-icon" data-feather="menu"></i>
+                </button>
+            </div>
         </div>
         
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden fixed top-20 left-4 right-4 bg-[#111] border border-white/10 rounded-2xl p-4 flex flex-col gap-2 shadow-2xl z-50">
-             <a href="/peptides" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/peptides'); return false; }" class="text-left px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-bold text-gray-300">PEPTIDES</a>
-             <a href="/stacks" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/stacks'); return false; }" class="text-left px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-bold text-gray-300">STACKS</a>
-             <a href="/calculators" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/calculators'); return false; }" class="text-left px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-bold text-gray-300">CALCULATORS</a>
-             <a href="https://blog.minmaxmuscle.com/" class="text-left px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-bold text-gray-300">BLOG</a>
-             <a href="https://blog.minmaxmuscle.com/forum/" class="text-left px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-bold text-gray-300">FORUMS</a>
-             <a href="/coaching" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/coaching'); return false; }" class="text-left px-4 py-3 rounded-xl bg-blue-600 text-white text-sm font-bold mt-2 text-center">COACHING</a>
+        <!-- Enhanced Mobile Menu -->
+        <div id="mobile-menu" class="fixed inset-0 bg-zinc-950/95 backdrop-blur-xl z-[-1] hidden opacity-0 transition-all duration-300 flex flex-col items-center justify-center p-8">
+            <div class="flex flex-col gap-4 w-full max-w-sm">
+                <a href="/peptides" onclick="navigate('/peptides'); return false;" class="text-3xl font-black italic uppercase text-zinc-500 hover:text-white transition-colors py-4 border-b border-white/5 flex justify-between items-center group">
+                    PEPTIDES <i data-feather="arrow-right" class="opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                </a>
+                <a href="/stacks" onclick="navigate('/stacks'); return false;" class="text-3xl font-black italic uppercase text-zinc-500 hover:text-white transition-colors py-4 border-b border-white/5 flex justify-between items-center group">
+                    STACKS <i data-feather="arrow-right" class="opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                </a>
+                <a href="/calculators" onclick="navigate('/calculators'); return false;" class="text-3xl font-black italic uppercase text-zinc-500 hover:text-white transition-colors py-4 border-b border-white/5 flex justify-between items-center group">
+                    CALCULATORS <i data-feather="arrow-right" class="opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                </a>
+                <a href="https://blog.minmaxmuscle.com/" class="text-3xl font-black italic uppercase text-zinc-500 hover:text-white transition-colors py-4 border-b border-white/5 flex justify-between items-center group">
+                    BLOG <i data-feather="external-link" class="w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                </a>
+                <a href="https://blog.minmaxmuscle.com/forum/" class="text-3xl font-black italic uppercase text-zinc-500 hover:text-white transition-colors py-4 border-b border-white/5 flex justify-between items-center group">
+                    FORUMS <i data-feather="external-link" class="w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                </a>
+                <a href="/coaching" onclick="navigate('/coaching'); return false;" class="mt-8 px-8 py-5 bg-blue-600 text-white text-xl font-black italic uppercase rounded-2xl text-center shadow-xl shadow-blue-600/20 active:scale-95 transition-transform">
+                    APPLY FOR COACHING
+                </a>
+            </div>
         </div>
     </nav>
 
     <main class="flex-grow pt-24 pb-20">
-        <!-- [ISSUE 15] Removed Hardware Optimization copy -->
+        <!-- Home View -->
         <section id="view-home" class="view-section active">
-            <div class="relative min-h-[80vh] flex items-center justify-center overflow-hidden px-4">
+            <div class="relative min-h-[85vh] flex items-center justify-center overflow-hidden px-4 mb-20">
                 <div class="absolute inset-0 z-0">
-                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover opacity-40 grayscale" alt="Gym">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#09090b] via-transparent to-transparent"></div>
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover opacity-30 grayscale blur-[2px]" alt="Gym">
+                    <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/80 to-zinc-950/40"></div>
                 </div>
-                <div class="relative z-10 text-center max-w-4xl">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-500/20 bg-blue-500/5 text-blue-400 text-[10px] font-black uppercase mb-8">
-                        <span class="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
-                        Data Archives Online
+                
+                <div class="relative z-10 text-center max-w-5xl">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-blue-400 text-[10px] font-black uppercase mb-12 animate-fade-in">
+                        <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse shadow-[0_0_12px_rgba(59,130,246,0.8)]"></span>
+                        Clinical Data Archives Online
                     </div>
-                    <h1 class="text-7xl md:text-9xl font-black mb-6 leading-[0.85] uppercase italic">PEAK<br><span class="text-blue-600">HUMAN</span><br>PERFORMANCE</h1>
-                    <p class="text-gray-400 text-lg mb-10 max-w-xl mx-auto font-medium">The definitive database for muscle hypertrophy, peptides, and advanced recovery protocols.</p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button onclick="navigate('/peptides')" class="px-10 py-4 bg-white text-black font-black rounded-xl uppercase italic text-sm hover:bg-blue-600 hover:text-white transition shadow-lg">Peptide Database</button>
-                        <button onclick="navigate('/stacks')" class="px-10 py-4 bg-white/5 border border-white/10 rounded-xl uppercase italic text-sm font-black hover:bg-white/10 transition backdrop-blur">Protocol Stacks</button>
+                    
+                    <h1 class="text-7xl md:text-[10rem] font-black mb-8 leading-[0.8] uppercase italic text-white tracking-tighter">
+                        PEAK<br>
+                        <span class="text-gradient">HUMAN</span><br>
+                        <span class="text-blue-600">PERFORMANCE</span>
+                    </h1>
+                    
+                    <p class="text-zinc-400 text-lg md:text-xl mb-12 max-w-2xl mx-auto font-medium leading-relaxed">
+                        The definitive clinical database for muscle hypertrophy, peptide research, and metabolic optimization protocols.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                        <button onclick="navigate('/peptides')" class="group relative px-12 py-5 bg-white text-black font-black rounded-2xl uppercase italic text-sm overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-2xl">
+                            <span class="relative z-10">Peptide Database</span>
+                            <div class="absolute inset-0 bg-blue-600 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                        </button>
+                        <button onclick="navigate('/stacks')" class="px-12 py-5 glass hover:bg-white/10 text-white rounded-2xl uppercase italic text-sm font-black transition-all hover:scale-105 active:scale-95">
+                            Protocol Stacks
+                        </button>
                     </div>
+                </div>
+                
+                <!-- Scroll Indicator -->
+                <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-20">
+                    <i data-feather="chevron-down" class="text-white"></i>
                 </div>
             </div>
 
-            <!-- Pillar Article for AdSense Compliance & SEO (1,000+ Words) -->
-            <div class="max-w-4xl mx-auto px-4 py-20 text-gray-300">
+            <!-- Pillar Article section -->
+            <div class="max-w-5xl mx-auto px-6 py-24">
                 <article class="prose prose-invert prose-blue max-w-none">
-                    <h2 class="text-5xl font-black italic uppercase text-white mb-8 leading-none">The Landscape of Peptide Research: A Comprehensive Clinical Analysis of Performance and Longevity</h2>
-                    <p class="text-xl leading-relaxed mb-8 font-medium text-gray-400">In the pursuit of peak human performance, the scientific community has shifted its focus from blunt-force anabolic agents to the surgical precision of metabolic optimization. Peptides—short chains of amino acids linked by peptide bonds—have emerged as the fundamental signaling molecules of the biological revolution. Unlike traditional pharmacology, which often overrides natural feedback loops, peptide therapy aims to modulate specific cellular pathways, restoring youthful vigor or accelerating physiological repair at the molecular level.</p>
-                    
-                    <p class="mb-8">Peptide research represents the convergence of clinical endocrinology, sports medicine, and molecular biology. Naturally occurring in the body as hormones and neurotransmitters, synthetic analogs now allow researchers to target biological receptors with unprecedented accuracy. From the controlled secretion of endogenous growth hormone to the regulation of mitochondrial efficiency and the systematic acceleration of tissue regeneration, peptides provide a blueprint for the future of human biological intervention.</p>
-
-                    <h3 class="text-2xl font-black italic uppercase text-white mt-16 mb-6">Categorizing the Peptide Frontier: Molecular Sub-Classes</h3>
-                    <p class="mb-8">Understanding the diversity of peptide compounds is essential for academic research and clinical observation. These compounds are categorized based on their primary biological receptor affinity and the metabolic outcomes they induce. Within the MinMaxMuscle archive, we focus on the most data-rich categories currently influencing the athletic and longevity landscapes.</p>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
-                        <div class="bg-white/5 p-8 rounded-3xl border border-white/10">
-                            <h4 class="text-blue-500 font-black uppercase text-sm mb-4">Growth Hormone Secretagogues (GHS)</h4>
-                            <p class="text-sm leading-relaxed">Compounds such as Ipamorelin, CJC-1295, and Tesamorelin represent the most researched class of peptides. Their primary mechanism involves stimulating the pituitary gland to release natural pulses of growth hormone. Unlike exogenous GH, which can lead to receptor desensitization and shutdown of natural production, GHS agents work with the body's homeostatic mechanisms to increase serum IGF-1 levels, facilitating muscle protein synthesis and systemic lipolysis.</p>
+                    <div class="flex flex-col md:flex-row gap-12 items-start mb-20">
+                        <div class="md:w-1/3 sticky top-32">
+                            <h2 class="text-5xl font-black italic uppercase text-white mb-6 leading-[0.9] tracking-tighter">The Peptide<br><span class="text-blue-600">Frontier</span></h2>
+                            <div class="w-20 h-2 bg-blue-600 mb-8 rounded-full"></div>
+                            <p class="text-zinc-500 font-bold uppercase text-xs tracking-widest">Clinical Analysis & Research Protocols</p>
                         </div>
-                        <div class="bg-white/5 p-8 rounded-3xl border border-white/10">
-                            <h4 class="text-blue-500 font-black uppercase text-sm mb-4">Regenerative and Healing Peptides</h4>
-                            <p class="text-sm leading-relaxed">BPC-157 (Body Protection Compound) and Thymosin Beta-4 (TB-500) are considered the clinical gold standards for tissue repair. BPC-157 operates via the upregulation of Vascular Endothelial Growth Factor (VEGF), inducing rapid angiogenesis and collagen synthesis. This makes it a primary focus for research regarding tendon resilience and gastric mucosal repair. TB-500 complements this by promoting cell migration and reducing systemic inflammatory cytokines.</p>
+                        <div class="md:w-2/3">
+                            <p class="text-2xl leading-relaxed mb-12 font-medium text-zinc-300">
+                                In the pursuit of peak human performance, the scientific community has shifted its focus from blunt-force anabolic agents to the surgical precision of <span class="text-white border-b border-blue-600/50">metabolic optimization</span>.
+                            </p>
+                            <div class="space-y-8 text-zinc-400 leading-relaxed text-lg">
+                                <p>Peptides—short chains of amino acids linked by peptide bonds—have emerged as the fundamental signaling molecules of the biological revolution. Unlike traditional pharmacology, which often overrides natural feedback loops, peptide therapy aims to modulate specific cellular pathways, restoring youthful vigor or accelerating physiological repair at the molecular level.</p>
+                                <p>Peptide research represents the convergence of clinical endocrinology, sports medicine, and molecular biology. Naturally occurring in the body as hormones and neurotransmitters, synthetic analogs now allow researchers to target biological receptors with unprecedented accuracy.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-20">
+                        <div class="glass p-10 rounded-[2.5rem] border-white/5 group hover:border-blue-500/30 transition-colors">
+                            <div class="w-12 h-12 bg-blue-600/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                <i data-feather="zap" class="text-blue-500"></i>
+                            </div>
+                            <h4 class="text-white font-black uppercase text-xl mb-4 italic tracking-tight">Growth Hormone Secretagogues (GHS)</h4>
+                            <p class="text-sm leading-relaxed text-zinc-400">Compounds such as Ipamorelin, CJC-1295, and Tesamorelin represent the most researched class of peptides. They work with the body's homeostatic mechanisms to increase serum IGF-1 levels, facilitating muscle protein synthesis and systemic lipolysis.</p>
+                        </div>
+                        <div class="glass p-10 rounded-[2.5rem] border-white/5 group hover:border-blue-500/30 transition-colors text-right md:text-left">
+                            <div class="w-12 h-12 bg-blue-600/20 rounded-2xl flex items-center justify-center mb-6 md:mr-auto md:ml-0 ml-auto group-hover:scale-110 transition-transform">
+                                <i data-feather="plus-circle" class="text-blue-500"></i>
+                            </div>
+                            <h4 class="text-white font-black uppercase text-xl mb-4 italic tracking-tight">Regenerative & Healing Peptides</h4>
+                            <p class="text-sm leading-relaxed text-zinc-400">BPC-157 and Thymosin Beta-4 (TB-500) are the clinical gold standards for tissue repair. They operate via the upregulation of VEGF and cell migration, inducing rapid angiogenesis and systemic inflammatory cytokine reduction.</p>
                         </div>
                     </div>
 
-                    <h3 class="text-2xl font-black italic uppercase text-white mt-16 mb-6">Metabolic Signaling and Mitochondrial Optimization</h3>
-                    <p class="mb-8">Beyond simple growth and repair, the "New Wave" of peptide research focuses on cellular energy production. Mitochondrial peptides like MOTS-c and SS-31 are being analyzed for their ability to reverse the hallmarks of metabolic aging. MOTS-c, specifically, is a mitochondrial-derived peptide that translocates to the nucleus to regulate gene expression in response to metabolic stress. It acts as an "exercise mimetic," promoting glucose uptake in skeletal muscle and enhancing fatty acid oxidation, even in sedentary research models.</p>
-                    
-                    <p class="mb-8">Similarly, SS-31 (Elamipretide) targets the inner mitochondrial membrane, specifically binding to cardiolipin. This interaction stabilizes mitochondrial cristae and optimizes the electron transport chain, reducing the leakage of reactive oxygen species (ROS) that leads to cellular damage. For researchers, these compounds represent a shift from "performance enhancement" to "biological preservation," ensuring that the cellular machinery remains efficient across the lifespan.</p>
-
-                    <h3 class="text-2xl font-black italic uppercase text-white mt-16 mb-6">Safety Protocols: The Science of Reconstitution and Stability</h3>
-                    <p class="mb-8">The efficacy of any peptide-based research is contingent upon the structural integrity of the molecule. Peptides are notoriously fragile; their peptide bonds are susceptible to degradation from UV light, temperature fluctuations, and physical shear stress. This necessitates a rigorous adherence to laboratory safety and preparation protocols.</p>
-                    
-                    <p class="mb-8">Researchers must utilize bacteriostatic water (USP water containing 0.9% benzyl alcohol) for reconstitution. The alcohol serves as a vital preservative, inhibiting bacterial growth in multi-dose vials. The process of reconstitution itself must be handled with precision—water should be introduced slowly down the side of the vial to prevent foam formation and structural "bruising" of the lyophilized powder. Once the peptide is in aqueous form, maintaining a "cold chain" (typically 2°C to 8°C) is mandatory to prevent enzymatic degradation and loss of bioactivity.</p>
-
-                    <h3 class="text-2xl font-black italic uppercase text-white mt-16 mb-6">The Synergistic Approach: Protocol Stacking</h3>
-                    <p class="mb-8">In advanced research, compounds are rarely viewed in isolation. The concept of "Protocol Stacking" leverages the synergistic mechanisms of different peptide classes to achieve a more robust physiological response. A classic example is the combination of a GHRH (Growth Hormone Releasing Hormone) analog like CJC-1295 with a GHRP (Growth Hormone Releasing Peptide) like Ipamorelin.</p>
-                    
-                    <p class="mb-8">By targeting both the GHRH receptor and the ghrelin receptor simultaneously, researchers observe a significantly larger pulse of endogenous growth hormone than the sum of the compounds used individually. However, this synergy requires a deep understanding of negative feedback loops. The human body is a homeostatic machine; excessive stimulation of any one pathway can lead to receptor downregulation or hormonal imbalances. Sophisticated protocols, therefore, include planned "washout" periods and titrated dosages to maintain biological sensitivity.</p>
-
-                    <h3 class="text-2xl font-black italic uppercase text-white mt-16 mb-6">Clinical Integrity and the Future of Bio-Optimization</h3>
-                    <p class="mb-8">As the global interest in peptides accelerates, the dissemination of authoritative, data-driven information is paramount. The fitness and "biohacking" industries are unfortunately plagued by anecdotal "bro-science" and marketing hyperbole that often ignores the clinical reality of molecular biology. MinMaxMuscle was founded to bridge this void, providing a centralized clinical archive of primary literature and established research protocols.</p>
-                    
-                    <p class="mb-8">It is critically important to maintain the distinction between approved pharmaceutical use and laboratory research. The majority of peptides discussed in contemporary literature remain classified as "Research Chemicals." Our database is an educational tool designed to help researchers navigate molecular structures, half-lives, receptor affinities, and documented side effects observed in phase trials. Precision, safety, and a commitment to data-driven optimization must always remain the primary directives of any biological intervention.</p>
-
-                    <div class="mt-16 p-10 bg-blue-600/10 border-2 border-blue-600/20 rounded-[3rem]">
-                        <h4 class="text-white font-black uppercase text-xl mb-6">Summary of Clinical Research Standards</h4>
-                        <ul class="list-disc pl-8 space-y-6 text-sm">
-                            <li><span class="text-white font-bold uppercase tracking-widest">Source Verification:</span> Prioritize compounds verified by third-party HPLC (High-Performance Liquid Chromatography) and LC-MS (Liquid Chromatography-Mass Spectrometry) reports to ensure purity and concentration integrity.</li>
-                            <li><span class="text-white font-bold uppercase tracking-widest">Aseptic Technique:</span> All laboratory procedures, including reconstitution and sampling, must be performed using sterile tools and alcohol-sanitized environments to prevent contamination.</li>
-                            <li><span class="text-white font-bold uppercase tracking-widest">Quantitative Documentation:</span> Maintain exhaustive logs of administration timing, dosage, and physiological markers (e.g., blood glucose, IGF-1 levels, recovery speed) to analyze longitudinal trends and protocol efficacy.</li>
-                            <li><span class="text-white font-bold uppercase tracking-widest">Legal Compliance:</span> Researchers must strictly adhere to local and international regulations regarding the acquisition and use of experimental compounds, ensuring all work is conducted within appropriate legal frameworks.</li>
+                    <div class="p-12 glass rounded-[3rem] border-blue-600/20 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 blur-[100px] -mr-32 -mt-32"></div>
+                        <h4 class="text-white font-black uppercase text-2xl mb-8 italic">Clinical Research Standards</h4>
+                        <ul class="grid md:grid-cols-2 gap-8">
+                            <li class="flex gap-4">
+                                <div class="text-blue-500 font-black text-2xl">01</div>
+                                <div>
+                                    <span class="text-white font-black uppercase text-[10px] tracking-widest block mb-1">Source Verification</span>
+                                    <p class="text-xs text-zinc-500">Prioritize compounds verified by third-party HPLC and LC-MS reports to ensure purity.</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-4">
+                                <div class="text-blue-500 font-black text-2xl">02</div>
+                                <div>
+                                    <span class="text-white font-black uppercase text-[10px] tracking-widest block mb-1">Aseptic Technique</span>
+                                    <p class="text-xs text-zinc-500">All procedures must be performed using sterile tools in sanitized environments.</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-4">
+                                <div class="text-blue-500 font-black text-2xl">03</div>
+                                <div>
+                                    <span class="text-white font-black uppercase text-[10px] tracking-widest block mb-1">Quantitative Logs</span>
+                                    <p class="text-xs text-zinc-500">Maintain exhaustive logs of administration timing, dosage, and physiological markers.</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-4">
+                                <div class="text-blue-500 font-black text-2xl">04</div>
+                                <div>
+                                    <span class="text-white font-black uppercase text-[10px] tracking-widest block mb-1">Legal Compliance</span>
+                                    <p class="text-xs text-zinc-500">Strictly adhere to local and international regulations regarding experimental compounds.</p>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </article>
             </div>
         </section>
-
-        <!-- PEPTIDES -->
-        <section id="view-peptides" class="view-section px-4 max-w-7xl mx-auto py-12">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+ 
+          <!-- PEPTIDES -->
+        <section id="view-peptides" class="view-section px-4 max-w-7xl mx-auto py-24">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
                 <div>
-                    <h2 class="text-6xl font-black italic uppercase mb-2">Peptide Index</h2>
-                    <p class="text-gray-500 font-bold uppercase text-[10px] tracking-widest">Active Research Dossiers</p>
+                    <h2 class="text-7xl font-black italic uppercase mb-2 tracking-tighter text-white">Peptide<br><span class="text-blue-600">Index</span></h2>
+                    <p class="text-zinc-500 font-bold uppercase text-[10px] tracking-[0.3em]">Active Research Dossiers</p>
                 </div>
-                <input type="text" id="pepSearch" class="bg-[#111] border border-white/5 p-4 rounded-xl w-full md:w-80 text-sm font-bold focus:border-blue-500 outline-none" placeholder="SEARCH DATABASE...">
+                <div class="relative w-full md:w-96 group">
+                    <i data-feather="search" class="absolute left-5 top-1/2 -translate-y-1/2 text-zinc-600 group-focus-within:text-blue-500 transition-colors w-4 h-4"></i>
+                    <input type="text" id="pepSearch" class="w-full bg-zinc-950/50 border border-white/5 p-5 pl-14 rounded-2xl text-sm font-bold focus:border-blue-500/50 outline-none transition-all placeholder:text-zinc-700" placeholder="SEARCH DATABASE...">
+                </div>
             </div>
-
-            <!-- Database Introduction for AdSense Compliance -->
-            <div class="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 mb-12">
-                <div class="grid md:grid-cols-2 gap-12">
+ 
+            <!-- Database Introduction -->
+            <div class="glass border-white/5 rounded-[3rem] p-10 md:p-16 mb-16 relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-96 h-96 bg-blue-600/5 blur-[120px] -ml-48 -mt-48"></div>
+                <div class="grid md:grid-cols-2 gap-16 relative z-10">
                     <div>
-                        <h3 class="text-2xl font-black italic uppercase text-white mb-6">Utilizing the Research Index</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed mb-6">The MinMaxMuscle Peptide Index is designed as a high-density clinical archive for researchers, biohackers, and medical professionals. Our goal is to consolidate disparate data points—ranging from molecular structure and half-life to phase III clinical trial outcomes—into a single, searchable interface. Each entry in this database represents an active "Research Dossier" that is continuously updated as new literature is published.</p>
-                        <p class="text-gray-400 text-sm leading-relaxed">To use this database effectively, utilize the search function to filter by compound name or primary research focus (e.g., "hypertrophy," "neural repair," or "lipolysis"). Each compound is assigned a research rank based on the volume of available clinical data and its prevalence in established athletic protocols. Clicking on a compound will reveal its full dossier, including molecular data, common research dosages, and synergistic stack pairings.</p>
+                        <h3 class="text-3xl font-black italic uppercase text-white mb-8 border-l-4 border-blue-600 pl-6">Clinical Archive</h3>
+                        <p class="text-zinc-400 text-sm leading-relaxed mb-8 font-medium italic">
+                            The MinMaxMuscle Peptide Index is designed as a high-density clinical archive for researchers and bio-optimization specialists. We consolidate biological data points into a systematically organized interface.
+                        </p>
+                        <ul class="space-y-4 text-xs font-bold text-zinc-500 uppercase tracking-widest">
+                            <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> Molecular Structure Analysis</li>
+                            <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> Phase Trial Tracking</li>
+                            <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> Synergistic Pairing Data</li>
+                        </ul>
                     </div>
-                    <div>
-                        <h3 class="text-2xl font-black italic uppercase text-white mb-6">Selection & Research Criteria</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed mb-6">Compounds listed in this index must meet rigorous criteria to be included. We prioritize peptides that have either undergone human clinical trials or have extensive longitudinal data in animal models. Our editorial team cross-references every data point against primary sources such as PubMed, ScienceDirect, and the World Anti-Doping Agency (WADA) guidelines to ensure that our dossiers reflect the most accurate and current scientific understanding.</p>
-                        <div class="bg-blue-600/10 border-l-4 border-blue-600 p-6 rounded-r-xl">
-                            <p class="text-[10px] text-blue-400 font-black uppercase tracking-widest mb-2">Protocol Integrity</p>
-                            <p class="text-xs text-gray-300 italic">"The utility of a research chemical is defined by its purity and the precision of its administration. We provide the data; the researcher provides the discipline."</p>
+                    <div class="flex flex-col justify-center">
+                        <div class="bg-blue-600/10 border border-blue-600/20 p-8 rounded-3xl mb-8">
+                            <p class="text-[10px] text-blue-400 font-black uppercase tracking-widest mb-4">Selection Rigor</p>
+                            <p class="text-sm text-zinc-300 italic font-medium leading-relaxed">
+                                "We prioritize peptides with human clinical data. Our dossiers represent the intersection of empirical science and performance optimization."
+                            </p>
                         </div>
+                        <p class="text-[9px] text-zinc-600 font-bold uppercase leading-relaxed italic">
+                            Mandatory Disclosure: All compounds listed are strictly for laboratory research and development purposes. Not intended for human or veterinary use.
+                        </p>
                     </div>
                 </div>
-                <div class="mt-10 pt-10 border-t border-white/5">
-                    <p class="text-[10px] text-gray-500 font-bold uppercase leading-relaxed text-center max-w-3xl mx-auto">Mandatory Disclaimer: All compounds listed are strictly for laboratory research and development purposes. They are not intended for human or veterinary use. The information provided is theoretical and based on available scientific literature. MinMaxMuscle does not endorse the unauthorized use of research chemicals.</p>
-                </div>
             </div>
-
-            <div id="pep-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
-                <div class="skeleton h-64 w-full"></div><div class="skeleton h-64 w-full"></div><div class="skeleton h-64 w-full"></div>
+ 
+            <div id="pep-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-fr">
+                <div class="skeleton h-72 w-full"></div>
+                <div class="skeleton h-72 w-full"></div>
+                <div class="skeleton h-72 w-full"></div>
             </div>
         </section>
 
         <!-- STACKS -->
-        <section id="view-stacks" class="view-section px-4 max-w-7xl mx-auto py-12">
-            <h2 class="text-6xl font-black italic uppercase mb-12">Protocol Stacks</h2>
-            <div id="stacks-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8 auto-rows-fr">
-                <div class="skeleton h-80 w-full"></div><div class="skeleton h-80 w-full"></div>
+        <section id="view-stacks" class="view-section px-4 max-w-7xl mx-auto py-24">
+            <div class="mb-16">
+                <h2 class="text-7xl font-black italic uppercase mb-2 tracking-tighter text-white">Protocol<br><span class="text-blue-600">Stacks</span></h2>
+                <div class="w-24 h-2 bg-blue-600 rounded-full mb-6"></div>
+                <p class="text-zinc-500 font-bold uppercase text-[10px] tracking-[0.3em]">Synergistic Research Matrices</p>
+            </div>
+            
+            <div id="stacks-grid" class="grid grid-cols-1 md:grid-cols-2 gap-10 auto-rows-fr">
+                <div class="skeleton h-96 w-full"></div>
+                <div class="skeleton h-96 w-full"></div>
             </div>
         </section>
 
         <!-- CALCULATORS -->
-        <section id="view-calculators" class="view-section px-4 max-w-2xl mx-auto py-12">
-            <!-- [ISSUE 7] -->
-            <h2 class="text-6xl font-black italic uppercase text-center mb-12">Peptide Calculators</h2>
-            
-            <div class="flex justify-center gap-2 mb-10">
-                <button onclick="switchCalc('recon')" class="tab-btn active px-6 py-2 rounded-full border border-white/10 text-xs font-black uppercase italic tracking-widest transition">Reconstitution</button>
-                <button onclick="switchCalc('unit')" class="tab-btn px-6 py-2 rounded-full border border-white/10 text-xs font-black uppercase italic tracking-widest transition">IU Converter</button>
-                <!-- [ISSUE 11] Added 3rd Calculator Option -->
-                <button onclick="switchCalc('cycle')" class="tab-btn px-6 py-2 rounded-full border border-white/10 text-xs font-black uppercase italic tracking-widest transition">Cycle Planner</button>
+        <section id="view-calculators" class="view-section px-4 max-w-4xl mx-auto py-24">
+            <div class="text-center mb-16">
+                <h2 class="text-7xl font-black italic uppercase mb-4 tracking-tighter text-white">Clinical<br><span class="text-blue-600">Calculators</span></h2>
+                <p class="text-zinc-500 font-bold uppercase text-[10px] tracking-[0.3em]">Precision Dosing & Yield Analytics</p>
             </div>
             
-            <div id="calc-recon" class="calc-view bento-card p-10 cursor-default hover:transform-none">
-                <div class="space-y-6">
-                    <div class="grid grid-cols-2 gap-4">
-                        <div><label class="text-[9px] font-black text-gray-500 uppercase">Vial (mg)</label><input type="number" id="c-mg" class="w-full bg-black border border-white/10 p-4 rounded-xl mt-2 font-mono" value="5"></div>
-                        <div><label class="text-[9px] font-black text-gray-500 uppercase">Water (ml)</label><input type="number" id="c-ml" class="w-full bg-black border border-white/10 p-4 rounded-xl mt-2 font-mono" value="2"></div>
-                    </div>
-                    <div><label class="text-[9px] font-black text-gray-500 uppercase">Dose (mcg)</label><input type="number" id="c-mcg" class="w-full bg-black border border-white/10 p-4 rounded-xl mt-2 font-mono" value="250"></div>
-                    <div class="p-8 bg-blue-600/10 border-2 border-blue-600/20 rounded-3xl text-center">
-                        <span id="c-res" class="text-7xl font-black italic">10</span>
-                        <p class="text-[9px] text-gray-500 font-bold uppercase mt-2 italic">Units (U-100 Syringe)</p>
-                    </div>
-                </div>
+            <div class="flex flex-wrap justify-center gap-3 mb-12">
+                <button onclick="switchCalc('recon')" class="tab-btn active px-8 py-3 rounded-2xl glass border-white/5 text-[10px] font-black uppercase italic tracking-widest transition-all hover:scale-105 active:scale-95 shadow-xl">Reconstitution</button>
+                <button onclick="switchCalc('unit')" class="tab-btn px-8 py-3 rounded-2xl glass border-white/5 text-[10px] font-black uppercase italic tracking-widest transition-all hover:scale-105 active:scale-95 shadow-xl">IU Converter</button>
+                <button onclick="switchCalc('cycle')" class="tab-btn px-8 py-3 rounded-2xl glass border-white/5 text-[10px] font-black uppercase italic tracking-widest transition-all hover:scale-105 active:scale-95 shadow-xl">Cycle Planner</button>
             </div>
             
-            <div id="calc-unit" class="calc-view bento-card p-10 cursor-default hover:transform-none hidden">
-                <div class="space-y-6">
-                    <div><label class="text-[9px] font-black text-gray-500 uppercase">Input Mcg</label><input type="number" id="u-mcg" class="w-full bg-black border border-white/10 p-4 rounded-xl mt-2 font-mono" placeholder="1000"></div>
-                    <div class="p-8 bg-purple-600/10 border-2 border-purple-600/20 rounded-3xl text-center">
-                        <span id="u-res" class="text-7xl font-black italic">3.0</span>
-                        <p class="text-[9px] text-gray-500 font-bold uppercase mt-2 italic">International Units (at 3:1)</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- [ISSUE 11] Cycle Planner UI -->
-            <div id="calc-cycle" class="calc-view bento-card p-10 cursor-default hover:transform-none hidden">
-                <h3 class="text-xl font-black uppercase italic mb-6">Total Cycle Volume</h3>
-                <div class="space-y-4">
-                    <div class="grid grid-cols-2 gap-4">
-                        <div><label class="text-[9px] font-black text-gray-500 uppercase">Dose per Pin (mg)</label><input type="number" id="cy-dose" class="w-full bg-black border border-white/10 p-4 rounded-xl mt-2 font-mono" value="2.5"></div>
-                        <div><label class="text-[9px] font-black text-gray-500 uppercase">Pins per Week</label><input type="number" id="cy-freq" class="w-full bg-black border border-white/10 p-4 rounded-xl mt-2 font-mono" value="2"></div>
-                    </div>
-                    <div><label class="text-[9px] font-black text-gray-500 uppercase">Cycle Length (Weeks)</label><input type="number" id="cy-weeks" class="w-full bg-black border border-white/10 p-4 rounded-xl mt-2 font-mono" value="12"></div>
-                    <div class="p-6 bg-green-600/10 border-2 border-green-600/20 rounded-3xl text-center mt-6">
-                        <span id="cy-res" class="text-5xl font-black italic">60</span><span class="text-xl font-bold ml-1">mg</span>
-                        <p class="text-[9px] text-gray-500 font-bold uppercase mt-2 italic">Total Compound Required for Cycle</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- [ISSUE 12 & 13] COACHING -->
-        <section id="view-coaching" class="view-section px-4 max-w-4xl mx-auto py-12">
-            <h2 class="text-6xl font-black italic uppercase mb-12 text-center">Performance Coaching</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                <!-- Training is now clickable/informative -->
-                <div class="bento-card p-8 border-blue-500/30">
-                    <i data-feather="activity" class="w-8 h-8 text-blue-500 mb-4"></i>
-                    <h3 class="text-2xl font-black italic uppercase mb-2">Training Programming</h3>
-                    <p class="text-gray-400 text-sm mb-6">Custom hypertrophy and strength blocks designed for maximal mechanical tension and optimal recovery.</p>
-                    <ul class="text-xs text-gray-500 space-y-2 mb-6 font-bold">
-                        <li>+ 12-Week Periodization</li>
-                        <li>+ Form Analysis</li>
-                        <li>+ Autoregulation Protocols</li>
-                    </ul>
-                </div>
-                <!-- Nutrition is now clickable/informative -->
-                <div class="bento-card p-8 border-blue-500/30">
-                    <i data-feather="pie-chart" class="w-8 h-8 text-blue-500 mb-4"></i>
-                    <h3 class="text-2xl font-black italic uppercase mb-2">Nutrition & Macros</h3>
-                    <p class="text-gray-400 text-sm mb-6">Data-driven recomposition tracking. Tailored energy balances for distinct biological phases.</p>
-                    <ul class="text-xs text-gray-500 space-y-2 mb-6 font-bold">
-                        <li>+ Phase-specific Macros</li>
-                        <li>+ Micronutrient Protocols</li>
-                        <li>+ Bloodwork Analysis Review</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- [ISSUE 12] Coaching CTA Form -->
-            <div class="bg-[#111] border border-white/10 rounded-3xl p-8 md:p-12">
-                <h3 class="text-3xl font-black italic uppercase mb-2">Apply for Coaching</h3>
-                <p class="text-gray-400 text-sm mb-8">Submit your details. We will contact you within 24 hours.</p>
-                <!-- Formspree Integration -->
-                <form action="https://formspree.io/f/xkovzdqq" method="POST" class="space-y-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="text-[9px] font-black text-gray-500 uppercase">Full Name</label>
-                            <input type="text" name="name" required class="w-full bg-black border border-white/10 p-4 rounded-xl mt-2 text-sm text-white">
+            <!-- Recon Calc -->
+            <div id="calc-recon" class="calc-view glass p-10 md:p-14 rounded-[3.5rem] border-white/5 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-blue-600/5 blur-[100px] -mr-32 -mt-32"></div>
+                <div class="relative z-10">
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div class="space-y-8">
+                            <div class="grid grid-cols-2 gap-6">
+                                <div>
+                                    <label class="text-[10px] font-black text-zinc-500 uppercase tracking-widest block mb-2 ml-4">Vial (mg)</label>
+                                    <input type="number" id="c-mg" class="w-full bg-zinc-950/50 border border-white/5 p-5 rounded-2xl text-white font-bold focus:border-blue-500 outline-none transition-all" value="5">
+                                </div>
+                                <div>
+                                    <label class="text-[10px] font-black text-zinc-500 uppercase tracking-widest block mb-2 ml-4">Water (ml)</label>
+                                    <input type="number" id="c-ml" class="w-full bg-zinc-950/50 border border-white/5 p-5 rounded-2xl text-white font-bold focus:border-blue-500 outline-none transition-all" value="2">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="text-[10px] font-black text-zinc-500 uppercase tracking-widest block mb-2 ml-4">Dose (mcg)</label>
+                                <input type="number" id="c-mcg" class="w-full bg-zinc-950/50 border border-white/5 p-5 rounded-2xl text-white font-bold focus:border-blue-500 outline-none transition-all" value="250">
+                            </div>
                         </div>
-                        <div>
-                            <label class="text-[9px] font-black text-gray-500 uppercase">Email</label>
-                            <input type="email" name="email" required class="w-full bg-black border border-white/10 p-4 rounded-xl mt-2 text-sm text-white">
+                        <div class="bg-blue-600/10 border border-blue-600/20 p-12 rounded-[2.5rem] text-center relative overflow-hidden">
+                            <div class="absolute inset-0 bg-blue-600/5 animate-pulse"></div>
+                            <div class="relative z-10">
+                                <span id="c-res" class="text-8xl font-black italic text-white leading-none">10</span>
+                                <p class="text-[10px] text-blue-400 font-black uppercase mt-4 tracking-widest italic">Units (U-100 Syringe)</p>
+                            </div>
                         </div>
                     </div>
-                    <div>
-                        <label class="text-[9px] font-black text-gray-500 uppercase">Primary Goal</label>
-                        <select name="goal" class="w-full bg-black border border-white/10 p-4 rounded-xl mt-2 text-sm text-white">
-                            <option value="Hypertrophy">Hypertrophy (Mass Gain)</option>
-                            <option value="Fat Loss">Fat Loss & Recomp</option>
-                            <option value="Injury Recovery">Injury Recovery</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="text-[9px] font-black text-gray-500 uppercase">Current Limitations / Notes</label>
-                        <textarea name="notes" rows="3" class="w-full bg-black border border-white/10 p-4 rounded-xl mt-2 text-sm text-white"></textarea>
-                    </div>
-                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-black italic uppercase tracking-widest py-4 rounded-xl transition">Submit Application</button>
-                </form>
+                </div>
             </div>
-        </section>
+            
+            <!-- Unit Calc -->
+            <div id="calc-unit" class="calc-view glass p-10 md:p-14 rounded-[3.5rem] border-white/5 relative overflow-hidden hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-purple-600/5 blur-[100px] -mr-32 -mt-32"></div>
+                <div class="relative z-10">
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div class="space-y-8">
+                            <div>
+                                <label class="text-[10px] font-black text-zinc-500 uppercase tracking-widest block mb-2 ml-4">Input Micrograms (mcg)</label>
+                                <input type="number" id="u-mcg" class="w-full bg-zinc-950/50 border border-white/5 p-6 rounded-3xl text-white font-bold focus:border-purple-500 outline-none transition-all" placeholder="1000">
+                            </div>
+                        </div>
+                        <div class="bg-purple-600/10 border border-purple-600/20 p-12 rounded-[2.5rem] text-center">
+                            <span id="u-res" class="text-8xl font-black italic text-white leading-none">3.0</span>
+                            <p class="text-[10px] text-purple-400 font-black uppercase mt-4 tracking-widest italic">International Units (at 3:1)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        <!-- [ISSUES 16-19] Static Footer Pages (EEAT & AdSense Compliant) -->
-        <section id="view-about" class="view-section px-4 max-w-4xl mx-auto py-16">
-            <div class="bento-card p-10 md:p-14">
-                <h2 class="text-5xl font-black italic uppercase mb-8 border-b border-white/10 pb-6">About MinMaxMuscle</h2>
-                <div class="space-y-6 text-gray-300 leading-relaxed font-medium">
-                    <p>MinMaxMuscle is an independent digital archive and clinical data analysis platform dedicated to the science of human hypertrophy, metabolic optimization, and advanced recovery protocols.</p>
-                    <p>Founded on the principles of "System over Motivation," our mission is to aggregate, analyze, and present complex biological data surrounding peptides, secretagogues, and performance compounds in a highly structured format. We strip away the marketing noise of the fitness industry to provide empirical, research-backed blueprints.</p>
-                    <h3 class="text-2xl font-black text-white italic uppercase mt-8 mb-4">Our Expertise</h3>
-                    <p>Our database relies on cross-referenced data from primary clinical literature (e.g., PubMed, ClinicalTrials.gov) and established anecdotal protocols from elite athletic populations. We provide this data strictly for educational and harm-reduction purposes.</p>
-                    <div class="bg-blue-900/20 border-l-4 border-blue-500 p-6 rounded-r-xl mt-6">
-                        <p class="text-sm text-blue-100 font-bold uppercase tracking-widest">Core Directive</p>
-                        <p class="text-sm mt-2">Data-driven optimization. No dogma. Just what works, what doesn't, and the clinical rationale behind it.</p>
+            <!-- Cycle Planner -->
+            <div id="calc-cycle" class="calc-view glass p-10 md:p-14 rounded-[3.5rem] border-white/5 relative overflow-hidden hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-emerald-600/5 blur-[100px] -mr-32 -mt-32"></div>
+                <div class="relative z-10">
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div class="space-y-8">
+                            <div class="grid grid-cols-2 gap-6">
+                                <div>
+                                    <label class="text-[10px] font-black text-zinc-500 uppercase tracking-widest block mb-2 ml-4">Dose/Pin (mg)</label>
+                                    <input type="number" id="cy-dose" class="w-full bg-zinc-950/50 border border-white/5 p-5 rounded-2xl text-white font-bold focus:border-emerald-500 outline-none transition-all" value="2.5">
+                                </div>
+                                <div>
+                                    <label class="text-[10px] font-black text-zinc-500 uppercase tracking-widest block mb-2 ml-4">Pins/Week</label>
+                                    <input type="number" id="cy-freq" class="w-full bg-zinc-950/50 border border-white/5 p-5 rounded-2xl text-white font-bold focus:border-emerald-500 outline-none transition-all" value="2">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="text-[10px] font-black text-zinc-500 uppercase tracking-widest block mb-2 ml-4">Cycle Length (Weeks)</label>
+                                <input type="number" id="cy-weeks" class="w-full bg-zinc-950/50 border border-white/5 p-5 rounded-2xl text-white font-bold focus:border-emerald-500 outline-none transition-all" value="12">
+                            </div>
+                        </div>
+                        <div class="bg-emerald-600/10 border border-emerald-600/20 p-12 rounded-[2.5rem] text-center">
+                            <div class="flex flex-col items-center">
+                                <div class="flex items-baseline gap-2">
+                                    <span id="cy-res" class="text-8xl font-black italic text-white leading-none">60</span>
+                                    <span class="text-2xl font-black text-emerald-500 italic uppercase">mg</span>
+                                </div>
+                                <p class="text-[10px] text-emerald-400 font-black uppercase mt-4 tracking-widest italic">Total Compound Required</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="view-contact" class="view-section px-4 max-w-4xl mx-auto py-16">
-            <div class="bento-card p-10 md:p-14 text-center">
-                <i data-feather="mail" class="w-12 h-12 text-blue-500 mx-auto mb-6"></i>
-                <h2 class="text-5xl font-black italic uppercase mb-4">Contact Us</h2>
-                <p class="text-gray-400 mb-8 max-w-lg mx-auto">For technical support, database corrections, coaching inquiries, or business partnerships, please reach out to our administrative team.</p>
+        <!-- COACHING -->
+        <section id="view-coaching" class="view-section px-4 max-w-4xl mx-auto py-24">
+            <div class="text-center mb-16">
+                <h2 class="text-7xl font-black italic uppercase mb-4 tracking-tighter text-white">Performance<br><span class="text-blue-600">Coaching</span></h2>
+                <div class="w-24 h-2 bg-blue-600 rounded-full mx-auto mb-6"></div>
+                <p class="text-zinc-500 font-bold uppercase text-[10px] tracking-[0.3em]">Direct Protocol Intervention</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
+                <div class="glass p-10 rounded-[3rem] border-white/5 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-600/5 blur-3xl -mr-16 -mt-16 group-hover:bg-blue-600/10 transition-colors"></div>
+                    <i data-feather="activity" class="w-10 h-10 text-blue-500 mb-6"></i>
+                    <h3 class="text-2xl font-black italic uppercase text-white mb-4">Training Design</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed mb-8 italic">Custom hypertrophy and strength blocks designed for maximal mechanical tension and optimal recovery.</p>
+                    <ul class="text-[10px] text-zinc-500 space-y-3 font-black uppercase tracking-widest">
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> 12-Week Periodization</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> Biomechanical Analysis</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> Autoregulation Logic</li>
+                    </ul>
+                </div>
                 
-                <div class="bg-black/50 border border-white/10 rounded-2xl p-8 max-w-md mx-auto">
-                    <p class="text-xs text-gray-500 font-black uppercase tracking-widest mb-2">Direct Email</p>
-                    <a href="mailto:admin@minmaxmuscle.com" class="text-2xl font-bold text-white hover:text-blue-400 transition">admin@minmaxmuscle.com</a>
-                    <p class="text-xs text-gray-500 mt-6">Expected Response Time: 24-48 Hours.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="view-privacy" class="view-section px-4 max-w-4xl mx-auto py-16">
-            <div class="bento-card p-10 md:p-14">
-                <h2 class="text-5xl font-black italic uppercase mb-8 border-b border-white/10 pb-6">Privacy Policy</h2>
-                <div class="space-y-6 text-sm text-gray-300 leading-relaxed">
-                    <p><span class="font-bold text-white">Last Updated:</span> February 2026</p>
-                    <p>At MinMaxMuscle, the privacy of our visitors is of extreme importance to us. This privacy policy document outlines the types of personal information received and collected by MinMaxMuscle and how it is used.</p>
-                    
-                    <h3 class="text-xl font-bold text-white uppercase tracking-wider mt-6">Log Files & Analytics</h3>
-                    <p>Like many other Web sites, MinMaxMuscle makes use of log files and analytics trackers. The information inside the log files includes internet protocol (IP) addresses, type of browser, Internet Service Provider (ISP), date/time stamp, referring/exit pages, and number of clicks to analyze trends, administer the site, track user’s movement around the site, and gather demographic information.</p>
-
-                    <h3 class="text-xl font-bold text-white uppercase tracking-wider mt-6">Cookies and Web Beacons (AdSense Compliance)</h3>
-                    <ul class="list-disc pl-5 space-y-2">
-                        <li>Third party vendors, including Google, use cookies to serve ads based on a user's prior visits to your website or other websites.</li>
-                        <li>Google's use of advertising cookies enables it and its partners to serve ads to your users based on their visit to your sites and/or other sites on the Internet.</li>
-                        <li>Users may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" class="text-blue-500 hover:underline">Google Ads Settings</a>.</li>
+                <div class="glass p-10 rounded-[3rem] border-white/5 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-600/5 blur-3xl -mr-16 -mt-16 group-hover:bg-blue-600/10 transition-colors"></div>
+                    <i data-feather="pie-chart" class="w-10 h-10 text-blue-500 mb-6"></i>
+                    <h3 class="text-2xl font-black italic uppercase text-white mb-4">Nutrition & Bio</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed mb-8 italic">Data-driven recomposition tracking. Tailored energy balances for distinct biological phases.</p>
+                    <ul class="text-[10px] text-zinc-500 space-y-3 font-black uppercase tracking-widest">
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> Phase-specific Macros</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> Micronutrient Protocols</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> Bloodwork Analysis</li>
                     </ul>
+                </div>
+            </div>
 
-                    <h3 class="text-xl font-bold text-white uppercase tracking-wider mt-6">Consent</h3>
-                    <p>By using our website, you hereby consent to our privacy policy and agree to its terms. If you require any more information or have any questions about our privacy policy, please feel free to contact us by email.</p>
+            <!-- Coaching CTA Form -->
+            <div class="glass rounded-[4rem] p-10 md:p-20 border-white/5 relative overflow-hidden">
+                <div class="absolute -top-40 -right-40 w-96 h-96 bg-blue-600/10 blur-[120px]"></div>
+                
+                <div class="relative z-10">
+                    <div class="mb-12">
+                        <h3 class="text-4xl font-black italic uppercase text-white mb-2 tracking-tighter">Apply for<br><span class="text-blue-600">Optimization</span></h3>
+                        <p class="text-zinc-500 text-xs font-black uppercase tracking-widest italic">Waitlist current: 24-48h Response Time</p>
+                    </div>
+                    
+                    <form action="https://formspree.io/f/xkovzdqq" method="POST" class="space-y-8">
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="space-y-3">
+                                <label class="text-[10px] font-black text-zinc-500 uppercase tracking-widest ml-4">Researcher Name</label>
+                                <input type="text" name="name" required class="w-full bg-zinc-950/50 border border-white/5 p-6 rounded-3xl text-white font-bold focus:border-blue-500 outline-none transition-all placeholder:text-zinc-800" placeholder="FULL NAME">
+                            </div>
+                            <div class="space-y-3">
+                                <label class="text-[10px] font-black text-zinc-500 uppercase tracking-widest ml-4">Email Channel</label>
+                                <input type="email" name="email" required class="w-full bg-zinc-950/50 border border-white/5 p-6 rounded-3xl text-white font-bold focus:border-blue-500 outline-none transition-all placeholder:text-zinc-800" placeholder="CONTACT@EMAIL.COM">
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <label class="text-[10px] font-black text-zinc-500 uppercase tracking-widest ml-4">Primary Research Focus</label>
+                            <select name="goal" class="w-full bg-zinc-950/50 border border-white/5 p-6 rounded-3xl text-white font-bold focus:border-blue-500 outline-none transition-all appearance-none cursor-pointer">
+                                <option value="Hypertrophy">Hypertrophy (Mass Gain)</option>
+                                <option value="Fat Loss">Fat Loss & Recomp</option>
+                                <option value="Injury Recovery">Injury Recovery</option>
+                                <option value="Longevity">Longevity & Metabolic Health</option>
+                            </select>
+                        </div>
+                        <div class="space-y-3">
+                            <label class="text-[10px] font-black text-zinc-500 uppercase tracking-widest ml-4">Current Physiological Status</label>
+                            <textarea name="notes" rows="4" class="w-full bg-zinc-950/50 border border-white/5 p-6 rounded-3xl text-white font-bold focus:border-blue-500 outline-none transition-all resize-none placeholder:text-zinc-800" placeholder="DESCRIBE YOUR GOALS AND LIMITATIONS..."></textarea>
+                        </div>
+                        <button type="submit" class="group relative w-full py-8 bg-white text-black font-black uppercase italic tracking-[0.3em] text-sm rounded-3xl overflow-hidden transition-all hover:scale-[1.02] active:scale-95 shadow-2xl">
+                            <span class="relative z-10">Submit Application</span>
+                            <div class="absolute inset-0 bg-blue-600 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                        </button>
+                    </form>
                 </div>
             </div>
         </section>
 
-        <section id="view-terms" class="view-section px-4 max-w-4xl mx-auto py-16">
-            <div class="bento-card p-10 md:p-14">
-                <h2 class="text-5xl font-black italic uppercase mb-8 border-b border-white/10 pb-6">Terms of Service & FDA Disclaimer</h2>
-                <div class="space-y-6 text-sm text-gray-300 leading-relaxed">
-                    <div class="bg-red-900/20 border border-red-500/50 p-6 rounded-xl mb-8">
-                        <h3 class="text-red-500 font-black uppercase tracking-widest mb-2">Critical Medical Disclaimer</h3>
-                        <p class="text-red-100 font-medium">The content provided on MinMaxMuscle is for academic, educational, and informational purposes only. The information contained herein is NOT intended to diagnose, treat, cure, or prevent any disease. MinMaxMuscle does not provide medical advice. Always consult with a licensed healthcare professional before engaging in any protocol or utilizing any compounds discussed on this platform.</p>
+        <!-- ABOUT -->
+        <section id="view-about" class="view-section px-4 max-w-5xl mx-auto py-24">
+            <div class="glass p-10 md:p-20 rounded-[4rem] border-white/5 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-96 h-96 bg-blue-600/5 blur-[120px] -mr-48 -mt-48"></div>
+                <h2 class="text-6xl font-black italic uppercase mb-12 tracking-tighter text-white border-b border-white/5 pb-8">About<br><span class="text-blue-600">MinMaxMuscle</span></h2>
+                <div class="grid md:grid-cols-2 gap-16 items-start">
+                    <div class="space-y-8 text-zinc-400 text-lg leading-relaxed font-medium italic">
+                        <p>MinMaxMuscle is an independent digital archive and clinical data analysis platform dedicated to the science of human hypertrophy, metabolic optimization, and advanced recovery protocols.</p>
+                        <p>Founded on the principles of <span class="text-white">"System over Motivation,"</span> our mission is to aggregate, analyze, and present complex biological data surrounding peptides and performance compounds in a systematically organized format.</p>
                     </div>
+                    <div class="space-y-8">
+                        <div class="bg-blue-600/10 border-l-4 border-blue-600 p-8 rounded-r-3xl">
+                            <h3 class="text-xs font-black text-blue-400 uppercase tracking-widest mb-4">Core Directive</h3>
+                            <p class="text-sm text-zinc-300 italic font-medium leading-relaxed">"Data-driven optimization. No dogma. Just what works, what doesn't, and the clinical rationale behind it."</p>
+                        </div>
+                        <p class="text-sm text-zinc-500 leading-relaxed font-medium">Our database relies on cross-referenced data from primary clinical literature and established anecdotal protocols from elite athletic populations. We provide this data strictly for educational and harm-reduction purposes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                    <h3 class="text-xl font-bold text-white uppercase tracking-wider">1. Research Chemicals Status</h3>
-                    <p>Peptides and related compounds discussed on this website are classified as research chemicals. They are NOT approved by the Food and Drug Administration (FDA) for human consumption, ingestion, or administration. Discussions regarding dosage, administration, and efficacy are theoretical, based on clinical trials, animal models, or anecdotal reports, and do not constitute instructions for human use.</p>
+        <!-- CONTACT -->
+        <section id="view-contact" class="view-section px-4 max-w-4xl mx-auto py-24 text-center">
+            <div class="glass p-16 md:p-24 rounded-[4rem] border-white/5 relative overflow-hidden group">
+                <div class="absolute inset-0 bg-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="relative z-10">
+                    <div class="w-20 h-20 bg-blue-600/20 rounded-3xl flex items-center justify-center mx-auto mb-10 transition-transform group-hover:scale-110">
+                        <i data-feather="mail" class="text-blue-500 w-8 h-8"></i>
+                    </div>
+                    <h2 class="text-6xl font-black italic uppercase mb-6 tracking-tighter text-white">Contact<br><span class="text-blue-600">Admin</span></h2>
+                    <p class="text-zinc-500 font-medium mb-12 max-w-lg mx-auto italic">For technical support, database corrections, or business partnerships, please reach out to our administrative team.</p>
+                    
+                    <div class="inline-block glass bg-white/5 border-white/10 p-10 rounded-[2.5rem] transition-all hover:bg-white/10">
+                        <p class="text-[10px] text-zinc-600 font-black uppercase tracking-[0.3em] mb-3">Direct Channel</p>
+                        <a href="mailto:admin@minmaxmuscle.com" class="text-3xl md:text-4xl font-black text-white hover:text-blue-500 transition-colors tracking-tight">admin@minmaxmuscle.com</a>
+                    </div>
+                    <p class="text-[10px] text-zinc-700 font-black uppercase tracking-widest mt-12">Expected Response Time: 24-48 Hours</p>
+                </div>
+            </div>
+        </section>
 
-                    <h3 class="text-xl font-bold text-white uppercase tracking-wider mt-6">2. Limitation of Liability</h3>
-                    <p>By accessing this site, you agree that MinMaxMuscle, its owners, contributors, and affiliates shall not be held liable for any direct, indirect, incidental, consequential, or punitive damages arising from your access to, or use of, the information provided. You assume full responsibility and all risks associated with the application of any data found on this platform.</p>
+        <!-- PRIVACY -->
+        <section id="view-privacy" class="view-section px-4 max-w-4xl mx-auto py-24">
+            <div class="glass p-12 md:p-20 rounded-[3.5rem] border-white/5">
+                <h2 class="text-5xl font-black italic uppercase mb-12 text-white tracking-tighter border-b border-white/5 pb-8">Privacy<br><span class="text-blue-600">Policy</span></h2>
+                <div class="space-y-8 text-zinc-400 font-medium text-sm leading-relaxed">
+                    <p>At MinMaxMuscle, the privacy of our visitors is of extreme importance to us. This privacy policy document outlines the types of personal information received and collected by MinMaxMuscle and how it is used.</p>
+                    <div class="space-y-4">
+                        <h4 class="text-xs font-black text-white uppercase tracking-widest">Analytics & Data</h4>
+                        <p>Like many other Web sites, MinMaxMuscle makes use of log files and analytics trackers. The information inside includes IP addresses, browser type, date/time stamp, and number of clicks to analyze trends and manage the clinical database effectively.</p>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="text-xs font-black text-white uppercase tracking-widest">AdSense Compliance</h4>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Third party vendors, including Google, use cookies to serve ads based on prior visits.</li>
+                            <li>Users may opt out of personalized advertising via Google Ads Settings.</li>
+                        </ul>
+                    </div>
+                    <p>By using our website, you hereby consent to our privacy policy and agree to its terms. If you require any more information, please contact us by email.</p>
+                </div>
+            </div>
+        </section>
 
-                    <h3 class="text-xl font-bold text-white uppercase tracking-wider mt-6">3. Intellectual Property</h3>
-                    <p>All structured data, text, graphics, and proprietary database schemas are the intellectual property of MinMaxMuscle. You may not scrape, copy, or redistribute our proprietary stack formulations without explicit written permission.</p>
+        <!-- TERMS -->
+        <section id="view-terms" class="view-section px-4 max-w-4xl mx-auto py-24">
+            <div class="glass p-12 md:p-20 rounded-[3.5rem] border-white/5">
+                <h2 class="text-5xl font-black italic uppercase mb-12 text-white tracking-tighter border-b border-white/5 pb-8">Terms of<br><span class="text-blue-600">Research</span></h2>
+                <div class="space-y-8 text-zinc-400 font-medium text-sm leading-relaxed">
+                    <div class="bg-red-900/10 border border-red-500/20 p-8 rounded-3xl mb-12">
+                        <h3 class="text-red-500 font-black uppercase text-xs tracking-widest mb-4">Critical Medical Disclaimer</h3>
+                        <p class="text-red-200/80 italic">"The content provided on MinMaxMuscle is for academic research purposes only. Peptides discussed are NOT approved by the FDA for human consumption. Always consult with a licensed healthcare professional."</p>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="text-xs font-black text-white uppercase tracking-widest underline decoration-blue-600/50 underline-offset-4">1. Research Chemistry Status</h4>
+                        <p>Compounds discussed on this website are classified as research chemicals. Discussions regarding dosage are theoretical and based on clinical trials or anecdotal reports. They do not constitute instructions for human use.</p>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="text-xs font-black text-white uppercase tracking-widest underline decoration-blue-600/50 underline-offset-4">2. Intellectual Property</h4>
+                        <p>All structured data, text, and proprietary database schemas are the intellectual property of MinMaxMuscle. Unauthorized scraping or redistribution is strictly prohibited.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -363,41 +504,53 @@
     </main>
 
     <!-- Fat Footer -->
-    <footer class="border-t border-white/5 bg-[#020202] py-20 px-4 mt-auto">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+    <footer class="border-t border-white/5 bg-[#020202] py-24 px-6 mt-auto">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-16">
             <div class="col-span-1 md:col-span-2">
-                <span class="brand text-2xl font-black italic">MINMAXMUSCLE</span>
-                <p class="text-gray-600 text-sm mt-4 max-w-sm">Peak human performance through clinical data analysis. Engineered for hypertrophy and recovery.</p>
+                <span class="brand text-3xl font-black italic text-white tracking-tighter">MINMAXMUSCLE</span>
+                <p class="text-zinc-500 text-sm mt-6 max-w-sm leading-relaxed italic">Peak human performance through systematic clinical data analysis. Engineered for hypertrophy, metabolic optimization, and advanced recovery.</p>
+                <div class="flex gap-4 mt-8">
+                    <a href="#" class="w-10 h-10 glass rounded-xl flex items-center justify-center text-zinc-400 hover:text-blue-500 transition-all hover:scale-110"><i data-feather="twitter" class="w-4 h-4"></i></a>
+                    <a href="#" class="w-10 h-10 glass rounded-xl flex items-center justify-center text-zinc-400 hover:text-blue-500 transition-all hover:scale-110"><i data-feather="instagram" class="w-4 h-4"></i></a>
+                    <a href="#" class="w-10 h-10 glass rounded-xl flex items-center justify-center text-zinc-400 hover:text-blue-500 transition-all hover:scale-110"><i data-feather="youtube" class="w-4 h-4"></i></a>
+                </div>
             </div>
             <div>
-                <h4 class="text-blue-600 font-black uppercase text-[10px] tracking-widest mb-6">Matrix</h4>
-                <ul class="space-y-3 text-[10px] font-bold text-gray-500 uppercase tracking-wide">
-                    <li><a href="/peptides" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/peptides'); return false; }" class="hover:text-white transition">Peptide Library</a></li>
-                    <li><a href="/stacks" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/stacks'); return false; }" class="hover:text-white transition">Protocol Stacks</a></li>
-                    <li><a href="/calculators" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/calculators'); return false; }" class="hover:text-white transition">Peptide Calculators</a></li>
-                    <li><a href="/coaching" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/coaching'); return false; }" class="hover:text-white transition">Performance Coaching</a></li>
+                <h4 class="text-blue-600 font-black uppercase text-[10px] tracking-[0.3em] mb-8">Matrix</h4>
+                <ul class="space-y-4 text-[10px] font-black text-zinc-500 uppercase tracking-widest">
+                    <li><a href="/peptides" onclick="navigate('/peptides'); return false;" class="hover:text-white transition-colors">Peptide Library</a></li>
+                    <li><a href="/stacks" onclick="navigate('/stacks'); return false;" class="hover:text-white transition-colors">Protocol Stacks</a></li>
+                    <li><a href="/calculators" onclick="navigate('/calculators'); return false;" class="hover:text-white transition-colors">Calculators</a></li>
+                    <li><a href="/coaching" onclick="navigate('/coaching'); return false;" class="hover:text-white transition-colors">Coaching</a></li>
                 </ul>
             </div>
             <div>
-                <h4 class="text-blue-600 font-black uppercase text-[10px] tracking-widest mb-6">Company & Legal</h4>
-                <ul class="space-y-3 text-[10px] font-bold text-gray-500 uppercase tracking-wide">
-                    <li><a href="/about" class="hover:text-white transition">About Us</a></li>
-                    <li><a href="/privacy" class="hover:text-white transition">Privacy Policy</a></li>
-                    <li><a href="/terms" class="hover:text-white transition">Terms of Service</a></li>
-                    <li><a href="/disclaimer" class="hover:text-white transition text-red-900/50 hover:text-red-500">Medical Disclaimer</a></li>
+                <h4 class="text-blue-600 font-black uppercase text-[10px] tracking-[0.3em] mb-8">Legal</h4>
+                <ul class="space-y-4 text-[10px] font-black text-zinc-500 uppercase tracking-widest">
+                    <li><a href="/about" onclick="navigate('/about'); return false;" class="hover:text-white transition-colors">About</a></li>
+                    <li><a href="/privacy" onclick="navigate('/privacy'); return false;" class="hover:text-white transition-colors">Privacy</a></li>
+                    <li><a href="/terms" onclick="navigate('/terms'); return false;" class="hover:text-white transition-colors">Terms</a></li>
+                    <li><a href="/disclaimer" onclick="navigate('/terms'); return false;" class="text-red-900/40 hover:text-red-500 transition-colors">Medical Disclaimer</a></li>
                 </ul>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto mt-20 pt-10 border-t border-white/5 text-[9px] text-gray-800 font-bold uppercase flex flex-col md:flex-row justify-between gap-4">
-            <p>FDA Disclaimer: Educational research only. Peptides are research chemicals and not intended for human consumption.</p>
-            <p>&copy; 2026 MinMaxMuscle. All rights reserved.</p>
+        <div class="max-w-7xl mx-auto mt-24 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-[9px] text-zinc-700 font-bold uppercase tracking-widest text-center md:text-left">FDA Disclosure: Educational research only. Not intended for human consumption.</p>
+            <p class="text-[9px] text-zinc-700 font-bold uppercase tracking-widest">&copy; 2026 MinMaxMuscle. All rights reserved.</p>
         </div>
     </footer>
 
-    <div id="modal-overlay" class="fixed inset-0 hidden flex items-center justify-center p-4 overflow-y-auto">
-        <div id="modal-content" class="modal-content opacity-0 scale-95 transition-all duration-300 my-8"></div>
+    <!-- Global Modal Overlay -->
+    <div id="modal-overlay" class="fixed inset-0 hidden z-50 items-center justify-center p-4 backdrop-blur-xl bg-zinc-950/40 overflow-y-auto">
+        <div id="modal-content" class="modal-content opacity-0 scale-95 transition-all duration-500 my-8 w-full max-w-4xl"></div>
     </div>
 
     <script src="/assets/js/script.js"></script>
+    <script>
+        // Trigger feather icons after load
+        window.addEventListener('load', () => {
+            if (typeof feather !== 'undefined') feather.replace();
+        });
+    </script>
 </body>
 </html>

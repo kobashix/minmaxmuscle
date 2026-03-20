@@ -37,15 +37,9 @@ function navigate(path, push = true) {
     const isIndex = currPath === '/' || currPath === '/index';
 
     // Global navigation behavior for Peptides/Stacks
-    if (cleanPath === '/peptides') {
-        if (!isIndex && currPath !== '/peptides' && currPath !== '/peptidesdb') { 
-            window.location.href = '/peptides'; 
-            return; 
-        }
-    }
-    if (cleanPath === '/stacks') {
-        if (!isIndex && currPath !== '/stacks' && currPath !== '/stacksdb') { 
-            window.location.href = '/stacks'; 
+    if (cleanPath === '/peptides' || cleanPath === '/stacks') {
+        if (!isIndex && currPath !== cleanPath && currPath !== cleanPath + 'db') { 
+            window.location.href = cleanPath; 
             return; 
         }
     }
@@ -65,27 +59,71 @@ function navigate(path, push = true) {
         return;
     }
 
+    // Deactivate all sections with a slight delay for exit animation if needed
     document.querySelectorAll('.view-section').forEach(v => v.classList.remove('active'));
-    targetView.classList.add('active');
     
-    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+    // Reactivate target view
+    setTimeout(() => {
+        targetView.classList.add('active');
+    }, 10);
+    
+    // Update nav links
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active', 'text-white', 'bg-white/10'));
     const lid = 'nav-' + cleanPath.replace('/', '');
     const navEl = document.getElementById(lid);
-    if(navEl) navEl.classList.add('active');
+    if(navEl) {
+        navEl.classList.add('active', 'text-white', 'bg-white/10');
+        navEl.classList.remove('text-zinc-400');
+    }
     
     if (push) {
         const pushUrl = cleanPath.startsWith('/') ? cleanPath : '/' + cleanPath;
         window.history.pushState({}, '', pushUrl);
     }
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     closeModal();
     
     // Close mobile menu if open
-    document.getElementById('mobile-menu')?.classList.add('hidden');
+    closeMobileMenu();
     
     if (!cleanPath.startsWith('/peptide') && !cleanPath.startsWith('/stack')) {
         document.title = routeData.title;
     }
+}
+
+/**
+ * Mobile Menu Controls
+ */
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const icon = document.getElementById('menu-icon');
+    if (!menu) return;
+
+    if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+        setTimeout(() => {
+            menu.classList.remove('opacity-0');
+            menu.classList.add('opacity-100');
+        }, 10);
+        if(icon) icon.setAttribute('data-feather', 'x');
+    } else {
+        closeMobileMenu();
+    }
+    feather.replace();
+}
+
+function closeMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const icon = document.getElementById('menu-icon');
+    if (!menu || menu.classList.contains('hidden')) return;
+
+    menu.classList.remove('opacity-100');
+    menu.classList.add('opacity-0');
+    setTimeout(() => {
+        menu.classList.add('hidden');
+    }, 300);
+    if(icon) icon.setAttribute('data-feather', 'menu');
+    feather.replace();
 }
 
 /**
@@ -138,26 +176,30 @@ function renderP(arr) {
     const grid = document.getElementById('pep-grid');
     if (!grid) return;
     
+    if (arr.length === 0) {
+        grid.innerHTML = `<div class="col-span-full py-24 text-center glass rounded-[3rem] border-white/5 mx-auto w-full max-w-2xl"><p class="text-zinc-600 font-black uppercase text-xs tracking-widest italic">No matching dossiers found in the matrix.</p></div>`;
+        return;
+    }
+
     grid.innerHTML = arr.map(p => {
         const forumUrl = `https://blog.minmaxmuscle.com/forum/search/?keywords=${encodeURIComponent(p.peptide_name)}`;
         return `
-            <div class="bento-card p-8 group flex flex-col h-full relative">
+            <div class="glass p-8 rounded-[3rem] border-white/5 group flex flex-col h-full relative transition-all duration-500 hover:scale-[1.02] hover:bg-white/5">
                 <a href="/peptide/${p.slug}" onclick="event.preventDefault(); openPepDossier('${p.slug}')" class="flex-grow block">
-                    <div class="flex justify-between mb-4">
-                        <span class="text-[9px] font-black uppercase text-blue-500 bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20">${p.Category || 'Core'}</span>
-                        <span class="text-gray-800 text-[10px] font-mono">PX-0${p.id}</span>
+                    <div class="flex justify-between items-center mb-6">
+                        <span class="text-[9px] font-black uppercase text-blue-500 bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20 tracking-widest">${p.Category || 'Core'}</span>
+                        <span class="text-zinc-800 text-[10px] font-black italic tracking-tighter">P0${p.id}</span>
                     </div>
-                    <h3 class="text-2xl font-black italic mb-2 uppercase leading-none break-words">${p.peptide_name}</h3>
-                    <p class="text-xs text-gray-500 font-bold uppercase tracking-widest mb-4">${p.nicknames ? p.nicknames.split(',')[0] : 'Protocol'}</p>
-                    <p class="text-sm text-gray-400 line-clamp-3 leading-relaxed font-medium">${p.primary_focus || p.research_summary}</p>
+                    <h3 class="text-3xl font-black italic mb-3 uppercase leading-none tracking-tighter text-white group-hover:text-blue-500 transition-colors">${p.peptide_name}</h3>
+                    <p class="text-zinc-500 text-sm font-medium mb-6 leading-relaxed italic line-clamp-3">${p.primary_focus || p.research_summary}</p>
                 </a>
                 <div class="mt-auto pt-6 border-t border-white/5 flex justify-between items-center">
-                    <a href="${p.forum_topic_url || forumUrl}" target="_blank" class="text-[9px] font-black uppercase text-gray-600 hover:text-blue-400 flex items-center gap-1 transition">
+                    <a href="${p.forum_topic_url || forumUrl}" target="_blank" class="text-[9px] font-black uppercase text-zinc-600 hover:text-white flex items-center gap-2 transition tracking-widest">
                         <i data-feather="message-square" class="w-3 h-3"></i>
-                        FORUM
+                        COMMUNITY
                     </a>
-                    <a href="/peptide/${p.slug}" onclick="event.preventDefault(); openPepDossier('${p.slug}')" class="text-[9px] font-black uppercase text-gray-600 group-hover:text-blue-500 flex items-center gap-1 transition">
-                        DOSSIER
+                    <a href="/peptide/${p.slug}" onclick="event.preventDefault(); openPepDossier('${p.slug}')" class="text-[9px] font-black uppercase text-zinc-600 group-hover:text-blue-500 flex items-center gap-2 transition tracking-widest">
+                        ANALYZE
                         <i data-feather="arrow-right" class="w-3 h-3 group-hover:translate-x-1 transition"></i>
                     </a>
                 </div>
@@ -175,16 +217,15 @@ function renderS(arr) {
     if (!grid) return;
 
     grid.innerHTML = arr.map(s => {
-        const forumUrl = `https://blog.minmaxmuscle.com/forum/search/?keywords=${encodeURIComponent(s.stack_name)}`;
         return `
-            <a href="/stack/${s.slug}" onclick="event.preventDefault(); openStackDossier('${s.slug}')" class="bento-card min-h-[300px] relative overflow-hidden group flex flex-col justify-end p-10 block">
-                <img src="https://images.unsplash.com/photo-1550345332-09e3ac987658?q=80&w=1000" class="absolute inset-0 w-full h-full object-cover opacity-20 grayscale group-hover:scale-105 transition duration-1000">
-                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+            <a href="/stack/${s.slug}" onclick="event.preventDefault(); openStackDossier('${s.slug}')" class="glass min-h-[400px] relative overflow-hidden group flex flex-col justify-end p-12 rounded-[4rem] border-white/5 transition-all duration-700 hover:scale-[1.01]">
+                <img src="https://images.unsplash.com/photo-1550345332-09e3ac987658?q=80&w=1000" class="absolute inset-0 w-full h-full object-cover opacity-10 grayscale group-hover:scale-105 transition duration-1000">
+                <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/60 to-transparent"></div>
                 <div class="relative z-10">
-                    <span class="text-[9px] font-black uppercase text-blue-500 bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20 mb-3 inline-block">Rank: ${s.rank}</span>
-                    <h3 class="text-5xl font-black italic uppercase leading-none mb-4 group-hover:text-blue-500 transition">${s.stack_name}</h3>
-                    <p class="text-gray-400 text-sm max-w-md line-clamp-2">${s.description}</p>
-                    <div class="mt-8 px-8 py-3 bg-blue-600 rounded-full font-black text-[10px] uppercase italic hover:bg-white hover:text-black transition inline-block">Analyze Protocol</div>
+                    <span class="text-[9px] font-black uppercase text-blue-500 bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20 mb-6 inline-block tracking-widest">Rank: ${s.rank}</span>
+                    <h3 class="text-6xl font-black italic uppercase leading-none mb-4 text-white tracking-tighter group-hover:text-blue-500 transition-colors">${s.stack_name}</h3>
+                    <p class="text-zinc-500 text-sm font-medium max-w-md line-clamp-2 italic mb-8">${s.description}</p>
+                    <div class="px-10 py-4 bg-white text-black rounded-2xl font-black text-[10px] uppercase italic tracking-widest hover:bg-blue-600 hover:text-white transition-all transform origin-left">Protocol Analysis</div>
                 </div>
             </a>
         `;
@@ -211,45 +252,93 @@ function openPepDossier(slug, push = true) {
     const forumUrl = `https://blog.minmaxmuscle.com/forum/search/?keywords=${encodeURIComponent(p.peptide_name)}`;
 
     document.getElementById('modal-content').innerHTML = `
-        <div class="grid md:grid-cols-12 min-h-[600px]">
-            <div class="md:col-span-4 bg-[#050505] p-12 border-r border-white/5 flex flex-col">
-                <h2 class="text-5xl font-black italic uppercase leading-[0.85] mb-4 break-words">${p.peptide_name}</h2>
-                <span class="text-blue-500 text-[10px] font-black uppercase tracking-[0.2em] italic">${p.Category}</span>
+        <div class="glass flex flex-col md:grid md:grid-cols-12 min-h-[70vh] rounded-[4rem] border-white/10 overflow-hidden shadow-2xl relative">
+            <div class="md:col-span-4 bg-zinc-950/80 p-10 md:p-14 border-b md:border-b-0 md:border-r border-white/5 flex flex-col justify-center">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-600/10 border border-blue-600/20 text-blue-400 text-[9px] font-black uppercase tracking-widest mb-8 w-fit">
+                    <span class="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
+                    Archive Verified
+                </div>
+                <h2 class="text-5xl md:text-6xl font-black italic uppercase leading-[0.85] mb-6 tracking-tighter text-white">${p.peptide_name}</h2>
+                <p class="text-zinc-500 font-bold uppercase text-[10px] tracking-[0.3em] mb-10 italic">PX-01${p.id} // ${p.Category}</p>
                 
-                <div class="mt-8 space-y-4 flex-grow">
-                    <div class="p-6 bg-white/5 rounded-2xl border border-white/10"><p class="text-[8px] text-gray-500 font-black uppercase mb-1">Common Designations</p><p class="text-xs font-bold italic text-white">${p.nicknames || 'None'}</p></div>
-                    <div class="p-6 bg-white/5 rounded-2xl border border-white/10"><p class="text-[8px] text-gray-500 font-black uppercase mb-1">Status</p><p class="text-xs font-bold italic">${p.Status}</p></div>
-                    <div class="p-6 bg-white/5 rounded-2xl border border-white/10"><p class="text-[8px] text-gray-500 font-black uppercase mb-1">Search Rank</p><p class="text-xs font-bold italic text-blue-500">${p.rank}</p></div>
+                <div class="space-y-4">
+                    <div class="p-6 bg-white/5 rounded-3xl border border-white/5 transition-colors hover:border-blue-500/20">
+                        <p class="text-[8px] text-zinc-600 font-black uppercase tracking-widest mb-2">Designations</p>
+                        <p class="text-xs font-bold italic text-zinc-300 leading-snug">${p.nicknames || 'Standard Protocol'}</p>
+                    </div>
+                    <div class="p-6 bg-white/5 rounded-3xl border border-white/5 transition-colors hover:border-blue-500/20">
+                        <p class="text-[8px] text-zinc-600 font-black uppercase tracking-widest mb-2">Research Status</p>
+                        <p class="text-xs font-black italic text-blue-500">${p.Status || 'Active Archive'}</p>
+                    </div>
                     
-                    <!-- Specific Forum Topic Link -->
-                    <a href="${p.forum_topic_url || forumUrl}" target="_blank" class="p-6 bg-blue-600/10 border border-blue-600/20 rounded-2xl block hover:bg-blue-600/20 transition group">
-                        <p class="text-[8px] text-blue-400 font-black uppercase mb-1 flex items-center gap-1">
-                            <i data-feather="message-square" class="w-2 h-2"></i>
-                            Community Archive
+                    <a href="${p.forum_topic_url || forumUrl}" target="_blank" class="p-6 bg-blue-600/10 border border-blue-600/20 rounded-3xl block hover:bg-blue-600/20 transition-all group">
+                        <p class="text-[8px] text-blue-400 font-black uppercase mb-2 flex items-center gap-2 tracking-widest">
+                            <i data-feather="message-square" class="w-3 h-3"></i>
+                            Community Matrix
                         </p>
-                        <p class="text-xs font-black italic text-white group-hover:text-blue-400 transition">Discuss this protocol <i data-feather="external-link" class="inline w-2 h-2 ml-1"></i></p>
+                        <p class="text-xs font-black italic text-white group-hover:text-blue-400 transition mb-1">Discuss this protocol</p>
+                        <p class="text-[9px] text-zinc-600 font-bold uppercase">Open Terminal Access <i data-feather="external-link" class="inline w-2 h-2 ml-1"></i></p>
                     </a>
                 </div>
             </div>
-            <div class="md:col-span-8 p-12 relative">
-                <button onclick="closeModal()" class="absolute top-8 right-8 text-gray-600 hover:text-white transition p-2 bg-white/5 rounded-full"><i data-feather="x" class="w-4 h-4"></i></button>
-                <h3 class="text-2xl font-black italic uppercase mb-6 border-l-4 border-blue-600 pl-6">Research Summary</h3>
-                <p class="text-gray-300 leading-relaxed font-medium mb-12 text-lg">${p.research_summary || 'Analysis pending.'}</p>
+            
+            <div class="md:col-span-8 p-10 md:p-16 relative overflow-y-auto max-h-[70vh] md:max-h-none">
+                <button onclick="closeModal()" class="fixed md:absolute top-8 right-8 text-zinc-500 hover:text-white transition p-3 glass rounded-full z-20 group">
+                    <i data-feather="x" class="w-5 h-5 group-hover:rotate-90 transition-transform"></i>
+                </button>
                 
-                <h4 class="text-[10px] font-black text-gray-600 uppercase mb-4 tracking-widest">Molecular Structure</h4>
-                <div class="p-6 bg-black border border-white/5 rounded-2xl font-mono text-[10px] text-blue-400 mb-10 overflow-x-auto">${p.molecular_data || 'Data Classified'}</div>
-
-                ${stacks.length ? `<h4 class="text-[10px] font-black text-gray-600 uppercase mb-4 tracking-widest">Utilized in Stacks</h4><div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">${stacks.map(s => `<div onclick="openStackDossier('${s.slug}')" class="p-5 bg-blue-500/5 border border-blue-500/10 rounded-2xl cursor-pointer hover:border-blue-500/40 transition flex justify-between items-center"><span class="text-white font-black uppercase text-xs italic">${s.stack_name}</span><i data-feather="plus" class="w-3 h-3 text-blue-600"></i></div>`).join('')}</div>` : ''}
+                <div class="mb-14">
+                    <h3 class="text-sm font-black text-blue-600 uppercase mb-6 tracking-[0.4em] italic flex items-center gap-4">
+                        <span class="w-10 h-1 bg-blue-600 rounded-full"></span>
+                        Executive Summary
+                    </h3>
+                    <p class="text-zinc-300 leading-relaxed font-medium text-lg md:text-xl italic">${p.research_summary || 'Analysis currently being processed by the matrix.'}</p>
+                </div>
                 
-                ${q.length && q[0] ? `<h4 class="text-[10px] font-black text-gray-600 uppercase mb-4 tracking-widest italic">Common Inquiries</h4><div class="space-y-2 mb-10">${q.map((qi, i) => qi ? `<details class="bg-white/5 rounded-2xl group"><summary class="p-5 cursor-pointer font-bold text-sm flex justify-between items-center italic uppercase leading-none">${qi}<i data-feather="chevron-down" class="w-4 h-4 text-gray-600 group-open:rotate-180 transition"></i></summary><p class="p-5 pt-0 text-sm text-gray-400 border-t border-white/5 leading-relaxed mt-4">${a[i] || 'Details pending.'}</p></details>` : '').join('')}</div>` : ''}
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-14">
+                    <div class="space-y-4">
+                        <h4 class="text-[10px] font-black text-zinc-600 uppercase tracking-widest italic">Molecular Data</h4>
+                        <div class="p-6 bg-zinc-950 border border-white/5 rounded-3xl font-mono text-[10px] text-blue-400/80 break-all leading-relaxed">${p.molecular_data || 'Classified Information'}</div>
+                    </div>
+                    ${stacks.length ? `
+                    <div class="space-y-4">
+                        <h4 class="text-[10px] font-black text-zinc-600 uppercase tracking-widest italic">Synergistic Stacks</h4>
+                        <div class="flex flex-wrap gap-2">
+                            ${stacks.map(s => `<button onclick="openStackDossier('${s.slug}')" class="px-5 py-3 glass border-blue-500/10 rounded-2xl text-[10px] font-black uppercase italic text-blue-500 hover:border-blue-500 transition-all">${s.stack_name}</button>`).join('')}
+                        </div>
+                    </div>` : ''}
+                </div>
 
-                ${src.length && src[0] ? `<h4 class="text-[10px] font-black text-gray-600 uppercase mb-4 tracking-widest italic">Related Research</h4><div class="flex flex-wrap gap-4">${src.map((s, i) => `<a href="${s.trim()}" target="_blank" class="text-[10px] text-blue-500 hover:text-white transition font-black uppercase italic border-b border-blue-500/20 pb-1">Source ${i+1} <i data-feather="external-link" class="inline w-2 h-2 ml-1"></i></a>`).join('')}</div>` : ''}
+                ${q.length && q[0] ? `
+                <div class="mb-14">
+                    <h4 class="text-[10px] font-black text-zinc-600 uppercase mb-8 tracking-widest italic">Clinical Inquiries</h4>
+                    <div class="space-y-4">
+                        ${q.map((qi, i) => qi ? `
+                        <details class="glass bg-white/5 rounded-3xl group border-white/5">
+                            <summary class="p-6 cursor-pointer font-black text-xs flex justify-between items-center italic uppercase leading-none text-zinc-200 tracking-wider">
+                                ${qi}
+                                <i data-feather="plus" class="w-4 h-4 text-zinc-600 group-open:rotate-45 transition-transform"></i>
+                            </summary>
+                            <div class="p-8 pt-2 text-sm text-zinc-500 border-t border-white/5 leading-relaxed font-medium italic">
+                                ${a[i] || 'Further clinical data required.'}
+                            </div>
+                        </details>` : '').join('')}
+                    </div>
+                </div>` : ''}
+
+                ${src.length && src[0] ? `
+                <div class="mt-auto pt-8 border-t border-white/5">
+                    <h4 class="text-[10px] font-black text-zinc-700 uppercase mb-6 tracking-widest italic">Source Documentation</h4>
+                    <div class="flex flex-wrap gap-6">
+                        ${src.map((s, i) => `<a href="${s.trim()}" target="_blank" class="text-[9px] text-blue-600/60 hover:text-blue-400 transition-colors font-black uppercase italic tracking-widest flex items-center gap-2">Ref. 0${i+1} <i data-feather="external-link" class="w-2 h-2"></i></a>`).join('')}
+                    </div>
+                </div>` : ''}
             </div>
         </div>
     `;
     showM(); 
     if(push) window.history.pushState({}, '', `/peptide/${slug}`);
-    document.title = `${p.peptide_name}, ${p.nicknames ? p.nicknames.split(',')[0] : 'Research'} | MinMaxMuscle Peptides`;
+    document.title = `${p.peptide_name} Dossier // MinMaxMuscle`;
     feather.replace();
 }
 
@@ -266,42 +355,66 @@ function openStackDossier(slug, push = true) {
     const forumUrl = `https://blog.minmaxmuscle.com/forum/search/?keywords=${encodeURIComponent(s.stack_name)}`;
 
     document.getElementById('modal-content').innerHTML = `
-        <div class="grid md:grid-cols-12 min-h-[500px]">
-            <div class="md:col-span-5 bg-[#050505] p-12 border-r border-white/5 flex flex-col justify-center">
-                <span class="text-blue-500 font-black uppercase text-[10px] tracking-widest mb-4 italic">Synergistic Matrix</span>
-                <h2 class="text-7xl font-black italic leading-[0.85] uppercase mb-6">${s.stack_name}</h2>
-                <p class="text-gray-400 font-medium leading-relaxed mb-8">${s.description}</p>
+        <div class="glass flex flex-col md:grid md:grid-cols-12 min-h-[60vh] rounded-[4rem] border-white/10 overflow-hidden shadow-2xl relative">
+            <div class="md:col-span-5 bg-zinc-950/80 p-12 md:p-20 border-b md:border-b-0 md:border-r border-white/5 flex flex-col justify-center relative">
+                <div class="absolute inset-0 bg-blue-600/5 blur-[100px] -z-10"></div>
+                <span class="text-blue-500 font-black uppercase text-[10px] tracking-[0.4em] mb-8 italic flex items-center gap-3">
+                    <span class="w-8 h-px bg-blue-600"></span> Synergy Matrix
+                </span>
+                <h2 class="text-7xl font-black italic leading-[0.8] uppercase mb-8 tracking-tighter text-white">${s.stack_name}</h2>
+                <p class="text-zinc-400 font-medium text-lg italic leading-relaxed mb-12">${s.description || 'Synergistic protocol analysis pending.'}</p>
                 
-                <a href="${s.forum_topic_url || forumUrl}" target="_blank" class="p-6 bg-blue-600/10 border border-blue-600/20 rounded-2xl block hover:bg-blue-600/20 transition group">
-                    <p class="text-[8px] text-blue-400 font-black uppercase mb-1 flex items-center gap-1">
-                        <i data-feather="message-square" class="w-2 h-2"></i>
-                        Protocol Archive
+                <a href="${s.forum_topic_url || forumUrl}" target="_blank" class="p-8 bg-blue-600/10 border border-blue-600/20 rounded-[2.5rem] block hover:bg-blue-600/20 transition-all group">
+                    <p class="text-[8px] text-blue-400 font-black uppercase mb-2 flex items-center gap-2 tracking-widest">
+                        <i data-feather="activity" class="w-3 h-3"></i>
+                        Optimization Archive
                     </p>
-                    <p class="text-xs font-black italic text-white group-hover:text-blue-400 transition">Discuss this stack <i data-feather="external-link" class="inline w-2 h-2 ml-1"></i></p>
+                    <p class="text-xs font-black italic text-white group-hover:text-blue-400 transition mb-1">Access Community Data</p>
+                    <p class="text-[9px] text-zinc-600 font-bold uppercase tracking-widest">Terminal Link <i data-feather="external-link" class="inline w-2 h-2 ml-2"></i></p>
                 </a>
             </div>
-            <div class="md:col-span-7 p-12 relative">
-                <button onclick="closeModal()" class="absolute top-8 right-8 text-gray-600 hover:text-white transition p-2 bg-white/5 rounded-full"><i data-feather="x" class="w-4 h-4"></i></button>
-                <h4 class="text-[10px] font-black text-gray-600 uppercase mb-8 tracking-widest italic">Components Matrix</h4>
+            
+            <div class="md:col-span-7 p-12 md:p-20 relative overflow-y-auto max-h-[70vh] md:max-h-none">
+                <button onclick="closeModal()" class="fixed md:absolute top-10 right-10 text-zinc-500 hover:text-white transition p-3 glass rounded-full z-20 group">
+                    <i data-feather="x" class="w-5 h-5 group-hover:rotate-90 transition-transform"></i>
+                </button>
                 
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
+                <h4 class="text-[10px] font-black text-zinc-700 uppercase mb-10 tracking-[0.3em] italic">Protocol Components</h4>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-16">
                     ${comps.length > 0 ? comps.map(c => {
                         const found = DB.peptides.find(p => p.slug === c.slug || (c.name && p.peptide_name.toLowerCase() === c.name.toLowerCase()));
-                        return `<div ${found ? `onclick="openPepDossier('${found.slug}')"` : ''} class="p-6 bg-white/5 border border-white/10 rounded-2xl flex flex-col justify-between ${found ? 'cursor-pointer hover:border-blue-500/30' : 'opacity-40'} group">
-                            <span class="text-[9px] text-gray-500 uppercase tracking-widest mb-1">COMPONENT</span>
-                            <span class="font-black uppercase italic text-xl group-hover:text-blue-500 transition mb-2">${c.name}</span>
-                            <span class="text-sm text-gray-400 italic">${c.dosage || 'Review full protocol'}</span>
+                        return `<div ${found ? `onclick="openPepDossier('${found.slug}')"` : ''} class="p-8 glass rounded-3xl flex flex-col justify-between border-white/5 ${found ? 'cursor-pointer hover:border-blue-500/40 hover:bg-white/5' : 'opacity-30'} group transition-all">
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="text-[8px] text-zinc-700 uppercase tracking-widest font-black">COMPONENT</span>
+                                ${found ? '<i data-feather="zap" class="w-3 h-3 text-blue-500 opacity-0 group-hover:opacity-100 transition"></i>' : ''}
+                            </div>
+                            <span class="font-black uppercase italic text-2xl text-white group-hover:text-blue-500 transition mb-2 tracking-tighter">${c.name}</span>
+                            <span class="text-xs text-zinc-500 font-bold italic">${c.dosage || 'Variable Dosing'}</span>
                         </div>`;
-                    }).join('') : '<p class="text-gray-500 text-xs italic">No specific components listed.</p>'}
+                    }).join('') : '<p class="text-zinc-600 text-xs italic font-black uppercase tracking-widest">No active components registered.</p>'}
                 </div>
 
-                ${q.length && q[0] ? `<h4 class="text-[10px] font-black text-gray-600 uppercase mb-4 italic tracking-widest">Protocol Intelligence</h4><div class="space-y-2">${q.map((qi, i) => qi ? `<details class="bg-white/5 rounded-2xl group"><summary class="p-5 cursor-pointer font-bold text-sm flex justify-between italic uppercase leading-none">${qi}<i data-feather="chevron-down" class="w-4 h-4 text-gray-600 group-open:rotate-180 transition"></i></summary><p class="p-5 pt-0 text-sm text-gray-400 border-t border-white/5 leading-relaxed mt-4">${a[i] || 'Details pending.'}</p></details>` : '').join('')}</div>` : ''}
+                ${q.length && q[0] ? `
+                <div class="space-y-4">
+                    <h4 class="text-[10px] font-black text-zinc-700 uppercase mb-8 tracking-[0.3em] italic">Intelligence Assessment</h4>
+                    ${q.map((qi, i) => qi ? `
+                    <details class="glass bg-white/5 rounded-3xl group border-white/5">
+                        <summary class="p-6 cursor-pointer font-black text-xs flex justify-between items-center italic uppercase leading-none text-zinc-200 tracking-wider">
+                            ${qi}
+                            <i data-feather="chevron-down" class="w-4 h-4 text-zinc-600 group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <div class="p-8 pt-2 text-sm text-zinc-500 border-t border-white/5 leading-relaxed font-medium italic">
+                            ${a[i] || 'Further telemetry required.'}
+                        </div>
+                    </details>` : '').join('')}
+                </div>` : ''}
             </div>
         </div>
     `;
     showM(); 
     if(push) window.history.pushState({}, '', `/stack/${slug}`);
-    document.title = `${s.stack_name} | MinMaxMuscle Stacks`;
+    document.title = `${s.stack_name} Protocol // MinMaxMuscle`;
     feather.replace();
 }
 
