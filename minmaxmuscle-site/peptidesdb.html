@@ -66,6 +66,17 @@
     </p>
   </section>
 
+  <section class="filters-container">
+    <div class="search-box">
+      <input type="text" id="peptideSearch" placeholder="Search peptides (e.g. BPC-157, Weight Loss)..." />
+    </div>
+    <div class="category-box">
+      <select id="categoryFilter">
+        <option value="all">All Categories</option>
+      </select>
+    </div>
+  </section>
+
   <section class="peptide-list">
     <p class="peptide-status" id="peptideStatus">Loading the latest peptide directory…</p>
     <ol id="peptideList"></ol>
@@ -79,7 +90,7 @@
         <h3>Peptide Stacks</h3>
         <p>Community stack patterns and typical combinations.</p>
       </a>
-      <a class="resource-card" href="peptides/disclaimer.html">
+      <a class="resource-card" href="/peptides/disclaimer">
         <h3>Disclaimer</h3>
         <p>Scope, compliance notes, and risk awareness.</p>
       </a>
@@ -96,9 +107,17 @@
 <script>
   const peptideList = document.getElementById("peptideList");
   const peptideStatus = document.getElementById("peptideStatus");
+  const searchInput = document.getElementById("peptideSearch");
+  const categoryFilter = document.getElementById("categoryFilter");
+
+  let allPeptides = [];
 
   const renderPeptides = (items) => {
     peptideList.innerHTML = "";
+    if (items.length === 0) {
+      peptideList.innerHTML = "<p style='grid-column: 1/-1; text-align: center; color: #9ca3af; padding: 40px;'>No peptides match your search or filter.</p>";
+      return;
+    }
     items.forEach((item) => {
       const listItem = document.createElement("li");
       const link = document.createElement("a");
@@ -119,6 +138,36 @@
       listItem.append(title, summary, tag);
       peptideList.appendChild(listItem);
     });
+  };
+
+  const populateCategories = (items) => {
+    const categories = new Set();
+    items.forEach(item => {
+      if (item.category) categories.add(item.category);
+    });
+    
+    // Sort and add to dropdown
+    Array.from(categories).sort().forEach(cat => {
+      const option = document.createElement("option");
+      option.value = cat;
+      option.textContent = cat;
+      categoryFilter.appendChild(option);
+    });
+  };
+
+  const filterPeptides = () => {
+    const searchTerm = searchInput.value.toLowerCase();
+    const selectedCategory = categoryFilter.value;
+
+    const filtered = allPeptides.filter(p => {
+      const matchesSearch = p.peptide_name.toLowerCase().includes(searchTerm) || 
+                           (p.research_summary && p.research_summary.toLowerCase().includes(searchTerm)) ||
+                           (p.nicknames && p.nicknames.toLowerCase().includes(searchTerm));
+      const matchesCategory = selectedCategory === "all" || p.category === selectedCategory;
+      return matchesSearch && matchesCategory;
+    });
+
+    renderPeptides(filtered);
   };
 
   const showFallback = (message) => {
@@ -145,12 +194,17 @@
         showFallback("No peptides are available right now. Please check back soon.");
         return;
       }
+      allPeptides = data;
       peptideStatus.style.display = "none";
+      populateCategories(data);
       renderPeptides(data);
     })
     .catch((error) => {
       showFallback(`We couldn't load the peptide directory. ${error.message}`);
     });
+
+  searchInput.addEventListener("input", filterPeptides);
+  categoryFilter.addEventListener("change", filterPeptides);
 </script>
 </body>
 </html>

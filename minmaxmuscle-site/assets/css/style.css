@@ -245,6 +245,47 @@ section p {
   color: #cbd5f5;
 }
 
+/* --------------------
+   FILTERS
+-------------------- */
+.filters-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 820px;
+  margin: 0 auto 32px;
+}
+
+.search-box input {
+  margin-bottom: 0;
+  background: rgba(30, 41, 59, 0.5);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  padding: 14px 18px;
+  font-size: 1rem;
+}
+
+.category-box select {
+  margin-bottom: 0;
+  background: rgba(30, 41, 59, 0.5);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  padding: 12px 18px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+@media (min-width: 600px) {
+  .filters-container {
+    flex-direction: row;
+    align-items: center;
+  }
+  .search-box {
+    flex: 2;
+  }
+  .category-box {
+    flex: 1;
+  }
+}
+
 .peptide-tag {
   display: inline-flex;
   align-items: center;
