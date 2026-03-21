@@ -3,142 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{peptide_name}} Research Dossier | MINMAXMUSCLE</title>
-    <meta name="description" content="Comprehensive molecular data, research summary, and clinical protocols for {{peptide_name}}. Part of the MinMaxMuscle Peptide Index.">
+    <title>{{PEPTIDE_NAME}} Research Dossier | MINMAXMUSCLE</title>
+    <meta name="description" content="Clinical research dossier for {{PEPTIDE_NAME}}. Structural analysis, molecular data, and established theoretical protocols. Part of the MinMaxMuscle clinical archive.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
-<body class="selection:bg-blue-500 min-h-screen flex flex-col bg-[#050505] text-white">
+<body class="selection:bg-blue-600 min-h-screen flex flex-col bg-zinc-950 text-zinc-400 font-inter">
 
-    <nav class="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
-        <div class="nav-pill rounded-full px-4 py-2 flex items-center justify-between gap-4 w-full max-w-5xl shadow-2xl">
-            <a href="/" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/'); return false; }" class="flex items-center gap-3 group">
-                <img src="https://minmaxmuscle.com/assets/img/logo.png" alt="MinMaxMuscle" class="w-8 h-8 rounded-full bg-white/5 object-contain">
-                <span class="font-bold hidden md:block italic tracking-tighter">MINMAXMUSCLE</span>
+    <!-- Floating Navigation -->
+    <nav class="fixed top-8 left-0 right-0 z-[1000] flex justify-center px-6">
+        <div class="nav-pill rounded-[2rem] px-6 py-3 flex items-center justify-between gap-8 w-full max-w-5xl">
+            <a href="/" class="flex items-center gap-4 group">
+                <div class="w-10 h-10 bg-white/5 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <img src="https://minmaxmuscle.com/assets/img/logo.png" alt="MMM" class="w-6 h-6 object-contain">
+                </div>
+                <span class="brand text-xl font-black italic tracking-tighter text-white">MINMAXMUSCLE</span>
             </a>
             
-            <div class="hidden md:flex gap-1 bg-black/20 rounded-full p-1 border border-white/5 overflow-x-auto">
-                <a href="/peptides" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/peptides'); return false; }" class="nav-link px-4 py-1.5 rounded-full text-[10px] font-black uppercase text-gray-400 hover:text-white transition whitespace-nowrap" id="nav-peptides">PEPTIDES</a>
-                <a href="/stacks" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/stacks'); return false; }" class="nav-link px-4 py-1.5 rounded-full text-[10px] font-black uppercase text-gray-400 hover:text-white transition whitespace-nowrap" id="nav-stacks">STACKS</a>
-                <a href="/calculators" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/calculators'); return false; }" class="nav-link px-4 py-1.5 rounded-full text-[10px] font-black uppercase text-gray-400 hover:text-white transition whitespace-nowrap" id="nav-calculators">CALCULATORS</a>
-                <a href="https://blog.minmaxmuscle.com/" class="nav-link px-4 py-1.5 rounded-full text-[10px] font-black uppercase text-gray-400 hover:text-white transition whitespace-nowrap">BLOG</a>
-                <a href="https://blog.minmaxmuscle.com/forum/" class="nav-link px-4 py-1.5 rounded-full text-[10px] font-black uppercase text-gray-400 hover:text-white transition whitespace-nowrap">FORUMS</a>
-                <a href="/coaching" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/coaching'); return false; }" class="nav-link px-4 py-1.5 rounded-full text-[10px] font-black uppercase text-white bg-blue-600 hover:bg-blue-500 transition whitespace-nowrap" id="nav-coaching">COACHING</a>
+            <div class="hidden md:flex items-center gap-1 bg-black/40 rounded-full p-1 border border-white/5">
+                <a href="/peptides" class="nav-link px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-widest hover:text-white transition-all text-white active italic">Peptides</a>
+                <a href="/stacks" class="nav-link px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-widest hover:text-white transition-all">Stacks</a>
+                <a href="/calculators" class="nav-link px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-widest hover:text-white transition-all">Calculators</a>
+                <a href="/coaching" class="nav-link px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-widest text-white bg-blue-600 shadow-lg shadow-blue-600/20 hover:bg-blue-500 transition-all">Coaching</a>
             </div>
 
-            <button class="md:hidden text-white" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
-                <i data-feather="menu"></i>
+            <button class="md:hidden text-white w-10 h-10 glass rounded-xl flex items-center justify-center">
+                <i data-feather="menu" class="w-5 h-5"></i>
             </button>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden fixed top-20 left-4 right-4 bg-[#111] border border-white/10 rounded-2xl p-4 flex flex-col gap-2 shadow-2xl z-50">
-             <a href="/peptides" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/peptides'); return false; }" class="text-left px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-bold text-gray-300">PEPTIDES</a>
-             <a href="/stacks" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/stacks'); return false; }" class="text-left px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-bold text-gray-300">STACKS</a>
-             <a href="/calculators" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/calculators'); return false; }" class="text-left px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-bold text-gray-300">CALCULATORS</a>
-             <a href="https://blog.minmaxmuscle.com/" class="text-left px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-bold text-gray-300">BLOG</a>
-             <a href="https://blog.minmaxmuscle.com/forum/" class="text-left px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-bold text-gray-300">FORUMS</a>
-             <a href="/coaching" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/coaching'); return false; }" class="text-left px-4 py-3 rounded-xl bg-blue-600 text-white text-sm font-bold mt-2 text-center">COACHING</a>
         </div>
     </nav>
 
-    <main class="flex-grow pt-32 pb-20">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="grid md:grid-cols-12 gap-8 bg-[#0a0a0a] border border-white/5 rounded-3xl overflow-hidden shadow-2xl">
-                <!-- Sidebar Info -->
-                <div class="md:col-span-4 bg-[#050505] p-12 border-r border-white/5">
-                    <h1 class="text-6xl font-black italic uppercase leading-[0.85] mb-4 break-words text-white">{{peptide_name}}</h1>
-                    <span class="text-blue-500 text-[10px] font-black uppercase tracking-[0.2em] italic">{{Category}}</span>
-                    
-                    <div class="mt-12 space-y-4">
-                        <div class="p-6 bg-white/5 rounded-2xl border border-white/10">
-                            <p class="text-[8px] text-gray-500 font-black uppercase mb-1">Common Designations</p>
-                            <p class="text-xs font-bold italic text-white">{{nicknames}}</p>
-                        </div>
-                        <div class="p-6 bg-white/5 rounded-2xl border border-white/10">
-                            <p class="text-[8px] text-gray-500 font-black uppercase mb-1">Research Status</p>
-                            <p class="text-xs font-bold italic text-blue-400">{{Status}}</p>
-                        </div>
-                        <div class="p-6 bg-white/5 rounded-2xl border border-white/10">
-                            <p class="text-[8px] text-gray-500 font-black uppercase mb-1">Database Rank</p>
-                            <p class="text-xs font-bold italic text-white">PX-{{rank}}</p>
+    <main class="flex-grow pt-40 pb-32 px-6">
+        <section class="max-w-7xl mx-auto">
+            <div class="glass p-12 md:p-24 rounded-[4rem] border-white/5 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-96 h-96 bg-blue-600/5 blur-[120px] -mr-48 -mt-48"></div>
+                
+                <div class="flex flex-col md:flex-row gap-16 items-start">
+                    <!-- Left Sidebar (Molecular Data) -->
+                    <div class="md:w-1/3 flex flex-col gap-10 sticky top-32">
+                        <div>
+                            <span class="text-[10px] font-black text-blue-500 uppercase tracking-[0.3em] mb-4 block">Archive Identifier</span>
+                            <h1 class="text-6xl font-black italic uppercase text-white tracking-tighter leading-none mb-4">{{PEPTIDE_NAME}}</h1>
+                            <p class="text-zinc-500 font-black uppercase text-xs tracking-widest">{{PEPTIDE_TYPE}}</p>
                         </div>
 
-                        <!-- Specific Forum Topic Link -->
-                        <a href="{{forum_url}}" target="_blank" class="p-6 bg-blue-600/10 border border-blue-600/20 rounded-2xl block hover:bg-blue-600/20 transition group">
-                            <p class="text-[8px] text-blue-400 font-black uppercase mb-1 flex items-center gap-1">
-                                <i data-feather="message-square" class="w-2 h-2"></i>
-                                Community Archive
+                        <div class="space-y-6">
+                            <div class="glass bg-white/5 border-white/10 p-8 rounded-3xl">
+                                <h4 class="text-white font-black uppercase text-[11px] tracking-widest mb-6 border-b border-white/10 pb-4 italic">Molecular Dossier</h4>
+                                <ul class="space-y-4 text-xs">
+                                    <li class="flex justify-between border-b border-white/5 pb-2">
+                                        <span class="text-zinc-600 font-bold uppercase">Formula:</span>
+                                        <span class="text-blue-400 font-black">{{MOLECULAR_FORMULA}}</span>
+                                    </li>
+                                    <li class="flex justify-between border-b border-white/5 pb-2">
+                                        <span class="text-zinc-600 font-bold uppercase">Weight:</span>
+                                        <span class="text-blue-400 font-black">{{MOLECULAR_WEIGHT}}</span>
+                                    </li>
+                                    <li class="flex justify-between border-b border-white/5 pb-2">
+                                        <span class="text-zinc-600 font-bold uppercase">Half-Life:</span>
+                                        <span class="text-blue-400 font-black">{{HALF_LIFE}}</span>
+                                    </li>
+                                    <li class="flex justify-between">
+                                        <span class="text-zinc-600 font-bold uppercase">Status:</span>
+                                        <span class="text-green-500 font-black">{{CLINICAL_STATUS}}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Content (Analysis) -->
+                    <div class="md:w-2/3">
+                        <div class="prose prose-invert prose-blue max-w-none">
+                            <h2 class="text-4xl font-black italic uppercase text-white mb-10 tracking-tight">Executive Summary</h2>
+                            <p class="text-xl leading-relaxed text-zinc-300 mb-12 italic font-medium">
+                                {{EXECUTIVE_SUMMARY}}
                             </p>
-                            <p class="text-xs font-black italic text-white group-hover:text-blue-400 transition">Discuss this protocol <i data-feather="external-link" class="inline w-2 h-2 ml-1"></i></p>
-                        </a>
-                    </div>
 
-                    <div class="mt-12 pt-12 border-t border-white/5">
-                        <h4 class="text-[10px] font-black text-gray-600 uppercase mb-4 tracking-widest italic">Clinical Resources</h4>
-                        <div class="flex flex-col gap-3">
-                            {{Sources}}
-                        </div>
-                    </div>
-                </div>
+                            <h3 class="text-2xl font-black italic uppercase text-white mt-16 mb-8 border-l-4 border-blue-600 pl-8">Theoretical Research Dosage</h3>
+                            <div class="bg-blue-600/10 border border-blue-600/20 p-8 rounded-3xl mb-12">
+                                <div class="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
+                                    <div>
+                                        <span class="block text-[10px] text-zinc-600 font-black uppercase mb-2">Protocol A</span>
+                                        <span class="text-2xl font-black text-white italic tracking-tight">{{DOSAGE_A}}</span>
+                                    </div>
+                                    <div>
+                                        <span class="block text-[10px] text-zinc-600 font-black uppercase mb-2">Protocol B</span>
+                                        <span class="text-2xl font-black text-white italic tracking-tight">{{DOSAGE_B}}</span>
+                                    </div>
+                                    <div class="col-span-2 md:col-span-1">
+                                        <span class="block text-[10px] text-zinc-600 font-black uppercase mb-2">Frequency</span>
+                                        <span class="text-2xl font-black text-white italic tracking-tight uppercase">{{FREQUENCY}}</span>
+                                    </div>
+                                </div>
+                            </div>
 
-                <!-- Main Content -->
-                <div class="md:col-span-8 p-12">
-                    <div class="mb-12">
-                        <h2 class="text-2xl font-black italic uppercase mb-6 border-l-4 border-blue-600 pl-6 text-white">Research Summary & Biological Action</h2>
-                        <p class="text-gray-300 leading-relaxed font-medium text-lg">{{research_summary}}</p>
-                    </div>
-                    
-                    <div class="mb-12">
-                        <h3 class="text-[10px] font-black text-gray-600 uppercase mb-4 tracking-widest">Molecular Structure & Identification</h3>
-                        <div class="p-8 bg-black border border-white/5 rounded-2xl font-mono text-[11px] text-blue-400 overflow-x-auto">
-                            {{molecular_data}}
-                        </div>
-                    </div>
+                            <h3 class="text-2xl font-black italic uppercase text-white mt-16 mb-8 border-l-4 border-blue-600 pl-8">Clinical Observations</h3>
+                            <div class="space-y-6 text-zinc-400 leading-relaxed text-lg italic">
+                                {{CLINICAL_OBSERVATIONS}}
+                            </div>
 
-                    <div class="mb-12">
-                        <h3 class="text-[10px] font-black text-gray-600 uppercase mb-6 tracking-widest italic text-white">Compound Intelligence (FAQ)</h3>
-                        <div class="space-y-4">
-                            {{FAQs}}
+                            <h3 class="text-2xl font-black italic uppercase text-white mt-16 mb-8 border-l-4 border-blue-600 pl-8">Clinical Inquiries (FAQ)</h3>
+                            <div class="space-y-4">
+                                {{FAQ_ACCORDIONS}}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
 
-    <footer class="border-t border-white/5 bg-[#020202] py-20 px-4 mt-auto">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+    <!-- Fat Footer -->
+    <footer class="border-t border-white/5 bg-[#020202] py-24 px-8 mt-auto">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-16">
             <div class="col-span-1 md:col-span-2">
-                <span class="brand text-2xl font-black italic">MINMAXMUSCLE</span>
-                <p class="text-gray-600 text-sm mt-4 max-w-sm">Peak human performance through clinical data analysis. Engineered for hypertrophy and recovery.</p>
+                <span class="brand text-3xl font-black italic text-white tracking-tighter">MINMAXMUSCLE</span>
+                <p class="text-zinc-500 text-sm mt-6 max-w-sm leading-relaxed italic">Peak human performance through systematic clinical data analysis. Engineered for hypertrophy, metabolic optimization, and advanced recovery.</p>
             </div>
             <div>
-                <h4 class="text-blue-600 font-black uppercase text-[10px] tracking-widest mb-6">Matrix</h4>
-                <ul class="space-y-3 text-[10px] font-bold text-gray-500 uppercase tracking-wide">
-                    <li><a href="/peptides" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/peptides'); return false; }" class="hover:text-white transition">Peptide Library</a></li>
-                    <li><a href="/stacks" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/stacks'); return false; }" class="hover:text-white transition">Protocol Stacks</a></li>
-                    <li><a href="/calculators" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/calculators'); return false; }" class="hover:text-white transition">Peptide Calculators</a></li>
-                    <li><a href="/coaching" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/coaching'); return false; }" class="hover:text-white transition">Performance Coaching</a></li>
+                <h4 class="text-blue-600 font-black uppercase text-[10px] tracking-[0.3em] mb-10">Matrix</h4>
+                <ul class="space-y-5 text-[10px] font-black text-zinc-500 uppercase tracking-widest">
+                    <li><a href="/peptides" class="hover:text-white transition-colors text-white">Peptide Library</a></li>
+                    <li><a href="/stacks" class="hover:text-white transition-colors">Protocol Stacks</a></li>
+                    <li><a href="/calculators" class="hover:text-white transition-colors">Calculators</a></li>
+                    <li><a href="/coaching" class="hover:text-white transition-colors">Coaching</a></li>
                 </ul>
             </div>
             <div>
-                <h4 class="text-blue-600 font-black uppercase text-[10px] tracking-widest mb-6">Company & Legal</h4>
-                <ul class="space-y-3 text-[10px] font-bold text-gray-500 uppercase tracking-wide">
-                    <li><a href="/about" class="hover:text-white transition">About Us</a></li>
-                    <li><a href="/privacy" class="hover:text-white transition">Privacy Policy</a></li>
-                    <li><a href="/terms" class="hover:text-white transition">Terms of Service</a></li>
-                    <li><a href="/disclaimer" class="hover:text-white transition text-red-900/50 hover:text-red-500">Medical Disclaimer</a></li>
+                <h4 class="text-blue-600 font-black uppercase text-[10px] tracking-[0.3em] mb-10">Legal</h4>
+                <ul class="space-y-5 text-[10px] font-black text-zinc-500 uppercase tracking-widest">
+                    <li><a href="/about" class="hover:text-white transition-colors">About</a></li>
+                    <li><a href="/privacy" class="hover:text-white transition-colors">Privacy</a></li>
+                    <li><a href="/terms" class="hover:text-white transition-colors text-white">Terms</a></li>
+                    <li><a href="/disclaimer" class="text-red-900/40 hover:text-red-500 transition-colors">Medical Disclaimer</a></li>
                 </ul>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto mt-20 pt-10 border-t border-white/5 text-[9px] text-gray-800 font-bold uppercase flex flex-col md:flex-row justify-between gap-4">
-            <p>FDA Disclaimer: Educational research only. Peptides are research chemicals and not intended for human consumption.</p>
-            <p>&copy; 2026 MinMaxMuscle. All rights reserved.</p>
+        <div class="max-w-7xl mx-auto mt-24 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
+            <p class="text-[10px] text-zinc-700 font-bold uppercase tracking-widest text-center md:text-left">FDA Disclosure: Educational research only. Not intended for human consumption.</p>
+            <p class="text-[10px] text-zinc-700 font-bold uppercase tracking-widest">&copy; 2026 MinMaxMuscle. All rights reserved.</p>
         </div>
     </footer>
 
+    <script src="/assets/js/script.js"></script>
     <script>
         feather.replace();
     </script>

@@ -3,113 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medical & Legal Disclaimer | MINMAXMUSCLE</title>
-    <meta name="description" content="MinMaxMuscle Medical and Legal Disclaimer - Essential information regarding research chemicals and human consumption.">
+    <title>Critical Clinical Disclosure | MINMAXMUSCLE</title>
+    <meta name="description" content="MinMaxMuscle Medical Disclaimer - Mandatory disclosure regarding research chemical classification and clinical data limitations.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
-<body class="selection:bg-blue-500 min-h-screen flex flex-col bg-[#09090b] text-white">
+<body class="selection:bg-blue-600 min-h-screen flex flex-col bg-zinc-950 text-zinc-400 font-inter">
 
-    <nav class="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
-        <div class="nav-pill rounded-full px-4 py-2 flex items-center justify-between gap-4 w-full max-w-5xl shadow-2xl">
-            <a href="/" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/'); return false; }" class="flex items-center gap-3 group">
-                <img src="https://minmaxmuscle.com/assets/img/logo.png" alt="MinMaxMuscle" class="w-8 h-8 rounded-full bg-white/5 object-contain">
-                <span class="font-bold hidden md:block italic tracking-tighter">MINMAXMUSCLE</span>
+    <!-- Floating Navigation -->
+    <nav class="fixed top-8 left-0 right-0 z-[1000] flex justify-center px-6">
+        <div class="nav-pill rounded-[2rem] px-6 py-3 flex items-center justify-between gap-8 w-full max-w-5xl">
+            <a href="/" class="flex items-center gap-4 group">
+                <div class="w-10 h-10 bg-white/5 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <img src="https://minmaxmuscle.com/assets/img/logo.png" alt="MMM" class="w-6 h-6 object-contain">
+                </div>
+                <span class="brand text-xl font-black italic tracking-tighter text-white">MINMAXMUSCLE</span>
             </a>
             
-            <div class="hidden md:flex gap-1 bg-black/20 rounded-full p-1 border border-white/5 overflow-x-auto">
-                <a href="/peptides" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/peptides'); return false; }" class="nav-link px-4 py-1.5 rounded-full text-[10px] font-black uppercase text-gray-400 hover:text-white transition whitespace-nowrap" id="nav-peptides">PEPTIDES</a>
-                <a href="/stacks" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/stacks'); return false; }" class="nav-link px-4 py-1.5 rounded-full text-[10px] font-black uppercase text-gray-400 hover:text-white transition whitespace-nowrap" id="nav-stacks">STACKS</a>
-                <a href="/calculators" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/calculators'); return false; }" class="nav-link px-4 py-1.5 rounded-full text-[10px] font-black uppercase text-gray-400 hover:text-white transition whitespace-nowrap" id="nav-calculators">CALCULATORS</a>
-                <a href="https://blog.minmaxmuscle.com/" class="nav-link px-4 py-1.5 rounded-full text-[10px] font-black uppercase text-gray-400 hover:text-white transition whitespace-nowrap">BLOG</a>
-                <a href="https://blog.minmaxmuscle.com/forum/" class="nav-link px-4 py-1.5 rounded-full text-[10px] font-black uppercase text-gray-400 hover:text-white transition whitespace-nowrap">FORUMS</a>
-                <a href="/coaching" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/coaching'); return false; }" class="nav-link px-4 py-1.5 rounded-full text-[10px] font-black uppercase text-white bg-blue-600 hover:bg-blue-500 transition whitespace-nowrap" id="nav-coaching">COACHING</a>
+            <div class="hidden md:flex items-center gap-1 bg-black/40 rounded-full p-1 border border-white/5">
+                <a href="/peptides" class="nav-link px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-widest hover:text-white transition-all">Peptides</a>
+                <a href="/stacks" class="nav-link px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-widest hover:text-white transition-all">Stacks</a>
+                <a href="/calculators" class="nav-link px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-widest hover:text-white transition-all">Calculators</a>
+                <a href="/coaching" class="nav-link px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-widest text-white bg-blue-600 shadow-lg shadow-blue-600/20 hover:bg-blue-500 transition-all">Coaching</a>
             </div>
 
-            <button class="md:hidden text-white" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
-                <i data-feather="menu"></i>
+            <button class="md:hidden text-white w-10 h-10 glass rounded-xl flex items-center justify-center">
+                <i data-feather="menu" class="w-5 h-5"></i>
             </button>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden fixed top-20 left-4 right-4 bg-[#111] border border-white/10 rounded-2xl p-4 flex flex-col gap-2 shadow-2xl z-50">
-             <a href="/peptides" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/peptides'); return false; }" class="text-left px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-bold text-gray-300">PEPTIDES</a>
-             <a href="/stacks" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/stacks'); return false; }" class="text-left px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-bold text-gray-300">STACKS</a>
-             <a href="/calculators" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/calculators'); return false; }" class="text-left px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-bold text-gray-300">CALCULATORS</a>
-             <a href="https://blog.minmaxmuscle.com/" class="text-left px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-bold text-gray-300">BLOG</a>
-             <a href="https://blog.minmaxmuscle.com/forum/" class="text-left px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-bold text-gray-300">FORUMS</a>
-             <a href="/coaching" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/coaching'); return false; }" class="text-left px-4 py-3 rounded-xl bg-blue-600 text-white text-sm font-bold mt-2 text-center">COACHING</a>
         </div>
     </nav>
 
-    <main class="flex-grow pt-32 pb-20 px-4">
-        <div class="max-w-4xl mx-auto">
-            <div class="bento-card p-10 md:p-14 border-red-900/50">
-                <h1 class="text-5xl md:text-6xl font-black italic uppercase mb-8 border-b border-white/10 pb-6 text-red-500">Medical & Legal Disclaimer</h1>
+    <main class="flex-grow pt-40 pb-32 px-6">
+        <section class="max-w-4xl mx-auto">
+            <div class="glass p-12 md:p-24 rounded-[4rem] border-red-500/20 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-96 h-96 bg-red-600/5 blur-[120px] -mr-48 -mt-48"></div>
                 
-                <div class="space-y-8 text-sm text-gray-300 leading-relaxed">
-                    <div class="bg-red-900/20 border-l-4 border-red-500 p-8 rounded-r-xl">
-                        <p class="text-red-100 font-bold text-lg uppercase mb-4">Laboratory Research Use Only</p>
-                        <p>The products and compounds discussed on MinMaxMuscle are intended for LABORATORY RESEARCH USE ONLY. They are NOT intended for human use, veterinary use, or for use in any other capacity including but not limited to food, drugs, medical devices, or cosmetics.</p>
+                <h2 class="text-7xl font-black italic uppercase mb-16 tracking-tighter text-white border-b border-white/5 pb-10">Clinical<br><span class="text-red-500">Disclosure</span></h2>
+                
+                <div class="space-y-12 text-zinc-400 font-medium text-lg leading-relaxed">
+                    <div class="bg-red-900/10 border border-red-500/20 p-10 rounded-[2.5rem] mb-12">
+                        <p class="text-red-200 italic text-2xl leading-relaxed">"Peptides and performance compounds indexed on this platform are strictly classified as Research Chemicals."</p>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <h4 class="text-white font-black uppercase text-sm tracking-widest underline decoration-red-600/50 underline-offset-8">No Medical Advice</h4>
+                        <p>The information provided by MinMaxMuscle is for educational and harm-reduction purposes only. It does not constitute medical advice, diagnosis, or treatment. Any research conducted based on this data is the sole responsibility of the user.</p>
                     </div>
 
-                    <div class="space-y-4">
-                        <h2 class="text-xl font-bold text-white uppercase tracking-wider">1. No Medical Advice</h2>
-                        <p>MinMaxMuscle is an educational archive and does not provide medical advice, diagnosis, or treatment. The information provided on this site is for academic and informational purposes only. You should not use the information on this site for diagnosing or treating a health problem or disease. Always consult with a qualified medical professional before making any health-related decisions.</p>
+                    <div class="space-y-6 text-zinc-500 text-base">
+                        <h4 class="text-zinc-200 font-black uppercase text-sm tracking-widest underline decoration-white/10 underline-offset-8">Research Chemical Status</h4>
+                        <p>These compounds are NOT approved by the FDA for human consumption, ingestion, or administration. Discussion of dosing and protocols is purely theoretical and derived from clinical literature or animal model analysis.</p>
                     </div>
 
-                    <div class="space-y-4">
-                        <h2 class="text-xl font-bold text-white uppercase tracking-wider">2. FDA Compliance</h2>
-                        <p>Statements regarding peptides and other research chemicals have not been evaluated by the Food and Drug Administration (FDA). These products are not intended to diagnose, treat, cure, or prevent any disease. Any mention of biological effects or "benefits" refers strictly to findings in clinical trials or animal models and does not constitute a claim for human efficacy.</p>
-                    </div>
-
-                    <div class="space-y-4">
-                        <h2 class="text-xl font-bold text-white uppercase tracking-wider">3. Assumption of Risk</h2>
-                        <p>By using this website, you acknowledge and agree that any use of the information provided is at your own risk. MinMaxMuscle, its owners, and its contributors are not responsible for any adverse effects or consequences resulting from the application of the data found in our dossiers or protocol stacks.</p>
-                    </div>
-
-                    <div class="space-y-4">
-                        <h2 class="text-xl font-bold text-white uppercase tracking-wider">4. Jurisdictional Regulations</h2>
-                        <p>It is the responsibility of the researcher to ensure that their acquisition and use of research chemicals comply with the laws and regulations of their specific country or jurisdiction. MinMaxMuscle does not provide legal advice regarding the status of these compounds.</p>
-                    </div>
-
-                    <div class="mt-12 pt-8 border-t border-white/10 text-center">
-                        <p class="text-[10px] font-black uppercase tracking-widest text-gray-500">Strictly Academic Archive | Engineered for Data Integrity</p>
+                    <div class="space-y-6 text-zinc-500 text-base">
+                        <h4 class="text-zinc-200 font-black uppercase text-sm tracking-widest underline decoration-white/10 underline-offset-8">Mandatory Consultation</h4>
+                        <p>Users must consult with a licensed and qualified healthcare professional before engaging in any research involving pharmacological agents. MinMaxMuscle assumes zero liability for physiological outcomes resulting from information extracted from this archive.</p>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
 
-    <footer class="border-t border-white/5 bg-[#020202] py-20 px-4 mt-auto">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+    <!-- Fat Footer -->
+    <footer class="border-t border-white/5 bg-[#020202] py-24 px-8 mt-auto">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-16">
             <div class="col-span-1 md:col-span-2">
-                <span class="brand text-2xl font-black italic">MINMAXMUSCLE</span>
-                <p class="text-gray-600 text-sm mt-4 max-w-sm">Peak human performance through clinical data analysis. Engineered for hypertrophy and recovery.</p>
+                <span class="brand text-3xl font-black italic text-white tracking-tighter">MINMAXMUSCLE</span>
+                <p class="text-zinc-500 text-sm mt-6 max-w-sm leading-relaxed italic">Peak human performance through systematic clinical data analysis. Engineered for hypertrophy, metabolic optimization, and advanced recovery.</p>
+                <div class="flex gap-4 mt-8">
+                    <a href="#" class="w-12 h-12 glass rounded-2xl flex items-center justify-center text-zinc-400 hover:text-blue-500 transition-all hover:scale-110"><i data-feather="twitter" class="w-5 h-5"></i></a>
+                    <a href="#" class="w-12 h-12 glass rounded-2xl flex items-center justify-center text-zinc-400 hover:text-blue-500 transition-all hover:scale-110"><i data-feather="instagram" class="w-5 h-5"></i></a>
+                    <a href="#" class="w-12 h-12 glass rounded-2xl flex items-center justify-center text-zinc-400 hover:text-blue-500 transition-all hover:scale-110"><i data-feather="youtube" class="w-5 h-5"></i></a>
+                </div>
             </div>
             <div>
-                <h4 class="text-blue-600 font-black uppercase text-[10px] tracking-widest mb-6">Matrix</h4>
-                <ul class="space-y-3 text-[10px] font-bold text-gray-500 uppercase tracking-wide">
-                    <li><a href="/peptides" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/peptides'); return false; }" class="hover:text-white transition">Peptide Library</a></li>
-                    <li><a href="/stacks" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/stacks'); return false; }" class="hover:text-white transition">Protocol Stacks</a></li>
-                    <li><a href="/calculators" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/calculators'); return false; }" class="hover:text-white transition">Peptide Calculators</a></li>
-                    <li><a href="/coaching" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/coaching'); return false; }" class="hover:text-white transition">Performance Coaching</a></li>
+                <h4 class="text-blue-600 font-black uppercase text-[10px] tracking-[0.3em] mb-10">Matrix</h4>
+                <ul class="space-y-5 text-[10px] font-black text-zinc-500 uppercase tracking-widest">
+                    <li><a href="/peptides" class="hover:text-white transition-colors">Peptide Library</a></li>
+                    <li><a href="/stacks" class="hover:text-white transition-colors">Protocol Stacks</a></li>
+                    <li><a href="/calculators" class="hover:text-white transition-colors">Calculators</a></li>
+                    <li><a href="/coaching" class="hover:text-white transition-colors">Coaching</a></li>
                 </ul>
             </div>
             <div>
-                <h4 class="text-blue-600 font-black uppercase text-[10px] tracking-widest mb-6">Company & Legal</h4>
-                <ul class="space-y-3 text-[10px] font-bold text-gray-500 uppercase tracking-wide">
-                    <li><a href="/about" class="hover:text-white transition">About Us</a></li>
-                    <li><a href="/privacy" class="hover:text-white transition">Privacy Policy</a></li>
-                    <li><a href="/terms" class="hover:text-white transition">Terms of Service</a></li>
-                    <li><a href="/disclaimer" class="hover:text-white transition text-red-900/50 hover:text-red-500">Medical Disclaimer</a></li>
+                <h4 class="text-blue-600 font-black uppercase text-[10px] tracking-[0.3em] mb-10">Legal</h4>
+                <ul class="space-y-5 text-[10px] font-black text-zinc-500 uppercase tracking-widest">
+                    <li><a href="/about" class="hover:text-white transition-colors">About</a></li>
+                    <li><a href="/privacy" class="hover:text-white transition-colors">Privacy</a></li>
+                    <li><a href="/terms" class="hover:text-white transition-colors">Terms</a></li>
+                    <li><a href="/disclaimer" class="hover:text-white transition-colors text-red-500">Medical Disclaimer</a></li>
                 </ul>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto mt-20 pt-10 border-t border-white/5 text-[9px] text-gray-800 font-bold uppercase flex flex-col md:flex-row justify-between gap-4">
-            <p>FDA Disclaimer: Educational research only. Peptides are research chemicals and not intended for human consumption.</p>
-            <p>&copy; 2026 MinMaxMuscle. All rights reserved.</p>
+        <div class="max-w-7xl mx-auto mt-24 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
+            <p class="text-[10px] text-zinc-700 font-bold uppercase tracking-widest text-center md:text-left">FDA Disclosure: Educational research only. Not intended for human consumption.</p>
+            <p class="text-[10px] text-zinc-700 font-bold uppercase tracking-widest">&copy; 2026 MinMaxMuscle. All rights reserved.</p>
         </div>
     </footer>
 

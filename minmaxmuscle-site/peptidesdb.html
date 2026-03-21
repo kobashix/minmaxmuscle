@@ -3,135 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peptide Index | MINMAXMUSCLE</title>
+    <title>Peptide Library | MINMAXMUSCLE</title>
     <meta name="description" content="The comprehensive research database for peptides, secretagogues, and performance compounds. Clinical data, molecular dossiers, and established research protocols.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
-<body class="selection:bg-blue-500 min-h-screen flex flex-col bg-[#09090b] text-white">
+<body class="selection:bg-blue-600 min-h-screen flex flex-col bg-zinc-950 text-zinc-400 font-inter">
 
-    <nav class="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
-        <div class="nav-pill rounded-full px-4 py-2 flex items-center justify-between gap-4 w-full max-w-5xl shadow-2xl">
-            <a href="/" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/'); return false; }" class="flex items-center gap-3 group">
-                <img src="https://minmaxmuscle.com/assets/img/logo.png" alt="MinMaxMuscle" class="w-8 h-8 rounded-full bg-white/5 object-contain">
-                <span class="font-bold hidden md:block italic tracking-tighter">MINMAXMUSCLE</span>
+    <!-- Floating Navigation -->
+    <nav class="fixed top-8 left-0 right-0 z-[1000] flex justify-center px-6">
+        <div class="nav-pill rounded-[2rem] px-6 py-3 flex items-center justify-between gap-8 w-full max-w-5xl">
+            <a href="/" class="flex items-center gap-4 group">
+                <div class="w-10 h-10 bg-white/5 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <img src="https://minmaxmuscle.com/assets/img/logo.png" alt="MMM" class="w-6 h-6 object-contain">
+                </div>
+                <span class="brand text-xl font-black italic tracking-tighter text-white">MINMAXMUSCLE</span>
             </a>
             
-            <div class="hidden md:flex gap-1 bg-black/20 rounded-full p-1 border border-white/5 overflow-x-auto">
-                <a href="/peptides" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/peptides'); return false; }" class="nav-link px-4 py-1.5 rounded-full text-[10px] font-black uppercase text-white bg-blue-600 transition whitespace-nowrap" id="nav-peptides">PEPTIDES</a>
-                <a href="/stacks" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/stacks'); return false; }" class="nav-link px-4 py-1.5 rounded-full text-[10px] font-black uppercase text-gray-400 hover:text-white transition whitespace-nowrap" id="nav-stacks">STACKS</a>
-                <a href="/calculators" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/calculators'); return false; }" class="nav-link px-4 py-1.5 rounded-full text-[10px] font-black uppercase text-gray-400 hover:text-white transition whitespace-nowrap" id="nav-calculators">CALCULATORS</a>
-                <a href="https://blog.minmaxmuscle.com/" class="nav-link px-4 py-1.5 rounded-full text-[10px] font-black uppercase text-gray-400 hover:text-white transition whitespace-nowrap">BLOG</a>
-                <a href="https://blog.minmaxmuscle.com/forum/" class="nav-link px-4 py-1.5 rounded-full text-[10px] font-black uppercase text-gray-400 hover:text-white transition whitespace-nowrap">FORUMS</a>
-                <a href="/coaching" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/coaching'); return false; }" class="nav-link px-4 py-1.5 rounded-full text-[10px] font-black uppercase text-white bg-blue-600 hover:bg-blue-500 transition whitespace-nowrap" id="nav-coaching">COACHING</a>
+            <div class="hidden md:flex items-center gap-1 bg-black/40 rounded-full p-1 border border-white/5">
+                <a href="/peptides" class="nav-link px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-widest text-white active italic">Peptides</a>
+                <a href="/stacks" class="nav-link px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-widest hover:text-white transition-all">Stacks</a>
+                <a href="/calculators" class="nav-link px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-widest hover:text-white transition-all">Calculators</a>
+                <a href="/coaching" class="nav-link px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-widest text-white bg-blue-600 shadow-lg shadow-blue-600/20 hover:bg-blue-500 transition-all">Coaching</a>
             </div>
 
-            <button class="md:hidden text-white" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
-                <i data-feather="menu"></i>
+            <button class="md:hidden text-white w-10 h-10 glass rounded-xl flex items-center justify-center">
+                <i data-feather="menu" class="w-5 h-5"></i>
             </button>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden fixed top-20 left-4 right-4 bg-[#111] border border-white/10 rounded-2xl p-4 flex flex-col gap-2 shadow-2xl z-50">
-             <a href="/peptides" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/peptides'); return false; }" class="text-left px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-bold text-gray-300">PEPTIDES</a>
-             <a href="/stacks" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/stacks'); return false; }" class="text-left px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-bold text-gray-300">STACKS</a>
-             <a href="/calculators" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/calculators'); return false; }" class="text-left px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-bold text-gray-300">CALCULATORS</a>
-             <a href="https://blog.minmaxmuscle.com/" class="text-left px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-bold text-gray-300">BLOG</a>
-             <a href="https://blog.minmaxmuscle.com/forum/" class="text-left px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-bold text-gray-300">FORUMS</a>
-             <a href="/coaching" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/coaching'); return false; }" class="text-left px-4 py-3 rounded-xl bg-blue-600 text-white text-sm font-bold mt-2 text-center">COACHING</a>
         </div>
     </nav>
 
-    <main id="view-peptides" class="view-section active flex-grow pt-32 pb-20 px-4">
+    <main id="view-peptides" class="view-section active flex-grow pt-40 pb-32 px-6">
         <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
                 <div>
-                    <h1 class="text-6xl font-black italic uppercase mb-2">Peptide Index</h1>
-                    <p class="text-gray-500 font-bold uppercase text-[10px] tracking-widest">Active Research Dossiers</p>
+                    <h1 class="text-7xl font-black italic uppercase mb-2 tracking-tighter text-white">Peptide<br><span class="text-blue-600">Library</span></h1>
+                    <p class="text-zinc-500 font-black uppercase text-xs tracking-widest">Active Research Dossiers</p>
                 </div>
-                <input type="text" id="pepSearch" class="bg-[#111] border border-white/5 p-4 rounded-xl w-full md:w-80 text-sm font-bold focus:border-blue-500 outline-none" placeholder="SEARCH DATABASE...">
+                <div class="relative w-full md:w-96 group">
+                    <i data-feather="search" class="absolute left-5 top-1/2 -translate-y-1/2 text-zinc-600 w-4 h-4 group-focus-within:text-blue-500 transition-colors"></i>
+                    <input type="text" id="pepSearch" class="glass bg-white/5 border-white/5 p-5 pl-14 rounded-2xl w-full text-xs font-black tracking-widest focus:border-blue-600/50 outline-none transition-all" placeholder="SEARCH CLINICAL DATABASE...">
+                </div>
             </div>
 
-            <!-- Database Introduction for AdSense Compliance (500+ Words) -->
-            <div class="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-16 mb-12">
-                <div class="grid md:grid-cols-2 gap-16">
+            <!-- Database Introduction for AdSense Compliance -->
+            <div class="glass p-12 md:p-20 rounded-[4rem] border-white/5 mb-16 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-96 h-96 bg-blue-600/5 blur-[120px] -mr-48 -mt-48"></div>
+                
+                <div class="grid md:grid-cols-2 gap-20">
                     <div>
-                        <h3 class="text-3xl font-black italic uppercase text-white mb-8 border-l-4 border-blue-600 pl-6">Utilizing the Clinical Research Index</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed mb-6 font-medium">The MinMaxMuscle Peptide Index is engineered as a high-density clinical archive, serving as a primary node for researchers, endocrinologists, and bio-optimization specialists. Our objective is to consolidate disparate biological data points—spanning from molecular nomenclature and structural sequences to Phase III clinical trial outcomes—into a single, systematically organized interface. Each entry within this database is treated as an active "Research Dossier," subjected to continuous revision as new peer-reviewed literature emerges.</p>
+                        <h3 class="text-3xl font-black italic uppercase text-white mb-8 border-l-4 border-blue-600 pl-8 tracking-tight">Clinical Research Matrix</h3>
+                        <p class="text-zinc-500 text-base leading-relaxed mb-8 font-medium italic">The MinMaxMuscle Peptide Library is engineered as a high-density clinical archive, serving as a primary node for researchers and performance specialists. Our objective is to consolidate biological data points—from molecular nomenclature to Phase III trial outcomes—into a systematically organized interface.</p>
                         
-                        <p class="text-gray-400 text-sm leading-relaxed mb-6">To navigate this database with precision, researchers should utilize the dynamic search interface to filter compounds by molecular class or primary metabolic focus (e.g., "GHS," "Angiogenesis," or "Neuroplasticity"). Each dossier provides a comprehensive overview of the compound's theoretical mechanism, established research dosages observed in literature, and its interaction profile within synergistic stacks. By clicking on a compound, you unlock the full data set, including molecular weights, half-lives, and secondary receptor affinities.</p>
-
-                        <p class="text-gray-400 text-sm leading-relaxed font-medium">This index is categorized based on the "MinMax Hierarchy," which prioritizes compounds based on the volume of human clinical data available. Researchers are encouraged to prioritize "FDA Approved" or "Phase 3" status compounds for their data reliability, while treating "Research Only" dossiers with the appropriate laboratory caution and theoretical scrutiny.</p>
+                        <p class="text-zinc-500 text-base leading-relaxed mb-8">Each entry is treated as an active "Research Dossier," subjected to continuous revision as new peer-reviewed literature emerges. Our repository prioritizes data integrity and systematic harm reduction through precision documentation.</p>
                     </div>
                     <div>
-                        <h3 class="text-3xl font-black italic uppercase text-white mb-8 border-l-4 border-blue-600 pl-6">Selection Rigor & Archival Criteria</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed mb-6 font-medium">Inclusion within the MinMaxMuscle Peptide Index is contingent upon meeting stringent academic and clinical criteria. We do not aggregate anecdotal "bro-science" or unverified marketing claims. Our editorial board cross-references every data point against primary scientific repositories, including the National Center for Biotechnology Information (NCBI), PubMed, ScienceDirect, and the World Anti-Doping Agency (WADA) technical documents. This ensures that the archives reflect the current consensus of the global scientific community.</p>
+                        <h3 class="text-3xl font-black italic uppercase text-white mb-8 border-l-4 border-blue-600 pl-8 tracking-tight">Archival Rigor</h3>
+                        <p class="text-zinc-500 text-base leading-relaxed mb-8 font-medium italic">Inclusion within this library is contingent upon meeting stringent clinical criteria. We cross-reference every data point against primary scientific repositories, including NCBI, PubMed, and WADA technical documents to ensure archival accuracy.</p>
                         
-                        <div class="bg-blue-600/10 border border-blue-600/20 p-8 rounded-3xl mb-8">
-                            <p class="text-[10px] text-blue-400 font-black uppercase tracking-[0.2em] mb-4">Protocol Integrity Directive</p>
-                            <p class="text-sm text-gray-300 italic font-medium">"The utility of a research compound is defined by its molecular purity and the precision of its administration. We provide the empirical data; the researcher provides the laboratory discipline."</p>
+                        <div class="glass bg-blue-600/10 border-l-4 border-blue-600 p-8 rounded-r-3xl mb-8">
+                            <h3 class="text-xs font-black text-blue-400 uppercase tracking-widest mb-4">Protocol Directive</h3>
+                            <p class="text-sm text-zinc-300 italic font-medium leading-relaxed">"The utility of a research compound is defined by its molecular purity and the precision of its administration."</p>
                         </div>
-
-                        <p class="text-gray-400 text-sm leading-relaxed">Beyond basic identification, our dossiers emphasize the importance of "Source Integrity." Researchers are reminded that chemical concentration and purity can vary significantly between batches. Always verify compounds using independent High-Performance Liquid Chromatography (HPLC) and Mass Spectrometry (MS) analysis. Our database includes sections for molecular formulas and CAS numbers to facilitate precise cross-referencing with Chemical COA (Certificate of Analysis) reports.</p>
-                    </div>
-                </div>
-                <div class="mt-12 pt-12 border-t border-white/5">
-                    <div class="max-w-4xl mx-auto">
-                        <h4 class="text-center text-white font-black uppercase text-xs mb-6 tracking-widest italic">Research Accountability & Harm Reduction</h4>
-                        <p class="text-[11px] text-gray-500 font-bold uppercase leading-relaxed text-center italic">Mandatory Disclosure: All compounds listed in this database are strictly for laboratory research and development purposes. They are not intended for human or veterinary use, ingestion, or administration. The information provided is entirely theoretical, derived from available scientific literature and animal models. MinMaxMuscle does not endorse the unauthorized or off-label use of research chemicals. Researchers assume all liability for the application of data found within this archive.</p>
                     </div>
                 </div>
             </div>
 
-            <div id="pep-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
+            <div id="pep-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-fr">
                 <!-- Data will be loaded via script.js -->
-                <div class="skeleton h-64 w-full"></div><div class="skeleton h-64 w-full"></div><div class="skeleton h-64 w-full"></div>
+                <div class="skeleton h-80 w-full rounded-[2.5rem]"></div>
+                <div class="skeleton h-80 w-full rounded-[2.5rem]"></div>
+                <div class="skeleton h-80 w-full rounded-[2.5rem]"></div>
             </div>
         </div>
     </main>
 
-    <footer class="border-t border-white/5 bg-[#020202] py-20 px-4 mt-auto">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+    <!-- Fat Footer -->
+    <footer class="border-t border-white/5 bg-[#020202] py-24 px-8 mt-auto">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-16">
             <div class="col-span-1 md:col-span-2">
-                <span class="brand text-2xl font-black italic">MINMAXMUSCLE</span>
-                <p class="text-gray-600 text-sm mt-4 max-w-sm">Peak human performance through clinical data analysis. Engineered for hypertrophy and recovery.</p>
+                <span class="brand text-3xl font-black italic text-white tracking-tighter">MINMAXMUSCLE</span>
+                <p class="text-zinc-500 text-sm mt-6 max-w-sm leading-relaxed italic">Peak human performance through systematic clinical data analysis. Engineered for hypertrophy, metabolic optimization, and advanced recovery.</p>
             </div>
             <div>
-                <h4 class="text-blue-600 font-black uppercase text-[10px] tracking-widest mb-6">Matrix</h4>
-                <ul class="space-y-3 text-[10px] font-bold text-gray-500 uppercase tracking-wide">
-                    <li><a href="/peptides" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/peptides'); return false; }" class="hover:text-white transition">Peptide Library</a></li>
-                    <li><a href="/stacks" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/stacks'); return false; }" class="hover:text-white transition">Protocol Stacks</a></li>
-                    <li><a href="/calculators" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/calculators'); return false; }" class="hover:text-white transition">Peptide Calculators</a></li>
-                    <li><a href="/coaching" onclick="if(location.pathname==='/' || location.pathname=='/index.html') { navigate('/coaching'); return false; }" class="hover:text-white transition">Performance Coaching</a></li>
+                <h4 class="text-blue-600 font-black uppercase text-[10px] tracking-[0.3em] mb-10">Matrix</h4>
+                <ul class="space-y-5 text-[10px] font-black text-zinc-500 uppercase tracking-widest">
+                    <li><a href="/peptides" class="hover:text-white transition-colors text-white">Peptide Library</a></li>
+                    <li><a href="/stacks" class="hover:text-white transition-colors">Protocol Stacks</a></li>
+                    <li><a href="/calculators" class="hover:text-white transition-colors">Calculators</a></li>
+                    <li><a href="/coaching" class="hover:text-white transition-colors">Coaching</a></li>
                 </ul>
             </div>
             <div>
-                <h4 class="text-blue-600 font-black uppercase text-[10px] tracking-widest mb-6">Company & Legal</h4>
-                <ul class="space-y-3 text-[10px] font-bold text-gray-500 uppercase tracking-wide">
-                    <li><a href="/about" class="hover:text-white transition">About Us</a></li>
-                    <li><a href="/privacy" class="hover:text-white transition">Privacy Policy</a></li>
-                    <li><a href="/terms" class="hover:text-white transition">Terms of Service</a></li>
-                    <li><a href="/disclaimer" class="hover:text-white transition text-red-900/50 hover:text-red-500">Medical Disclaimer</a></li>
+                <h4 class="text-blue-600 font-black uppercase text-[10px] tracking-[0.3em] mb-10">Legal</h4>
+                <ul class="space-y-5 text-[10px] font-black text-zinc-500 uppercase tracking-widest">
+                    <li><a href="/about" class="hover:text-white transition-colors">About</a></li>
+                    <li><a href="/privacy" class="hover:text-white transition-colors">Privacy</a></li>
+                    <li><a href="/terms" class="hover:text-white transition-colors">Terms</a></li>
+                    <li><a href="/disclaimer" class="text-red-900/40 hover:text-red-500 transition-colors">Medical Disclaimer</a></li>
                 </ul>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto mt-20 pt-10 border-t border-white/5 text-[9px] text-gray-800 font-bold uppercase flex flex-col md:flex-row justify-between gap-4">
-            <p>FDA Disclaimer: Educational research only. Peptides are research chemicals and not intended for human consumption.</p>
-            <p>&copy; 2026 MinMaxMuscle. All rights reserved.</p>
+        <div class="max-w-7xl mx-auto mt-24 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
+            <p class="text-[10px] text-zinc-700 font-bold uppercase tracking-widest text-center md:text-left">FDA Disclosure: Educational research only. Not intended for human consumption.</p>
+            <p class="text-[10px] text-zinc-700 font-bold uppercase tracking-widest">&copy; 2026 MinMaxMuscle. All rights reserved.</p>
         </div>
     </footer>
 
-    <div id="modal-overlay" class="fixed inset-0 hidden flex items-center justify-center p-4 overflow-y-auto z-[100]">
+    <div id="modal-overlay" class="fixed inset-0 hidden flex items-center justify-center p-4 overflow-y-auto z-[1000] opacity-0 transition-opacity">
         <div id="modal-content" class="modal-content opacity-0 scale-95 transition-all duration-300 my-8"></div>
     </div>
 
     <script src="/assets/js/script.js"></script>
     <script>
-        // Trigger initialization for this page if needed
-        document.addEventListener('DOMContentLoaded', () => {
-            // init() is called in script.js, but we might need to handle grid rendering here
-        });
+        feather.replace();
     </script>
 </body>
 </html>
