@@ -23,6 +23,8 @@ let DB = {
     stacks: []
 };
 
+let activeCategory = 'ALL';
+
 /**
  * Navigation handler for SPA
  */
@@ -145,6 +147,7 @@ async function init() {
                     forum_topic_url: p.forum_topic_url || `https://blog.minmaxmuscle.com/forum/search/?keywords=${encodeURIComponent(p.peptide_name)}`
                 }));
 
+                renderFilters();
                 renderP(DB.peptides);
                 renderS(DB.stacks);
                 handleURL();
@@ -167,6 +170,40 @@ function handleURL() {
     else if(p.startsWith('/stack/')) openStackDossier(p.split('/')[2], false);
     else if(h) navigate('/' + h.replace('#', ''), false);
     else navigate(p, false);
+}
+
+/**
+ * Renders Category Filter Buttons
+ */
+function renderFilters() {
+    const bar = document.getElementById('filter-bar');
+    if (!bar) return;
+
+    const cats = ['ALL', ...new Set(DB.peptides.map(p => p.Category).filter(Boolean).sort())];
+    
+    bar.innerHTML = cats.map(c => `
+        <button onclick="setCategory('${c}')" class="filter-btn px-6 py-2.5 rounded-full text-[10px] font-black uppercase tracking-widest transition-all whitespace-nowrap ${activeCategory === c ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30' : 'glass text-zinc-500 hover:text-white border-white/5'}">
+            ${c}
+        </button>
+    `).join('');
+}
+
+function setCategory(cat) {
+    activeCategory = cat;
+    renderFilters();
+    applyFilters();
+}
+
+function applyFilters() {
+    const query = document.getElementById('pepSearch')?.value.toLowerCase() || '';
+    const filtered = DB.peptides.filter(p => {
+        const matchesCat = activeCategory === 'ALL' || p.Category === activeCategory;
+        const matchesQuery = p.peptide_name.toLowerCase().includes(query) || 
+                             (p.research_summary && p.research_summary.toLowerCase().includes(query)) ||
+                             (p.primary_focus && p.primary_focus.toLowerCase().includes(query));
+        return matchesCat && matchesQuery;
+    });
+    renderP(filtered);
 }
 
 /**
@@ -473,8 +510,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Peptide Search
     document.getElementById('pepSearch')?.addEventListener('input', (e) => {
-        const t = e.target.value.toLowerCase();
-        renderP(DB.peptides.filter(p => p.peptide_name.toLowerCase().includes(t) || (p.primary_focus && p.primary_focus.toLowerCase().includes(t))));
+        applyFilters();
     });
 
     // Reconstitution Calculator

@@ -165,6 +165,15 @@ h1, h2, h3, h4, h5, h6, .brand {
     100% { background-position: -200% 0; }
 }
 
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
 /* Table & Details Styling */
 details > summary { 
     list-style: none; 
