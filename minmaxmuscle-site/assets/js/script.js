@@ -389,7 +389,7 @@ function openStackDossier(slug, push = true) {
     const comps = s.component_list || [];
     const q = s.faq_questions ? s.faq_questions.split('|||') : [];
     const a = s.faq_answers ? s.faq_answers.split('|||') : [];
-    const forumUrl = `https://blog.minmaxmuscle.com/forum/search/?keywords=${encodeURIComponent(s.stack_name)}`;
+    const forumUrl = `https://blog.minmaxmuscle.com/forum/search/?keywords=${encodeURIComponent(s.title)}`;
 
     document.getElementById('modal-content').innerHTML = `
         <div class="glass flex flex-col md:grid md:grid-cols-12 min-h-[60vh] rounded-[4rem] border-white/10 overflow-hidden shadow-2xl relative">
