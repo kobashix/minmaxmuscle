@@ -1,0 +1,29 @@
+[
+  {
+    "uuid": "0cbeab0d-3ae7-4b1b-b734-7b7c87282e63",
+    "name": "seo_manager_db",
+    "created_at": "2026-02-22T11:36:36.530Z",
+    "version": "production",
+    "num_tables": 0,
+    "file_size": 24576,
+    "jurisdiction": null
+  },
+  {
+    "uuid": "3ad2d9e5-3f7a-4b19-ac06-78580634fdbe",
+    "name": "portfolio-db",
+    "created_at": "2026-02-15T12:17:11.462Z",
+    "version": "production",
+    "num_tables": 0,
+    "file_size": 53248,
+    "jurisdiction": null
+  },
+  {
+    "uuid": "ffdc0a4e-5374-4a7c-bcae-1fb58188a774",
+    "name": "minmaxmuscle_db",
+    "created_at": "2026-02-03T20:09:02.664Z",
+    "version": "production",
+    "num_tables": 0,
+    "file_size": 106496,
+    "jurisdiction": null
+  }
+]

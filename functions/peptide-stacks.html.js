@@ -7,7 +7,7 @@ export async function onRequest(context) {
       <a href="/stacks/${s.slug}" class="stack-card">
         <span class="rank-badge">RANK #${s.rank}</span>
         <span class="stack-goal">${s.goal}</span>
-        <h3 class="stack-title">${s.stack_name}</h3>
+        <h3 class="stack-title">${s.title}</h3>
         <p class="stack-desc">${s.description}</p>
       </a>`).join("");
 

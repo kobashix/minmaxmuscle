@@ -7,7 +7,7 @@ export async function onRequest(context) {
     let peptides = [];
     let stacks = [];
     try {
-      const pRes = await env.DB.prepare("SELECT slug, 'As Of' as date FROM Peptides").all();
+      const pRes = await env.DB.prepare("SELECT slug, updated_at as date FROM Peptides").all();
       peptides = pRes.results;
       const sRes = await env.DB.prepare("SELECT slug FROM Stacks").all();
       stacks = sRes.results;

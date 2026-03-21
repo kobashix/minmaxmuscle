@@ -4,7 +4,7 @@ export async function onRequest(context) {
 
   try {
     const { results } = await DB.prepare(`
-      SELECT s.stack_name, s.goal, s.description, s.rank, p.peptide_name, p.slug AS p_slug, sp.dosage_instruction
+      SELECT s.title, s.goal, s.description, s.rank, p.name, p.slug AS p_slug, sp.dosage_instruction
       FROM Stacks s JOIN Stack_Peptides sp ON s.id = sp.stack_id JOIN Peptides p ON sp.peptide_id = p.id
       WHERE s.slug = ?
     `).bind(slug).all();
@@ -15,7 +15,7 @@ export async function onRequest(context) {
     const peptidesHtml = results.map(p => `
       <div class="spec-card">
         <span class="spec-label">Component</span>
-        <a href="/peptides/${p.p_slug}" class="spec-value">${p.peptide_name}</a>
+        <a href="/peptides/${p.p_slug}" class="spec-value">${p.name}</a>
         <div class="dosage-info">${p.dosage_instruction}</div>
       </div>`).join("");
 
@@ -30,16 +30,16 @@ export async function onRequest(context) {
     const schema = {
       "@context": "https://schema.org",
       "@type": "ItemList",
-      "name": stack.stack_name,
+      "name": stack.title,
       "description": stack.description,
-      "itemListElement": results.map((p, i) => ({ "@type": "ListItem", "position": i + 1, "name": p.peptide_name }))
+      "itemListElement": results.map((p, i) => ({ "@type": "ListItem", "position": i + 1, "name": p.name }))
     };
 
     return new HTMLRewriter()
       .on("head", { element(el) { el.append(`<script type="application/ld+json">${JSON.stringify(schema)}</script>`, { html: true }); } })
       .on("header", { element(el) { el.setInnerContent(headerHtml, { html: true }); } })
       .on("footer", { element(el) { el.setInnerContent(footerHtml, { html: true }); } })
-      .on("#stack_name", { element(el) { el.setInnerContent(stack.stack_name); } })
+      .on("#stack_name", { element(el) { el.setInnerContent(stack.title); } })
       .on("#stack_goal", { element(el) { el.setInnerContent(stack.goal); } })
       .on("#stack_description", { element(el) { el.setInnerContent(stack.description); } })
       .on("#peptide_list", { element(el) { el.setInnerContent(peptidesHtml, { html: true }); } })

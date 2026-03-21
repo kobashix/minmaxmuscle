@@ -2,7 +2,7 @@ export async function onRequest(context) {
   const { env } = context;
 
   try {
-    // [ISSUE 3] Changed to ORDER BY rank ASC
+    // 1. Fetch Peptides with joined FAQs
     const pReq = env.DB.prepare(`
       SELECT p.*, 
         GROUP_CONCAT(f.question, '|||') as faq_questions,
@@ -14,7 +14,7 @@ export async function onRequest(context) {
       ORDER BY p.rank ASC
     `).all();
 
-    // [ISSUE 3] Changed to ORDER BY rank ASC
+    // 2. Fetch Stacks with joined FAQs
     const sReq = env.DB.prepare(`
       SELECT s.*, 
         GROUP_CONCAT(f.question, '|||') as faq_questions,
@@ -26,12 +26,12 @@ export async function onRequest(context) {
       ORDER BY s.rank ASC
     `).all();
 
-    // [ISSUE 6] Fetch View_Stack_Details to get dosage instructions
+    // 3. Fetch View_Stack_Details for authoritative dosages
     let mapping = { results: [] };
     try {
       mapping = await env.DB.prepare(`SELECT * FROM View_Stack_Details`).all();
     } catch (e) {
-      console.log("View_Stack_Details missing or misspelled.", e);
+      console.log("View_Stack_Details error:", e);
     }
 
     const [peptides, stacks] = await Promise.all([pReq, sReq]);
@@ -40,8 +40,8 @@ export async function onRequest(context) {
     const sList = stacks.results;
     const links = mapping.results || [];
 
+    // 4. Map Dosages to Stacks
     sList.forEach(stack => {
-        // [ISSUE 6] Match on stack_slug instead of ID, based on your screenshot
         const matches = links.filter(l => l.stack_slug === stack.slug);
         
         if (matches.length > 0) {
@@ -50,11 +50,6 @@ export async function onRequest(context) {
                 slug: m.peptide_slug,
                 dosage: m.dosage_instruction
             }));
-        } else if (stack.peptides_used) {
-            // Fallback
-            stack.component_list = stack.peptides_used.split(',').map(s => ({
-                name: s.trim(), slug: s.trim().toLowerCase().replace(' ', '-'), dosage: 'Review full protocol'
-            }));
         } else {
             stack.component_list = [];
         }
@@ -62,10 +57,18 @@ export async function onRequest(context) {
 
     return new Response(JSON.stringify({
       peptides: pList,
-      stacks: sList
-    }), { headers: { "Content-Type": "application/json", "Cache-Control": "no-cache" } });
+      stacks: sList,
+      version: "2.0-relational",
+      timestamp: new Date().toISOString()
+    }), { 
+      headers: { 
+        "Content-Type": "application/json", 
+        "Cache-Control": "no-cache",
+        "Access-Control-Allow-Origin": "*"
+      } 
+    });
 
   } catch (err) {
     return new Response(JSON.stringify({ error: err.message }), { status: 500 });
   }
-}
+}

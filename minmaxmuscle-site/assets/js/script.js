@@ -144,7 +144,7 @@ async function init() {
                 // Ensure all entries have forum links fallback
                 DB.peptides = DB.peptides.map(p => ({
                     ...p,
-                    forum_topic_url: p.forum_topic_url || `https://blog.minmaxmuscle.com/forum/search/?keywords=${encodeURIComponent(p.peptide_name)}`
+                    forum_topic_url: p.forum_topic_url || `https://blog.minmaxmuscle.com/forum/search/?keywords=${encodeURIComponent(p.name)}`
                 }));
 
                 renderFilters();
@@ -179,7 +179,7 @@ function renderFilters() {
     const bar = document.getElementById('filter-bar');
     if (!bar) return;
 
-    const cats = ['ALL', ...new Set(DB.peptides.map(p => p.Category).filter(Boolean).sort())];
+    const cats = ['ALL', ...new Set(DB.peptides.map(p => p.category).filter(Boolean).sort())];
     
     bar.innerHTML = cats.map(c => `
         <button onclick="setCategory('${c}')" class="filter-btn px-6 py-2.5 rounded-full text-[10px] font-black uppercase tracking-widest transition-all whitespace-nowrap ${activeCategory === c ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30' : 'glass text-zinc-500 hover:text-white border-white/5'}">
@@ -197,8 +197,8 @@ function setCategory(cat) {
 function applyFilters() {
     const query = document.getElementById('pepSearch')?.value.toLowerCase() || '';
     const filtered = DB.peptides.filter(p => {
-        const matchesCat = activeCategory === 'ALL' || p.Category === activeCategory;
-        const matchesQuery = p.peptide_name.toLowerCase().includes(query) || 
+        const matchesCat = activeCategory === 'ALL' || p.category === activeCategory;
+        const matchesQuery = p.name.toLowerCase().includes(query) || 
                              (p.research_summary && p.research_summary.toLowerCase().includes(query)) ||
                              (p.primary_focus && p.primary_focus.toLowerCase().includes(query));
         return matchesCat && matchesQuery;
@@ -219,15 +219,15 @@ function renderP(arr) {
     }
 
     grid.innerHTML = arr.map(p => {
-        const forumUrl = `https://blog.minmaxmuscle.com/forum/search/?keywords=${encodeURIComponent(p.peptide_name)}`;
+        const forumUrl = `https://blog.minmaxmuscle.com/forum/search/?keywords=${encodeURIComponent(p.name)}`;
         return `
             <div class="glass p-8 rounded-[3rem] border-white/5 group flex flex-col h-full relative transition-all duration-500 hover:scale-[1.02] hover:bg-white/5">
                 <a href="/peptide/${p.slug}" onclick="event.preventDefault(); openPepDossier('${p.slug}')" class="flex-grow block">
                     <div class="flex justify-between items-center mb-6">
-                        <span class="text-[9px] font-black uppercase text-blue-500 bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20 tracking-widest">${p.Category || 'Core'}</span>
+                        <span class="text-[9px] font-black uppercase text-blue-500 bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20 tracking-widest">${p.category || 'Core'}</span>
                         <span class="text-zinc-800 text-[10px] font-black italic tracking-tighter">P0${p.id}</span>
                     </div>
-                    <h3 class="text-3xl font-black italic mb-3 uppercase leading-none tracking-tighter text-white group-hover:text-blue-500 transition-colors">${p.peptide_name}</h3>
+                    <h3 class="text-3xl font-black italic mb-3 uppercase leading-none tracking-tighter text-white group-hover:text-blue-500 transition-colors">${p.name}</h3>
                     <p class="text-zinc-500 text-sm font-medium mb-6 leading-relaxed italic line-clamp-3">${p.primary_focus || p.research_summary}</p>
                 </a>
                 <div class="mt-auto pt-6 border-t border-white/5 flex justify-between items-center">
@@ -260,7 +260,7 @@ function renderS(arr) {
                 <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/60 to-transparent"></div>
                 <div class="relative z-10">
                     <span class="text-[9px] font-black uppercase text-blue-500 bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20 mb-6 inline-block tracking-widest">Rank: ${s.rank}</span>
-                    <h3 class="text-6xl font-black italic uppercase leading-none mb-4 text-white tracking-tighter group-hover:text-blue-500 transition-colors">${s.stack_name}</h3>
+                    <h3 class="text-6xl font-black italic uppercase leading-none mb-4 text-white tracking-tighter group-hover:text-blue-500 transition-colors">${s.title}</h3>
                     <p class="text-zinc-500 text-sm font-medium max-w-md line-clamp-2 italic mb-8">${s.description}</p>
                     <div class="px-10 py-4 bg-white text-black rounded-2xl font-black text-[10px] uppercase italic tracking-widest hover:bg-blue-600 hover:text-white transition-all transform origin-left">Protocol Analysis</div>
                 </div>
@@ -279,14 +279,14 @@ function openPepDossier(slug, push = true) {
     
     const stacks = DB.stacks.filter(s => {
          if(s.component_list) {
-             return s.component_list.some(c => c.slug === p.slug || (c.name && c.name.toLowerCase() === p.peptide_name.toLowerCase()));
+             return s.component_list.some(c => c.slug === p.slug || (c.name && c.name.toLowerCase() === p.name.toLowerCase()));
          }
          return false;
     });
     const q = p.faq_questions ? p.faq_questions.split('|||') : [];
     const a = p.faq_answers ? p.faq_answers.split('|||') : [];
-    const src = p.Sources ? p.Sources.split(',') : [];
-    const forumUrl = `https://blog.minmaxmuscle.com/forum/search/?keywords=${encodeURIComponent(p.peptide_name)}`;
+    const src = p.sources ? p.sources.split(',') : [];
+    const forumUrl = `https://blog.minmaxmuscle.com/forum/search/?keywords=${encodeURIComponent(p.name)}`;
 
     document.getElementById('modal-content').innerHTML = `
         <div class="glass flex flex-col md:grid md:grid-cols-12 min-h-[70vh] rounded-[4rem] border-white/10 overflow-hidden shadow-2xl relative">
@@ -295,8 +295,8 @@ function openPepDossier(slug, push = true) {
                     <span class="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
                     Archive Verified
                 </div>
-                <h2 class="text-5xl md:text-6xl font-black italic uppercase leading-[0.85] mb-6 tracking-tighter text-white">${p.peptide_name}</h2>
-                <p class="text-zinc-500 font-bold uppercase text-[10px] tracking-[0.3em] mb-10 italic">PX-01${p.id} // ${p.Category}</p>
+                <h2 class="text-5xl md:text-6xl font-black italic uppercase leading-[0.85] mb-6 tracking-tighter text-white">${p.name}</h2>
+                <p class="text-zinc-500 font-bold uppercase text-[10px] tracking-[0.3em] mb-10 italic">PX-01${p.id} // ${p.category}</p>
                 
                 <div class="space-y-4">
                     <div class="p-6 bg-white/5 rounded-3xl border border-white/5 transition-colors hover:border-blue-500/20">
@@ -305,7 +305,7 @@ function openPepDossier(slug, push = true) {
                     </div>
                     <div class="p-6 bg-white/5 rounded-3xl border border-white/5 transition-colors hover:border-blue-500/20">
                         <p class="text-[8px] text-zinc-600 font-black uppercase tracking-widest mb-2">Research Status</p>
-                        <p class="text-xs font-black italic text-blue-500">${p.Status || 'Active Archive'}</p>
+                        <p class="text-xs font-black italic text-blue-500">${p.legal_status || 'Active Archive'}</p>
                     </div>
                     
                     <a href="${p.forum_topic_url || forumUrl}" target="_blank" class="p-6 bg-blue-600/10 border border-blue-600/20 rounded-3xl block hover:bg-blue-600/20 transition-all group">
@@ -341,7 +341,7 @@ function openPepDossier(slug, push = true) {
                     <div class="space-y-4">
                         <h4 class="text-[10px] font-black text-zinc-600 uppercase tracking-widest italic">Synergistic Stacks</h4>
                         <div class="flex flex-wrap gap-2">
-                            ${stacks.map(s => `<button onclick="openStackDossier('${s.slug}')" class="px-5 py-3 glass border-blue-500/10 rounded-2xl text-[10px] font-black uppercase italic text-blue-500 hover:border-blue-500 transition-all">${s.stack_name}</button>`).join('')}
+                            ${stacks.map(s => `<button onclick="openStackDossier('${s.slug}')" class="px-5 py-3 glass border-blue-500/10 rounded-2xl text-[10px] font-black uppercase italic text-blue-500 hover:border-blue-500 transition-all">${s.title}</button>`).join('')}
                         </div>
                     </div>` : ''}
                 </div>
@@ -375,7 +375,7 @@ function openPepDossier(slug, push = true) {
     `;
     showM(); 
     if(push) window.history.pushState({}, '', `/peptide/${slug}`);
-    document.title = `${p.peptide_name} Dossier // MinMaxMuscle`;
+    document.title = `${p.name} Dossier // MinMaxMuscle`;
     feather.replace();
 }
 
@@ -398,7 +398,7 @@ function openStackDossier(slug, push = true) {
                 <span class="text-blue-500 font-black uppercase text-[10px] tracking-[0.4em] mb-8 italic flex items-center gap-3">
                     <span class="w-8 h-px bg-blue-600"></span> Synergy Matrix
                 </span>
-                <h2 class="text-7xl font-black italic leading-[0.8] uppercase mb-8 tracking-tighter text-white">${s.stack_name}</h2>
+                <h2 class="text-7xl font-black italic leading-[0.8] uppercase mb-8 tracking-tighter text-white">${s.title}</h2>
                 <p class="text-zinc-400 font-medium text-lg italic leading-relaxed mb-12">${s.description || 'Synergistic protocol analysis pending.'}</p>
                 
                 <a href="${s.forum_topic_url || forumUrl}" target="_blank" class="p-8 bg-blue-600/10 border border-blue-600/20 rounded-[2.5rem] block hover:bg-blue-600/20 transition-all group">
@@ -420,7 +420,7 @@ function openStackDossier(slug, push = true) {
                 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-16">
                     ${comps.length > 0 ? comps.map(c => {
-                        const found = DB.peptides.find(p => p.slug === c.slug || (c.name && p.peptide_name.toLowerCase() === c.name.toLowerCase()));
+                        const found = DB.peptides.find(p => p.slug === c.slug || (c.name && p.name.toLowerCase() === c.name.toLowerCase()));
                         return `<div ${found ? `onclick="openPepDossier('${found.slug}')"` : ''} class="p-8 glass rounded-3xl flex flex-col justify-between border-white/5 ${found ? 'cursor-pointer hover:border-blue-500/40 hover:bg-white/5' : 'opacity-30'} group transition-all">
                             <div class="flex justify-between items-start mb-4">
                                 <span class="text-[8px] text-zinc-700 uppercase tracking-widest font-black">COMPONENT</span>
@@ -451,7 +451,7 @@ function openStackDossier(slug, push = true) {
     `;
     showM(); 
     if(push) window.history.pushState({}, '', `/stack/${slug}`);
-    document.title = `${s.stack_name} Protocol // MinMaxMuscle`;
+    document.title = `${s.title} Protocol // MinMaxMuscle`;
     feather.replace();
 }
 

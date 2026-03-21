@@ -1,0 +1,160 @@
+
+ Γ¢à∩╕Å wrangler 4.67.0 (update available 4.76.0)
+ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+Resource location: remote 
+
+≡ƒîÇ Executing on remote database minmaxmuscle_db (ffdc0a4e-5374-4a7c-bcae-1fb58188a774):
+≡ƒîÇ To execute on your local development database, remove the --remote flag from your wrangler command.
+≡ƒÜú Executed 1 command in 0.24ms
+[
+  {
+    "results": [
+      {
+        "id": 1,
+        "stack_name": "The Quad-Pathway",
+        "slug": "quad-pathway",
+        "goal": "Maximum Weight Loss",
+        "description": "Retatrutide + Cagrilintide. Targets GIP, GLP-1, Glucagon, and Amylin for record-breaking fat loss.",
+        "rank": 1
+      },
+      {
+        "id": 2,
+        "stack_name": "Metabolic Advanced",
+        "slug": "metabolic-advanced",
+        "goal": "Weight Loss & Satiety",
+        "description": "Tirzepatide + Cagrilintide. Superior appetite suppression compared to monotherapy.",
+        "rank": 2
+      },
+      {
+        "id": 3,
+        "stack_name": "The Wolverine",
+        "slug": "wolverine-stack",
+        "goal": "Injury & Tissue Repair",
+        "description": "BPC-157 + TB-500. The gold standard for localized and systemic recovery of ligaments and tendons.",
+        "rank": 3
+      },
+      {
+        "id": 4,
+        "stack_name": "Classic Recomp",
+        "slug": "classic-recomp",
+        "goal": "Fat Loss & Muscle Lean",
+        "description": "CJC-1295 + Ipamorelin. Optimizes natural GH pulses for improved body composition and sleep.",
+        "rank": 4
+      },
+      {
+        "id": 5,
+        "stack_name": "Visceral Shred",
+        "slug": "visceral-shred",
+        "goal": "Targeted Fat Loss",
+        "description": "Tesamorelin + Ipamorelin. Clinically effective for reducing stubborn abdominal/visceral fat.",
+        "rank": 5
+      },
+      {
+        "id": 6,
+        "stack_name": "Cognitive Focus",
+        "slug": "cognitive-focus",
+        "goal": "Mental Performance",
+        "description": "Semax + Selank. Synergistic neuro-regulation for BDNF upregulation and stress management.",
+        "rank": 6
+      },
+      {
+        "id": 7,
+        "stack_name": "Cellular Longevity",
+        "slug": "longevity-reset",
+        "goal": "Anti-Aging",
+        "description": "Epitalon + MOTS-c + Thymosin Alpha-1. Focuses on telomeres, mitochondrial energy, and immune modulation.",
+        "rank": 7
+      },
+      {
+        "id": 8,
+        "stack_name": "The God Protocol",
+        "slug": "the-god-protocol",
+        "goal": "Peak Human Performance",
+        "description": "The ultimate synergy of GH Secretagogues, Glucose Disposal, and Mitochondrial Repair. Designed for total body recomposition and anti-aging.",
+        "rank": 0
+      },
+      {
+        "id": 9,
+        "stack_name": "Advanced Hypertrophy",
+        "slug": "advanced-hypertrophy",
+        "goal": "Maximum Muscle Growth",
+        "description": "IGF-1 LR3 + CJC-1295 + Ipamorelin. Combines direct growth signaling with optimized GH pulses for peak anabolic response.",
+        "rank": 9
+      },
+      {
+        "id": 10,
+        "stack_name": "The Metabolic Reset",
+        "slug": "metabolic-reset",
+        "goal": "Cellular Efficiency",
+        "description": "5-Amino-1MQ + MOTS-c. Targets fat metabolism and mitochondrial efficiency to reset the metabolic baseline.",
+        "rank": 10
+      },
+      {
+        "id": 11,
+        "stack_name": "Aesthetic Repair",
+        "slug": "aesthetic-repair",
+        "goal": "Skin & Wound Healing",
+        "description": "GHK-Cu + BPC-157 + TB-500. Synergistic protocol for collagen production and rapid tissue regeneration.",
+        "rank": 11
+      },
+      {
+        "id": 12,
+        "stack_name": "Mitochondrial Health",
+        "slug": "mitochondrial-health",
+        "goal": "Longevity & Energy",
+        "description": "SS-31 + MOTS-c. Protects and repairs mitochondrial membranes while enhancing ATP production.",
+        "rank": 12
+      },
+      {
+        "id": 13,
+        "stack_name": "Hormonal Support",
+        "slug": "hormonal-support",
+        "goal": "Endogenous Testosterone Maintenance",
+        "description": "HCG + Kisspeptin. Research-focused protocol for maintaining the HPTA axis and supporting natural hormone production.",
+        "rank": 13
+      },
+      {
+        "id": 14,
+        "stack_name": "Gut & Inflammation Repair",
+        "slug": "gut-inflammation-repair",
+        "goal": "Systemic Anti-Inflammatory",
+        "description": "BPC-157 + KPV. Synergistic tripeptide and pentadecapeptide blend researched for gut barrier integrity and reducing inflammatory markers.",
+        "rank": 14
+      },
+      {
+        "id": 15,
+        "stack_name": "Immune Resilience",
+        "slug": "immune-resilience",
+        "goal": "Innate & Adaptive Support",
+        "description": "Thymosin Alpha-1 + LL-37. Modulates immune response while providing broad-spectrum antimicrobial defense research data.",
+        "rank": 15
+      },
+      {
+        "id": 16,
+        "stack_name": "Neuro-Repair Advanced",
+        "slug": "neuro-repair-advanced",
+        "goal": "Cognitive & Peripheral Nerve Repair",
+        "description": "Dihexa + ARA-290. Potent neuropeptide synergy studied for neurogenesis and small nerve fiber repair.",
+        "rank": 16
+      }
+    ],
+    "success": true,
+    "meta": {
+      "served_by": "v3-prod",
+      "served_by_region": "WNAM",
+      "served_by_colo": "DFW",
+      "served_by_primary": true,
+      "timings": {
+        "sql_duration_ms": 0.2357
+      },
+      "duration": 0.2357,
+      "changes": 0,
+      "last_row_id": 0,
+      "changed_db": false,
+      "size_after": 106496,
+      "rows_read": 16,
+      "rows_written": 0,
+      "total_attempts": 1
+    }
+  }
+]

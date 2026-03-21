@@ -1,0 +1,172 @@
+
+ Γ¢à∩╕Å wrangler 4.67.0 (update available 4.76.0)
+ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+Resource location: remote 
+
+≡ƒîÇ Executing on remote database minmaxmuscle_db (ffdc0a4e-5374-4a7c-bcae-1fb58188a774):
+≡ƒîÇ To execute on your local development database, remove the --remote flag from your wrangler command.
+≡ƒÜú Executed 1 command in 0.22ms
+[
+  {
+    "results": [
+      {
+        "id": 1,
+        "peptide_name": "BPC-157",
+        "slug": "bpc-157",
+        "molecular_data": "15 Amino Acid Pentadecapeptide",
+        "research_summary": "Studied for systemic healing, particularly tendon, ligament, and gut repair.",
+        "nicknames": "Wolverine, Body Protection Compound",
+        "Status": "Research Only",
+        "Sources": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12446177/,https://pubmed.ncbi.nlm.nih.gov/29898335/",
+        "Category": "Repair & Recovery",
+        "primary_focus": "Injury Repair & Gut Health",
+        "rank": 6,
+        "As Of": "2026-02-04"
+      },
+      {
+        "id": 2,
+        "peptide_name": "TB-500",
+        "slug": "tb-500",
+        "molecular_data": "Synthetic Thymosin Beta-4 Fragment",
+        "research_summary": "Researched for cellular migration, angiogenesis, and muscle recovery.",
+        "nicknames": "Repair Fragment, Thymosin Beta-4",
+        "Status": "FDA Category 2",
+        "Sources": "https://clinicaltrials.gov/search?term=TB-500",
+        "Category": "Repair & Recovery",
+        "primary_focus": "Tissue Regeneration & Recovery",
+        "rank": 7,
+        "As Of": "2026-02-04"
+      },
+      {
+        "id": 3,
+        "peptide_name": "GHK-Cu",
+        "slug": "ghk-cu",
+        "molecular_data": "Glycyl-L-histidyl-L-lysine",
+        "research_summary": "Copper-binding tripeptide researched for skin remodeling and collagen synthesis.",
+        "nicknames": "Copper Peptide, GHK Copper",
+        "Status": "Cosmetic / FDA Cat 2",
+        "Sources": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12753158/,https://pubmed.ncbi.nlm.nih.gov/29018445/",
+        "Category": "Skin & Hair Health",
+        "primary_focus": "Collagen & Aesthetic Health",
+        "rank": 8,
+        "As Of": "2026-02-04"
+      },
+      {
+        "id": 4,
+        "peptide_name": "Semaglutide",
+        "slug": "semaglutide",
+        "molecular_data": "GLP-1 Analog (C187H291N45O59)",
+        "research_summary": "GLP-1 receptor agonist studied for appetite suppression and glycemic control.",
+        "nicknames": "Ozempic, Wegovy, GLP-1",
+        "Status": "FDA Approved",
+        "Sources": "https://www.ncbi.nlm.nih.gov/books/NBK603723/,https://pubmed.ncbi.nlm.nih.gov/33644386/",
+        "Category": "Metabolic & Weight Loss",
+        "primary_focus": "Metabolic & Weight Management",
+        "rank": 2,
+        "As Of": "2026-02-04"
+      },
+      {
+        "id": 5,
+        "peptide_name": "Tirzepatide",
+        "slug": "tirzepatide",
+        "molecular_data": "39 Amino Acid Linear Peptide",
+        "research_summary": "Dual GIP/GLP-1 agonist researched for superior metabolic efficiency.",
+        "nicknames": "Mounjaro, Zepbound",
+        "Status": "FDA Approved (Diabetes)",
+        "Sources": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12477106/,https://pubmed.ncbi.nlm.nih.gov/34166613/",
+        "Category": "Metabolic & Weight Loss",
+        "primary_focus": "Weight Loss & Glucose Efficiency",
+        "rank": 1,
+        "As Of": "2026-02-04"
+      },
+      {
+        "id": 6,
+        "peptide_name": "AOD-9604",
+        "slug": "aod-9604",
+        "molecular_data": "C-Terminal HGH Fragment",
+        "research_summary": "Lipolytic fragment of HGH studied for localized fat metabolism.",
+        "nicknames": "Fat Burning Fragment, 9604",
+        "Status": "FDA Category 2",
+        "Sources": "https://pubmed.ncbi.nlm.nih.gov/11146367/,https://pubmed.ncbi.nlm.nih.gov/11713213/",
+        "Category": "Metabolic & Weight Loss",
+        "primary_focus": "Fat Metabolism",
+        "rank": 13,
+        "As Of": "2026-02-04"
+      },
+      {
+        "id": 7,
+        "peptide_name": "CJC-1295",
+        "slug": "cjc-1295",
+        "molecular_data": "30 Amino Acid Peptide (Mod GRF 1-29)",
+        "research_summary": "A GHRH analog that increases growth hormone levels via natural pulses.",
+        "nicknames": "Mod GRF 1-29, No DAC",
+        "Status": "FDA Category 2",
+        "Sources": "https://academic.oup.com/jcem/article/91/3/799/2843281",
+        "Category": "Growth Hormone Secretagogues",
+        "primary_focus": "GH Stimulation & Recovery",
+        "rank": 10,
+        "As Of": "2026-02-04"
+      },
+      {
+        "id": 8,
+        "peptide_name": "Ipamorelin",
+        "slug": "ipamorelin",
+        "molecular_data": "Pentapeptide (Aib-His-D-2-Nal-D-Phe-Lys)",
+        "research_summary": "Selective ghrelin receptor agonist that stimulates GH release without cortisol spikes.",
+        "nicknames": "Ipa, The Selective GHRP",
+        "Status": "FDA Category 2",
+        "Sources": "https://pubmed.ncbi.nlm.nih.gov/9849822/",
+        "Category": "Growth Hormone Secretagogues",
+        "primary_focus": "Growth Hormone / Sleep Quality",
+        "rank": 9,
+        "As Of": "2026-02-04"
+      },
+      {
+        "id": 9,
+        "peptide_name": "Tesamorelin",
+        "slug": "tesamorelin",
+        "molecular_data": "44 Amino Acid Analog",
+        "research_summary": "GHRH analog researched for reducing visceral adipose tissue (VAT).",
+        "nicknames": "Egrifta, TH9507",
+        "Status": "FDA Approved",
+        "Sources": "https://www.nejm.org/doi/full/10.1056/NEJMoa1006014",
+        "Category": "Growth Hormone Secretagogues",
+        "primary_focus": "Visceral Fat Reduction",
+        "rank": 11,
+        "As Of": "2026-02-04"
+      },
+      {
+        "id": 10,
+        "peptide_name": "Semax",
+        "slug": "semax",
+        "molecular_data": "Heptapeptide (Met-Glu-His-Phe-Pro-Gly-Pro)",
+        "research_summary": "Neuropeptide researched for cognitive enhancement and neuroprotection.",
+        "nicknames": "Brain Booster, Russian Focus",
+        "Status": "FDA Category 2",
+        "Sources": "https://pubmed.ncbi.nlm.nih.gov/16635254/",
+        "Category": "Cognitive & Nootropic",
+        "primary_focus": "Cognitive Enhancement",
+        "rank": 17,
+        "As Of": "2026-02-04"
+      }
+    ],
+    "success": true,
+    "meta": {
+      "served_by": "v3-prod",
+      "served_by_region": "WNAM",
+      "served_by_colo": "DFW",
+      "served_by_primary": true,
+      "timings": {
+        "sql_duration_ms": 0.2192
+      },
+      "duration": 0.2192,
+      "changes": 0,
+      "last_row_id": 0,
+      "changed_db": false,
+      "size_after": 106496,
+      "rows_read": 10,
+      "rows_written": 0,
+      "total_attempts": 1
+    }
+  }
+]

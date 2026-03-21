@@ -1,0 +1,192 @@
+
+ Γ¢à∩╕Å wrangler 4.67.0 (update available 4.76.0)
+ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+Resource location: remote 
+
+≡ƒîÇ Executing on remote database minmaxmuscle_db (ffdc0a4e-5374-4a7c-bcae-1fb58188a774):
+≡ƒîÇ To execute on your local development database, remove the --remote flag from your wrangler command.
+≡ƒÜú Executed 1 command in 0.39ms
+[
+  {
+    "results": [
+      {
+        "stack_name": "The Quad-Pathway",
+        "stack_slug": "quad-pathway",
+        "goal": "Maximum Weight Loss",
+        "peptide_name": "Retatrutide",
+        "peptide_slug": "retatrutide",
+        "dosage_instruction": "Titrated 1-12mg weekly"
+      },
+      {
+        "stack_name": "The Quad-Pathway",
+        "stack_slug": "quad-pathway",
+        "goal": "Maximum Weight Loss",
+        "peptide_name": "Cagrilintide",
+        "peptide_slug": "cagrilintide",
+        "dosage_instruction": "0.3mg - 2.4mg weekly"
+      },
+      {
+        "stack_name": "Metabolic Advanced",
+        "stack_slug": "metabolic-advanced",
+        "goal": "Weight Loss & Satiety",
+        "peptide_name": "Tirzepatide",
+        "peptide_slug": "tirzepatide",
+        "dosage_instruction": "2.5-15mg weekly"
+      },
+      {
+        "stack_name": "Metabolic Advanced",
+        "stack_slug": "metabolic-advanced",
+        "goal": "Weight Loss & Satiety",
+        "peptide_name": "Cagrilintide",
+        "peptide_slug": "cagrilintide",
+        "dosage_instruction": "0.3mg weekly starting"
+      },
+      {
+        "stack_name": "The Wolverine",
+        "stack_slug": "wolverine-stack",
+        "goal": "Injury & Tissue Repair",
+        "peptide_name": "BPC-157",
+        "peptide_slug": "bpc-157",
+        "dosage_instruction": "250-500mcg daily"
+      },
+      {
+        "stack_name": "The Wolverine",
+        "stack_slug": "wolverine-stack",
+        "goal": "Injury & Tissue Repair",
+        "peptide_name": "TB-500",
+        "peptide_slug": "tb-500",
+        "dosage_instruction": "2.5mg twice weekly"
+      },
+      {
+        "stack_name": "Classic Recomp",
+        "stack_slug": "classic-recomp",
+        "goal": "Fat Loss & Muscle Lean",
+        "peptide_name": "CJC-1295",
+        "peptide_slug": "cjc-1295",
+        "dosage_instruction": "100mcg daily (5/2 schedule)"
+      },
+      {
+        "stack_name": "Classic Recomp",
+        "stack_slug": "classic-recomp",
+        "goal": "Fat Loss & Muscle Lean",
+        "peptide_name": "Ipamorelin",
+        "peptide_slug": "ipamorelin",
+        "dosage_instruction": "200mcg daily"
+      },
+      {
+        "stack_name": "Visceral Shred",
+        "stack_slug": "visceral-shred",
+        "goal": "Targeted Fat Loss",
+        "peptide_name": "Tesamorelin",
+        "peptide_slug": "tesamorelin",
+        "dosage_instruction": "2mg daily (pre-bed)"
+      },
+      {
+        "stack_name": "Visceral Shred",
+        "stack_slug": "visceral-shred",
+        "goal": "Targeted Fat Loss",
+        "peptide_name": "Ipamorelin",
+        "peptide_slug": "ipamorelin",
+        "dosage_instruction": "200mcg daily"
+      },
+      {
+        "stack_name": "Cognitive Focus",
+        "stack_slug": "cognitive-focus",
+        "goal": "Mental Performance",
+        "peptide_name": "Semax",
+        "peptide_slug": "semax",
+        "dosage_instruction": "2-3 drops intranasal"
+      },
+      {
+        "stack_name": "Cognitive Focus",
+        "stack_slug": "cognitive-focus",
+        "goal": "Mental Performance",
+        "peptide_name": "Selank",
+        "peptide_slug": "selank",
+        "dosage_instruction": "2-3 drops intranasal"
+      },
+      {
+        "stack_name": "Cellular Longevity",
+        "stack_slug": "longevity-reset",
+        "goal": "Anti-Aging",
+        "peptide_name": "Epitalon",
+        "peptide_slug": "epitalon",
+        "dosage_instruction": "10mg daily (10-day cycle)"
+      },
+      {
+        "stack_name": "Cellular Longevity",
+        "stack_slug": "longevity-reset",
+        "goal": "Anti-Aging",
+        "peptide_name": "MOTS-c",
+        "peptide_slug": "mots-c",
+        "dosage_instruction": "10mg weekly"
+      },
+      {
+        "stack_name": "Cellular Longevity",
+        "stack_slug": "longevity-reset",
+        "goal": "Anti-Aging",
+        "peptide_name": "Thymosin Alpha-1",
+        "peptide_slug": "thymosin-alpha-1",
+        "dosage_instruction": "1.5mg twice weekly"
+      },
+      {
+        "stack_name": "The God Protocol",
+        "stack_slug": "the-god-protocol",
+        "goal": "Peak Human Performance",
+        "peptide_name": "Tesamorelin",
+        "peptide_slug": "tesamorelin",
+        "dosage_instruction": "2mg daily pre-bed (5/2 schedule)"
+      },
+      {
+        "stack_name": "The God Protocol",
+        "stack_slug": "the-god-protocol",
+        "goal": "Peak Human Performance",
+        "peptide_name": "Ipamorelin",
+        "peptide_slug": "ipamorelin",
+        "dosage_instruction": "200mcg daily pre-bed"
+      },
+      {
+        "stack_name": "The God Protocol",
+        "stack_slug": "the-god-protocol",
+        "goal": "Peak Human Performance",
+        "peptide_name": "MOTS-c",
+        "peptide_slug": "mots-c",
+        "dosage_instruction": "10mg weekly (Mitochondrial Energy)"
+      },
+      {
+        "stack_name": "The God Protocol",
+        "stack_slug": "the-god-protocol",
+        "goal": "Peak Human Performance",
+        "peptide_name": "Tirzepatide",
+        "peptide_slug": "tirzepatide",
+        "dosage_instruction": "2.5mg weekly (Glucose Management)"
+      },
+      {
+        "stack_name": "Advanced Hypertrophy",
+        "stack_slug": "advanced-hypertrophy",
+        "goal": "Maximum Muscle Growth",
+        "peptide_name": "IGF-1 LR3",
+        "peptide_slug": "igf-1-lr3",
+        "dosage_instruction": "50-100mcg daily post-workout"
+      }
+    ],
+    "success": true,
+    "meta": {
+      "served_by": "v3-prod",
+      "served_by_region": "WNAM",
+      "served_by_colo": "DFW",
+      "served_by_primary": true,
+      "timings": {
+        "sql_duration_ms": 0.3875
+      },
+      "duration": 0.3875,
+      "changes": 0,
+      "last_row_id": 0,
+      "changed_db": false,
+      "size_after": 106496,
+      "rows_read": 60,
+      "rows_written": 0,
+      "total_attempts": 1
+    }
+  }
+]

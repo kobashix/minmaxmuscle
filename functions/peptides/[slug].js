@@ -4,7 +4,7 @@ export async function onRequest(context) {
 
   try {
     // 1. Fetch Primary Peptide Data (Status mapped to Legal UI)
-    const peptide = await DB.prepare("SELECT id, peptide_name, slug, Category, research_summary, nicknames, primary_focus, Status, rank, molecular_data, Sources, [As Of] FROM Peptides WHERE slug = ?")
+    const peptide = await DB.prepare("SELECT id, name, slug, category, research_summary, nicknames, primary_focus, legal_status, rank, molecular_data, sources, updated_at FROM Peptides WHERE slug = ?")
       .bind(slug)
       .first();
     
@@ -20,12 +20,12 @@ export async function onRequest(context) {
 
     // 3. Fetch Related Research
     const related = await DB.prepare(
-      "SELECT peptide_name, slug FROM Peptides WHERE Category = ? AND slug != ? LIMIT 5"
-    ).bind(peptide.Category, slug).all();
+      "SELECT name, slug FROM Peptides WHERE category = ? AND slug != ? LIMIT 5"
+    ).bind(peptide.category, slug).all();
 
     // 4. Build HTML Components
     const relatedHtml = related.results.map(p => 
-      `<li><a href="/peptides/${p.slug}">${p.peptide_name}</a></li>`
+      `<li><a href="/peptides/${p.slug}">${p.name}</a></li>`
     ).join("");
 
     const faqHtml = faqs.results.map(f => `
@@ -37,8 +37,8 @@ export async function onRequest(context) {
 
     // 5. Build Functional Citation Links (Conditional Logic)
     let sourceSectionHtml = ""; // Default to empty
-    if (peptide.Sources && peptide.Sources.trim() !== "") {
-      const sourceUrls = peptide.Sources.split(',');
+    if (peptide.sources && peptide.sources.trim() !== "") {
+      const sourceUrls = peptide.sources.split(',');
       const links = sourceUrls.map((url, index) => {
         const cleanUrl = url.trim();
         if (!cleanUrl) return "";
@@ -63,9 +63,9 @@ export async function onRequest(context) {
     const mainSchema = {
       "@context": "https://schema.org",
       "@type": "MedicalEntity",
-      "name": peptide.peptide_name,
+      "name": peptide.name,
       "description": peptide.research_summary,
-      "category": peptide.Category
+      "category": peptide.category
     };
 
     const faqSchema = {
@@ -88,18 +88,18 @@ export async function onRequest(context) {
       })
       .on("header", { element(el) { el.setInnerContent(headerHtml, { html: true }); } })
       .on("footer", { element(el) { el.setInnerContent(footerHtml, { html: true }); } })
-      .on("#peptide_name", { element(el) { el.setInnerContent(peptide.peptide_name); } })
-      .on("#category_badge", { element(el) { el.setInnerContent(peptide.Category || "Research"); } })
+      .on("#peptide_name", { element(el) { el.setInnerContent(peptide.name); } })
+      .on("#category_badge", { element(el) { el.setInnerContent(peptide.category || "Research"); } })
       .on("#research_summary", { element(el) { el.setInnerContent(peptide.research_summary); } })
       .on("#nicknames", { element(el) { el.setInnerContent(peptide.nicknames || "N/A"); } })
       .on("#primary_focus", { element(el) { el.setInnerContent(peptide.primary_focus); } })
-      .on("#legal_status", { element(el) { el.setInnerContent(peptide.Status || "Research Only"); } })
+      .on("#legal_status", { element(el) { el.setInnerContent(peptide.legal_status || "Research Only"); } })
       .on("#rank", { element(el) { el.setInnerContent(String(peptide.rank)); } })
       .on("#molecular_data", { element(el) { el.setInnerContent(peptide.molecular_data || "N/A"); } })
       .on("#related_list", { element(el) { el.setInnerContent(relatedHtml, { html: true }); } })
       .on("#faq_container", { element(el) { el.setInnerContent(faqHtml, { html: true }); } })
       .on("#source_link", { element(el) { el.setInnerContent(sourceSectionHtml, { html: true }); } })
-      .on("#as_of_date", { element(el) { el.setInnerContent(`Data Verified: ${peptide["As Of"] || '2026-02-06'}`); } })
+      .on("#as_of_date", { element(el) { el.setInnerContent(`Data Verified: ${peptide.updated_at || '2026-02-06'}`); } })
       .transform(tempRes);
 
   } catch (e) {
