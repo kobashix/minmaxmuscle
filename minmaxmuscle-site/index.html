@@ -10,7 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
-<body class="selection:bg-blue-500 min-h-screen flex flex-col bg-zinc-950 text-zinc-300">
+<body class="selection:bg-emerald-500 min-h-screen flex flex-col bg-zinc-950 text-zinc-300">
 
     <nav class="fixed top-6 left-0 right-0 z-[100] flex justify-center px-4 pointer-events-none">
         <div class="nav-pill rounded-full px-4 py-2 flex items-center justify-between gap-4 w-full max-w-5xl shadow-2xl pointer-events-auto transition-transform duration-500 hover:scale-[1.02]">
@@ -29,7 +29,7 @@
             </div>
             
             <div class="flex items-center gap-2">
-                <a href="/coaching" onclick="navigate('/coaching'); return false;" class="hidden md:block px-6 py-2 rounded-full text-[11px] font-black uppercase text-white bg-blue-600 hover:bg-blue-500 transition shadow-lg shadow-blue-600/20" id="nav-coaching">COACHING</a>
+                <a href="/coaching" onclick="navigate('/coaching'); return false;" class="hidden md:block px-6 py-2 rounded-full text-[11px] font-black uppercase text-white bg-emerald-600 hover:bg-emerald-500 transition shadow-lg shadow-emerald-600/20" id="nav-coaching">COACHING</a>
                 <button class="md:hidden text-white p-2 hover:bg-white/5 rounded-full transition" onclick="toggleMobileMenu()">
                     <i id="menu-icon" data-feather="menu"></i>
                 </button>
@@ -37,7 +37,7 @@
         </div>
         
         <!-- Enhanced Mobile Menu -->
-        <div id="mobile-menu" class="fixed inset-0 bg-zinc-950/95 backdrop-blur-xl z-[-1] hidden opacity-0 transition-all duration-300 flex flex-col items-center justify-center p-8">
+        <div id="mobile-menu" class="fixed inset-0 bg-zinc-950/95 backdrop-blur-xl z-[110] hidden opacity-0 transition-all duration-300 flex flex-col items-center justify-center p-8">
             <div class="flex flex-col gap-4 w-full max-w-sm">
                 <a href="/peptides" onclick="navigate('/peptides'); return false;" class="text-3xl font-black italic uppercase text-zinc-500 hover:text-white transition-colors py-4 border-b border-white/5 flex justify-between items-center group">
                     PEPTIDES <i data-feather="arrow-right" class="opacity-0 group-hover:opacity-100 transition-opacity"></i>
@@ -54,7 +54,7 @@
                 <a href="https://blog.minmaxmuscle.com/forum/" class="text-3xl font-black italic uppercase text-zinc-500 hover:text-white transition-colors py-4 border-b border-white/5 flex justify-between items-center group">
                     FORUMS <i data-feather="external-link" class="w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity"></i>
                 </a>
-                <a href="/coaching" onclick="navigate('/coaching'); return false;" class="mt-8 px-8 py-5 bg-blue-600 text-white text-xl font-black italic uppercase rounded-2xl text-center shadow-xl shadow-blue-600/20 active:scale-95 transition-transform">
+                <a href="/coaching" onclick="navigate('/coaching'); return false;" class="mt-8 px-8 py-5 bg-emerald-600 text-white text-xl font-black italic uppercase rounded-2xl text-center shadow-xl shadow-emerald-600/20 active:scale-95 transition-transform">
                     APPLY FOR COACHING
                 </a>
             </div>
@@ -71,15 +71,15 @@
                 </div>
                 
                 <div class="relative z-10 text-center max-w-5xl">
-                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-blue-400 text-[10px] font-black uppercase mb-12 animate-fade-in">
-                        <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse shadow-[0_0_12px_rgba(59,130,246,0.8)]"></span>
-                        Clinical Data Archives Online
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-emerald-400 text-[10px] font-black uppercase mb-12 animate-fade-in data-mono">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_12px_rgba(16,185,129,0.8)]"></span>
+                        Node: clinical_archive_01 // Online
                     </div>
                     
                     <h1 class="text-7xl md:text-[10rem] font-black mb-8 leading-[0.8] uppercase italic text-white tracking-tighter">
                         PEAK<br>
                         <span class="text-gradient">HUMAN</span><br>
-                        <span class="text-blue-600">PERFORMANCE</span>
+                        <span class="text-emerald-600">PERFORMANCE</span>
                     </h1>
                     
                     <p class="text-zinc-400 text-lg md:text-xl mb-12 max-w-2xl mx-auto font-medium leading-relaxed">
@@ -89,7 +89,7 @@
                     <div class="flex flex-col sm:flex-row gap-6 justify-center">
                         <button onclick="navigate('/peptides')" class="group relative px-12 py-5 bg-white text-black font-black rounded-2xl uppercase italic text-sm overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-2xl">
                             <span class="relative z-10">Peptide Database</span>
-                            <div class="absolute inset-0 bg-blue-600 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                            <div class="absolute inset-0 bg-emerald-600 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
                         </button>
                         <button onclick="navigate('/stacks')" class="px-12 py-5 glass hover:bg-white/10 text-white rounded-2xl uppercase italic text-sm font-black transition-all hover:scale-105 active:scale-95">
                             Protocol Stacks
@@ -108,13 +108,13 @@
                 <article class="prose prose-invert prose-blue max-w-none">
                     <div class="flex flex-col md:flex-row gap-12 items-start mb-20">
                         <div class="md:w-1/3 sticky top-32">
-                            <h2 class="text-5xl font-black italic uppercase text-white mb-6 leading-[0.9] tracking-tighter">The Peptide<br><span class="text-blue-600">Frontier</span></h2>
-                            <div class="w-20 h-2 bg-blue-600 mb-8 rounded-full"></div>
+                            <h2 class="text-5xl font-black italic uppercase text-white mb-6 leading-[0.9] tracking-tighter">The Peptide<br><span class="text-emerald-600">Frontier</span></h2>
+                            <div class="w-20 h-2 bg-emerald-600 mb-8 rounded-full"></div>
                             <p class="text-zinc-500 font-bold uppercase text-xs tracking-widest">Clinical Analysis & Research Protocols</p>
                         </div>
                         <div class="md:w-2/3">
                             <p class="text-2xl leading-relaxed mb-12 font-medium text-zinc-300">
-                                In the pursuit of peak human performance, the scientific community has shifted its focus from blunt-force anabolic agents to the surgical precision of <span class="text-white border-b border-blue-600/50">metabolic optimization</span>.
+                                In the pursuit of peak human performance, the scientific community has shifted its focus from blunt-force anabolic agents to the surgical precision of <span class="text-white border-b border-emerald-600/50">metabolic optimization</span>.
                             </p>
                             <div class="space-y-8 text-zinc-400 leading-relaxed text-lg">
                                 <p>Peptides—short chains of amino acids linked by peptide bonds—have emerged as the fundamental signaling molecules of the biological revolution. Unlike traditional pharmacology, which often overrides natural feedback loops, peptide therapy aims to modulate specific cellular pathways, restoring youthful vigor or accelerating physiological repair at the molecular level.</p>
@@ -124,49 +124,49 @@
                     </div>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-20">
-                        <div class="glass p-10 rounded-[2.5rem] border-white/5 group hover:border-blue-500/30 transition-colors">
-                            <div class="w-12 h-12 bg-blue-600/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                                <i data-feather="zap" class="text-blue-500"></i>
+                        <div class="glass p-10 rounded-[2.5rem] border-white/5 group hover:border-emerald-500/30 transition-colors">
+                            <div class="w-12 h-12 bg-emerald-600/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                <i data-feather="zap" class="text-emerald-500"></i>
                             </div>
                             <h4 class="text-white font-black uppercase text-xl mb-4 italic tracking-tight">Growth Hormone Secretagogues (GHS)</h4>
                             <p class="text-sm leading-relaxed text-zinc-400">Compounds such as Ipamorelin, CJC-1295, and Tesamorelin represent the most researched class of peptides. They work with the body's homeostatic mechanisms to increase serum IGF-1 levels, facilitating muscle protein synthesis and systemic lipolysis.</p>
                         </div>
-                        <div class="glass p-10 rounded-[2.5rem] border-white/5 group hover:border-blue-500/30 transition-colors text-right md:text-left">
-                            <div class="w-12 h-12 bg-blue-600/20 rounded-2xl flex items-center justify-center mb-6 md:mr-auto md:ml-0 ml-auto group-hover:scale-110 transition-transform">
-                                <i data-feather="plus-circle" class="text-blue-500"></i>
+                        <div class="glass p-10 rounded-[2.5rem] border-white/5 group hover:border-emerald-500/30 transition-colors text-right md:text-left">
+                            <div class="w-12 h-12 bg-emerald-600/20 rounded-2xl flex items-center justify-center mb-6 md:mr-auto md:ml-0 ml-auto group-hover:scale-110 transition-transform">
+                                <i data-feather="plus-circle" class="text-emerald-500"></i>
                             </div>
                             <h4 class="text-white font-black uppercase text-xl mb-4 italic tracking-tight">Regenerative & Healing Peptides</h4>
                             <p class="text-sm leading-relaxed text-zinc-400">BPC-157 and Thymosin Beta-4 (TB-500) are the clinical gold standards for tissue repair. They operate via the upregulation of VEGF and cell migration, inducing rapid angiogenesis and systemic inflammatory cytokine reduction.</p>
                         </div>
                     </div>
 
-                    <div class="p-12 glass rounded-[3rem] border-blue-600/20 relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 blur-[100px] -mr-32 -mt-32"></div>
+                    <div class="p-12 glass rounded-[3rem] border-emerald-600/20 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-emerald-600/10 blur-[100px] -mr-32 -mt-32"></div>
                         <h4 class="text-white font-black uppercase text-2xl mb-8 italic">Clinical Research Standards</h4>
                         <ul class="grid md:grid-cols-2 gap-8">
                             <li class="flex gap-4">
-                                <div class="text-blue-500 font-black text-2xl">01</div>
+                                <div class="text-emerald-500 font-black text-2xl data-mono">01</div>
                                 <div>
                                     <span class="text-white font-black uppercase text-[10px] tracking-widest block mb-1">Source Verification</span>
                                     <p class="text-xs text-zinc-500">Prioritize compounds verified by third-party HPLC and LC-MS reports to ensure purity.</p>
                                 </div>
                             </li>
                             <li class="flex gap-4">
-                                <div class="text-blue-500 font-black text-2xl">02</div>
+                                <div class="text-emerald-500 font-black text-2xl data-mono">02</div>
                                 <div>
                                     <span class="text-white font-black uppercase text-[10px] tracking-widest block mb-1">Aseptic Technique</span>
                                     <p class="text-xs text-zinc-500">All procedures must be performed using sterile tools in sanitized environments.</p>
                                 </div>
                             </li>
                             <li class="flex gap-4">
-                                <div class="text-blue-500 font-black text-2xl">03</div>
+                                <div class="text-emerald-500 font-black text-2xl data-mono">03</div>
                                 <div>
                                     <span class="text-white font-black uppercase text-[10px] tracking-widest block mb-1">Quantitative Logs</span>
                                     <p class="text-xs text-zinc-500">Maintain exhaustive logs of administration timing, dosage, and physiological markers.</p>
                                 </div>
                             </li>
                             <li class="flex gap-4">
-                                <div class="text-blue-500 font-black text-2xl">04</div>
+                                <div class="text-emerald-500 font-black text-2xl data-mono">04</div>
                                 <div>
                                     <span class="text-white font-black uppercase text-[10px] tracking-widest block mb-1">Legal Compliance</span>
                                     <p class="text-xs text-zinc-500">Strictly adhere to local and international regulations regarding experimental compounds.</p>
@@ -182,7 +182,7 @@
         <section id="view-peptides" class="view-section px-4 max-w-7xl mx-auto py-24">
             <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
                 <div class="w-full">
-                    <h1 class="text-7xl font-black italic uppercase mb-2 tracking-tighter text-white">Peptide<br><span class="text-blue-600">Library</span></h1>
+                    <h1 class="text-7xl font-black italic uppercase mb-2 tracking-tighter text-white">Peptide<br><span class="text-emerald-500">Library</span></h1>
                     <p class="text-zinc-500 font-black uppercase text-xs tracking-widest mb-10">Active Research Dossiers</p>
                     
                     <!-- Filter Matrix -->
@@ -194,29 +194,29 @@
                     </div>
                 </div>
                 <div class="relative w-full md:w-96 group mb-10 md:mb-0">
-                    <i data-feather="search" class="absolute left-5 top-1/2 -translate-y-1/2 text-zinc-600 w-4 h-4 group-focus-within:text-blue-500 transition-colors"></i>
-                    <input type="text" id="pepSearch" class="glass bg-white/5 border-white/5 p-5 pl-14 rounded-2xl w-full text-xs font-black tracking-widest focus:border-blue-600/50 outline-none transition-all" placeholder="SEARCH CLINICAL DATABASE...">
+                    <i data-feather="search" class="absolute left-5 top-1/2 -translate-y-1/2 text-zinc-600 w-4 h-4 group-focus-within:text-emerald-500 transition-colors"></i>
+                    <input type="text" id="pepSearch" class="glass bg-white/5 border-white/5 p-5 pl-14 rounded-2xl w-full text-xs font-black tracking-widest focus:border-emerald-600/50 outline-none transition-all" placeholder="SEARCH CLINICAL DATABASE...">
                 </div>
             </div>
  
             <!-- Database Introduction -->
             <div class="glass border-white/5 rounded-[3rem] p-10 md:p-16 mb-16 relative overflow-hidden">
-                <div class="absolute top-0 left-0 w-96 h-96 bg-blue-600/5 blur-[120px] -ml-48 -mt-48"></div>
+                <div class="absolute top-0 left-0 w-96 h-96 bg-emerald-600/5 blur-[120px] -ml-48 -mt-48"></div>
                 <div class="grid md:grid-cols-2 gap-16 relative z-10">
                     <div>
-                        <h3 class="text-3xl font-black italic uppercase text-white mb-8 border-l-4 border-blue-600 pl-6">Clinical Archive</h3>
+                        <h3 class="text-3xl font-black italic uppercase text-white mb-8 border-l-4 border-emerald-600 pl-6">Clinical Archive</h3>
                         <p class="text-zinc-400 text-sm leading-relaxed mb-8 font-medium italic">
                             The MinMaxMuscle Peptide Index is designed as a high-density clinical archive for researchers and bio-optimization specialists. We consolidate biological data points into a systematically organized interface.
                         </p>
                         <ul class="space-y-4 text-xs font-bold text-zinc-500 uppercase tracking-widest">
-                            <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> Molecular Structure Analysis</li>
-                            <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> Phase Trial Tracking</li>
-                            <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> Synergistic Pairing Data</li>
+                            <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Molecular Structure Analysis</li>
+                            <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Phase Trial Tracking</li>
+                            <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Synergistic Pairing Data</li>
                         </ul>
                     </div>
                     <div class="flex flex-col justify-center">
-                        <div class="bg-blue-600/10 border border-blue-600/20 p-8 rounded-3xl mb-8">
-                            <p class="text-[10px] text-blue-400 font-black uppercase tracking-widest mb-4">Selection Rigor</p>
+                        <div class="bg-emerald-600/10 border border-emerald-600/20 p-8 rounded-3xl mb-8">
+                            <p class="text-[10px] text-emerald-400 font-black uppercase tracking-widest mb-4">Selection Rigor</p>
                             <p class="text-sm text-zinc-300 italic font-medium leading-relaxed">
                                 "We prioritize peptides with human clinical data. Our dossiers represent the intersection of empirical science and performance optimization."
                             </p>
@@ -238,8 +238,8 @@
         <!-- STACKS -->
         <section id="view-stacks" class="view-section px-4 max-w-7xl mx-auto py-24">
             <div class="mb-16">
-                <h2 class="text-7xl font-black italic uppercase mb-2 tracking-tighter text-white">Protocol<br><span class="text-blue-600">Stacks</span></h2>
-                <div class="w-24 h-2 bg-blue-600 rounded-full mb-6"></div>
+                <h2 class="text-7xl font-black italic uppercase mb-2 tracking-tighter text-white">Protocol<br><span class="text-emerald-500">Stacks</span></h2>
+                <div class="w-24 h-2 bg-emerald-600 rounded-full mb-6"></div>
                 <p class="text-zinc-500 font-bold uppercase text-[10px] tracking-[0.3em]">Synergistic Research Matrices</p>
             </div>
             
@@ -252,8 +252,8 @@
         <!-- CALCULATORS -->
         <section id="view-calculators" class="view-section px-4 max-w-4xl mx-auto py-24">
             <div class="text-center mb-16">
-                <h2 class="text-7xl font-black italic uppercase mb-4 tracking-tighter text-white">Clinical<br><span class="text-blue-600">Calculators</span></h2>
-                <p class="text-zinc-500 font-bold uppercase text-[10px] tracking-[0.3em]">Precision Dosing & Yield Analytics</p>
+                <h2 class="text-7xl font-black italic uppercase mb-4 tracking-tighter text-white">Clinical<br><span class="text-emerald-500">Calculators</span></h2>
+                <p class="text-zinc-500 font-bold uppercase text-[10px] tracking-[0.3em] data-mono">Precision Dosing & Yield Analytics</p>
             </div>
             
             <div class="flex flex-wrap justify-center gap-3 mb-12">
@@ -264,30 +264,30 @@
             
             <!-- Recon Calc -->
             <div id="calc-recon" class="calc-view glass p-10 md:p-14 rounded-[3.5rem] border-white/5 relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-blue-600/5 blur-[100px] -mr-32 -mt-32"></div>
+                <div class="absolute top-0 right-0 w-64 h-64 bg-emerald-600/5 blur-[100px] -mr-32 -mt-32"></div>
                 <div class="relative z-10">
                     <div class="grid md:grid-cols-2 gap-12 items-center">
                         <div class="space-y-8">
                             <div class="grid grid-cols-2 gap-6">
                                 <div>
-                                    <label class="text-[10px] font-black text-zinc-500 uppercase tracking-widest block mb-2 ml-4">Vial (mg)</label>
-                                    <input type="number" id="c-mg" class="w-full bg-zinc-950/50 border border-white/5 p-5 rounded-2xl text-white font-bold focus:border-blue-500 outline-none transition-all" value="5">
+                                    <label class="text-[10px] font-black text-zinc-500 uppercase tracking-widest block mb-2 ml-4 data-mono">Vial (mg)</label>
+                                    <input type="number" id="c-mg" class="w-full bg-zinc-950/50 border border-white/5 p-5 rounded-2xl text-white font-bold focus:border-emerald-500 outline-none transition-all data-mono" value="5">
                                 </div>
                                 <div>
-                                    <label class="text-[10px] font-black text-zinc-500 uppercase tracking-widest block mb-2 ml-4">Water (ml)</label>
-                                    <input type="number" id="c-ml" class="w-full bg-zinc-950/50 border border-white/5 p-5 rounded-2xl text-white font-bold focus:border-blue-500 outline-none transition-all" value="2">
+                                    <label class="text-[10px] font-black text-zinc-500 uppercase tracking-widest block mb-2 ml-4 data-mono">Water (ml)</label>
+                                    <input type="number" id="c-ml" class="w-full bg-zinc-950/50 border border-white/5 p-5 rounded-2xl text-white font-bold focus:border-emerald-500 outline-none transition-all data-mono" value="2">
                                 </div>
                             </div>
                             <div>
-                                <label class="text-[10px] font-black text-zinc-500 uppercase tracking-widest block mb-2 ml-4">Dose (mcg)</label>
-                                <input type="number" id="c-mcg" class="w-full bg-zinc-950/50 border border-white/5 p-5 rounded-2xl text-white font-bold focus:border-blue-500 outline-none transition-all" value="250">
+                                <label class="text-[10px] font-black text-zinc-500 uppercase tracking-widest block mb-2 ml-4 data-mono">Dose (mcg)</label>
+                                <input type="number" id="c-mcg" class="w-full bg-zinc-950/50 border border-white/5 p-5 rounded-2xl text-white font-bold focus:border-emerald-500 outline-none transition-all data-mono" value="250">
                             </div>
                         </div>
-                        <div class="bg-blue-600/10 border border-blue-600/20 p-12 rounded-[2.5rem] text-center relative overflow-hidden">
-                            <div class="absolute inset-0 bg-blue-600/5 animate-pulse"></div>
+                        <div class="bg-emerald-600/10 border border-emerald-600/20 p-12 rounded-[2.5rem] text-center relative overflow-hidden">
+                            <div class="absolute inset-0 bg-emerald-600/5 animate-pulse"></div>
                             <div class="relative z-10">
-                                <span id="c-res" class="text-8xl font-black italic text-white leading-none">10</span>
-                                <p class="text-[10px] text-blue-400 font-black uppercase mt-4 tracking-widest italic">Units (U-100 Syringe)</p>
+                                <span id="c-res" class="text-8xl font-black italic text-white leading-none data-mono">10</span>
+                                <p class="text-[10px] text-emerald-400 font-black uppercase mt-4 tracking-widest italic data-mono">Units (U-100 Syringe)</p>
                             </div>
                         </div>
                     </div>
@@ -306,8 +306,8 @@
                             </div>
                         </div>
                         <div class="bg-purple-600/10 border border-purple-600/20 p-12 rounded-[2.5rem] text-center">
-                            <span id="u-res" class="text-8xl font-black italic text-white leading-none">3.0</span>
-                            <p class="text-[10px] text-purple-400 font-black uppercase mt-4 tracking-widest italic">International Units (at 3:1)</p>
+                            <span id="u-res" class="text-8xl font-black italic text-white leading-none data-mono">3.0</span>
+                            <p class="text-[10px] text-purple-400 font-black uppercase mt-4 tracking-widest italic data-mono">International Units (at 3:1)</p>
                         </div>
                     </div>
                 </div>
@@ -337,10 +337,10 @@
                         <div class="bg-emerald-600/10 border border-emerald-600/20 p-12 rounded-[2.5rem] text-center">
                             <div class="flex flex-col items-center">
                                 <div class="flex items-baseline gap-2">
-                                    <span id="cy-res" class="text-8xl font-black italic text-white leading-none">60</span>
-                                    <span class="text-2xl font-black text-emerald-500 italic uppercase">mg</span>
+                                    <span id="cy-res" class="text-8xl font-black italic text-white leading-none data-mono">60</span>
+                                    <span class="text-2xl font-black text-emerald-500 italic uppercase data-mono">mg</span>
                                 </div>
-                                <p class="text-[10px] text-emerald-400 font-black uppercase mt-4 tracking-widest italic">Total Compound Required</p>
+                                <p class="text-[10px] text-emerald-400 font-black uppercase mt-4 tracking-widest italic data-mono">Total Compound Required</p>
                             </div>
                         </div>
                     </div>
@@ -351,61 +351,61 @@
         <!-- COACHING -->
         <section id="view-coaching" class="view-section px-4 max-w-4xl mx-auto py-24">
             <div class="text-center mb-16">
-                <h2 class="text-7xl font-black italic uppercase mb-4 tracking-tighter text-white">Performance<br><span class="text-blue-600">Coaching</span></h2>
-                <div class="w-24 h-2 bg-blue-600 rounded-full mx-auto mb-6"></div>
+                <h2 class="text-7xl font-black italic uppercase mb-4 tracking-tighter text-white">Performance<br><span class="text-emerald-500">Coaching</span></h2>
+                <div class="w-24 h-2 bg-emerald-600 rounded-full mx-auto mb-6"></div>
                 <p class="text-zinc-500 font-bold uppercase text-[10px] tracking-[0.3em]">Direct Protocol Intervention</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
                 <div class="glass p-10 rounded-[3rem] border-white/5 relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-600/5 blur-3xl -mr-16 -mt-16 group-hover:bg-blue-600/10 transition-colors"></div>
-                    <i data-feather="activity" class="w-10 h-10 text-blue-500 mb-6"></i>
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-600/5 blur-3xl -mr-16 -mt-16 group-hover:bg-emerald-600/10 transition-colors"></div>
+                    <i data-feather="activity" class="w-10 h-10 text-emerald-500 mb-6"></i>
                     <h3 class="text-2xl font-black italic uppercase text-white mb-4">Training Design</h3>
                     <p class="text-zinc-400 text-sm leading-relaxed mb-8 italic">Custom hypertrophy and strength blocks designed for maximal mechanical tension and optimal recovery.</p>
-                    <ul class="text-[10px] text-zinc-500 space-y-3 font-black uppercase tracking-widest">
-                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> 12-Week Periodization</li>
-                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> Biomechanical Analysis</li>
-                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> Autoregulation Logic</li>
+                    <ul class="text-[10px] text-zinc-500 space-y-3 font-black uppercase tracking-widest data-mono">
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> 12-Week Periodization</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Biomechanical Analysis</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Autoregulation Logic</li>
                     </ul>
                 </div>
                 
                 <div class="glass p-10 rounded-[3rem] border-white/5 relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-600/5 blur-3xl -mr-16 -mt-16 group-hover:bg-blue-600/10 transition-colors"></div>
-                    <i data-feather="pie-chart" class="w-10 h-10 text-blue-500 mb-6"></i>
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-600/5 blur-3xl -mr-16 -mt-16 group-hover:bg-emerald-600/10 transition-colors"></div>
+                    <i data-feather="pie-chart" class="w-10 h-10 text-emerald-500 mb-6"></i>
                     <h3 class="text-2xl font-black italic uppercase text-white mb-4">Nutrition & Bio</h3>
                     <p class="text-zinc-400 text-sm leading-relaxed mb-8 italic">Data-driven recomposition tracking. Tailored energy balances for distinct biological phases.</p>
-                    <ul class="text-[10px] text-zinc-500 space-y-3 font-black uppercase tracking-widest">
-                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> Phase-specific Macros</li>
-                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> Micronutrient Protocols</li>
-                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> Bloodwork Analysis</li>
+                    <ul class="text-[10px] text-zinc-500 space-y-3 font-black uppercase tracking-widest data-mono">
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Phase-specific Macros</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Micronutrient Protocols</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Bloodwork Analysis</li>
                     </ul>
                 </div>
             </div>
 
             <!-- Coaching CTA Form -->
             <div class="glass rounded-[4rem] p-10 md:p-20 border-white/5 relative overflow-hidden">
-                <div class="absolute -top-40 -right-40 w-96 h-96 bg-blue-600/10 blur-[120px]"></div>
+                <div class="absolute -top-40 -right-40 w-96 h-96 bg-emerald-600/10 blur-[120px]"></div>
                 
                 <div class="relative z-10">
                     <div class="mb-12">
-                        <h3 class="text-4xl font-black italic uppercase text-white mb-2 tracking-tighter">Apply for<br><span class="text-blue-600">Optimization</span></h3>
-                        <p class="text-zinc-500 text-xs font-black uppercase tracking-widest italic">Waitlist current: 24-48h Response Time</p>
+                        <h3 class="text-4xl font-black italic uppercase text-white mb-2 tracking-tighter">Apply for<br><span class="text-emerald-500">Optimization</span></h3>
+                        <p class="text-zinc-500 text-xs font-black uppercase tracking-widest italic data-mono">Waitlist current: 24-48h Response Time</p>
                     </div>
                     
                     <form action="https://formspree.io/f/xkovzdqq" method="POST" class="space-y-8">
                         <div class="grid md:grid-cols-2 gap-8">
                             <div class="space-y-3">
-                                <label class="text-[10px] font-black text-zinc-500 uppercase tracking-widest ml-4">Researcher Name</label>
-                                <input type="text" name="name" required class="w-full bg-zinc-950/50 border border-white/5 p-6 rounded-3xl text-white font-bold focus:border-blue-500 outline-none transition-all placeholder:text-zinc-800" placeholder="FULL NAME">
+                                <label class="text-[10px] font-black text-zinc-500 uppercase tracking-widest ml-4 data-mono">Researcher Name</label>
+                                <input type="text" name="name" required class="w-full bg-zinc-950/50 border border-white/5 p-6 rounded-3xl text-white font-bold focus:border-emerald-500 outline-none transition-all placeholder:text-zinc-800" placeholder="FULL NAME">
                             </div>
                             <div class="space-y-3">
-                                <label class="text-[10px] font-black text-zinc-500 uppercase tracking-widest ml-4">Email Channel</label>
-                                <input type="email" name="email" required class="w-full bg-zinc-950/50 border border-white/5 p-6 rounded-3xl text-white font-bold focus:border-blue-500 outline-none transition-all placeholder:text-zinc-800" placeholder="CONTACT@EMAIL.COM">
+                                <label class="text-[10px] font-black text-zinc-500 uppercase tracking-widest ml-4 data-mono">Email Channel</label>
+                                <input type="email" name="email" required class="w-full bg-zinc-950/50 border border-white/5 p-6 rounded-3xl text-white font-bold focus:border-emerald-500 outline-none transition-all placeholder:text-zinc-800" placeholder="CONTACT@EMAIL.COM">
                             </div>
                         </div>
                         <div class="space-y-3">
                             <label class="text-[10px] font-black text-zinc-500 uppercase tracking-widest ml-4">Primary Research Focus</label>
-                            <select name="goal" class="w-full bg-zinc-950/50 border border-white/5 p-6 rounded-3xl text-white font-bold focus:border-blue-500 outline-none transition-all appearance-none cursor-pointer">
+                            <select name="goal" class="w-full bg-zinc-950/50 border border-white/5 p-6 rounded-3xl text-white font-bold focus:border-emerald-500 outline-none transition-all appearance-none cursor-pointer data-mono">
                                 <option value="Hypertrophy">Hypertrophy (Mass Gain)</option>
                                 <option value="Fat Loss">Fat Loss & Recomp</option>
                                 <option value="Injury Recovery">Injury Recovery</option>
@@ -414,11 +414,11 @@
                         </div>
                         <div class="space-y-3">
                             <label class="text-[10px] font-black text-zinc-500 uppercase tracking-widest ml-4">Current Physiological Status</label>
-                            <textarea name="notes" rows="4" class="w-full bg-zinc-950/50 border border-white/5 p-6 rounded-3xl text-white font-bold focus:border-blue-500 outline-none transition-all resize-none placeholder:text-zinc-800" placeholder="DESCRIBE YOUR GOALS AND LIMITATIONS..."></textarea>
+                            <textarea name="notes" rows="4" class="w-full bg-zinc-950/50 border border-white/5 p-6 rounded-3xl text-white font-bold focus:border-emerald-500 outline-none transition-all resize-none placeholder:text-zinc-800 data-mono" placeholder="DESCRIBE YOUR GOALS AND LIMITATIONS..."></textarea>
                         </div>
                         <button type="submit" class="group relative w-full py-8 bg-white text-black font-black uppercase italic tracking-[0.3em] text-sm rounded-3xl overflow-hidden transition-all hover:scale-[1.02] active:scale-95 shadow-2xl">
                             <span class="relative z-10">Submit Application</span>
-                            <div class="absolute inset-0 bg-blue-600 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                            <div class="absolute inset-0 bg-emerald-600 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
                         </button>
                     </form>
                 </div>
@@ -428,16 +428,16 @@
         <!-- ABOUT -->
         <section id="view-about" class="view-section px-4 max-w-5xl mx-auto py-24">
             <div class="glass p-10 md:p-20 rounded-[4rem] border-white/5 relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-96 h-96 bg-blue-600/5 blur-[120px] -mr-48 -mt-48"></div>
-                <h2 class="text-6xl font-black italic uppercase mb-12 tracking-tighter text-white border-b border-white/5 pb-8">About<br><span class="text-blue-600">The Archive</span></h2>
+                <div class="absolute top-0 right-0 w-96 h-96 bg-emerald-600/5 blur-[120px] -mr-48 -mt-48"></div>
+                <h2 class="text-6xl font-black italic uppercase mb-12 tracking-tighter text-white border-b border-white/5 pb-8">About<br><span class="text-emerald-500">The Archive</span></h2>
                 <div class="grid md:grid-cols-2 gap-16 items-start">
                     <div class="space-y-8 text-zinc-400 text-lg leading-relaxed font-medium italic">
                         <p>MinMaxMuscle is an independent digital archive and clinical data analysis platform dedicated to the science of human hypertrophy, metabolic optimization, and advanced recovery protocols.</p>
                         <p>Founded on the principles of <span class="text-white">"System over Motivation,"</span> our directive is to aggregate, analyze, and present complex biological data surrounding peptides and performance compounds in a systematically organized format.</p>
                     </div>
                     <div class="space-y-8">
-                        <div class="bg-blue-600/10 border-l-4 border-blue-600 p-8 rounded-r-3xl">
-                            <h3 class="text-xs font-black text-blue-400 uppercase tracking-widest mb-4">Core Philosophy</h3>
+                        <div class="bg-emerald-600/10 border-l-4 border-emerald-600 p-8 rounded-r-3xl">
+                            <h3 class="text-xs font-black text-emerald-400 uppercase tracking-widest mb-4">Core Philosophy</h3>
                             <p class="text-sm text-zinc-300 italic font-medium leading-relaxed">"Data-driven optimization. No dogma. Just what works, what doesn't, and the clinical rationale behind it."</p>
                         </div>
                         <p class="text-sm text-zinc-500 leading-relaxed font-medium">Our repository relies on cross-referenced data from primary clinical literature and established anecdotal protocols from elite athletic populations. We provide this data strictly for educational and harm-reduction purposes.</p>
@@ -449,17 +449,17 @@
         <!-- CONTACT -->
         <section id="view-contact" class="view-section px-4 max-w-4xl mx-auto py-24 text-center">
             <div class="glass p-16 md:p-24 rounded-[4rem] border-white/5 relative overflow-hidden group">
-                <div class="absolute inset-0 bg-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="absolute inset-0 bg-emerald-600/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div class="relative z-10">
-                    <div class="w-20 h-20 bg-blue-600/20 rounded-3xl flex items-center justify-center mx-auto mb-10 transition-transform group-hover:scale-110">
-                        <i data-feather="mail" class="text-blue-500 w-8 h-8"></i>
+                    <div class="w-20 h-20 bg-emerald-600/20 rounded-3xl flex items-center justify-center mx-auto mb-10 transition-transform group-hover:scale-110">
+                        <i data-feather="mail" class="text-emerald-500 w-8 h-8"></i>
                     </div>
-                    <h2 class="text-6xl font-black italic uppercase mb-6 tracking-tighter text-white">Contact<br><span class="text-blue-600">Admin</span></h2>
+                    <h2 class="text-6xl font-black italic uppercase mb-6 tracking-tighter text-white">Contact<br><span class="text-emerald-500">Admin</span></h2>
                     <p class="text-zinc-500 font-medium mb-12 max-w-lg mx-auto italic">For technical support, database corrections, or business partnerships, please reach out to our administrative team.</p>
                     
                     <div class="inline-block glass bg-white/5 border-white/10 p-10 rounded-[2.5rem] transition-all hover:bg-white/10">
-                        <p class="text-[10px] text-zinc-600 font-black uppercase tracking-[0.3em] mb-3">Direct Channel</p>
-                        <a href="mailto:admin@minmaxmuscle.com" class="text-3xl md:text-4xl font-black text-white hover:text-blue-500 transition-colors tracking-tight">admin@minmaxmuscle.com</a>
+                        <p class="text-[10px] text-zinc-600 font-black uppercase tracking-[0.3em] mb-3 data-mono">Direct Channel</p>
+                        <a href="mailto:admin@minmaxmuscle.com" class="text-3xl md:text-4xl font-black text-white hover:text-emerald-500 transition-colors tracking-tight">admin@minmaxmuscle.com</a>
                     </div>
                     <p class="text-[10px] text-zinc-700 font-black uppercase tracking-widest mt-12">Expected Response Time: 24-48 Hours</p>
                 </div>
@@ -469,7 +469,7 @@
         <!-- PRIVACY -->
         <section id="view-privacy" class="view-section px-4 max-w-4xl mx-auto py-24">
             <div class="glass p-12 md:p-20 rounded-[3.5rem] border-white/5">
-                <h2 class="text-5xl font-black italic uppercase mb-12 text-white tracking-tighter border-b border-white/5 pb-8">Data<br><span class="text-blue-600">Integrity</span></h2>
+                <h2 class="text-5xl font-black italic uppercase mb-12 text-white tracking-tighter border-b border-white/5 pb-8">Data<br><span class="text-emerald-500">Integrity</span></h2>
                 <div class="space-y-8 text-zinc-400 font-medium text-sm leading-relaxed">
                     <p>At MinMaxMuscle, the security and privacy of our clinical archive visitors is paramount. This protocol outlines the types of data telemetry received and the methods by which the archive is maintained.</p>
                     <div class="space-y-4">
@@ -491,18 +491,18 @@
         <!-- TERMS -->
         <section id="view-terms" class="view-section px-4 max-w-4xl mx-auto py-24">
             <div class="glass p-12 md:p-20 rounded-[3.5rem] border-white/5">
-                <h2 class="text-5xl font-black italic uppercase mb-12 text-white tracking-tighter border-b border-white/5 pb-8">Archive<br><span class="text-blue-600">Protocols</span></h2>
+                <h2 class="text-5xl font-black italic uppercase mb-12 text-white tracking-tighter border-b border-white/5 pb-8">Archive<br><span class="text-emerald-500">Protocols</span></h2>
                 <div class="space-y-8 text-zinc-400 font-medium text-sm leading-relaxed">
                     <div class="bg-red-900/10 border border-red-500/20 p-8 rounded-3xl mb-12">
                         <h3 class="text-red-500 font-black uppercase text-xs tracking-widest mb-4">Critical Clinical Disclaimer</h3>
                         <p class="text-red-200/80 italic">"The content provided on MinMaxMuscle is for academic research and educational purposes only. Compounds discussed are classified strictly as research chemicals and are NOT approved for human consumption. Direct medical consultation is mandatory."</p>
                     </div>
                     <div class="space-y-4">
-                        <h4 class="text-xs font-black text-white uppercase tracking-widest underline decoration-blue-600/50 underline-offset-4">1. Research Chemistry Designation</h4>
+                        <h4 class="text-xs font-black text-white uppercase tracking-widest underline decoration-emerald-600/50 underline-offset-4 data-mono">1. Research Chemistry Designation</h4>
                         <p>All compounds indexed are intended for laboratory R&D. Theoretical dosing data is aggregated from clinical trials and must not be construed as medical instruction. Terminal users assume all liability for research conducted outside a sterile clinical environment.</p>
                     </div>
                     <div class="space-y-4">
-                        <h4 class="text-xs font-black text-white uppercase tracking-widest underline decoration-blue-600/50 underline-offset-4">2. Proprietary Matrix & IP</h4>
+                        <h4 class="text-xs font-black text-white uppercase tracking-widest underline decoration-emerald-600/50 underline-offset-4 data-mono">2. Proprietary Matrix & IP</h4>
                         <p>The systematic database structure, proprietary molecular dossiers, and clinical analysis matrices are the exclusive property of MinMaxMuscle. Unauthorized telemetry or commercial redistribution is strictly actionable.</p>
                     </div>
                 </div>
@@ -518,13 +518,13 @@
                 <span class="brand text-3xl font-black italic text-white tracking-tighter">MINMAXMUSCLE</span>
                 <p class="text-zinc-500 text-sm mt-6 max-w-sm leading-relaxed italic">Peak human performance through systematic clinical data analysis. Engineered for hypertrophy, metabolic optimization, and advanced recovery.</p>
                 <div class="flex gap-4 mt-8">
-                    <a href="#" class="w-10 h-10 glass rounded-xl flex items-center justify-center text-zinc-400 hover:text-blue-500 transition-all hover:scale-110"><i data-feather="twitter" class="w-4 h-4"></i></a>
-                    <a href="#" class="w-10 h-10 glass rounded-xl flex items-center justify-center text-zinc-400 hover:text-blue-500 transition-all hover:scale-110"><i data-feather="instagram" class="w-4 h-4"></i></a>
-                    <a href="#" class="w-10 h-10 glass rounded-xl flex items-center justify-center text-zinc-400 hover:text-blue-500 transition-all hover:scale-110"><i data-feather="youtube" class="w-4 h-4"></i></a>
+                    <a href="#" class="w-10 h-10 glass rounded-xl flex items-center justify-center text-zinc-400 hover:text-emerald-500 transition-all hover:scale-110"><i data-feather="twitter" class="w-4 h-4"></i></a>
+                    <a href="#" class="w-10 h-10 glass rounded-xl flex items-center justify-center text-zinc-400 hover:text-emerald-500 transition-all hover:scale-110"><i data-feather="instagram" class="w-4 h-4"></i></a>
+                    <a href="#" class="w-10 h-10 glass rounded-xl flex items-center justify-center text-zinc-400 hover:text-emerald-500 transition-all hover:scale-110"><i data-feather="youtube" class="w-4 h-4"></i></a>
                 </div>
             </div>
             <div>
-                <h4 class="text-blue-600 font-black uppercase text-[10px] tracking-[0.3em] mb-8">Matrix</h4>
+                <h4 class="text-emerald-600 font-black uppercase text-[10px] tracking-[0.3em] mb-8 data-mono">Matrix</h4>
                 <ul class="space-y-4 text-[10px] font-black text-zinc-500 uppercase tracking-widest">
                     <li><a href="/peptides" onclick="navigate('/peptides'); return false;" class="hover:text-white transition-colors">Peptide Library</a></li>
                     <li><a href="/stacks" onclick="navigate('/stacks'); return false;" class="hover:text-white transition-colors">Protocol Stacks</a></li>
@@ -533,7 +533,7 @@
                 </ul>
             </div>
             <div>
-                <h4 class="text-blue-600 font-black uppercase text-[10px] tracking-[0.3em] mb-8">Legal</h4>
+                <h4 class="text-emerald-600 font-black uppercase text-[10px] tracking-[0.3em] mb-8 data-mono">Legal</h4>
                 <ul class="space-y-4 text-[10px] font-black text-zinc-500 uppercase tracking-widest">
                     <li><a href="/about" onclick="navigate('/about'); return false;" class="hover:text-white transition-colors">About</a></li>
                     <li><a href="/privacy" onclick="navigate('/privacy'); return false;" class="hover:text-white transition-colors">Privacy</a></li>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{STACK_NAME}} Protocol | MINMAXMUSCLE</title>
+    <meta name="description" content="Synergistic protocol analysis for {{STACK_NAME}}. Molecular pairing, theoretical dosing, and clinical research data.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body class="selection:bg-emerald-500 min-h-screen flex flex-col bg-zinc-950 text-slate-400 font-inter">
+
+    <header></header>
+
+    <main class="flex-grow pt-40 pb-32 px-6">
+        <section class="max-w-7xl mx-auto">
+            <div class="glass p-12 md:p-24 rounded-[4rem] border-white/5 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-96 h-96 bg-emerald-600/5 blur-[120px] -mr-48 -mt-48"></div>
+                
+                <div class="flex flex-col md:flex-row gap-16 items-start">
+                    <div class="md:w-1/3 flex flex-col gap-10 sticky top-32">
+                        <div>
+                            <span class="text-[10px] font-black text-emerald-500 uppercase tracking-[0.3em] mb-4 block data-mono">Protocol Identifier</span>
+                            <h1 id="stack_name" class="text-6xl font-black italic uppercase text-white tracking-tighter leading-none mb-4">Protocol Title</h1>
+                            <p id="stack_goal" class="text-zinc-500 font-black uppercase text-xs tracking-widest data-mono">Goal Optimization</p>
+                        </div>
+
+                        <div class="glass bg-white/5 border-white/10 p-8 rounded-3xl">
+                            <h4 class="text-white font-black uppercase text-[11px] tracking-widest mb-6 border-b border-white/10 pb-4 italic">Archival Status</h4>
+                            <p id="stack_description" class="text-sm italic leading-relaxed text-zinc-400">Loading protocol analysis matrix...</p>
+                        </div>
+                    </div>
+
+                    <div class="md:w-2/3">
+                        <div class="prose prose-invert prose-emerald max-w-none">
+                            <h2 class="text-4xl font-black italic uppercase text-white mb-10 tracking-tight">Synergy Matrix</h2>
+                            <div id="peptide_list" class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16">
+                                <!-- Components injected here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer></footer>
+
+    <script src="/assets/js/script.js"></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>

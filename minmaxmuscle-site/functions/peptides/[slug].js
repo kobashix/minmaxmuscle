@@ -85,8 +85,8 @@ function renderSources(p) {
     if (!src.length || !src[0]) return '<p class="text-gray-500 italic text-[10px]">Primary sources pending archival.</p>';
     
     return src.map((s, i) => `
-        <a href="${s.trim()}" target="_blank" class="p-4 bg-white/5 rounded-xl border border-white/10 text-[10px] text-blue-400 hover:bg-blue-600 hover:text-white transition flex justify-between items-center group mb-2">
-            <span class="font-black uppercase italic">Source Dossier ${i+1}</span>
+        <a href="${s.trim()}" target="_blank" class="p-4 bg-white/5 rounded-xl border border-white/10 text-[10px] text-emerald-400 hover:bg-emerald-600 hover:text-white transition flex justify-between items-center group mb-2 data-mono">
+            <span class="font-black uppercase italic">Source Dossier 0${i+1}</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-50 group-hover:opacity-100"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
         </a>
     `).join('');

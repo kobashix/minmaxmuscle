@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
 :root { 
     --zinc-50: #fafafa;
@@ -11,18 +11,22 @@
     --zinc-700: #3f3f46;
     --zinc-800: #27272a;
     --zinc-900: #18181b;
-    --zinc-950: #050507; /* Deeper black for premium feel */
+    --zinc-950: #08080a; /* Laboratory Grade Deep Black */
     
-    --blue-500: #3b82f6; 
-    --blue-600: #2563eb;
-    --blue-400: #60a5fa;
+    --clinical-emerald: #10b981; 
+    --research-indigo: #6366f1;
+    --caution-amber: #f59e0b;
     
-    --glass-bg: rgba(255, 255, 255, 0.02);
-    --glass-border: rgba(255, 255, 255, 0.05);
-    --glass-blur: blur(24px);
+    --blue-500: var(--clinical-emerald); 
+    --blue-600: #059669; /* Emerald Dark */
+    --blue-400: #34d399; /* Emerald Light */
     
-    --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-    --text-gradient: linear-gradient(180deg, #ffffff 0%, #a1a1aa 100%);
+    --glass-bg: rgba(255, 255, 255, 0.015);
+    --glass-border: rgba(255, 255, 255, 0.03);
+    --glass-blur: blur(20px);
+    
+    --accent-gradient: linear-gradient(135deg, var(--clinical-emerald) 0%, var(--research-indigo) 100%);
+    --text-gradient: linear-gradient(180deg, #ffffff 0%, #94a3b8 100%);
 }
 
 /* Global Reset & Base */
@@ -40,7 +44,10 @@ html {
 
 body { 
     background: var(--zinc-950); 
-    color: var(--zinc-400); 
+    background-image: 
+        radial-gradient(circle at 2px 2px, rgba(255,255,255,0.02) 1px, transparent 0);
+    background-size: 40px 40px;
+    color: #94a3b8; 
     font-family: 'Inter', system-ui, -apple-system, sans-serif; 
     overflow-x: hidden; 
     line-height: 1.6;
@@ -60,13 +67,39 @@ h1, h2, h3, h4, h5, h6, .brand {
     -webkit-text-fill-color: transparent;
 }
 
-/* Glassmorphism System */
+/* Clinical Card System */
 .glass {
     background: var(--glass-bg);
     backdrop-filter: var(--glass-blur);
     -webkit-backdrop-filter: var(--glass-blur);
     border: 1px solid var(--glass-border);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Laboratory Measure Marks */
+.glass::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    border-left: 1px solid rgba(255,255,255,0.1);
+    pointer-events: none;
+}
+
+.glass::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-right: 1px solid rgba(255,255,255,0.1);
+    pointer-events: none;
 }
 
 .glass-hover {
@@ -203,10 +236,16 @@ details > summary::-webkit-details-marker {
     background: var(--zinc-700);
 }
 
-/* Selection Padding */
+/* Selection */
 ::selection {
-    background: var(--blue-600);
-    color: #fff;
+    background: var(--clinical-emerald);
+    color: #000;
+}
+
+/* Monospace Data Points */
+.data-mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
 }
 
 /* Button & Card Animations */
