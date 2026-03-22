@@ -11,7 +11,50 @@
 </head>
 <body class="selection:bg-emerald-500 min-h-screen flex flex-col bg-zinc-950 text-slate-400 font-inter">
 
-    <header></header>
+    <nav class="fixed top-6 left-0 right-0 z-[100] flex justify-center px-4 pointer-events-none">
+        <div class="nav-pill rounded-full px-4 py-2 flex items-center justify-between gap-4 w-full max-w-5xl shadow-2xl pointer-events-auto transition-transform duration-500 hover:scale-[1.02]">
+            <button onclick="navigate('/')" class="flex items-center gap-3 group px-2">
+                <img src="https://minmaxmuscle.com/assets/img/logo.png" alt="MinMaxMuscle" class="w-8 h-8 rounded-full bg-white/5 object-contain transition-transform group-hover:rotate-12" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik00IDE1czEtMSA0LTEgNSAyIDggMiA0LTEgNC0xVjNzLTEgMS00IDEtNS0yLTgtMi00IDEtNCAxeiI+PC9wYXRoPjwvc3ZnPg==';">
+                <span class="font-black hidden md:block italic tracking-tighter text-lg text-white">MINMAXMUSCLE</span>
+            </button>
+            <div class="hidden md:flex gap-1 bg-white/5 rounded-full p-1 border border-white/5 items-center">
+                <a href="/peptides" onclick="navigate('/peptides'); return false;" class="nav-link px-5 py-2 rounded-full text-[11px] font-black uppercase text-zinc-400 hover:text-white hover:bg-white/5 transition whitespace-nowrap" id="nav-peptides">PEPTIDES</a>
+                <a href="/stacks" onclick="navigate('/stacks'); return false;" class="nav-link px-5 py-2 rounded-full text-[11px] font-black uppercase text-zinc-400 hover:text-white hover:bg-white/5 transition whitespace-nowrap" id="nav-stacks">STACKS</a>
+                <a href="/calculators" onclick="navigate('/calculators'); return false;" class="nav-link px-5 py-2 rounded-full text-[11px] font-black uppercase text-zinc-400 hover:text-white hover:bg-white/5 transition whitespace-nowrap" id="nav-calculators">CALCULATORS</a>
+                <div class="w-px h-4 bg-white/10 mx-1"></div>
+                <a href="https://blog.minmaxmuscle.com/" class="nav-link px-5 py-2 rounded-full text-[11px] font-black uppercase text-zinc-400 hover:text-white hover:bg-white/5 transition whitespace-nowrap">BLOG</a>
+                <a href="https://blog.minmaxmuscle.com/forum/" class="nav-link px-5 py-2 rounded-full text-[11px] font-black uppercase text-zinc-400 hover:text-white hover:bg-white/5 transition whitespace-nowrap">FORUMS</a>
+            </div>
+            <div class="flex items-center gap-2">
+                <a href="/coaching" onclick="navigate('/coaching'); return false;" class="hidden md:block px-6 py-2 rounded-full text-[11px] font-black uppercase text-white bg-emerald-600 hover:bg-emerald-500 transition shadow-lg shadow-emerald-600/20" id="nav-coaching">COACHING</a>
+                <button class="md:hidden text-white p-2 hover:bg-white/5 rounded-full transition" onclick="toggleMobileMenu()">
+                    <i id="menu-icon" data-feather="menu"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="fixed inset-0 bg-zinc-950/95 backdrop-blur-xl z-[110] hidden opacity-0 transition-all duration-300 flex flex-col items-center justify-center p-8 pointer-events-auto">
+            <div class="flex flex-col gap-4 w-full max-w-sm">
+                <a href="/peptides" onclick="navigate('/peptides'); return false;" class="text-3xl font-black italic uppercase text-zinc-500 hover:text-white transition-colors py-4 border-b border-white/5 flex justify-between items-center group">
+                    PEPTIDES <i data-feather="arrow-right" class="opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                </a>
+                <a href="/stacks" onclick="navigate('/stacks'); return false;" class="text-3xl font-black italic uppercase text-zinc-500 hover:text-white transition-colors py-4 border-b border-white/5 flex justify-between items-center group">
+                    STACKS <i data-feather="arrow-right" class="opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                </a>
+                <a href="/calculators" onclick="navigate('/calculators'); return false;" class="text-3xl font-black italic uppercase text-zinc-500 hover:text-white transition-colors py-4 border-b border-white/5 flex justify-between items-center group">
+                    CALCULATORS <i data-feather="arrow-right" class="opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                </a>
+                <a href="https://blog.minmaxmuscle.com/" class="text-3xl font-black italic uppercase text-zinc-500 hover:text-white transition-colors py-4 border-b border-white/5 flex justify-between items-center group">
+                    BLOG <i data-feather="external-link" class="w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                </a>
+                <a href="https://blog.minmaxmuscle.com/forum/" class="text-3xl font-black italic uppercase text-zinc-500 hover:text-white transition-colors py-4 border-b border-white/5 flex justify-between items-center group">
+                    FORUMS <i data-feather="external-link" class="w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                </a>
+                <a href="/coaching" onclick="navigate('/coaching'); return false;" class="mt-8 px-8 py-5 bg-emerald-600 text-white text-xl font-black italic uppercase rounded-2xl text-center shadow-xl shadow-emerald-600/20 active:scale-95 transition-transform">
+                    APPLY FOR COACHING
+                </a>
+            </div>
+        </div>
+    </nav>
 
     <main class="flex-grow pt-40 pb-32 px-6">
         <section class="max-w-7xl mx-auto">
@@ -88,7 +131,36 @@
         </section>
     </main>
 
-    <footer></footer>
+    <footer class="border-t border-white/5 bg-[#020202] py-24 px-8 mt-auto">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-16">
+            <div class="col-span-1 md:col-span-2">
+                <span class="brand text-3xl font-black italic text-white tracking-tighter">MINMAXMUSCLE</span>
+                <p class="text-zinc-500 text-sm mt-6 max-w-sm leading-relaxed italic">Peak human performance through systematic clinical data analysis. Engineered for hypertrophy, metabolic optimization, and advanced recovery.</p>
+            </div>
+            <div>
+                <h4 class="text-emerald-500 font-black uppercase text-[10px] tracking-[0.3em] mb-10 data-mono">Matrix</h4>
+                <ul class="space-y-5 text-[10px] font-black text-zinc-500 uppercase tracking-widest data-mono">
+                    <li><a href="/peptides" class="hover:text-white transition-colors">Peptide Library</a></li>
+                    <li><a href="/stacks" class="hover:text-white transition-colors">Protocol Stacks</a></li>
+                    <li><a href="/calculators" class="hover:text-white transition-colors">Calculators</a></li>
+                    <li><a href="/coaching" class="hover:text-white transition-colors">Coaching</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-emerald-500 font-black uppercase text-[10px] tracking-[0.3em] mb-10 data-mono">Legal</h4>
+                <ul class="space-y-5 text-[10px] font-black text-zinc-500 uppercase tracking-widest data-mono">
+                    <li><a href="/about" class="hover:text-white transition-colors">About</a></li>
+                    <li><a href="/privacy" class="hover:text-white transition-colors">Privacy</a></li>
+                    <li><a href="/terms" class="hover:text-white transition-colors">Terms</a></li>
+                    <li><a href="/disclaimer" class="text-red-900/40 hover:text-red-500 transition-colors">Medical Disclaimer</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-24 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
+            <p class="text-[10px] text-zinc-700 font-bold uppercase tracking-widest text-center md:text-left data-mono">FDA Disclosure: Educational research only. Not intended for human consumption.</p>
+            <p class="text-[10px] text-zinc-700 font-bold uppercase tracking-widest data-mono">&copy; 2026 MinMaxMuscle. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script src="/assets/js/script.js"></script>
     <script>

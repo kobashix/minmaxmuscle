@@ -1,0 +1,8 @@
+name = "minmaxmuscle-site"
+main = "functions/api/peptides.js"
+compatibility_date = "2024-03-21"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "minmaxmuscle_db"
+database_id = "d87f58cc-6c9c-490b-939e-97ec767972ba"
