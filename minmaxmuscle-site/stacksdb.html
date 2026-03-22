@@ -21,16 +21,20 @@
                 <span class="brand text-xl font-black italic tracking-tighter text-white">MINMAXMUSCLE</span>
             </a>
             
-            <div class="hidden md:flex items-center gap-1 bg-black/40 rounded-full p-1 border border-white/5 data-mono">
-                <a href="/peptides" class="nav-link px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-widest hover:text-white transition-all">Peptides</a>
-                <a href="/stacks" class="nav-link px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-widest text-white active italic">Stacks</a>
-                <a href="/calculators" class="nav-link px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-widest hover:text-white transition-all">Calculators</a>
-                <a href="/coaching" class="nav-link px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-widest text-white bg-emerald-600 shadow-lg shadow-emerald-600/20 hover:bg-emerald-500 transition-all">Coaching</a>
+            <div class="hidden md:flex gap-1 bg-white/5 rounded-full p-1 border border-white/5 items-center">
+                <a href="/peptides" onclick="navigate('/peptides'); return false;" class="nav-link px-5 py-2 rounded-full text-[11px] font-black uppercase text-zinc-400 hover:text-white hover:bg-white/5 transition whitespace-nowrap" data-seo="nav_peptides">PEPTIDE LIBRARY</a>
+                <a href="/stacks" onclick="navigate('/stacks'); return false;" class="nav-link px-5 py-2 rounded-full text-[11px] font-black uppercase text-zinc-400 hover:text-white hover:bg-white/5 transition whitespace-nowrap active-nav" data-seo="nav_stacks">PEPTIDE STACKS</a>
+                <a href="/calculators" onclick="navigate('/calculators'); return false;" class="nav-link px-5 py-2 rounded-full text-[11px] font-black uppercase text-zinc-400 hover:text-white hover:bg-white/5 transition whitespace-nowrap" data-seo="nav_calculators">DOSAGE CALCULATOR</a>
+                <div class="w-px h-4 bg-white/10 mx-1"></div>
+                <a href="https://blog.minmaxmuscle.com/" class="nav-link px-5 py-2 rounded-full text-[11px] font-black uppercase text-zinc-400 hover:text-white hover:bg-white/5 transition whitespace-nowrap" data-seo="nav_blog">RESEARCH BLOG</a>
+                <a href="https://blog.minmaxmuscle.com/forum/" class="nav-link px-5 py-2 rounded-full text-[11px] font-black uppercase text-zinc-400 hover:text-white hover:bg-white/5 transition whitespace-nowrap" data-seo="nav_forums">COMMUNITY</a>
             </div>
-
-            <button class="md:hidden text-white w-10 h-10 glass rounded-xl flex items-center justify-center" onclick="toggleMobileMenu()">
-                <i id="menu-icon" data-feather="menu" class="w-5 h-5"></i>
-            </button>
+            <div class="flex items-center gap-2">
+                <a href="/coaching" onclick="navigate('/coaching'); return false;" class="hidden md:block px-6 py-2 rounded-full text-[11px] font-black uppercase text-white bg-emerald-600 hover:bg-emerald-500 transition shadow-lg shadow-emerald-600/20" data-seo="nav_coaching">COACHING</a>
+                <button class="md:hidden text-white w-10 h-10 glass rounded-xl flex items-center justify-center" onclick="toggleMobileMenu()">
+                    <i id="menu-icon" data-feather="menu" class="w-5 h-5"></i>
+                </button>
+            </div>
         </div>
         
         <!-- Enhanced Mobile Menu -->
@@ -61,9 +65,12 @@
     <main id="view-stacks" class="view-section active flex-grow pt-40 pb-32 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-                <div>
-                    <h1 class="text-7xl font-black italic uppercase mb-2 tracking-tighter text-white">Protocol<br><span class="text-emerald-500">Stacks</span></h1>
-                    <p class="text-zinc-500 font-black uppercase text-xs tracking-widest data-mono">Synergistic Clinical Matrices</p>
+                <div class="md:w-1/2">
+                    <span class="text-[10px] font-black text-emerald-500 uppercase tracking-[0.3em] mb-4 block data-mono" data-seo="hero_tag">clinical_archive_09 // SECURE</span>
+                    <h1 class="text-6xl md:text-8xl font-black italic uppercase text-white tracking-tighter leading-none mb-6">
+                        Protocol <span class="text-emerald-500" data-seo="stacks_accent">Stacks</span>
+                    </h1>
+                    <p class="text-zinc-500 font-black uppercase text-xs tracking-[0.2em] data-mono" data-seo="stacks_subtitle">Synergistic Clinical Matrices</p>
                 </div>
                 <div class="relative w-full md:w-96 group">
                     <i data-feather="search" class="absolute left-5 top-1/2 -translate-y-1/2 text-zinc-600 w-4 h-4 group-focus-within:text-emerald-500 transition-colors"></i>

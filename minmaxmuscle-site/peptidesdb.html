@@ -36,22 +36,22 @@
         <!-- Enhanced Mobile Menu -->
         <div id="mobile-menu" class="fixed inset-0 bg-zinc-950/95 backdrop-blur-xl z-[110] hidden opacity-0 transition-all duration-300 flex flex-col items-center justify-center p-8 pointer-events-auto">
             <div class="flex flex-col gap-4 w-full max-w-sm">
-                <a href="/peptides" onclick="navigate('/peptides'); return false;" class="text-3xl font-black italic uppercase text-zinc-500 hover:text-white transition-colors py-4 border-b border-white/5 flex justify-between items-center group">
-                    PEPTIDES <i data-feather="arrow-right" class="opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                <a href="/peptides" onclick="navigate('/peptides'); return false;" class="text-3xl font-black italic uppercase text-zinc-500 hover:text-white transition-colors py-4 border-b border-white/5 flex justify-between items-center group" data-seo="nav_peptides">
+                    PEPTIDE LIBRARY <i data-feather="arrow-right" class="opacity-0 group-hover:opacity-100 transition-opacity"></i>
                 </a>
-                <a href="/stacks" onclick="navigate('/stacks'); return false;" class="text-3xl font-black italic uppercase text-zinc-500 hover:text-white transition-colors py-4 border-b border-white/5 flex justify-between items-center group">
-                    STACKS <i data-feather="arrow-right" class="opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                <a href="/stacks" onclick="navigate('/stacks'); return false;" class="text-3xl font-black italic uppercase text-zinc-500 hover:text-white transition-colors py-4 border-b border-white/5 flex justify-between items-center group" data-seo="nav_stacks">
+                    PEPTIDE STACKS <i data-feather="arrow-right" class="opacity-0 group-hover:opacity-100 transition-opacity"></i>
                 </a>
-                <a href="/calculators" onclick="navigate('/calculators'); return false;" class="text-3xl font-black italic uppercase text-zinc-500 hover:text-white transition-colors py-4 border-b border-white/5 flex justify-between items-center group">
-                    CALCULATORS <i data-feather="arrow-right" class="opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                <a href="/calculators" onclick="navigate('/calculators'); return false;" class="text-3xl font-black italic uppercase text-zinc-500 hover:text-white transition-colors py-4 border-b border-white/5 flex justify-between items-center group" data-seo="nav_calculators">
+                    DOSAGE CALCULATOR <i data-feather="arrow-right" class="opacity-0 group-hover:opacity-100 transition-opacity"></i>
                 </a>
-                <a href="https://blog.minmaxmuscle.com/" class="text-3xl font-black italic uppercase text-zinc-500 hover:text-white transition-colors py-4 border-b border-white/5 flex justify-between items-center group">
-                    BLOG <i data-feather="external-link" class="w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                <a href="https://blog.minmaxmuscle.com/" class="text-3xl font-black italic uppercase text-zinc-500 hover:text-white transition-colors py-4 border-b border-white/5 flex justify-between items-center group" data-seo="nav_blog">
+                    RESEARCH BLOG <i data-feather="external-link" class="w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity"></i>
                 </a>
-                <a href="https://blog.minmaxmuscle.com/forum/" class="text-3xl font-black italic uppercase text-zinc-500 hover:text-white transition-colors py-4 border-b border-white/5 flex justify-between items-center group">
-                    FORUMS <i data-feather="external-link" class="w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                <a href="https://blog.minmaxmuscle.com/forum/" class="text-3xl font-black italic uppercase text-zinc-500 hover:text-white transition-colors py-4 border-b border-white/5 flex justify-between items-center group" data-seo="nav_forums">
+                    COMMUNITY <i data-feather="external-link" class="w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity"></i>
                 </a>
-                <a href="/coaching" onclick="navigate('/coaching'); return false;" class="mt-8 px-8 py-5 bg-emerald-600 text-white text-xl font-black italic uppercase rounded-2xl text-center shadow-xl shadow-emerald-600/20 active:scale-95 transition-transform">
+                <a href="/coaching" onclick="navigate('/coaching'); return false;" class="mt-8 px-8 py-5 bg-emerald-600 text-white text-xl font-black italic uppercase rounded-2xl text-center shadow-xl shadow-emerald-600/20 active:scale-95 transition-transform" data-seo="nav_coaching">
                     APPLY FOR COACHING
                 </a>
             </div>
@@ -61,17 +61,12 @@
     <main id="view-peptides" class="view-section active flex-grow pt-40 pb-32 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-                <div class="w-full">
-                    <h1 class="text-7xl font-black italic uppercase mb-2 tracking-tighter text-white">Peptide<br><span class="text-emerald-500">Library</span></h1>
-                    <p class="text-zinc-500 font-black uppercase text-xs tracking-widest mb-10 data-mono">Active Research Dossiers</p>
-
-                    <!-- Filter Matrix -->
-                    <div id="filter-bar" class="flex flex-wrap gap-3 mb-8 overflow-x-auto pb-2 no-scrollbar scroll-smooth">
-                        <!-- Dynamic Categories Rendered Here -->
-                        <div class="skeleton w-24 h-10 rounded-full"></div>
-                        <div class="skeleton w-24 h-10 rounded-full"></div>
-                        <div class="skeleton w-24 h-10 rounded-full"></div>
-                    </div>
+                <div class="md:w-1/2">
+                    <span class="text-[10px] font-black text-emerald-500 uppercase tracking-[0.3em] mb-4 block data-mono" data-seo="hero_tag">clinical_archive_04 // SECURE</span>
+                    <h1 class="text-6xl md:text-8xl font-black italic uppercase text-white tracking-tighter leading-none mb-6">
+                        Peptide <span class="text-emerald-500" data-seo="pep_library_accent">Library</span>
+                    </h1>
+                    <p class="text-zinc-500 font-black uppercase text-xs tracking-[0.2em] data-mono" data-seo="pep_library_subtitle">Active Research Dossiers</p>
                 </div>
                 <div class="relative w-full md:w-96 group mb-10 md:mb-0">
                     <i data-feather="search" class="absolute left-5 top-1/2 -translate-y-1/2 text-zinc-600 w-4 h-4 group-focus-within:text-emerald-500 transition-colors"></i>

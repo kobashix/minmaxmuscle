@@ -129,9 +129,40 @@ function closeMobileMenu() {
 }
 
 /**
+ * Terminology & SEO Optimization
+ * Loads central dictionary and updates DOM elements with data-seo attributes.
+ */
+async function loadTerminology() {
+    try {
+        const res = await fetch('/assets/terminology.json');
+        if (!res.ok) return;
+        const dict = await res.json();
+        
+        document.querySelectorAll('[data-seo]').forEach(el => {
+            const key = el.getAttribute('data-seo');
+            if (dict[key]) {
+                if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                    el.placeholder = dict[key];
+                } else {
+                    el.innerText = dict[key];
+                }
+            }
+        });
+        
+        // Update document title if site_title is present
+        if (dict.site_title && (window.location.pathname === '/' || window.location.pathname === '/index.html')) {
+            document.title = dict.site_title;
+        }
+    } catch (e) {
+        console.warn("Terminology load failed:", e);
+    }
+}
+
+/**
  * Initialize application and fetch data FROM D1
  */
 async function init() {
+    await loadTerminology();
     try {
         const res = await fetch('/api/peptides');
         if(res.ok) {

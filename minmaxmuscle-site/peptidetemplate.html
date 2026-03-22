@@ -18,15 +18,15 @@
                 <span class="font-black hidden md:block italic tracking-tighter text-lg text-white">MINMAXMUSCLE</span>
             </button>
             <div class="hidden md:flex gap-1 bg-white/5 rounded-full p-1 border border-white/5 items-center">
-                <a href="/peptides" onclick="navigate('/peptides'); return false;" class="nav-link px-5 py-2 rounded-full text-[11px] font-black uppercase text-zinc-400 hover:text-white hover:bg-white/5 transition whitespace-nowrap" id="nav-peptides">PEPTIDES</a>
-                <a href="/stacks" onclick="navigate('/stacks'); return false;" class="nav-link px-5 py-2 rounded-full text-[11px] font-black uppercase text-zinc-400 hover:text-white hover:bg-white/5 transition whitespace-nowrap" id="nav-stacks">STACKS</a>
-                <a href="/calculators" onclick="navigate('/calculators'); return false;" class="nav-link px-5 py-2 rounded-full text-[11px] font-black uppercase text-zinc-400 hover:text-white hover:bg-white/5 transition whitespace-nowrap" id="nav-calculators">CALCULATORS</a>
+                <a href="/peptides" onclick="navigate('/peptides'); return false;" class="nav-link px-5 py-2 rounded-full text-[11px] font-black uppercase text-zinc-400 hover:text-white hover:bg-white/5 transition whitespace-nowrap" id="nav-peptides" data-seo="nav_peptides">PEPTIDE LIBRARY</a>
+                <a href="/stacks" onclick="navigate('/stacks'); return false;" class="nav-link px-5 py-2 rounded-full text-[11px] font-black uppercase text-zinc-400 hover:text-white hover:bg-white/5 transition whitespace-nowrap" id="nav-stacks" data-seo="nav_stacks">PEPTIDE STACKS</a>
+                <a href="/calculators" onclick="navigate('/calculators'); return false;" class="nav-link px-5 py-2 rounded-full text-[11px] font-black uppercase text-zinc-400 hover:text-white hover:bg-white/5 transition whitespace-nowrap" id="nav-calculators" data-seo="nav_calculators">DOSAGE CALCULATOR</a>
                 <div class="w-px h-4 bg-white/10 mx-1"></div>
-                <a href="https://blog.minmaxmuscle.com/" class="nav-link px-5 py-2 rounded-full text-[11px] font-black uppercase text-zinc-400 hover:text-white hover:bg-white/5 transition whitespace-nowrap">BLOG</a>
-                <a href="https://blog.minmaxmuscle.com/forum/" class="nav-link px-5 py-2 rounded-full text-[11px] font-black uppercase text-zinc-400 hover:text-white hover:bg-white/5 transition whitespace-nowrap">FORUMS</a>
+                <a href="https://blog.minmaxmuscle.com/" class="nav-link px-5 py-2 rounded-full text-[11px] font-black uppercase text-zinc-400 hover:text-white hover:bg-white/5 transition whitespace-nowrap" data-seo="nav_blog">RESEARCH BLOG</a>
+                <a href="https://blog.minmaxmuscle.com/forum/" class="nav-link px-5 py-2 rounded-full text-[11px] font-black uppercase text-zinc-400 hover:text-white hover:bg-white/5 transition whitespace-nowrap" data-seo="nav_forums">COMMUNITY</a>
             </div>
             <div class="flex items-center gap-2">
-                <a href="/coaching" onclick="navigate('/coaching'); return false;" class="hidden md:block px-6 py-2 rounded-full text-[11px] font-black uppercase text-white bg-emerald-600 hover:bg-emerald-500 transition shadow-lg shadow-emerald-600/20" id="nav-coaching">COACHING</a>
+                <a href="/coaching" onclick="navigate('/coaching'); return false;" class="hidden md:block px-6 py-2 rounded-full text-[11px] font-black uppercase text-white bg-emerald-600 hover:bg-emerald-500 transition shadow-lg shadow-emerald-600/20" id="nav-coaching" data-seo="nav_coaching">COACHING</a>
                 <button class="md:hidden text-white p-2 hover:bg-white/5 rounded-full transition" onclick="toggleMobileMenu()">
                     <i id="menu-icon" data-feather="menu"></i>
                 </button>
@@ -135,19 +135,19 @@
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-16">
             <div class="col-span-1 md:col-span-2">
                 <span class="brand text-3xl font-black italic text-white tracking-tighter">MINMAXMUSCLE</span>
-                <p class="text-zinc-500 text-sm mt-6 max-w-sm leading-relaxed italic">Peak human performance through systematic clinical data analysis. Engineered for hypertrophy, metabolic optimization, and advanced recovery.</p>
+                <p class="text-zinc-500 text-sm mt-6 max-w-sm leading-relaxed italic" data-seo="footer_description">Peak human performance through systematic clinical data analysis. Engineered for hypertrophy, metabolic optimization, and advanced recovery.</p>
             </div>
             <div>
-                <h4 class="text-emerald-500 font-black uppercase text-[10px] tracking-[0.3em] mb-10 data-mono">Matrix</h4>
+                <h4 class="text-emerald-500 font-black uppercase text-[10px] tracking-[0.3em] mb-10 data-mono" data-seo="footer_matrix_title">Matrix</h4>
                 <ul class="space-y-5 text-[10px] font-black text-zinc-500 uppercase tracking-widest data-mono">
-                    <li><a href="/peptides" class="hover:text-white transition-colors">Peptide Library</a></li>
-                    <li><a href="/stacks" class="hover:text-white transition-colors">Protocol Stacks</a></li>
-                    <li><a href="/calculators" class="hover:text-white transition-colors">Calculators</a></li>
-                    <li><a href="/coaching" class="hover:text-white transition-colors">Coaching</a></li>
+                    <li><a href="/peptides" class="hover:text-white transition-colors" data-seo="nav_peptides">Peptide Library</a></li>
+                    <li><a href="/stacks" class="hover:text-white transition-colors" data-seo="nav_stacks">Protocol Stacks</a></li>
+                    <li><a href="/calculators" class="hover:text-white transition-colors" data-seo="nav_calculators">Calculators</a></li>
+                    <li><a href="/coaching" class="hover:text-white transition-colors" data-seo="nav_coaching">Coaching</a></li>
                 </ul>
             </div>
             <div>
-                <h4 class="text-emerald-500 font-black uppercase text-[10px] tracking-[0.3em] mb-10 data-mono">Legal</h4>
+                <h4 class="text-emerald-500 font-black uppercase text-[10px] tracking-[0.3em] mb-10 data-mono" data-seo="footer_legal_title">Legal</h4>
                 <ul class="space-y-5 text-[10px] font-black text-zinc-500 uppercase tracking-widest data-mono">
                     <li><a href="/about" class="hover:text-white transition-colors">About</a></li>
                     <li><a href="/privacy" class="hover:text-white transition-colors">Privacy</a></li>
