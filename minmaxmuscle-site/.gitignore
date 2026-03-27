@@ -1,1 +1,4 @@
 generated/
+
+.wrangler/
+gsc_token.json
