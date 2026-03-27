@@ -27,7 +27,8 @@ export async function onRequest(context) {
       <url><loc>${domain}/about</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
       <url><loc>${domain}/contact</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
       <url><loc>${domain}/privacy</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
-      <url><loc>${domain}/terms</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>`;
+      <url><loc>${domain}/terms</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+      <url><loc>${domain}/disclaimer</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>`;
 
     // Inject dynamic peptides
     peptides.forEach(row => {

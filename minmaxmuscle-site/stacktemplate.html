@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{STACK_NAME}} Protocol | MINMAXMUSCLE</title>
-    <meta name="description" content="Synergistic protocol analysis for {{STACK_NAME}}. Molecular pairing, theoretical dosing, and clinical research data.">
+    <title>{{STACK_NAME}} Peptide Protocol & Cycle Guide | MinMaxMuscle</title>
+    <meta name="description" content="Detailed synergistic protocol analysis for {{STACK_NAME}}. Explore molecular pairing, theoretical dosing, benefits, and research data for peak performance.">
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6603644268716206" crossorigin="anonymous"></script>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
     <link rel="stylesheet" href="/assets/css/style.css">
@@ -58,6 +62,18 @@
 
     <main class="flex-grow pt-40 pb-32 px-6">
         <section class="max-w-7xl mx-auto">
+            <!-- YMYL Protocol Compliance Banner -->
+            <div class="bg-red-950/20 border border-red-500/20 rounded-[2rem] p-8 mb-12 flex flex-col md:flex-row items-center gap-8 backdrop-blur-md">
+                <div class="w-16 h-16 bg-red-500/10 rounded-2xl flex items-center justify-center shrink-0">
+                    <i data-feather="alert-octagon" class="text-red-500 w-8 h-8"></i>
+                </div>
+                <div>
+                    <h4 class="text-red-500 font-black uppercase text-xs tracking-widest mb-2 data-mono">Protocol Research Designation & Liability</h4>
+                    <p class="text-zinc-400 text-xs italic leading-relaxed">Synergistic protocols aggregated in the MinMaxMuscle archive are for experimental research only. Combining compounds increases physiological complexity and risk. These matrices are NOT medical prescriptions. Full medical consultation is required prior to any research application.</p>
+                </div>
+                <a href="/disclaimer" class="shrink-0 px-6 py-3 border border-red-500/30 rounded-xl text-red-500 text-[10px] font-black uppercase tracking-widest hover:bg-red-500 hover:text-white transition-all">Full Disclaimer</a>
+            </div>
+
             <div class="glass p-12 md:p-24 rounded-[4rem] border-white/5 relative overflow-hidden">
                 <div class="absolute top-0 right-0 w-96 h-96 bg-emerald-600/5 blur-[120px] -mr-48 -mt-48"></div>
                 
@@ -80,6 +96,59 @@
                             <h2 class="text-4xl font-black italic uppercase text-white mb-10 tracking-tight">Synergy Matrix</h2>
                             <div id="peptide_list" class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16">
                                 <!-- Components injected here -->
+                            </div>
+
+                            <!-- Forum CTA Loop -->
+                            <div class="glass bg-emerald-600/5 border border-emerald-600/20 p-10 rounded-[3rem] my-16 text-center group">
+                                <h4 class="text-white font-black uppercase text-xl mb-4 italic tracking-tight">Active Research Thread</h4>
+                                <p class="text-zinc-500 text-sm mb-8 italic">Join the ongoing discussion regarding clinical outcomes and anecdotal observations for this protocol.</p>
+                                <a id="forum_cta" href="https://blog.minmaxmuscle.com/forum/" target="_blank" class="inline-flex items-center gap-4 px-10 py-5 bg-emerald-600 text-white font-black italic uppercase rounded-2xl transition-all hover:scale-105 active:scale-95 shadow-xl shadow-emerald-600/20">
+                                    Discuss in Forum
+                                    <i data-feather="message-square" class="w-5 h-5"></i>
+                                </a>
+                            </div>
+
+                            <h3 class="text-2xl font-black italic uppercase text-white mt-16 mb-8 border-l-4 border-emerald-600 pl-8">Clinical Data Matrix</h3>
+                            <div class="glass overflow-hidden rounded-3xl border-white/5 mb-12">
+                                <table class="w-full text-left text-xs data-mono">
+                                    <thead class="bg-white/5 text-zinc-500 uppercase font-black tracking-widest">
+                                        <tr>
+                                            <th class="p-6 border-b border-white/5">Parameter</th>
+                                            <th class="p-6 border-b border-white/5">Clinical Value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-zinc-300 italic">
+                                        <tr class="hover:bg-white/5 transition-colors">
+                                            <td class="p-6 border-b border-white/5 font-bold uppercase text-emerald-500">Protocol Rank</td>
+                                            <td class="p-6 border-b border-white/5" id="spec_rank">Elite Tier</td>
+                                        </tr>
+                                        <tr class="hover:bg-white/5 transition-colors">
+                                            <td class="p-6 border-b border-white/5 font-bold uppercase text-emerald-500">Optimization Goal</td>
+                                            <td class="p-6 border-b border-white/5" id="spec_goal">Hypertrophy</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                                <div class="glass p-8 rounded-3xl border-emerald-500/20 bg-emerald-600/5">
+                                    <h4 class="text-emerald-500 font-black uppercase text-xs tracking-widest mb-6 flex items-center gap-2">
+                                        <i data-feather="trending-up" class="w-4 h-4"></i>
+                                        Clinical Pros
+                                    </h4>
+                                    <ul id="clinical_pros" class="space-y-3 text-sm text-zinc-300 italic font-medium">
+                                        <!-- Pros injected here -->
+                                    </ul>
+                                </div>
+                                <div class="glass p-8 rounded-3xl border-red-500/20 bg-red-600/5">
+                                    <h4 class="text-red-500 font-black uppercase text-xs tracking-widest mb-6 flex items-center gap-2">
+                                        <i data-feather="alert-triangle" class="w-4 h-4"></i>
+                                        Research Limitations
+                                    </h4>
+                                    <ul id="research_limitations" class="space-y-3 text-sm text-zinc-300 italic font-medium">
+                                        <!-- Cons injected here -->
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>

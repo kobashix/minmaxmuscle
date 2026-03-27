@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peptide Library | MINMAXMUSCLE</title>
-    <meta name="description" content="The comprehensive research database for peptides, secretagogues, and performance compounds. Clinical data, molecular dossiers, and established research protocols.">
+    <title>Peptide Library | Research Dossiers & Clinical Data | MinMaxMuscle</title>
+    <meta name="description" content="Explore the definitive peptide database. Clinical research on BPC-157, TB-500, Semaglutide, Tirzepatide, and more. Structural analysis and theoretical protocols.">
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6603644268716206" crossorigin="anonymous"></script>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
     <link rel="stylesheet" href="/assets/css/style.css">
@@ -21,12 +25,16 @@
                 <span class="brand text-xl font-black italic tracking-tighter text-white">MINMAXMUSCLE</span>
             </a>
             
-            <div class="hidden md:flex items-center gap-1 bg-black/40 rounded-full p-1 border border-white/5 data-mono">
-                <a href="/peptides" class="nav-link px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-widest text-white active italic">Peptides</a>
-                <a href="/stacks" class="nav-link px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-widest hover:text-white transition-all">Stacks</a>
-                <a href="/calculators" class="nav-link px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-widest hover:text-white transition-all">Calculators</a>
-                <a href="/coaching" class="nav-link px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-widest text-white bg-emerald-600 shadow-lg shadow-emerald-600/20 hover:bg-emerald-500 transition-all">Coaching</a>
+            <div class="hidden md:flex gap-1 bg-white/5 rounded-full p-1 border border-white/5 items-center">
+                <a href="/peptides" onclick="navigate('/peptides'); return false;" class="nav-link px-5 py-2 rounded-full text-[11px] font-black uppercase text-zinc-400 hover:text-white hover:bg-white/5 transition whitespace-nowrap" data-seo="nav_peptides">PEPTIDE LIBRARY</a>
+                <a href="/stacks" onclick="navigate('/stacks'); return false;" class="nav-link px-5 py-2 rounded-full text-[11px] font-black uppercase text-zinc-400 hover:text-white hover:bg-white/5 transition whitespace-nowrap" data-seo="nav_stacks">PEPTIDE STACKS</a>
+                <a href="/calculators" onclick="navigate('/calculators'); return false;" class="nav-link px-5 py-2 rounded-full text-[11px] font-black uppercase text-zinc-400 hover:text-white hover:bg-white/5 transition whitespace-nowrap" data-seo="nav_calculators">DOSAGE CALCULATOR</a>
+                <div class="w-px h-4 bg-white/10 mx-1"></div>
+                <a href="https://blog.minmaxmuscle.com/" class="nav-link px-5 py-2 rounded-full text-[11px] font-black uppercase text-zinc-400 hover:text-white hover:bg-white/5 transition whitespace-nowrap" data-seo="nav_blog">RESEARCH BLOG</a>
+                <a href="https://blog.minmaxmuscle.com/forum/" class="nav-link px-5 py-2 rounded-full text-[11px] font-black uppercase text-zinc-400 hover:text-white hover:bg-white/5 transition whitespace-nowrap" data-seo="nav_forums">COMMUNITY</a>
             </div>
+            <div class="flex items-center gap-2">
+                <a href="/coaching" onclick="navigate('/coaching'); return false;" class="hidden md:block px-6 py-2 rounded-full text-[11px] font-black uppercase text-white bg-emerald-600 hover:bg-emerald-500 transition shadow-lg shadow-emerald-600/20" data-seo="nav_coaching">COACHING</a>
 
             <button class="md:hidden text-white w-10 h-10 glass rounded-xl flex items-center justify-center" onclick="toggleMobileMenu()">
                 <i id="menu-icon" data-feather="menu" class="w-5 h-5"></i>
@@ -63,14 +71,13 @@
             <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
                 <div class="md:w-1/2">
                     <span class="text-[10px] font-black text-emerald-500 uppercase tracking-[0.3em] mb-4 block data-mono" data-seo="hero_tag">clinical_archive_04 // SECURE</span>
-                    <h1 class="text-6xl md:text-8xl font-black italic uppercase text-white tracking-tighter leading-none mb-6">
-                        Peptide <span class="text-emerald-500" data-seo="pep_library_accent">Library</span>
-                    </h1>
-                    <p class="text-zinc-500 font-black uppercase text-xs tracking-[0.2em] data-mono" data-seo="pep_library_subtitle">Active Research Dossiers</p>
+                    <div class="w-full">
+                    <h1 class="text-7xl font-black italic uppercase mb-2 tracking-tighter text-white"><span data-seo="pep_library_title">Peptide</span><br><span class="text-emerald-500" data-seo="pep_library_accent">Library</span></h1>
+                    <p class="text-zinc-500 font-black uppercase text-xs tracking-widest mb-10" data-seo="pep_library_subtitle">Active Research Dossiers</p>
                 </div>
                 <div class="relative w-full md:w-96 group mb-10 md:mb-0">
                     <i data-feather="search" class="absolute left-5 top-1/2 -translate-y-1/2 text-zinc-600 w-4 h-4 group-focus-within:text-emerald-500 transition-colors"></i>
-                    <input type="text" id="pepSearch" class="glass bg-white/5 border-white/5 p-5 pl-14 rounded-2xl w-full text-xs font-black tracking-widest focus:border-emerald-600/50 outline-none transition-all data-mono" placeholder="SEARCH CLINICAL DATABASE...">
+                    <input type="text" id="pepSearch" class="glass bg-white/5 border-white/5 p-5 pl-14 rounded-2xl w-full text-xs font-black tracking-widest focus:border-emerald-600/50 outline-none transition-all" placeholder="SEARCH PEPTIDE LIBRARY..." data-seo="pep_search_placeholder">
                 </div>
             </div>
 
@@ -83,15 +90,52 @@
                         <h3 class="text-3xl font-black italic uppercase text-white mb-8 border-l-4 border-emerald-600 pl-8 tracking-tight">Clinical Research Matrix</h3>
                         <p class="text-zinc-500 text-base leading-relaxed mb-8 font-medium italic">The MinMaxMuscle Peptide Library is engineered as a high-density clinical archive, serving as a primary node for researchers and performance specialists. Our objective is to consolidate biological data points—from molecular nomenclature to Phase III trial outcomes—into a systematically organized interface.</p>
                         
-                        <p class="text-zinc-500 text-base leading-relaxed mb-8">Each entry is treated as an active "Research Dossier," subjected to continuous revision as new peer-reviewed literature emerges. Our repository prioritizes data integrity and systematic harm reduction through precision documentation.</p>
+                        <p class="text-zinc-500 text-base leading-relaxed mb-8">Each entry is treated as an active "Research Dossier," subjected to continuous revision as new peer-reviewed literature emerges. Our repository prioritizes data integrity and systematic harm reduction through precision documentation of amino acid sequences, signaling pathways, and documented metabolic interactions.</p>
+
+                        <h4 class="text-white font-black uppercase text-sm mb-6 italic tracking-tight">Systematic Data Aggregation</h4>
+                        <p class="text-zinc-500 text-sm leading-relaxed mb-8">Our archival process involves the cross-referencing of experimental data from international clinical registries. We focus on compounds that demonstrate high selectivity for specific biological receptors, such as the Growth Hormone Secretagogue Receptor (GHSR) and the GLP-1 receptor family. By providing a centralized location for these dossiers, we enable researchers to access critical safety and efficacy data without navigating fragmented clinical repositories.</p>
                     </div>
                     <div>
-                        <h3 class="text-3xl font-black italic uppercase text-white mb-8 border-l-4 border-emerald-600 pl-8 tracking-tight">Archival Rigor</h3>
+                        <h3 class="text-3xl font-black italic uppercase text-white mb-8 border-l-4 border-emerald-600 pl-8 tracking-tight">Archival Rigor & E-E-A-T</h3>
                         <p class="text-zinc-500 text-base leading-relaxed mb-8 font-medium italic">Inclusion within this library is contingent upon meeting stringent clinical criteria. We cross-reference every data point against primary scientific repositories, including NCBI, PubMed, and WADA technical documents to ensure archival accuracy.</p>
                         
                         <div class="glass bg-emerald-600/10 border-l-4 border-emerald-600 p-8 rounded-r-3xl mb-8">
                             <h3 class="text-xs font-black text-emerald-400 uppercase tracking-widest mb-4 data-mono">Protocol Directive</h3>
-                            <p class="text-sm text-zinc-300 italic font-medium leading-relaxed">"The utility of a research compound is defined by its molecular purity and the precision of its administration."</p>
+                            <p class="text-sm text-zinc-300 italic font-medium leading-relaxed">"The utility of a research compound is defined by its molecular purity, the precision of its administration, and the depth of its clinical documentation."</p>
+                        </div>
+
+                        <h4 class="text-white font-black uppercase text-sm mb-6 italic tracking-tight">Safety & Risk Mitigation</h4>
+                        <p class="text-zinc-500 text-sm leading-relaxed">MinMaxMuscle serves a critical role in harm reduction by providing transparent data on the biochemical properties and potential side effects of experimental compounds. We explicitly categorize substances based on their current clinical trial phase and regulatory status, ensuring that researchers are fully informed of the biological risks associated with experimental research outside of established medical supervision.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Usage Guide for AdSense Compliance -->
+            <div class="glass p-12 md:p-20 rounded-[4rem] border-white/5 my-16 relative overflow-hidden bg-white/5">
+                <div class="absolute inset-0 bg-emerald-600/5"></div>
+                <div class="relative z-10">
+                    <h3 class="text-3xl font-black italic uppercase text-white mb-10 tracking-tight">How to Use This Database</h3>
+                    <div class="grid md:grid-cols-3 gap-12">
+                        <div class="space-y-4">
+                            <div class="w-10 h-10 bg-emerald-600/20 rounded-xl flex items-center justify-center mb-6">
+                                <span class="text-emerald-500 font-black data-mono">01</span>
+                            </div>
+                            <h4 class="text-white font-black uppercase text-sm italic tracking-tight">Identify Research Target</h4>
+                            <p class="text-zinc-500 text-xs leading-relaxed">Use the search matrix or category filters to identify compounds relevant to your specific biological research focus, such as injury repair, metabolic health, or cognitive enhancement.</p>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="w-10 h-10 bg-emerald-600/20 rounded-xl flex items-center justify-center mb-6">
+                                <span class="text-emerald-500 font-black data-mono">02</span>
+                            </div>
+                            <h4 class="text-white font-black uppercase text-sm italic tracking-tight">Analyze Molecular Dossiers</h4>
+                            <p class="text-zinc-500 text-xs leading-relaxed">Each entry provides a molecular dossier including nomenclature, clinical trial phase, and documented receptor interactions. Cross-reference these with the provided primary literature citations.</p>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="w-10 h-10 bg-emerald-600/20 rounded-xl flex items-center justify-center mb-6">
+                                <span class="text-emerald-500 font-black data-mono">03</span>
+                            </div>
+                            <h4 class="text-white font-black uppercase text-sm italic tracking-tight">Verify Clinical Data</h4>
+                            <p class="text-zinc-500 text-xs leading-relaxed">The archive is designed for academic verification. Use the 'Source Documentation' links to access the underlying clinical trials and laboratory reports that form the basis of each dossier.</p>
                         </div>
                     </div>
                 </div>

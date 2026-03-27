@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- [ISSUE 4] Default SEO Title -->
-    <title>MINMAXMUSCLE | Peak Human Performance</title>
-    <meta name="description" content="The definitive database for muscle hypertrophy, peptides, and recovery protocols.">
+    <title>MinMaxMuscle | Peptide Library, Protocols & Dosage Calculators</title>
+    <meta name="description" content="The definitive clinical database for BPC-157, TB-500, Semaglutide, and Tirzepatide. Research-backed peptide protocols, dosage calculators, and metabolic optimization.">
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6603644268716206" crossorigin="anonymous"></script>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
     <link rel="stylesheet" href="/assets/css/style.css">
@@ -20,9 +23,9 @@
             </button>
             
             <div class="hidden md:flex gap-1 bg-white/5 rounded-full p-1 border border-white/5 items-center">
-                <a href="/peptides" onclick="navigate('/peptides'); return false;" class="nav-link px-5 py-2 rounded-full text-[11px] font-black uppercase text-zinc-400 hover:text-white hover:bg-white/5 transition whitespace-nowrap" id="nav-peptides" data-seo="nav_peptides">PEPTIDES</a>
-                <a href="/stacks" onclick="navigate('/stacks'); return false;" class="nav-link px-5 py-2 rounded-full text-[11px] font-black uppercase text-zinc-400 hover:text-white hover:bg-white/5 transition whitespace-nowrap" id="nav-stacks" data-seo="nav_stacks">STACKS</a>
-                <a href="/calculators" onclick="navigate('/calculators'); return false;" class="nav-link px-5 py-2 rounded-full text-[11px] font-black uppercase text-zinc-400 hover:text-white hover:bg-white/5 transition whitespace-nowrap" id="nav-calculators" data-seo="nav_calculators">CALCULATORS</a>
+                <a href="/peptides" onclick="navigate('/peptides'); return false;" class="nav-link px-5 py-2 rounded-full text-[11px] font-black uppercase text-zinc-400 hover:text-white hover:bg-white/5 transition whitespace-nowrap" id="nav-peptides" data-seo="nav_peptides">PEPTIDE LIBRARY</a>
+                <a href="/stacks" onclick="navigate('/stacks'); return false;" class="nav-link px-5 py-2 rounded-full text-[11px] font-black uppercase text-zinc-400 hover:text-white hover:bg-white/5 transition whitespace-nowrap" id="nav-stacks" data-seo="nav_stacks">PEPTIDE STACKS</a>
+                <a href="/calculators" onclick="navigate('/calculators'); return false;" class="nav-link px-5 py-2 rounded-full text-[11px] font-black uppercase text-zinc-400 hover:text-white hover:bg-white/5 transition whitespace-nowrap" id="nav-calculators" data-seo="nav_calculators">DOSAGE CALCULATOR</a>
                 <div class="w-px h-4 bg-white/10 mx-1"></div>
                 <a href="https://blog.minmaxmuscle.com/" class="nav-link px-5 py-2 rounded-full text-[11px] font-black uppercase text-zinc-400 hover:text-white hover:bg-white/5 transition whitespace-nowrap" data-seo="nav_blog">BLOG</a>
                 <a href="https://blog.minmaxmuscle.com/forum/" class="nav-link px-5 py-2 rounded-full text-[11px] font-black uppercase text-zinc-400 hover:text-white hover:bg-white/5 transition whitespace-nowrap" data-seo="nav_forums">FORUMS</a>
@@ -78,13 +81,13 @@
                 </div>
                 
                 <h1 class="text-7xl md:text-[10rem] font-black italic text-white tracking-tighter leading-[0.85] uppercase mb-12">
-                    <span class="block animate-slide-up opacity-0" style="animation-delay: 0.1s;" data-seo="hero_title_1">Clinical</span>
-                    <span class="block animate-slide-up opacity-0 text-emerald-500" style="animation-delay: 0.2s;" data-seo="hero_title_2">Cyber</span>
-                    <span class="block animate-slide-up opacity-0" style="animation-delay: 0.3s;" data-seo="hero_title_3">Laboratory</span>
+                    <span class="block animate-slide-up opacity-0" style="animation-delay: 0.1s;" data-seo="hero_title_1">PEAK</span>
+                    <span class="block animate-slide-up opacity-0 text-emerald-500" style="animation-delay: 0.2s;" data-seo="hero_title_2">HUMAN</span>
+                    <span class="block animate-slide-up opacity-0" style="animation-delay: 0.3s;" data-seo="hero_title_3">PERFORMANCE</span>
                 </h1>
                 
                 <p class="text-xl md:text-2xl text-zinc-400 max-w-2xl leading-relaxed mb-16 italic font-medium animate-fade-in opacity-0" style="animation-delay: 0.5s;" data-seo="hero_subtitle">
-                    The definitive clinical database for muscle hypertrophy, peptide research, and metabolic optimization protocols.
+                    The definitive clinical database for BPC-157, TB-500, Semaglutide, and Tirzepatide research protocols. Optimized for hypertrophy and metabolic health.
                 </p>
                     
                     <div class="flex flex-col sm:flex-row gap-6 animate-fade-in opacity-0" style="animation-delay: 0.7s;">
@@ -181,7 +184,7 @@
         <section id="view-peptides" class="view-section px-4 max-w-7xl mx-auto py-24">
             <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
                 <div class="w-full">
-                    <h1 class="text-7xl font-black italic uppercase mb-2 tracking-tighter text-white">Peptide<br><span class="text-emerald-500" data-seo="pep_library_accent">Library</span></h1>
+                    <h1 class="text-7xl font-black italic uppercase mb-2 tracking-tighter text-white"><span data-seo="pep_library_title">Peptide</span><br><span class="text-emerald-500" data-seo="pep_library_accent">Library</span></h1>
                     <p class="text-zinc-500 font-black uppercase text-xs tracking-widest mb-10" data-seo="pep_library_subtitle">Active Research Dossiers</p>
                     
                     <!-- Filter Matrix -->
@@ -237,9 +240,9 @@
         <!-- STACKS -->
         <section id="view-stacks" class="view-section px-4 max-w-7xl mx-auto py-24">
             <div class="mb-16">
-                <h2 class="text-7xl font-black italic uppercase mb-2 tracking-tighter text-white">Protocol<br><span class="text-emerald-500">Stacks</span></h2>
+                <h2 class="text-7xl font-black italic uppercase mb-2 tracking-tighter text-white"><span data-seo="stacks_title">Protocol</span><br><span class="text-emerald-500" data-seo="stacks_accent">Stacks</span></h2>
                 <div class="w-24 h-2 bg-emerald-600 rounded-full mb-6"></div>
-                <p class="text-zinc-500 font-bold uppercase text-[10px] tracking-[0.3em]">Synergistic Research Matrices</p>
+                <p class="text-zinc-500 font-bold uppercase text-[10px] tracking-[0.3em]" data-seo="stacks_subtitle">Synergistic Clinical Matrices</p>
             </div>
             
             <div id="stacks-grid" class="grid grid-cols-1 md:grid-cols-2 gap-10 auto-rows-fr">
@@ -267,6 +270,9 @@
                 <div class="relative z-10">
                     <div class="grid md:grid-cols-2 gap-12 items-center">
                         <div class="space-y-8">
+                            <h4 class="text-white font-black uppercase text-sm mb-4 italic tracking-tight">Reconstitution Logic</h4>
+                            <p class="text-zinc-500 text-xs leading-relaxed mb-6">Accurate peptide reconstitution is the baseline of clinical research. This calculator determines the exact volume of Bacteriostatic Water required to achieve a target concentration (mcg/unit). Precision in measurement ensures the integrity of receptor signaling studies.</p>
+                            
                             <div class="grid grid-cols-2 gap-6">
                                 <div>
                                     <label class="text-[10px] font-black text-zinc-500 uppercase tracking-widest block mb-2 ml-4 data-mono">Vial (mg)</label>
@@ -299,6 +305,8 @@
                 <div class="relative z-10">
                     <div class="grid md:grid-cols-2 gap-12 items-center">
                         <div class="space-y-8">
+                            <h4 class="text-white font-black uppercase text-sm mb-4 italic tracking-tight">IU Conversion Standard</h4>
+                            <p class="text-zinc-500 text-xs leading-relaxed mb-6">International Units (IU) are the global standard for pharmacological potency. This module provides a theoretical conversion for research compounds that utilize IU-based dosing, ensuring cross-platform protocol alignment.</p>
                             <div>
                                 <label class="text-[10px] font-black text-zinc-500 uppercase tracking-widest block mb-2 ml-4">Input Micrograms (mcg)</label>
                                 <input type="number" id="u-mcg" class="w-full bg-zinc-950/50 border border-white/5 p-6 rounded-3xl text-white font-bold focus:border-purple-500 outline-none transition-all" placeholder="1000">
@@ -318,6 +326,8 @@
                 <div class="relative z-10">
                     <div class="grid md:grid-cols-2 gap-12 items-center">
                         <div class="space-y-8">
+                            <h4 class="text-white font-black uppercase text-sm mb-4 italic tracking-tight">Cycle Resource Mapping</h4>
+                            <p class="text-zinc-500 text-xs leading-relaxed mb-6">Resource allocation is critical for long-term clinical trials. This planner calculates total compound requirements based on cycle length and administration frequency, facilitating systematic inventory management.</p>
                             <div class="grid grid-cols-2 gap-6">
                                 <div>
                                     <label class="text-[10px] font-black text-zinc-500 uppercase tracking-widest block mb-2 ml-4">Dose/Pin (mg)</label>
@@ -353,6 +363,16 @@
                 <h2 class="text-7xl font-black italic uppercase mb-4 tracking-tighter text-white">Performance<br><span class="text-emerald-500">Coaching</span></h2>
                 <div class="w-24 h-2 bg-emerald-600 rounded-full mx-auto mb-6"></div>
                 <p class="text-zinc-500 font-bold uppercase text-[10px] tracking-[0.3em]">Direct Protocol Intervention</p>
+            </div>
+
+            <!-- Coaching Authority Content -->
+            <div class="glass p-10 md:p-16 rounded-[3rem] border-white/5 mb-16 relative overflow-hidden">
+                <div class="absolute inset-0 bg-emerald-600/5"></div>
+                <div class="relative z-10">
+                    <h3 class="text-2xl font-black italic uppercase text-white mb-6 border-l-4 border-emerald-600 pl-6">The MinMax Methodology</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed mb-6 italic font-medium">Performance optimization is a science of precision, not approximation. Our coaching framework is built on quantitative physiological markers, biomechanical analysis, and the systematic application of research-backed protocols.</p>
+                    <p class="text-zinc-500 text-xs leading-relaxed mb-6">We bridge the gap between clinical data and real-world results. Every client protocol is custom-tailored to their unique metabolic profile, genetic predispositions, and specific performance objectives. We prioritize long-term biological health while pushing the boundaries of human capacity.</p>
+                </div>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">

@@ -11,7 +11,7 @@
 
 # Peptide & Stack Dossier Resolvers
 /peptide/* /functions/peptides/[slug].js 200
-/stack/* /index.html 200
+/stack/* /functions/stacks/[slug].js 200
 
 # Catch-all SPA behavior
 /* /index.html 200
