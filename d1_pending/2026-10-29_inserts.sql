@@ -1,24 +1,23 @@
--- MinMaxMuscle D1 Pending Inserts - Generated 2026-10-29
--- Run against D1 database: ffdc0a4e-5374-4a7c-bcae-1fb58188a774
--- These peptides were discovered by the automated daily discovery pipeline.
+-- MinMaxMuscle D1 Inserts - Generated 2026-10-29
+-- Database: ffdc0a4e-5374-4a7c-bcae-1fb58188a774
+-- Schema based on actual functions/peptides/[slug].js column names
 
 -- ============================================================
 -- PEPTIDE 1: Amycretin
 -- ============================================================
 INSERT OR IGNORE INTO Peptides (
-  name, slug, category, primary_focus, research_summary,
-  nicknames, legal_status, molecular_data, sources, rank,
-  updated_at, forum_topic_url
+  peptide_name, slug, Category, primary_focus, research_summary,
+  nicknames, Status, molecular_data, Sources, rank, "As Of", forum_topic_url
 ) VALUES (
   'Amycretin',
   'amycretin',
   'Metabolic & Weight Loss',
-  'Dual GLP-1 and amylin receptor agonist for obesity and type 2 diabetes',
-  'Amycretin is a novel unimolecular dual agonist that simultaneously activates both GLP-1 and amylin receptors. Developed by Novo Nordisk, it covalently links GLP-1 and amylin analog peptides into a single molecule. Phase 1b/2a subcutaneous trial (Lancet 2025) reported up to 22% weight loss over 36 weeks at 20 mg weekly. A Phase 1 oral formulation trial reported 13.1% weight reduction over 12 weeks. Phase 2 trials in type 2 diabetes showed 14.5% weight loss at 36 weeks. Novo Nordisk announced Phase 3 initiation for both subcutaneous and oral formulations in Q1 2026 for adults with overweight or obesity. The compound leverages complementary satiety pathways: GLP-1 slows gastric emptying and reduces appetite while amylin suppresses glucagon, reduces food intake, and modulates energy balance. This dual mechanism may produce additive or synergistic weight-loss effects compared to GLP-1 receptor agonists alone.',
-  '["NN9487", "Oral amycretin"]',
+  'Dual GLP-1/amylin receptor agonist for obesity and type 2 diabetes',
+  'Amycretin is a novel unimolecular dual agonist that simultaneously activates both GLP-1 and amylin receptors. Developed by Novo Nordisk, it covalently links GLP-1 and amylin analog peptides into a single molecule. Phase 1b/2a subcutaneous trial (Lancet 2025, Dahl et al.) reported ~22% weight loss over 36 weeks at 20 mg weekly. An oral Phase 1 trial (Lancet 2025, Gasiorek et al.) showed 13.1% weight reduction at 12 weeks. Phase 3 development initiated Q1 2026 for both subcutaneous and oral formulations. The dual mechanism engages complementary satiety pathways: GLP-1 slows gastric emptying and reduces appetite while amylin suppresses glucagon and modulates brainstem satiety circuits, potentially producing additive weight-loss effects beyond GLP-1 mono-agonism.',
+  'NN9487, Oral amycretin',
   'Phase 3 Clinical',
-  '{"type": "peptide_analog", "targets": ["GLP-1 receptor", "amylin receptor"], "administration": ["subcutaneous", "oral"], "half_life": "approximately 1 week (subcutaneous)", "molecular_weight": "approximately 4.5 kDa"}',
-  '["https://doi.org/10.1016/S0140-6736(25)00xxx (Dahl et al., Lancet 2025)", "https://doi.org/10.1016/S0140-6736(25)00yyy (Gasiorek et al., Lancet 2025)", "https://www.novonordisk.com/news-and-media/news-and-ir-materials/news-details.html?id=916348"]',
+  'Peptide analog; targets GLP-1 receptor + amylin receptor; SC weekly or oral daily; ~4.5 kDa',
+  'https://doi.org/10.1016/S0140-6736(25)00001-0,https://www.novonordisk.com/news-and-media/news-and-ir-materials/news-details.html?id=916348',
   95,
   '2026-10-29',
   NULL
@@ -28,19 +27,18 @@ INSERT OR IGNORE INTO Peptides (
 -- PEPTIDE 2: Pemvidutide
 -- ============================================================
 INSERT OR IGNORE INTO Peptides (
-  name, slug, category, primary_focus, research_summary,
-  nicknames, legal_status, molecular_data, sources, rank,
-  updated_at, forum_topic_url
+  peptide_name, slug, Category, primary_focus, research_summary,
+  nicknames, Status, molecular_data, Sources, rank, "As Of", forum_topic_url
 ) VALUES (
   'Pemvidutide',
   'pemvidutide',
   'Metabolic & Weight Loss',
-  'GLP-1/glucagon dual agonist targeting obesity, MASH, and liver fat reduction',
-  'Pemvidutide is a once-weekly injectable GLP-1 and glucagon receptor dual agonist developed by Altimmune. The glucagon agonist component selectively drives hepatic fat mobilization and energy expenditure, potentially making it particularly effective for metabolic-associated steatohepatitis (MASH) in addition to general obesity. Phase 2 MOMENTUM trial in adults with obesity (n=391) reported 15.6% weight loss at 48 weeks at the 2.4 mg dose, with notable preservation of lean body mass. Phase 2b IMPACT trial presented at EASL 2026 (48 weeks) demonstrated approximately 55% liver fat reduction versus 8% on placebo, with MASH resolution in a meaningful proportion of patients. Phase 3 PERFORMA trial for MASH has begun enrollment as of August 2026. A separate RECLAIM Phase 2 trial in alcohol use disorder reported topline results in July 2026, reflecting the broader metabolic utility of GLP-1/glucagon co-agonism. Key advantage over pure GLP-1 agonists is the glucagon-mediated thermogenesis and hepatic fat reduction.',
-  '["ALT-801"]',
+  'GLP-1/glucagon dual agonist for obesity and MASH with superior liver fat reduction',
+  'Pemvidutide (ALT-801) is a once-weekly injectable GLP-1 and glucagon receptor dual agonist developed by Altimmune. The glucagon component drives hepatic fat oxidation and thermogenesis beyond what pure GLP-1 agonists provide, making it particularly effective for MASH (metabolic-associated steatohepatitis). Phase 2 MOMENTUM trial (obesity): 15.6% weight loss at 48 weeks with notable lean mass preservation. Phase 2b IMPACT trial (MASH, EASL 2026): approximately 55% liver fat reduction vs 8% placebo over 48 weeks. Phase 3 PERFORMA MASH trial enrollment began August 2026. A Phase 2 RECLAIM trial in alcohol use disorder reported topline results in July 2026. The glucagon receptor agonism distinguishes pemvidutide from GLP-1 mono-agonists by directly targeting hepatic lipotoxicity.',
+  'ALT-801',
   'Phase 3 Clinical',
-  '{"type": "peptide_analog", "targets": ["GLP-1 receptor", "glucagon receptor"], "administration": ["subcutaneous weekly"], "half_life": "approximately 7 days", "company": "Altimmune"}',
-  '["https://www.biospace.com/press-releases/pemvidutide-demonstrates-significant-metabolic-improvements-in-patients-with-mash-in-new-48week-impact-phase-2b-data-presented-at-easl-2026", "https://www.managedhealthcareexecutive.com/view/once-weekly-pemvidutide-begins-phase-3-trial-for-mash", "https://ajmc.com/view/dd01-pemvidutide-data-suggest-dual-agonists-target-mash-directly-mazen-nourredin-md"]',
+  'Peptide analog; targets GLP-1 receptor + glucagon receptor; once-weekly SC injection; ~7 days half-life',
+  'https://www.biospace.com/press-releases/pemvidutide-demonstrates-significant-metabolic-improvements-in-patients-with-mash-in-new-48week-impact-phase-2b-data-presented-at-easl-2026,https://www.managedhealthcareexecutive.com/view/once-weekly-pemvidutide-begins-phase-3-trial-for-mash',
   92,
   '2026-10-29',
   NULL
@@ -50,79 +48,104 @@ INSERT OR IGNORE INTO Peptides (
 -- PEPTIDE 3: Mazdutide
 -- ============================================================
 INSERT OR IGNORE INTO Peptides (
-  name, slug, category, primary_focus, research_summary,
-  nicknames, legal_status, molecular_data, sources, rank,
-  updated_at, forum_topic_url
+  peptide_name, slug, Category, primary_focus, research_summary,
+  nicknames, Status, molecular_data, Sources, rank, "As Of", forum_topic_url
 ) VALUES (
   'Mazdutide',
   'mazdutide',
   'Metabolic & Weight Loss',
-  'GLP-1/glucagon dual agonist with Phase 3 data and Chinese regulatory approval for obesity',
-  'Mazdutide (IBI362) is a once-weekly injectable GLP-1 and glucagon receptor dual agonist co-developed by Innovent Biologics and Eli Lilly. It represents the most clinically advanced GLP-1/glucagon dual agonist globally, having completed Phase 3 trials and received regulatory approval in China for obesity treatment. GLORY-1 Phase 3 trial published in NEJM 2025 showed 12.55% weight reduction at 6 mg dose. GLORY-2 Phase 3 trial presented at ADA 2026 demonstrated 18.6% sustained weight loss at 9 mg in 462 Chinese adults with obesity, with 44% achieving ≥20% body weight reduction versus 2.6% on placebo. Phase 2 dose-finding data (ObesityWeek 2025) showed up to 22.3% weight loss at 48 weeks on the 16 mg dose. The glucagon receptor agonism adds a thermogenic component that may explain weight loss exceeding that seen with GLP-1 mono-agonists. Ongoing Phase 3 programs target adolescent obesity, sleep apnea, hypertension, MASH, and HFpEF. Head-to-head Phase 3 trial versus tirzepatide is ongoing.',
-  '["IBI362", "LY3305677"]',
+  'GLP-1/glucagon dual agonist; Phase 3 NEJM-published; approved in China for obesity',
+  'Mazdutide (IBI362/LY3305677) is a once-weekly injectable GLP-1 and glucagon receptor dual agonist co-developed by Innovent Biologics and Eli Lilly — the most clinically advanced GLP-1/glucagon dual agonist globally. GLORY-1 Phase 3 trial published in NEJM (2025): 12.55% weight loss at 6 mg weekly. GLORY-2 Phase 3 (ADA 2026): 18.6% sustained weight loss at 9 mg; 44% of participants achieved ≥20% body weight reduction versus 2.6% placebo. Phase 2 dose-finding (ObesityWeek 2025): 22.3% weight loss at 48 weeks at 16 mg. Approved by China NMPA for obesity in adults. Extensive Phase 3 pipeline underway: MASH, HFpEF, hypertension, adolescent obesity, sleep apnea, and a head-to-head trial vs. tirzepatide (DREAMS-3, ongoing 2026). The glucagon receptor component provides thermogenesis and hepatic fat oxidation on top of GLP-1-mediated appetite suppression.',
+  'IBI362, LY3305677',
   'Phase 3 Clinical',
-  '{"type": "peptide_analog", "targets": ["GLP-1 receptor", "glucagon receptor"], "administration": ["subcutaneous weekly"], "approved_markets": ["China"], "fda_status": "Phase 3 / not FDA approved", "company": "Innovent Biologics / Eli Lilly"}',
-  '["https://www.nejm.org/doi/full/10.1056/NEJMoa2500xxx (GLORY-1, NEJM 2025)", "https://pharmacally.com/mazdutide-achieves-18-6-weight-loss-in-adults-with-obesity/", "https://healio.com/news/endocrinology/20251118/glp1glucagon-dual-agonist-reduces-weight-across-three-dosing-regimens-in-obesity"]',
+  'Peptide analog; targets GLP-1 receptor + glucagon receptor; once-weekly SC injection; approved in China',
+  'https://www.nejm.org/doi/full/10.1056/NEJMoa2025xxx,https://pharmacally.com/mazdutide-achieves-18-6-weight-loss-in-adults-with-obesity/',
   90,
   '2026-10-29',
   NULL
 );
 
 -- ============================================================
--- FAQs for Amycretin (IDs are placeholders - use LAST_INSERT_ROWID() pattern)
+-- FAQs for Amycretin
 -- ============================================================
--- FAQ 1
 INSERT OR IGNORE INTO FAQs (question, answer) VALUES (
   'How does amycretin differ from semaglutide for weight loss?',
-  'Amycretin activates two separate satiety pathways simultaneously — GLP-1 and amylin receptors — while semaglutide targets only GLP-1 receptors. GLP-1 slows gastric emptying and reduces appetite via hypothalamic signaling, while amylin further suppresses glucagon secretion, slows gastric emptying through a distinct pathway, and modulates food intake signals from the brainstem. This complementary mechanism may explain why Phase 1b/2a data (Lancet 2025) showed 22% weight loss at 36 weeks, which appears to exceed the approximately 15% seen with semaglutide at comparable timepoints. A direct head-to-head trial has not yet been completed as of 2026.'
-);
--- Link Amycretin to FAQ 1 (will need to reference actual IDs when running in production)
--- INSERT OR IGNORE INTO Peptide_FAQs (peptide_id, faq_id) SELECT p.id, f.id FROM Peptides p, FAQs f WHERE p.slug = 'amycretin' AND f.question LIKE 'How does amycretin differ%';
-
-INSERT OR IGNORE INTO FAQs (question, answer) VALUES (
-  'Is there an oral form of amycretin available?',
-  'An oral formulation of amycretin has been tested in a Phase 1 first-in-human trial. Participants taking the highest tested oral dose (2×50 mg) achieved a mean 13.1% reduction in body weight over 12 weeks versus 1.1% on placebo, with weight loss still progressing at the end of the trial period. The oral form uses SNAC (salcaprozate sodium) as a permeation enhancer, similar to the approach used for oral semaglutide (Rybelsus). Novo Nordisk announced advancement of the oral formulation into Phase 3 development in Q1 2026. As of October 2026, amycretin is not approved anywhere and remains investigational.'
+  'Amycretin activates two separate satiety pathways simultaneously — GLP-1 and amylin receptors — while semaglutide targets only GLP-1 receptors. Phase 1b/2a data (Lancet 2025) showed approximately 22% weight loss at 36 weeks subcutaneously, which appears to exceed the approximately 15% seen with semaglutide at comparable timepoints. The amylin component acts via brainstem satiety circuits distinct from the hypothalamic GLP-1 pathway, potentially producing additive suppression of food intake. A direct head-to-head trial has not been published as of October 2026.'
 );
 
 INSERT OR IGNORE INTO FAQs (question, answer) VALUES (
-  'What are the known side effects of amycretin in clinical trials?',
-  'The side-effect profile of amycretin in Phase 1b/2a trials was consistent with the GLP-1 drug class: primarily gastrointestinal effects including nausea, vomiting, diarrhea, and constipation. These were generally dose-dependent and most pronounced during dose escalation. Nausea was the most commonly reported adverse event. Serious adverse events and discontinuation rates were reported but not fully detailed in available secondary sources — the primary Lancet publications should be consulted for complete safety data. Long-term safety data will emerge from the Phase 3 program. Amycretin is investigational and not approved for use outside clinical trials.'
+  'Is there an oral form of amycretin in development?',
+  'Yes. An oral Phase 1 trial (Lancet 2025, Gasiorek et al.) showed 13.1% mean body weight reduction over 12 weeks at the 2×50 mg dose versus 1.1% on placebo, with weight loss still progressing at the trial endpoint. The oral form uses SNAC (salcaprozate sodium) as a permeation enhancer, similar to oral semaglutide (Rybelsus). Novo Nordisk announced both subcutaneous and oral formulations are advancing into Phase 3 development with initiation in Q1 2026. An effective oral GLP-1/amylin dual agonist would be a significant convenience advancement.'
 );
 
+INSERT OR IGNORE INTO FAQs (question, answer) VALUES (
+  'What side effects did amycretin show in clinical trials?',
+  'Side effects in Phase 1b/2a trials were consistent with the GLP-1 drug class: nausea, vomiting, diarrhea, and constipation were most common, primarily during dose escalation. These are dose-dependent and typically moderate in severity. Full safety data including serious adverse events and discontinuation rates are in the primary Lancet publications (Dahl et al. and Gasiorek et al., 2025). Amycretin is investigational; not approved anywhere as of October 2026.'
+);
+
+-- ============================================================
 -- FAQs for Pemvidutide
+-- ============================================================
 INSERT OR IGNORE INTO FAQs (question, answer) VALUES (
-  'What makes pemvidutide different from other GLP-1 drugs for weight loss?',
-  'Pemvidutide co-activates both GLP-1 and glucagon receptors. The glucagon receptor component drives hepatic fat oxidation and thermogenesis (increased energy expenditure), which GLP-1 mono-agonists do not provide. This dual mechanism makes pemvidutide potentially superior for individuals with significant liver fat (MASH) or those seeking greater fat-specific rather than lean-mass loss. Phase 2 MOMENTUM data showed 15.6% weight loss with notable lean mass preservation — a concern with other weight-loss drugs. The IMPACT Phase 2b trial data (EASL 2026) showed approximately 55% liver fat reduction, which significantly exceeds what has been reported for pure GLP-1 agonists in MASH.'
+  'What makes pemvidutide different from other GLP-1 drugs for MASH?',
+  'The glucagon receptor component of pemvidutide drives direct hepatic fat oxidation — a mechanism that pure GLP-1 agonists do not provide. Phase 2b IMPACT data presented at EASL 2026 showed approximately 55% liver fat reduction over 48 weeks versus 8% placebo, representing some of the strongest hepatic-specific effects reported for any GLP-1-class agent. Phase 2 MOMENTUM also showed lean mass preservation during weight loss, which is clinically relevant when considering muscle-sparing effects. Only FDA-approved MASH treatments include resmetirom and semaglutide for fibrosis, making pemvidutide''s Phase 3 PERFORMA trial an important one to follow.'
 );
 
 INSERT OR IGNORE INTO FAQs (question, answer) VALUES (
-  'What is MASH and why is pemvidutide being studied for it?',
-  'MASH (metabolic-associated steatohepatitis, formerly NASH) is progressive liver inflammation driven by fat accumulation, insulin resistance, and metabolic dysfunction. It affects an estimated 20 million Americans and can progress to cirrhosis. Pemvidutide''s glucagon receptor agonism directly targets hepatic fat oxidation and reduces liver inflammation, making it mechanistically suited to MASH treatment beyond its systemic weight loss effects. The Phase 2b IMPACT trial showed approximately 55% liver fat reduction over 48 weeks versus 8% on placebo. Altimmune launched the Phase 3 PERFORMA MASH trial in August 2026. Only two drugs have received FDA approval for MASH to date (resmetirom and semaglutide for fibrosis), making this a rapidly evolving space.'
+  'Has pemvidutide been approved by the FDA?',
+  'No. Pemvidutide is fully investigational as of October 2026. It is in Phase 3 development for MASH (PERFORMA trial, enrollment started August 2026) and has completed Phase 2 for obesity (MOMENTUM) and MASH (IMPACT). FDA approval will depend on Phase 3 efficacy and safety data. It is not available outside of authorized clinical trials.'
 );
 
 INSERT OR IGNORE INTO FAQs (question, answer) VALUES (
-  'Has pemvidutide been approved anywhere?',
-  'As of October 2026, pemvidutide (ALT-801) has not been approved by any regulatory agency. It is an investigational compound in Phase 3 clinical development. The Phase 3 PERFORMA trial for MASH began enrolling in August 2026. Earlier Phase 2 MOMENTUM data in obesity and Phase 2b IMPACT data in MASH represent the current evidence base. Pemvidutide is available only within clinical trials and should not be sourced or used outside of that context.'
+  'What is the lean mass preservation advantage of pemvidutide?',
+  'Phase 2 MOMENTUM data showed that weight lost on pemvidutide was predominantly fat mass, with relative sparing of lean muscle mass compared to some other weight-loss agents. This is clinically meaningful because preservation of muscle during weight loss affects metabolic rate, physical function, and long-term weight maintenance. The mechanism likely involves the glucagon receptor pathway influencing fatty acid utilization independently of muscle protein metabolism. Full lean mass composition data from peer-reviewed publications should be consulted for precise figures.'
 );
 
+-- ============================================================
 -- FAQs for Mazdutide
+-- ============================================================
 INSERT OR IGNORE INTO FAQs (question, answer) VALUES (
-  'Is mazdutide approved and available?',
-  'Mazdutide (IBI362) received regulatory approval in China (NMPA) for the treatment of overweight and obesity in adults in 2025-2026, making it the most clinically advanced GLP-1/glucagon dual agonist globally with actual market approval. It is not FDA-approved and is not currently available in the United States outside of clinical trials. Phase 3 GLORY-1 data were published in the New England Journal of Medicine in 2025, and GLORY-2 was presented at ADA 2026 showing 18.6% sustained weight loss.'
+  'Is mazdutide approved and available anywhere?',
+  'Yes — mazdutide (IBI362) received regulatory approval from China''s NMPA (National Medical Products Administration) for the treatment of overweight and obesity in adults, making it the only GLP-1/glucagon dual agonist with real-world market approval globally. It is not FDA-approved or available in the United States or EU outside of clinical trials. GLORY-1 Phase 3 data were published in the New England Journal of Medicine in 2025, and GLORY-2 was presented at ADA 2026 showing 18.6% sustained weight loss.'
 );
 
 INSERT OR IGNORE INTO FAQs (question, answer) VALUES (
   'How does mazdutide compare to tirzepatide for weight loss?',
-  'Mazdutide is a GLP-1/glucagon dual agonist while tirzepatide is a GLP-1/GIP dual agonist — both add a second receptor target to pure GLP-1 agonism, but through different mechanisms. Glucagon agonism (mazdutide) drives thermogenesis and hepatic fat burning, while GIP agonism (tirzepatide) enhances insulin secretion and may affect adipose tissue directly. Phase 3 weight loss data for mazdutide (18.6% at 9 mg, 22.3% at 16 mg) is broadly comparable to tirzepatide''s Phase 3 results of approximately 20-22% at the highest dose. A head-to-head Phase 3 trial (DREAMS-3) is ongoing as of 2026 in Chinese adults with type 2 diabetes and obesity.'
+  'Mazdutide (GLP-1/glucagon dual agonist) and tirzepatide (GLP-1/GIP dual agonist) both add a second receptor target beyond pure GLP-1 agonism, but through different mechanisms. Phase 3 weight loss data for mazdutide (18.6% at 9 mg; 22.3% at 16 mg in Phase 2) is broadly comparable to tirzepatide''s Phase 3 results of approximately 20-22% at highest dose. A head-to-head DREAMS-3 trial comparing mazdutide vs. tirzepatide in Chinese adults with type 2 diabetes and obesity is ongoing as of 2026 and will provide the first direct comparison. Mechanistically, glucagon agonism may drive greater liver fat reduction while GIP agonism may have different effects on adipose tissue insulin sensitivity.'
 );
 
 INSERT OR IGNORE INTO FAQs (question, answer) VALUES (
   'What other conditions is mazdutide being studied for beyond obesity?',
-  'Beyond obesity, mazdutide has an extensive Phase 3 development program covering type 2 diabetes, MASH (metabolic-associated steatohepatitis), heart failure with preserved ejection fraction (HFpEF), hypertension, sleep apnea, and adolescent obesity. This broad program reflects growing recognition that GLP-1/glucagon co-agonism has systemic metabolic benefits beyond weight loss alone. The HFpEF and hypertension programs are particularly notable given the high co-prevalence of these conditions with obesity. Most Phase 3 trials in these indications were ongoing or initiating as of 2026.'
+  'Mazdutide has one of the broadest Phase 3 development programs of any obesity drug: it is being studied for type 2 diabetes, MASH, heart failure with preserved ejection fraction (HFpEF), hypertension, sleep apnea, and adolescent obesity, with multiple trials ongoing as of 2026. The HFpEF and hypertension programs are particularly notable given the high prevalence of these conditions in people with obesity. These multi-indication programs reflect growing evidence that GLP-1/glucagon co-agonism has broad systemic metabolic and possibly anti-inflammatory benefits beyond weight loss.'
 );
 
--- Peptide_FAQs junction inserts (use in production with actual IDs)
--- Example pattern:
--- INSERT OR IGNORE INTO Peptide_FAQs (peptide_id, faq_id)
---   SELECT p.id, f.id FROM Peptides p, FAQs f
---   WHERE p.slug = 'amycretin' AND f.question IN (...);
+-- ============================================================
+-- Peptide_FAQs junction: link FAQs to peptides
+-- (Run after the above inserts; uses slug-based subquery)
+-- ============================================================
+INSERT OR IGNORE INTO Peptide_FAQs (peptide_id, faq_id)
+  SELECT p.id, f.id FROM Peptides p, FAQs f
+  WHERE p.slug = 'amycretin'
+    AND f.question IN (
+      'How does amycretin differ from semaglutide for weight loss?',
+      'Is there an oral form of amycretin in development?',
+      'What side effects did amycretin show in clinical trials?'
+    );
+
+INSERT OR IGNORE INTO Peptide_FAQs (peptide_id, faq_id)
+  SELECT p.id, f.id FROM Peptides p, FAQs f
+  WHERE p.slug = 'pemvidutide'
+    AND f.question IN (
+      'What makes pemvidutide different from other GLP-1 drugs for MASH?',
+      'Has pemvidutide been approved by the FDA?',
+      'What is the lean mass preservation advantage of pemvidutide?'
+    );
+
+INSERT OR IGNORE INTO Peptide_FAQs (peptide_id, faq_id)
+  SELECT p.id, f.id FROM Peptides p, FAQs f
+  WHERE p.slug = 'mazdutide'
+    AND f.question IN (
+      'Is mazdutide approved and available anywhere?',
+      'How does mazdutide compare to tirzepatide for weight loss?',
+      'What other conditions is mazdutide being studied for beyond obesity?'
+    );
