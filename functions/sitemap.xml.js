@@ -1,3 +1,5 @@
+const STATIC_PEPTIDE_SLUGS = ["amycretin", "pemvidutide", "mazdutide"];
+
 export async function onRequest(context) {
   const { DB } = context.env;
   const baseUrl = "https://minmaxmuscle.com";
@@ -29,9 +31,13 @@ export async function onRequest(context) {
       xml += `<url><loc>${baseUrl}${path}</loc><changefreq>weekly</changefreq></url>`;
     });
 
-    // Add Peptides
+    // Add Peptides (D1 results + static fallbacks not already in D1)
+    const dbSlugs = new Set((peptides.results || []).map(p => p.slug));
     peptides.results.forEach(p => {
       xml += `<url><loc>${baseUrl}/peptides/${p.slug}</loc><changefreq>monthly</changefreq></url>`;
+    });
+    STATIC_PEPTIDE_SLUGS.filter(s => !dbSlugs.has(s)).forEach(s => {
+      xml += `<url><loc>${baseUrl}/peptides/${s}</loc><changefreq>monthly</changefreq></url>`;
     });
 
     // Add Stacks

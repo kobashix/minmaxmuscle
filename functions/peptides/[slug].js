@@ -172,12 +172,17 @@ export async function onRequest(context) {
     const [headerHtml, footerHtml] = await Promise.all([headRes.text(), footRes.text()]);
 
     // 7. Structured Data
+    const canonicalUrl = `https://minmaxmuscle.com/peptides/${peptide.slug}`;
+    const metaDesc = (peptide.research_summary || "").slice(0, 155) + ((peptide.research_summary || "").length > 155 ? "…" : "");
+    const pageTitle = `${peptide.peptide_name} | Peptide Research | MinMaxMuscle`;
+
     const mainSchema = {
       "@context": "https://schema.org",
       "@type": "MedicalEntity",
       "name": peptide.peptide_name,
       "description": peptide.research_summary,
-      "category": peptide.Category
+      "category": peptide.Category,
+      "url": canonicalUrl
     };
 
     const faqSchema = {
@@ -190,16 +195,35 @@ export async function onRequest(context) {
       }))
     };
 
+    const breadcrumbSchema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://minmaxmuscle.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Peptides", "item": "https://minmaxmuscle.com/peptidesdb.html" },
+        { "@type": "ListItem", "position": 3, "name": peptide.peptide_name, "item": canonicalUrl }
+      ]
+    };
+
     // 8. Inject and Transform
     return new HTMLRewriter()
       .on("head", {
         element(el) {
           el.append(`<script type="application/ld+json">${JSON.stringify(mainSchema)}</script>`, { html: true });
           el.append(`<script type="application/ld+json">${JSON.stringify(faqSchema)}</script>`, { html: true });
+          el.append(`<script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script>`, { html: true });
         }
       })
       .on("header", { element(el) { el.setInnerContent(headerHtml, { html: true }); } })
       .on("footer", { element(el) { el.setInnerContent(footerHtml, { html: true }); } })
+      .on("#page_title", { element(el) { el.setInnerContent(pageTitle); } })
+      .on("#meta_description", { element(el) { el.setAttribute("content", metaDesc); } })
+      .on("#og_title", { element(el) { el.setAttribute("content", pageTitle); } })
+      .on("#og_description", { element(el) { el.setAttribute("content", metaDesc); } })
+      .on("#og_url", { element(el) { el.setAttribute("content", canonicalUrl); } })
+      .on("#twitter_title", { element(el) { el.setAttribute("content", pageTitle); } })
+      .on("#twitter_description", { element(el) { el.setAttribute("content", metaDesc); } })
+      .on("#canonical_url", { element(el) { el.setAttribute("href", canonicalUrl); } })
       .on("#peptide_name", { element(el) { el.setInnerContent(peptide.peptide_name); } })
       .on("#category_badge", { element(el) { el.setInnerContent(peptide.Category || "Research"); } })
       .on("#research_summary", { element(el) { el.setInnerContent(peptide.research_summary); } })
