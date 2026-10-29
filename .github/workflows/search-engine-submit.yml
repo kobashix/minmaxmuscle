@@ -25,8 +25,8 @@ jobs:
             -H "Content-Type: application/json" \
             -d '{
               "host": "minmaxmuscle.com",
-              "key": "${{ secrets.INDEXNOW_KEY }}",
-              "keyLocation": "https://minmaxmuscle.com/${{ secrets.INDEXNOW_KEY }}.txt",
+              "key": "TeqhIndexNowKey2026",
+              "keyLocation": "https://minmaxmuscle.com/TeqhIndexNowKey2026.txt",
               "urlList": [
                 "https://minmaxmuscle.com/peptides/amycretin",
                 "https://minmaxmuscle.com/peptides/pemvidutide",
@@ -44,8 +44,8 @@ jobs:
             -H "Content-Type: application/json" \
             -d '{
               "host": "minmaxmuscle.com",
-              "key": "${{ secrets.INDEXNOW_KEY }}",
-              "keyLocation": "https://minmaxmuscle.com/${{ secrets.INDEXNOW_KEY }}.txt",
+              "key": "TeqhIndexNowKey2026",
+              "keyLocation": "https://minmaxmuscle.com/TeqhIndexNowKey2026.txt",
               "urlList": [
                 "https://minmaxmuscle.com/peptides/amycretin",
                 "https://minmaxmuscle.com/peptides/pemvidutide",
