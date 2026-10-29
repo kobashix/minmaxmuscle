@@ -1,0 +1,69 @@
+name: Search Engine Submission
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      extra_urls:
+        description: "Extra URLs to submit (comma-separated, optional)"
+        required: false
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Wait for Cloudflare Pages deploy
+        run: sleep 60
+
+      - name: Submit to IndexNow (covers Bing, Yandex, Seznam, Naver)
+        run: |
+          curl -s -X POST https://api.indexnow.org/indexnow \
+            -H "Content-Type: application/json" \
+            -d '{
+              "host": "minmaxmuscle.com",
+              "key": "${{ secrets.INDEXNOW_KEY }}",
+              "keyLocation": "https://minmaxmuscle.com/${{ secrets.INDEXNOW_KEY }}.txt",
+              "urlList": [
+                "https://minmaxmuscle.com/peptides/amycretin",
+                "https://minmaxmuscle.com/peptides/pemvidutide",
+                "https://minmaxmuscle.com/peptides/mazdutide",
+                "https://minmaxmuscle.com/peptidesdb.html",
+                "https://minmaxmuscle.com/sitemap.xml"
+              ]
+            }' \
+            -w "\nIndexNow HTTP status: %{http_code}\n" \
+            --fail-with-body || echo "IndexNow submission failed (non-fatal)"
+
+      - name: Submit to Bing directly via IndexNow
+        run: |
+          curl -s -X POST https://www.bing.com/indexnow \
+            -H "Content-Type: application/json" \
+            -d '{
+              "host": "minmaxmuscle.com",
+              "key": "${{ secrets.INDEXNOW_KEY }}",
+              "keyLocation": "https://minmaxmuscle.com/${{ secrets.INDEXNOW_KEY }}.txt",
+              "urlList": [
+                "https://minmaxmuscle.com/peptides/amycretin",
+                "https://minmaxmuscle.com/peptides/pemvidutide",
+                "https://minmaxmuscle.com/peptides/mazdutide",
+                "https://minmaxmuscle.com/peptidesdb.html"
+              ]
+            }' \
+            -w "\nBing HTTP status: %{http_code}\n" \
+            --fail-with-body || echo "Bing submission failed (non-fatal)"
+
+      - name: Ping Google sitemap
+        run: |
+          curl -s "https://www.google.com/ping?sitemap=https://minmaxmuscle.com/sitemap.xml" \
+            -w "\nGoogle sitemap ping HTTP status: %{http_code}\n" \
+            --fail-with-body || echo "Google ping failed (non-fatal)"
+
+      - name: Ping Bing sitemap
+        run: |
+          curl -s "https://www.bing.com/ping?sitemap=https://minmaxmuscle.com/sitemap.xml" \
+            -w "\nBing sitemap ping HTTP status: %{http_code}\n" \
+            --fail-with-body || echo "Bing sitemap ping failed (non-fatal)"
