@@ -83,6 +83,62 @@ const STATIC_PEPTIDES = {
         answer: "Mazdutide has one of the broadest Phase 3 development programs of any obesity drug: it is being studied for type 2 diabetes, MASH, heart failure with preserved ejection fraction (HFpEF), hypertension, sleep apnea, and adolescent obesity, with multiple trials ongoing as of 2026. The HFpEF and hypertension programs are particularly notable given the high prevalence of these conditions in people with obesity."
       }
     ]
+  },
+  survodutide: {
+    id: -4,
+    peptide_name: "Survodutide",
+    slug: "survodutide",
+    Category: "Metabolic & Weight Loss",
+    primary_focus: "GLP-1/glucagon dual agonist; Phase 3 NEJM-published; SYNCHRONIZE-1 and SYNCHRONIZE-2 results 2026",
+    research_summary: "Survodutide (BI 456906) is a once-weekly injectable dual agonist of the GLP-1 receptor (GLP1R) and glucagon receptor (GCGR), co-developed by Boehringer Ingelheim and Zealand Pharma. Structurally derived from oxyntomodulin, it adds thermogenic and hepatic fat-oxidation effects (via glucagon receptor) to GLP-1-mediated appetite suppression. Phase 3 SYNCHRONIZE-1 (no T2D, n=725): 16.6% weight loss vs 3.2% placebo at 76 weeks; published in NEJM at ADA 2026. Phase 3 SYNCHRONIZE-2 (with T2D): 13.1% weight loss, HbA1c down 1.21%; published in NEJM on October 1, 2026 (EASD 2026). SYNCHRONIZE-MASLD: significant liver fat reduction, Nature Medicine 2026. SYNCHRONIZE-CVOT (cardiovascular outcomes) readout expected Q4 2026. Not yet filed for regulatory approval as of October 2026.",
+    nicknames: "BI 456906",
+    Status: "Phase 3 Clinical",
+    rank: 88,
+    molecular_data: "Peptide analog; targets GLP-1 receptor + glucagon receptor; once-weekly SC injection; derived from oxyntomodulin; ~29 amino acids",
+    Sources: "https://www.nejm.org/doi/full/10.1056/NEJMoa2607219,https://www.boehringer-ingelheim.com/us/human-health/metabolic-diseases/results-phase-iii-synchronize-1-obesity-trial,https://www.healio.com/news/endocrinology/20261001/survodutide-induces-impressive-amount-of-weight-loss-in-type-2-diabetes-and-obesity",
+    "As Of": "2026-10-30",
+    faqs: [
+      {
+        question: "How does survodutide compare to semaglutide and tirzepatide for weight loss?",
+        answer: "Survodutide's Phase 3 SYNCHRONIZE-1 (no T2D) reported 16.6% mean body weight loss at 76 weeks — comparable to tirzepatide (~20-22% at highest doses) and better than semaglutide (~15%). In type 2 diabetes (SYNCHRONIZE-2), weight loss was 13.1%, published in NEJM October 2026, alongside HbA1c reduction of 1.21%. Survodutide's glucagon receptor component drives hepatic fat oxidation for best-in-class liver fat reduction vs pure GLP-1 agents. No regulatory filing announced as of October 2026."
+      },
+      {
+        question: "What is the mechanism of survodutide and why does the glucagon component matter?",
+        answer: "Survodutide is derived from oxyntomodulin, an endogenous post-meal hormone activating both GLP-1R and GCGR. The GLP-1 arm suppresses appetite and slows gastric emptying; the glucagon receptor arm drives hepatic fat oxidation and thermogenesis — mechanisms pure GLP-1 drugs like semaglutide do not engage. This dual action explains survodutide's strong MASLD results (Nature Medicine 2026)."
+      },
+      {
+        question: "Is survodutide approved or available anywhere?",
+        answer: "No. As of October 2026, survodutide is not approved in any country. Phase 3 SYNCHRONIZE-1, SYNCHRONIZE-2, and SYNCHRONIZE-MASLD are complete with positive results. SYNCHRONIZE-CVOT is pending readout Q4 2026. No regulatory filing announced. Not available outside clinical trials."
+      }
+    ]
+  },
+  petrelintide: {
+    id: -5,
+    peptide_name: "Petrelintide",
+    slug: "petrelintide",
+    Category: "Metabolic & Weight Loss",
+    primary_focus: "Amylin receptor agonist by Zealand/Roche; best-in-class tolerability; Phase 3 underway",
+    research_summary: "Petrelintide (ZP8396) is a once-weekly injectable amylin receptor agonist developed by Zealand Pharma in partnership with Roche. It acts exclusively through brainstem amylin receptor pathways — not GLP-1 or glucagon receptors — producing meaningful weight loss with GI adverse events at placebo rates in Phase 2. ZUPREME-1 (obesity, no T2D): 10.7% weight loss vs 1.7% placebo; published in The Lancet Diabetes & Endocrinology, September 29, 2026 (EASD 2026). ZUPREME-2 (obesity + T2D, n=220): 9.2% weight loss vs 2.0% placebo at Week 28; HbA1c down 0.65%; discontinuations from AEs 1.9% vs 1.7% placebo — statistically identical to placebo tolerability. Topline announced October 7, 2026. Phase 3 underway in partnership with Roche.",
+    nicknames: "ZP8396",
+    Status: "Phase 3 Clinical",
+    rank: 85,
+    molecular_data: "Peptide analog; amylin receptor agonist; once-weekly SC injection; distinct from GLP-1 class; brainstem satiety mechanism",
+    Sources: "https://www.globenewswire.com/news-release/2026/09/29/3371443/0/en/zealand-pharma-to-present-additional-data-from-phase-2-zupreme-1-trial-for-petrelintide-at-easd-2026-and-announces-publication-of-trial-results-in-the-lancet-diabetes-endocrinology.html,https://www.globenewswire.com/news-release/2026/10/07/3376750/0/en/zealand-pharma-announces-positive-phase-2-zupreme-2-topline-results-for-amylin-analog-petrelintide-in-people-with-overweight-or-obesity-and-type-2-diabetes.html",
+    "As Of": "2026-10-30",
+    faqs: [
+      {
+        question: "What makes petrelintide different from GLP-1 drugs like semaglutide?",
+        answer: "Petrelintide is a pure amylin receptor agonist — completely distinct from the GLP-1 receptor pathway. Phase 2 trials (ZUPREME-1 and ZUPREME-2) showed GI adverse events at essentially placebo rates, unlike GLP-1 drugs where 30-40% of patients experience nausea during dose escalation. Weight loss in Phase 2 (10.7%; 9.2% in T2D) is somewhat lower than GLP-1 agonists, but the tolerability profile makes it an option for patients intolerant to GLP-1 drugs, and a potential combination partner. Published in The Lancet Diabetes & Endocrinology, September 2026."
+      },
+      {
+        question: "Has petrelintide been approved anywhere?",
+        answer: "No. Petrelintide is fully investigational as of October 2026. ZUPREME-1 results were published in The Lancet Diabetes & Endocrinology (September 2026) and ZUPREME-2 positive topline results were announced October 7, 2026. Phase 3 is underway with Roche. Not available outside authorized clinical trials."
+      },
+      {
+        question: "Is petrelintide related to pramlintide or cagrilintide?",
+        answer: "All three are amylin analogs. Pramlintide (FDA-approved, short-acting, multiple daily injections for diabetes). Cagrilintide (Novo Nordisk, once-weekly, most advanced as CagriSema combination). Petrelintide (Zealand/Roche, once-weekly standalone, best GI tolerability in Phase 2 with events at placebo rates). They share the amylin receptor target but differ in structure, half-life, and clinical profile."
+      }
+    ]
   }
 };
 

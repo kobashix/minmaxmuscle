@@ -16,6 +16,18 @@ const STATIC_PEPTIDES = [
     slug: "mazdutide",
     category: "Metabolic & Weight Loss",
     research_summary: "Innovent/Lilly GLP-1/glucagon dual agonist. GLORY-1 published in NEJM 2025. GLORY-2 (ADA 2026): 18.6% weight loss, 44% achieved ≥20% reduction. Approved in China."
+  },
+  {
+    peptide_name: "Survodutide",
+    slug: "survodutide",
+    category: "Metabolic & Weight Loss",
+    research_summary: "Boehringer Ingelheim/Zealand GLP-1/glucagon dual agonist. SYNCHRONIZE-1 (NEJM 2026): 16.6% weight loss (no T2D). SYNCHRONIZE-2 (NEJM Oct 2026): 13.1% + HbA1c reduction in T2D. Nature Medicine MASLD data."
+  },
+  {
+    peptide_name: "Petrelintide",
+    slug: "petrelintide",
+    category: "Metabolic & Weight Loss",
+    research_summary: "Zealand/Roche amylin receptor agonist. ZUPREME-1 (Lancet D&E Sep 2026): 10.7% weight loss. ZUPREME-2 (Oct 2026): 9.2% in T2D. GI adverse events at placebo rates — best-in-class tolerability. Phase 3 underway."
   }
 ];
 
