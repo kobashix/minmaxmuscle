@@ -1,4 +1,4 @@
-const STATIC_PEPTIDE_SLUGS = ["amycretin", "pemvidutide", "mazdutide"];
+const STATIC_PEPTIDE_SLUGS = ["amycretin", "pemvidutide", "mazdutide", "survodutide", "eloralintide", "maridebart-cafraglutide", "cyclized-hexapeptide-9"];
 
 export async function onRequest(context) {
   const { DB } = context.env;
