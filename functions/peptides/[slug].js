@@ -83,6 +83,118 @@ const STATIC_PEPTIDES = {
         answer: "Mazdutide has one of the broadest Phase 3 development programs of any obesity drug: it is being studied for type 2 diabetes, MASH, heart failure with preserved ejection fraction (HFpEF), hypertension, sleep apnea, and adolescent obesity, with multiple trials ongoing as of 2026. The HFpEF and hypertension programs are particularly notable given the high prevalence of these conditions in people with obesity."
       }
     ]
+  },
+  survodutide: {
+    id: -4,
+    peptide_name: "Survodutide",
+    slug: "survodutide",
+    Category: "Metabolic & Weight Loss",
+    primary_focus: "GLP-1/glucagon dual agonist for obesity and MASLD with superior liver fat reduction",
+    research_summary: "Survodutide (BI 456906) is a once-weekly injectable unimolecular dual agonist of GLP-1 and glucagon receptors, developed by Boehringer Ingelheim in partnership with Zealand Pharma. The GLP-1 component reduces appetite and slows gastric emptying while the glucagon receptor agonism drives hepatic fat oxidation, thermogenesis, and energy expenditure — mechanisms that produce greater liver fat reduction than pure GLP-1 agonists. Phase 2 data established 18.7% weight loss at 46 weeks (vs. 2.3% placebo) at the 4.8 mg dose. Phase 3 SYNCHRONIZE-1 (non-diabetic obesity, N=1,033) reported up to 16.6% weight loss at 76 weeks vs. 3.2% placebo using the efficacy estimand; results published simultaneously at ADA 2026 in the New England Journal of Medicine. Phase 3 SYNCHRONIZE-MASLD (N=368) demonstrated 12.2% body weight reduction and >30% liver fat reduction in most participants over 48 weeks; published in Nature Medicine (June 7, 2026). Phase 3 SYNCHRONIZE-2 (obesity with type 2 diabetes) showed 13.1% weight loss vs. 3.1% placebo at 76 weeks, announced October 1, 2026. A cardiovascular outcomes trial (SYNCHRONIZE-CVOT) completed October 2026, results pending. Survodutide is not yet approved by the FDA or EMA as of November 2026.",
+    nicknames: "BI 456906, survodutide",
+    Status: "Phase 3 Clinical",
+    rank: 93,
+    molecular_data: "Peptide analog; targets GLP-1 receptor (GLP-1R) + glucagon receptor (GCGR); once-weekly subcutaneous injection; co-developed by Boehringer Ingelheim and Zealand Pharma",
+    Sources: "https://pubmed.ncbi.nlm.nih.gov/42822760/,https://www.boehringer-ingelheim.com/us/human-health/metabolic-diseases/results-phase-iii-synchronize-1-obesity-trial,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9679702/",
+    "As Of": "2026-11-01",
+    faqs: [
+      {
+        question: "How does survodutide differ from semaglutide and tirzepatide for weight loss?",
+        answer: "Survodutide activates both GLP-1 and glucagon receptors simultaneously, a combination that adds energy expenditure and direct hepatic fat oxidation to the appetite suppression of GLP-1 agonism. Semaglutide is a pure GLP-1 agonist. Tirzepatide adds GIP receptor activation to GLP-1. The glucagon receptor component in survodutide is particularly effective at reducing liver fat — Phase 3 SYNCHRONIZE-MASLD showed >30% liver fat reduction in most participants at 48 weeks, published in Nature Medicine (2026). Survodutide's SYNCHRONIZE-1 showed 16.6% weight loss at 76 weeks (NEJM, ADA 2026), comparable to tirzepatide and semaglutide but with a potentially superior liver-specific metabolic profile."
+      },
+      {
+        question: "What is MASLD and why is survodutide particularly relevant for it?",
+        answer: "MASLD stands for Metabolic-Associated Steatotic Liver Disease (formerly NAFLD/NASH), a spectrum of liver conditions driven by excess liver fat accumulation linked to metabolic syndrome, obesity, and insulin resistance. Survodutide's glucagon receptor component directly stimulates hepatic fatty acid oxidation and reduces de novo lipogenesis, mechanisms that GLP-1 agonists alone do not significantly engage. In SYNCHRONIZE-MASLD (Phase 3, N=368), survodutide achieved 12.2% body weight reduction and >30% liver fat reduction in most participants at 48 weeks vs. 1.0% placebo, published in Nature Medicine in June 2026. No FDA approval yet, but this profile makes it one of the leading investigational agents for MASLD."
+      },
+      {
+        question: "Is survodutide safe for people with type 2 diabetes?",
+        answer: "Phase 3 SYNCHRONIZE-2 specifically enrolled adults with obesity and type 2 diabetes, reporting 13.1% weight loss vs. 3.1% placebo at 76 weeks (announced October 1, 2026). Safety was consistent with the GLP-1 drug class: nausea, vomiting, and gastrointestinal side effects were most common. The glucagon receptor component theoretically raises a concern about glucagon-driven glucose elevation in diabetes, but this was studied and managed in the trial protocol. Survodutide is not approved by the FDA or EMA as of November 2026."
+      }
+    ]
+  },
+  eloralintide: {
+    id: -5,
+    peptide_name: "Eloralintide",
+    slug: "eloralintide",
+    Category: "Metabolic & Weight Loss",
+    primary_focus: "Selective amylin receptor agonist for obesity — non-GLP-1 mechanism with up to 20% weight loss",
+    research_summary: "Eloralintide (LY3841136) is a once-weekly selective amylin receptor agonist developed by Eli Lilly, representing a distinct class from GLP-1 agonists and GLP-1/amylin dual agonists. Unlike amycretin (which combines GLP-1 and amylin activity), eloralintide acts exclusively via amylin receptors — including calcitonin receptor (CTR) and calcitonin receptor-like receptor (CLR) complexes — modulating satiety through brainstem area postrema circuits and suppressing glucagon secretion. Phase 2 results published in The Lancet (announced November 6, 2025): 263 adults with obesity or overweight without type 2 diabetes; maximum mean bodyweight reduction of 20.1% (–21.3 kg) at 48 weeks at the highest dose vs. 0.4% placebo; weight loss had not plateaued by 48 weeks, suggesting continued efficacy potential. Phase 3 ENLIGHTEN program launched in 2026: ENLIGHTEN-1 (obesity without T2DM, NCT07321886), ENLIGHTEN-2 (obesity with T2DM, NCT07282600), ENLIGHTEN-3 (sleep apnea, NCT07369011), and ENLIGHTEN-6 (persistent obesity on background incretin therapy, NCT07392190). An EloraTZP co-formulation study with tirzepatide is planned for late 2026. Eloralintide is investigational; not approved by the FDA as of November 2026.",
+    nicknames: "LY3841136, eloralintide",
+    Status: "Phase 3 Clinical",
+    rank: 91,
+    molecular_data: "Peptide analog; selective amylin receptor agonist (CTR/CLR complex); once-weekly subcutaneous injection; developed by Eli Lilly; distinct from GLP-1 receptor agonists",
+    Sources: "https://www.sciencedirect.com/science/article/abs/pii/S0140673625021555,https://clinicaltrials.gov/study/NCT07321886,https://www.drugtopics.com/view/eloralintide-reduces-weight-by-9-5-to-20-1-for-patients-with-obesity",
+    "As Of": "2026-11-01",
+    faqs: [
+      {
+        question: "What makes eloralintide different from amycretin, which also involves amylin?",
+        answer: "Both involve amylin receptor signaling, but the mechanism and molecular strategy differ fundamentally. Amycretin (Novo Nordisk, NN9487) is a dual GLP-1 and amylin agonist — a single molecule that simultaneously activates both receptor systems. Eloralintide (LY3841136) is a selective amylin receptor agonist only — it has no GLP-1 activity. This means eloralintide could in principle be combined with GLP-1 drugs (or GLP-1/GIP drugs like tirzepatide) to add amylin pathway satiety on top of existing GLP-1 treatment. The ENLIGHTEN-6 trial specifically studies eloralintide in people already on weekly incretin therapy, and an EloraTZP co-formulation with tirzepatide is planned. Phase 2 Lancet data (2025) showed up to 20.1% weight loss at 48 weeks."
+      },
+      {
+        question: "Why hasn't an amylin-only drug been developed before eloralintide?",
+        answer: "Pramlintide (Symlin), an injectable amylin analog, was FDA-approved in 2005 for diabetes but required multiple daily injections, limiting adoption for obesity. Eloralintide is engineered for once-weekly dosing by incorporating half-life extension technologies, solving the compliance problem that limited pramlintide. Lilly's Phase 2 data published in The Lancet (2025) suggests the once-weekly approach achieves 20% weight loss without the dosing burden, representing a meaningful technical advance over earlier amylin approaches."
+      },
+      {
+        question: "What is the current status of eloralintide and can I enroll in a trial?",
+        answer: "Eloralintide is fully investigational — it is not FDA-approved and not commercially available as of November 2026. Multiple Phase 3 ENLIGHTEN trials are actively recruiting: ENLIGHTEN-1 (NCT07321886) and ENLIGHTEN-2 (NCT07282600) are the primary obesity registrational trials. ENLIGHTEN-3 focuses on obstructive sleep apnea and obesity (NCT07369011), and ENLIGHTEN-6 (NCT07392190) targets people with persistent obesity already on GLP-1 therapy. To check eligibility, visit ClinicalTrials.gov and search the NCT numbers above. Participation in clinical research is the only legal access to eloralintide at this time."
+      }
+    ]
+  },
+  "maridebart-cafraglutide": {
+    id: -6,
+    peptide_name: "Maridebart cafraglutide",
+    slug: "maridebart-cafraglutide",
+    Category: "Metabolic & Weight Loss",
+    primary_focus: "Once-monthly GLP-1R agonist / GIPR antagonist antibody-peptide conjugate for obesity — unique monthly dosing in obesity pipeline",
+    research_summary: "Maridebart cafraglutide (AMG 133, trade name MariTide) is a novel bispecific antibody-peptide conjugate developed by Amgen that combines a fully human anti-GIP receptor (GIPR) antagonist antibody with two GLP-1 receptor agonist peptide analogs covalently conjugated to the antibody backbone. The antibody component blocks the GIP receptor (GIPR antagonism), while the two attached GLP-1 peptides activate GLP-1 receptors. This dual mechanism — combined with the antibody's long 21-day half-life — enables once-monthly subcutaneous dosing, a dosing frequency unique among obesity therapeutics in the 2026 pipeline. Phase 2 results published in the New England Journal of Medicine (Jastreboff et al., 2025): 592 adults randomized across 11 dose groups in two cohorts. In the obesity-without-diabetes cohort, participants achieved approximately 12.3%–16.2% body weight reduction at 52 weeks vs. –2.5% placebo (treatment-policy estimand); weight loss trajectories were not yet plateaued at 52 weeks. In the obesity-plus-type-2-diabetes cohort, weight loss was approximately 8.4%–12.3% with HbA1c reductions of 1.2–1.6 percentage points. Phase 3 MARITIME program initiated: MARITIME-1 (NCT06858839), MARITIME-HF (NCT07037459), MARITIME-CV (NCT07037433), and vs. semaglutide in T2DM (NCT07866066). Maridebart cafraglutide is investigational; not FDA-approved as of November 2026. Note: this is a peptide-antibody conjugate, not a pure synthetic peptide.",
+    nicknames: "AMG 133, MariTide",
+    Status: "Phase 3 Clinical",
+    rank: 88,
+    molecular_data: "Antibody-peptide conjugate; GLP-1 receptor agonist + GIPR antagonist; once-monthly subcutaneous injection; 21-day half-life; 2 GLP-1 peptide analogs per antibody molecule; developed by Amgen",
+    Sources: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10896721/,https://clinicaltrials.gov/study/NCT06858839,https://www.amgen.com/stories/2026/05/the-story-of-maridebart-cafraglutide",
+    "As Of": "2026-11-02",
+    faqs: [
+      {
+        question: "Why can maridebart cafraglutide be injected once a month instead of once a week like other obesity drugs?",
+        answer: "The monthly dosing comes from maridebart cafraglutide's unique molecular structure: it is an antibody-peptide conjugate, specifically a human anti-GIPR antibody with two GLP-1 agonist peptide analogs attached. The antibody portion has a natural half-life of approximately 21 days — roughly three times longer than the half-lives of weekly peptides like semaglutide or tirzepatide. This extended pharmacokinetics allows the GLP-1 peptide payloads to remain active at therapeutic concentrations for the full month between injections. No other obesity drug in advanced development as of November 2026 offers monthly dosing, which could represent a meaningful compliance and convenience advantage."
+      },
+      {
+        question: "What were the actual weight loss results from the maridebart cafraglutide Phase 2 NEJM trial?",
+        answer: "The Phase 2 trial (Jastreboff et al., NEJM, 2025) enrolled 592 adults across 11 dose groups. In the non-diabetic obesity cohort at the highest doses, participants lost approximately 16% body weight by week 52 (treatment-policy estimand) vs. –2.5% placebo. Under the efficacy estimand, weight loss reached approximately 16%–20% at highest doses. Critically, weight loss was still declining — not plateaued — at 52 weeks, suggesting continued efficacy with longer treatment. In the type 2 diabetes cohort, weight loss was approximately 8.4%–12.3% with HbA1c reductions of 1.2–1.6 percentage points vs. –0.4 pp placebo."
+      },
+      {
+        question: "Is maridebart cafraglutide a peptide or an antibody?",
+        answer: "It is a bispecific antibody-peptide conjugate — an antibody backbone for GIPR blockade and half-life extension, with peptide components providing GLP-1 receptor agonism. It occupies a molecular middle ground between traditional peptides and monoclonal antibodies. We include it because its pharmacological activity is partly driven by the GLP-1 agonist peptides it carries and its development trajectory runs alongside GLP-1 class peptide drugs. This structural note is included so readers understand it is not a simple synthetic peptide."
+      }
+    ]
+  },
+  "cyclized-hexapeptide-9": {
+    id: -7,
+    peptide_name: "Cyclized Hexapeptide-9",
+    slug: "cyclized-hexapeptide-9",
+    Category: "Skin & Hair Health",
+    primary_focus: "Topical skin anti-aging peptide — outperforms retinol in published RCT for wrinkles, elasticity, pigmentation and barrier function",
+    research_summary: "Cyclized Hexapeptide-9 (CHP-9, INCI: Hexapeptide-9) is a synthetic cosmetic peptide consisting of six amino acids in a cyclized (ring) conformation that enhances stability and dermal penetration compared to linear analogs. It stimulates collagen and elastin synthesis in fibroblasts, inhibits matrix metalloproteinases (MMPs) responsible for extracellular matrix degradation, and promotes epidermal cell turnover — the same biological pathways targeted by retinol but through a receptor-mediated rather than retinoic acid receptor pathway. CHP-9 does not produce retinoid-associated skin irritation, peeling, or photosensitivity, allowing twice-daily use. Published clinical evidence: Chang et al., 2025, Journal of Cosmetic Dermatology (PMC12207714, PubMed 40586182) — a randomized, double-blinded, vehicle- and active-controlled trial in healthy volunteers with aging skin. Participants applied 0.002% CHP-9 serum, 0.002% retinol serum, or vehicle serum twice daily for 56 days. CHP-9 demonstrated statistically superior improvement over retinol across all measured endpoints except crow's feet roughness (equivalent): forehead and crow's feet wrinkle count, wrinkle area and roughness, periorbital and nasolabial skin elasticity, skin pigmentation (UV spot area), and transepidermal water loss (barrier repair). Time-dependent augmentation was observed: potency relative to retinol increased progressively from Day 28 to Day 56. Study was industry-affiliated (Shanghai Kans Biotech); independent replication pending. CHP-9 is not a pharmaceutical drug, requires no FDA approval, and is commercially available in cosmetic formulations.",
+    nicknames: "CHP-9, Hexapeptide-9",
+    Status: "Cosmetic Grade",
+    rank: 62,
+    molecular_data: "Cyclized hexapeptide; topical cosmetic peptide; collagen stimulation + MMP inhibition; 0.002% serum in published trial; INCI name: Hexapeptide-9",
+    Sources: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12207714/,https://pubmed.ncbi.nlm.nih.gov/40586182/,https://onlinelibrary.wiley.com/doi/10.1111/jocd.70290",
+    "As Of": "2026-11-02",
+    faqs: [
+      {
+        question: "How does cyclized hexapeptide-9 compare to retinol for reducing wrinkles?",
+        answer: "A 56-day randomized double-blind clinical trial (Chang et al., 2025, PMC12207714) directly compared 0.002% CHP-9 serum to 0.002% retinol serum applied twice daily to adults with aging skin. CHP-9 outperformed retinol on all measured endpoints except crow's feet roughness (equivalent): forehead and crow's feet wrinkle count and area, skin elasticity at orbital and nasolabial areas, UV spot pigmentation, and barrier function (transepidermal water loss). The advantage grew over time — larger at Day 56 than Day 28. CHP-9 also lacks retinol's irritation and photosensitivity, enabling twice-daily use without tolerance-building."
+      },
+      {
+        question: "What is the mechanism of action of cyclized hexapeptide-9 for skin anti-aging?",
+        answer: "CHP-9 works through three interlocking mechanisms: (1) stimulates Type I and III collagen synthesis in fibroblasts via TGF-β pathway activation; (2) inhibits MMP-1 (collagenase) and MMP-3 (stromelysin) — enzymes that break down collagen and elastin with age; (3) promotes epidermal keratinocyte renewal through a non-retinoic acid receptor mechanism. The cyclized ring structure resists skin proteases that cleave linear peptides and positions pharmacophoric residues in the optimal binding geometry, increasing potency per molecule versus a linear hexapeptide of the same sequence."
+      },
+      {
+        question: "Can I use cyclized hexapeptide-9 products now, or is it investigational?",
+        answer: "CHP-9 is a cosmetic-grade ingredient — not a pharmaceutical drug — and is already commercially available in over-the-counter anti-aging serums. Unlike the investigational pharmaceutical peptides on this site that require clinical trial participation, CHP-9 can be purchased today. Look for 'Hexapeptide-9' in the INCI ingredient list when selecting a product. The published trial used 0.002%; most commercial serums target a similar concentration. Evidence is based on a single industry-affiliated RCT; independent replication is ongoing."
+      }
+    ]
   }
 };
 
