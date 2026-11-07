@@ -83,6 +83,62 @@ const STATIC_PEPTIDES = {
         answer: "Mazdutide has one of the broadest Phase 3 development programs of any obesity drug: it is being studied for type 2 diabetes, MASH, heart failure with preserved ejection fraction (HFpEF), hypertension, sleep apnea, and adolescent obesity, with multiple trials ongoing as of 2026. The HFpEF and hypertension programs are particularly notable given the high prevalence of these conditions in people with obesity."
       }
     ]
+  },
+  setmelanotide: {
+    id: -13,
+    peptide_name: "Setmelanotide",
+    slug: "setmelanotide",
+    Category: "Metabolic & Weight Loss",
+    primary_focus: "MC4R agonist for genetic and acquired obesity; first treatment for POMC/PCSK1/LEPR deficiency and acquired hypothalamic obesity; FDA approved; AstraZeneca $10B acquisition offer November 2026",
+    research_summary: "Setmelanotide (RM-493, brand name Imcivree) is an 8-amino acid synthetic macrocyclic peptide that selectively activates the melanocortin-4 receptor (MC4R). FDA approved for three rare obesity indications: POMC/PCSK1/LEPR deficiency (2020), Bardet-Biedl syndrome (2022), and acquired hypothalamic obesity (March 2026 — first-ever approved therapy). Pivotal trial (Clément et al., NEJM 2020) showed 25.6% body weight reduction in POMC deficiency cohort vs. +0.3% placebo at 12 months. TRANSCEND trial (AHO, March 2026): 18.4% placebo-adjusted BMI reduction in 142 adults. Mechanism: directly activates MC4R to restore the missing downstream signal in patients where the leptin-POMC-MC4R axis is broken — mechanistically distinct from all GLP-1 receptor agonists. Discovery trigger: AstraZeneca reported to offer ~$10 billion to acquire Rhythm Pharmaceuticals (Imcivree maker) through Alexion, its rare-disease unit, with Rhythm shares rising 24-28% on November 4-6, 2026 reports.",
+    nicknames: "Imcivree, RM-493",
+    Status: "FDA Approved",
+    rank: 94,
+    molecular_data: "8-amino acid synthetic macrocyclic peptide; MC4R selective agonist; subcutaneous injection; MW ~1023 Da; developed by Rhythm Pharmaceuticals",
+    Sources: "https://www.nejm.org/doi/10.1056/NEJMoa1917544,https://www.biospace.com/business/coveted-metabolic-gem-rhythm-reportedly-gets-10b-offer-from-astrazeneca",
+    "As Of": "2026-11-07",
+    faqs: [
+      {
+        question: "How is setmelanotide different from GLP-1 drugs like semaglutide or tirzepatide?",
+        answer: "Setmelanotide and GLP-1 receptor agonists target entirely different signaling pathways. GLP-1 drugs slow gastric emptying and increase satiety signaling in the general obese population regardless of obesity cause. Setmelanotide selectively activates MC4R for patients in whom the leptin-melanocortin axis is broken — those with POMC, PCSK1, or LEPR mutations, Bardet-Biedl syndrome, or acquired hypothalamic damage. For these patients, GLP-1 drugs provide limited benefit because their obesity is caused by the absence of the endogenous MC4R-activating signal. Setmelanotide replaces that missing signal. It is not approved for polygenic or common obesity."
+      },
+      {
+        question: "What is acquired hypothalamic obesity and why was the 2026 FDA approval significant?",
+        answer: "Acquired hypothalamic obesity (AHO) develops when damage to the hypothalamus — often from craniopharyngioma treatment — destroys neural circuits regulating hunger and energy expenditure. Prior to March 2026, there was no approved pharmacological treatment. The TRANSCEND trial demonstrated an 18.4% placebo-adjusted BMI reduction after one year — the first approved therapy for approximately 50,000 US patients, mostly craniopharyngioma survivors, who previously had no pharmacological option."
+      },
+      {
+        question: "What does the AstraZeneca acquisition offer mean for setmelanotide access?",
+        answer: "Reports from November 4-6, 2026 describe AstraZeneca making a non-binding ~$10 billion offer for Rhythm Pharmaceuticals through Alexion. No confirmed deal exists as of November 7, 2026. If acquired, Imcivree would join AstraZeneca's rare-disease portfolio, potentially improving global access and insurance coverage. The drug's indications, mechanism, and evidence base do not change with any acquisition. Analyst projections place Imcivree peak sales at $3.6 billion by 2032."
+      }
+    ]
+  },
+  epitalon: {
+    id: -14,
+    peptide_name: "Epitalon",
+    slug: "epitalon",
+    Category: "Longevity",
+    primary_focus: "Synthetic tetrapeptide analog of epithalamin (pineal gland); telomerase activation; rodent lifespan extension 12-24%; HHS enforcement discretion policy October 2026; Elysium Health platform launch November 2026",
+    research_summary: "Epitalon (Ala-Glu-Asp-Gly; also Epithalon) is a synthetic tetrapeptide designed as a functional analog of epithalamin, a polypeptide fraction from bovine pineal gland, developed by Professor Vladimir Khavinson at IBEG, St. Petersburg, Russia. Proposed mechanisms: (1) telomerase activation in aging cells — potentially reversing telomere shortening, a hallmark of cellular aging; (2) melatonin regulation via pineal gland support. Rodent evidence (Khavinson group): 12-24% median lifespan extension in multiple strains; reduced spontaneous tumor rates. Human evidence: placebo-controlled trial (75 elderly women) showed statistically significant increases in urinary melatonin metabolite — the strongest controlled human biological effect documented. 2025 Biogerontology paper reported telomere-maintenance pathway effects in human cell lines. 2026 Frontiers in Aging review (doi:10.3389/fragi.2026.1790247) covers epitalon in the anti-aging peptide literature. Key limitation: lifespan data entirely from Khavinson's IBEG group; no independent Western replication; no completed human longevity RCT. Discovery triggers: HHS Interim Enforcement Discretion Policy (~October 28, 2026) allowing US 503A pharmacy compounding; Elysium Health Rx platform launch (November 5-6, 2026) as the first major US longevity company to formally offer epitalon.",
+    nicknames: "Epithalon, Epithalone, Ala-Glu-Asp-Gly, epithalamin synthetic analog",
+    Status: "Research Only",
+    rank: 95,
+    molecular_data: "4-amino acid synthetic tetrapeptide (Ala-Glu-Asp-Gly); MW ~390 Da; synthetic analog of epithalamin; developed by V.Kh. Khavinson at IBEG, Russia",
+    Sources: "https://www.frontiersin.org/journals/aging/articles/10.3389/fragi.2026.1790247/full,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11943447/,https://www.prnewswire.com/news-releases/elysium-health-expands-access-to-six-additional-peptides-under-new-hhs-policy-302930925.html",
+    "As Of": "2026-11-07",
+    faqs: [
+      {
+        question: "Is there human evidence that epitalon extends lifespan or slows aging?",
+        answer: "As of November 2026, no completed peer-reviewed RCT of synthetic epitalon has demonstrated lifespan extension or measurable reduction in aging biomarkers in humans. The human evidence consists of a small placebo-controlled trial (75 elderly women) showing increased urinary melatonin metabolites, and observational/open-label data from Khavinson's group. The lifespan data (12-24%) comes exclusively from rodent studies at a single Russian institution with no independent Western replication. Epitalon has a plausible mechanism and real preclinical data, but no human longevity evidence meeting current Western evidence-based medicine standards."
+      },
+      {
+        question: "What does telomerase activation by epitalon actually mean and is it safe?",
+        answer: "Telomerase extends telomere sequences at chromosome ends, potentially reversing cellular aging's molecular hallmark. Epitalon's reported reactivation of telomerase in aging cells is scientifically interesting. However, two caveats apply: (1) the cell/animal data are from Khavinson's group without independent replication; (2) cancer cells also use telomerase to achieve replicative immortality, so any pro-telomerase intervention needs careful safety evaluation for cancer risk in long-term human use. Interestingly, the Khavinson rodent studies found reduced tumor incidence, not increased — but this needs confirmation in a cancer-safety-focused human trial design."
+      },
+      {
+        question: "Why did the HHS enforcement discretion policy in October 2026 specifically cover epitalon?",
+        answer: "The HHS Interim Enforcement Discretion Policy followed a July 2026 favorable 7-2 FDA PCAC recommendation for epitalon's placement on the 503A Bulks List. The PCAC's favorable vote was influenced by epitalon's years of research literature, its defined tetrapeptide structure enabling quality testing, and its decades-long safety record in Russian geriatric medical use. The policy allows state-licensed 503A pharmacies to compound epitalon with patient-specific prescriptions — the regulatory basis for Elysium Health's November 2026 Rx platform launch. It is not FDA approval and can be revisited if safety signals emerge."
+      }
+    ]
   }
 };
 
