@@ -139,6 +139,34 @@ const STATIC_PEPTIDES = {
         answer: "The HHS Interim Enforcement Discretion Policy followed a July 2026 favorable 7-2 FDA PCAC recommendation for epitalon's placement on the 503A Bulks List. The PCAC's favorable vote was influenced by epitalon's years of research literature, its defined tetrapeptide structure enabling quality testing, and its decades-long safety record in Russian geriatric medical use. The policy allows state-licensed 503A pharmacies to compound epitalon with patient-specific prescriptions — the regulatory basis for Elysium Health's November 2026 Rx platform launch. It is not FDA approval and can be revisited if safety signals emerge."
       }
     ]
+  },
+  retatrutide: {
+    id: -15,
+    peptide_name: "Retatrutide",
+    slug: "retatrutide",
+    Category: "Metabolic & Weight Loss",
+    primary_focus: "GLP-1/GIP/glucagon triple receptor agonist for obesity; 6 positive Phase 3 trials; up to 28.3% weight loss (highest ever in Phase 3); TRANSCEND-T2D-2 beats Ozempic 2:1 head-to-head; FDA BLA filing Q1 2027; also effective for knee osteoarthritis and sleep apnea",
+    research_summary: "Retatrutide (LY3437943) is an investigational once-weekly injectable peptide by Eli Lilly that simultaneously activates three receptors: GLP-1R, GIPR, and glucagon receptor (GCGR). It is the first triple agonist to complete Phase 3 trials and has produced the highest weight loss results ever in a large anti-obesity drug trial. TRIUMPH-1 (May 2026): up to 28.3% mean weight loss at 80 weeks on 12 mg; 45.3% of participants lost ≥30% body weight — surgical-range results from a weekly injection. TRIUMPH-2 (T2D): 20.8% weight loss. TRIUMPH-3 (severe obesity + CVD): 22.6%. Also positive Phase 3 trials for knee osteoarthritis pain and obstructive sleep apnea. TRANSCEND-T2D-2 (October 28, 2026): head-to-head vs. Ozempic 2 mg — retatrutide 12 mg delivered -20.9% weight vs. -9.4% for Ozempic (more than double). A1C: -2.2% vs. -1.8%. This was the 6th positive Phase 3 trial. Mechanism: GLP-1R reduces intake and slows gastric emptying; GIPR augments incretin effects (tirzepatide's advantage); GCGR drives direct hepatic fat oxidation and thermogenesis — the third layer that explains why the weight loss magnitude (~25–28%) substantially exceeds both GLP-1 mono (~15%) and GLP-1/GIP dual (~21%) approaches. FDA BLA filing planned Q1 2027 for obesity, knee OA pain, and sleep apnea. TRIUMPH-5 head-to-head vs. tirzepatide ongoing, results expected late 2026/early 2027.",
+    nicknames: "LY3437943",
+    Status: "Phase 3 Clinical",
+    rank: 96,
+    molecular_data: "Triple agonist: GLP-1R + GIPR + glucagon receptor; once-weekly SC injection; developed by Eli Lilly; FDA BLA filing planned Q1 2027",
+    Sources: "https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-delivered-powerful-weight-loss,https://www.hcplive.com/view/transcend-t2d-2-retatrutide-beats-semaglutide-2-mg-on-a1c-weight-loss,https://www.ajmc.com/view/retatrutide-tops-semaglutide-on-a1c-weight-in-head-to-head-trial",
+    "As Of": "2026-11-08",
+    faqs: [
+      {
+        question: "How does retatrutide differ from semaglutide and tirzepatide?",
+        answer: "Retatrutide adds a third receptor target — the glucagon receptor — on top of the GLP-1R and GIPR targets that tirzepatide hits. Each additional receptor adds a distinct mechanism: GLP-1R provides satiety and glucose control; GIPR augments incretin effects; glucagon receptor drives direct hepatic fat oxidation and thermogenesis. The clinical result is progressively greater weight loss: semaglutide ~15%, tirzepatide ~21%, retatrutide 25–28.3%. TRANSCEND-T2D-2 (Oct 28, 2026) showed retatrutide achieving more than double Ozempic 2 mg's weight loss in a direct comparison. The head-to-head TRIUMPH-5 vs. tirzepatide is ongoing with results expected in late 2026/early 2027."
+      },
+      {
+        question: "What does 28.3% weight loss in TRIUMPH-1 actually mean?",
+        answer: "For a person starting at 250 lbs, that's approximately 62–70 lbs lost on average — the highest ever reported in a Phase 3 anti-obesity drug trial. Perhaps more striking: 45.3% of TRIUMPH-1 participants on 12 mg lost ≥30% of body weight, approaching the typical range for bariatric surgery (25–35% at one year). These results are from topline Lilly announcements; full peer-reviewed publications are pending, and FDA review will determine whether the drug is approved."
+      },
+      {
+        question: "When will retatrutide be approved and available?",
+        answer: "Eli Lilly announced plans to file a Biologics License Application (BLA) with the FDA in Q1 2027, with the data package supporting obesity, knee osteoarthritis pain, and obstructive sleep apnea. If FDA grants standard review, approval could come in late 2027 or early 2028. The drug is not approved anywhere as of November 2026 and is not available outside of clinical trials."
+      }
+    ]
   }
 };
 
