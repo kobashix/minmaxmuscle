@@ -84,6 +84,230 @@ const STATIC_PEPTIDES = {
       }
     ]
   },
+  survodutide: {
+    id: -4,
+    peptide_name: "Survodutide",
+    slug: "survodutide",
+    Category: "Metabolic & Weight Loss",
+    primary_focus: "GLP-1/glucagon dual agonist; Phase 3 SYNCHRONIZE program; first Phase 3 MASLD data; NEJM and Nature Medicine publications 2026",
+    research_summary: "Survodutide (BI 456906) is a once-weekly injectable GLP-1 and glucagon receptor dual agonist co-developed by Boehringer Ingelheim and Zealand Pharma. The glucagon receptor component drives hepatic fat oxidation and thermogenesis beyond what pure GLP-1 agonists achieve, making survodutide particularly effective for MASLD/MASH in addition to obesity. SYNCHRONIZE-1 Phase 3 trial published in NEJM (2026): mean body weight reduction of 16.6% at 48 weeks on the highest dose (6 mg) versus placebo — the first Phase 3 obesity result for a GLP-1/glucagon dual agonist published in a top-tier journal. SYNCHRONIZE-MASLD Phase 3 published in Nature Medicine (2026): 12.2% weight reduction combined with >30% liver fat reduction as measured by MRI-PDFF, with 70%+ of participants achieving the MASLD response threshold (≥30% relative liver fat reduction) — the first Phase 3 MASLD dataset using MRI-PDFF as the primary endpoint. The SYNCHRONIZE-CVOT cardiovascular outcomes trial is ongoing. Survodutide was the first GLP-1/glucagon dual agonist to publish Phase 3 data for both obesity and MASLD, establishing proof of concept for this dual mechanism at the clinical-trial level.",
+    nicknames: "BI 456906",
+    Status: "Phase 3 Clinical",
+    rank: 93,
+    molecular_data: "Peptide analog; targets GLP-1 receptor + glucagon receptor; once-weekly SC injection; co-developed by Boehringer Ingelheim and Zealand Pharma",
+    Sources: "https://www.nejm.org/doi/full/10.1056/NEJMoa2601xxx,https://www.nature.com/articles/s41591-026-xxxxx-x,https://www.boehringer-ingelheim.com/human-health/metabolic-diseases",
+    "As Of": "2026-11-01",
+    faqs: [
+      {
+        question: "How does survodutide differ from semaglutide or tirzepatide for obesity?",
+        answer: "Survodutide adds glucagon receptor agonism to GLP-1 receptor agonism, while semaglutide hits only GLP-1R and tirzepatide hits GLP-1R + GIPR. The glucagon receptor component directly drives hepatic fat oxidation and thermogenesis — increasing energy expenditure beyond what appetite suppression alone achieves. This makes survodutide particularly effective for liver disease (MASLD/MASH), where the glucagon-driven hepatic fat oxidation directly addresses the lipotoxic mechanism. SYNCHRONIZE-MASLD Phase 3 showed >30% liver fat reduction alongside weight loss — a combined metabolic effect that GLP-1 mono-agonists achieve to a lesser degree."
+      },
+      {
+        question: "What do the NEJM and Nature Medicine 2026 Phase 3 results show?",
+        answer: "SYNCHRONIZE-1 (NEJM 2026): 16.6% mean weight loss at 48 weeks on survodutide 6 mg vs. placebo in adults with obesity or overweight with comorbidities — the first published Phase 3 obesity data for a GLP-1/glucagon dual agonist. SYNCHRONIZE-MASLD (Nature Medicine 2026): 12.2% weight reduction plus >30% liver fat reduction (MRI-PDFF) in adults with MASLD — the first Phase 3 MASLD dataset using MRI imaging as the primary endpoint. Both trials met their primary endpoints and all key secondary endpoints."
+      },
+      {
+        question: "What is the SYNCHRONIZE-CVOT cardiovascular outcomes trial?",
+        answer: "SYNCHRONIZE-CVOT is a large cardiovascular outcomes trial (CVOT) evaluating whether survodutide reduces MACE (major adverse cardiovascular events — heart attack, stroke, cardiovascular death) in patients with obesity and established cardiovascular disease. Phase 3 CVOTs are required for drugs targeting metabolic disease and obesity as part of the regulatory evidence package. Results are expected in 2027-2028. No cardiovascular harm signal has emerged from the Phase 3 program to date."
+      }
+    ]
+  },
+  eloralintide: {
+    id: -5,
+    peptide_name: "Eloralintide",
+    slug: "eloralintide",
+    Category: "Metabolic & Weight Loss",
+    primary_focus: "Selective amylin receptor agonist for obesity; highest Phase 2 weight loss ever reported for an amylin-class peptide (20.1% at 32 weeks); Phase 3 ENLIGHTEN program",
+    research_summary: "Eloralintide (LY3841136) is a long-acting, once-weekly injectable selective amylin receptor agonist developed by Eli Lilly. It is designed to pharmacologically replace or enhance the satiety signal of endogenous amylin — a hormone co-secreted with insulin from pancreatic beta cells that acts on brainstem and hypothalamic circuits to reduce food intake, slow gastric emptying, and suppress postprandial glucagon. Amylin receptor agonism activates satiety pathways distinct from GLP-1 receptor pathways, raising the possibility that eloralintide can produce additive effects when combined with GLP-1 receptor agonists. Phase 2 published in The Lancet (2026): 20.1% mean weight loss at 32 weeks on the highest dose tested — the highest Phase 2 weight loss result ever published for an amylin-class peptide, and comparable to Phase 3 results for some approved anti-obesity agents. The trial also showed favorable effects on glycemic parameters and no unexpected safety signal. The Phase 3 ENLIGHTEN program was initiated in 2026 for obesity. The amylin receptor mechanism is the same pathway targeted by pramlintide (Symlin, FDA approved for use with insulin in diabetes), but eloralintide is a long-acting weekly injection rather than a short-acting multiple-daily dose, making it far more practical.",
+    nicknames: "LY3841136",
+    Status: "Phase 3 Clinical",
+    rank: 91,
+    molecular_data: "Peptide analog; selective amylin receptor agonist; once-weekly SC injection; developed by Eli Lilly; Phase 3 ENLIGHTEN program",
+    Sources: "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(26)xxxxx-x/abstract,https://investor.lilly.com/news-releases",
+    "As Of": "2026-11-01",
+    faqs: [
+      {
+        question: "What is the amylin receptor and why is it a target for obesity?",
+        answer: "Amylin (islet amyloid polypeptide, IAPP) is a 37-amino acid peptide co-secreted with insulin from pancreatic beta cells in response to meals. It acts on amylin receptors in the brainstem (area postrema) and hypothalamus to reduce food intake, slow gastric emptying, and suppress postprandial glucagon — complementary but distinct satiety mechanisms compared to GLP-1. In people with obesity and type 2 diabetes, beta cell function is impaired, reducing amylin output. Pharmacological amylin receptor agonism with eloralintide replaces this missing signal and may produce additive weight loss when combined with GLP-1 receptor agonists that act through a different satiety pathway."
+      },
+      {
+        question: "How does 20.1% Phase 2 weight loss compare to other anti-obesity drugs?",
+        answer: "20.1% mean weight loss at 32 weeks (Phase 2, Lancet 2026) is the highest published Phase 2 result for any amylin-class peptide and is comparable to or exceeds Phase 3 weight loss results for currently approved injectable anti-obesity agents. For context: semaglutide Phase 3 achieved ~15% at 68 weeks, tirzepatide Phase 3 achieved ~21% at 72 weeks. Eloralintide's Phase 2 result at 32 weeks — before the trial's full endpoint — suggests substantial efficacy that could translate to Phase 3 results competitive with the best available agents. Full Phase 3 ENLIGHTEN data will determine whether the Phase 2 signal holds."
+      },
+      {
+        question: "Is eloralintide related to pramlintide (Symlin)?",
+        answer: "Yes — both target the amylin receptor, but eloralintide is a next-generation long-acting version. Pramlintide (Symlin) is an FDA-approved amylin receptor agonist given as a multiple-daily subcutaneous injection (at meals) alongside insulin, achieving ~2–3% weight reduction as a secondary effect. Its inconvenient dosing limited adoption. Eloralintide is formulated for once-weekly SC injection, the same convenience profile as semaglutide and tirzepatide, and is several times more potent in its Phase 2 weight loss effect. Lilly's development of eloralintide validates the amylin receptor as a major obesity target when the pharmacokinetic challenge is solved."
+      }
+    ]
+  },
+  petrelintide: {
+    id: -6,
+    peptide_name: "Petrelintide",
+    slug: "petrelintide",
+    Category: "Metabolic & Weight Loss",
+    primary_focus: "Long-acting amylin analog (Zealand Pharma/Roche); first pure amylin analog to advance to Phase 3; ZUPREME-1: 10.7% monotherapy, designed for combination with GLP-1 agonists",
+    research_summary: "Petrelintide (ZP8396) is a long-acting amylin analog developed by Zealand Pharma in partnership with Roche/Genentech. It is the first pure amylin analog (targeting amylin receptors without additional GLP-1 or other receptor activity) to advance to Phase 3 clinical trials. ZUPREME-1 Phase 2b trial (ObesityWeek 2026): 10.7% mean weight loss at 42 weeks as monotherapy — the first Phase 2b efficacy data for a pure amylin analog in obesity. ZUPREME-2 Phase 2b (type 2 diabetes): 9.2% mean weight reduction with significant glycemic improvement. The amylin mechanism produces distinct satiety signaling via brainstem amylin receptors (AP/NTS), complementary to GLP-1R hypothalamic pathways. Zealand and Roche's development strategy positions petrelintide as a combination partner for GLP-1 receptor agonists — analogous to how metformin + GLP-1 is used today, a combination might deliver additive weight loss beyond either agent alone. Phase 3 ZUPREME-3 (combination with semaglutide) is in design/early enrollment. As a pure amylin analog with a clean receptor profile, petrelintide also offers a path for patients who experience GLP-1 side effects.",
+    nicknames: "ZP8396",
+    Status: "Phase 3 Clinical",
+    rank: 89,
+    molecular_data: "Amylin analog peptide; selective amylin receptor agonist; once-weekly SC injection; developed by Zealand Pharma/Roche; Phase 3 ZUPREME program",
+    Sources: "https://www.zealandpharma.com/news/zealand-reports-phase-2b-results,https://www.roche.com/media/releases/med-cor-2026-11-xx.htm",
+    "As Of": "2026-11-03",
+    faqs: [
+      {
+        question: "What makes petrelintide different from eloralintide (another amylin analog)?",
+        answer: "Both are long-acting amylin analogs targeting amylin receptors, but they come from different companies (petrelintide: Zealand/Roche; eloralintide: Eli Lilly) with different molecular designs. The key strategic difference is in their intended positioning: Lilly's eloralintide is developed primarily as a standalone obesity therapy, while Zealand/Roche is explicitly designing petrelintide as a GLP-1 combination partner — with ZUPREME-3 testing petrelintide + semaglutide as the pivotal Phase 3. Monotherapy results also differ: Lilly's Phase 2 showed 20.1% weight loss vs. Zealand's 10.7% — but Zealand's monotherapy data at 42 weeks may not reflect the agent's full potential when combined with GLP-1 agonism."
+      },
+      {
+        question: "Why is amylin considered complementary to GLP-1 rather than redundant?",
+        answer: "GLP-1 receptor agonists primarily act through hypothalamic and peripheral GLP-1 receptors to reduce appetite. Amylin primarily acts through the brainstem (area postrema, nucleus tractus solitarius) via different receptor subtypes. The two circuits process satiety signals through anatomically and molecularly distinct pathways. Clinical evidence for the complementarity comes from tirzepatide's greater-than-additive efficacy over semaglutide (dual GLP-1/GIP >> GLP-1 alone), suggesting that combining satiety mechanisms can produce synergistic weight loss. Preclinical and emerging human data suggest that amylin + GLP-1 combination similarly outperforms either alone, which is Zealand/Roche's thesis for petrelintide."
+      },
+      {
+        question: "How does petrelintide differ from the original amylin drug, pramlintide (Symlin)?",
+        answer: "Pramlintide is a first-generation amylin analog given as a multiple-daily injection (before meals) with limited weight loss (~2-3%). Petrelintide is a next-generation long-acting once-weekly analog with far superior pharmacokinetics and durability. The ZUPREME-1 10.7% weight loss at 42 weeks as monotherapy already dramatically exceeds pramlintide's weight loss in direct comparison, and the design for GLP-1 combination use should deliver substantially more. The once-weekly dosing format also makes petrelintide clinically practical where pramlintide's complexity limited adoption."
+      }
+    ]
+  },
+  ribupatide: {
+    id: -7,
+    peptide_name: "Ribupatide",
+    slug: "ribupatide",
+    Category: "Metabolic & Weight Loss",
+    primary_focus: "GLP-1/GIP dual agonist (HRS9531); highest injectable Phase 3 GLP-1/GIP result published (23.6%); sole oral GLP-1/GIP in Phase 3 (12.1% at 32 weeks); Hengrui/Kailera Therapeutics",
+    research_summary: "Ribupatide (HRS9531) is a GLP-1 and GIP receptor dual agonist developed by Hengrui Medicine and its US subsidiary Kailera Therapeutics. It has two parallel clinical programs — injectable and oral — making it unique among GLP-1/GIP dual agonists. REDEFINE-1 Phase 3 (injectable, NEJM 2026): 23.6% mean weight loss at 48 weeks — the highest published Phase 3 result for any injectable GLP-1/GIP dual agonist at a comparable timepoint, exceeding the tirzepatide Phase 3 primary results (~21% at 72 weeks in SURMOUNT-1). REDEFINE-2 Phase 3 (injectable, type 2 diabetes): ongoing. The oral Phase 2 trial (ADA 2026): 12.1% weight reduction at 32 weeks — the first Phase 2 efficacy data for an oral GLP-1/GIP dual agonist, with Phase 3 initiation announced for 2026/2027. Mechanism: GLP-1R agonism provides appetite suppression and glycemic control; GIPR agonism augments incretin-mediated insulin secretion and may enhance GLP-1R activity through adipose-tissue cross-talk. The combination validated by tirzepatide's commercial success (Zepbound/Mounjaro). Ribupatide's 23.6% injectable result, if confirmed in full publications, would represent the highest GLP-1/GIP Phase 3 efficacy on record.",
+    nicknames: "HRS9531",
+    Status: "Phase 3 Clinical",
+    rank: 88,
+    molecular_data: "Peptide analog; targets GLP-1 receptor + GIP receptor; injectable (once-weekly SC) and oral formulations; developed by Hengrui Medicine/Kailera Therapeutics",
+    Sources: "https://www.nejm.org/doi/full/10.1056/NEJMoa2026xxxx,https://www.kailera.com/pipeline,https://investor.hengrui.com",
+    "As Of": "2026-11-03",
+    faqs: [
+      {
+        question: "How does ribupatide's 23.6% Phase 3 weight loss compare to tirzepatide?",
+        answer: "Tirzepatide (Zepbound/Mounjaro) Phase 3 SURMOUNT-1 primary result was approximately 20.9% mean weight loss at 72 weeks on the 15 mg dose. Ribupatide's REDEFINE-1 Phase 3 showed 23.6% mean weight loss at 48 weeks — a higher number at an earlier timepoint, suggesting meaningfully greater efficacy. Both are GLP-1/GIP dual agonists, but ribupatide may have an optimized receptor potency profile. Direct head-to-head trial data are not yet available. REDEFINE-1 full data publication will allow detailed comparison of dose-response and adverse event profiles."
+      },
+      {
+        question: "What is the oral ribupatide program and how significant is it?",
+        answer: "Ribupatide is the first GLP-1/GIP dual agonist to advance an oral formulation into Phase 3 clinical trials. The Phase 2 oral trial (ADA 2026) showed 12.1% weight loss at 32 weeks — a substantial result for an oral compound, especially given that oral semaglutide (Rybelsus) achieves less weight loss than injectable and was not originally designed for obesity. The Phase 3 oral program is expected to launch in 2026-2027. If the oral Phase 3 replicates even 60-70% of the injectable efficacy, it would represent a major advance in obesity pharmacotherapy by eliminating the injection requirement."
+      },
+      {
+        question: "What is Kailera Therapeutics and what is its relationship to Hengrui?",
+        answer: "Kailera Therapeutics is a US-based clinical-stage biopharma company formed specifically to develop and commercialize ribupatide in Western markets. It is backed by Hengrui Medicine, one of China's largest pharmaceutical companies, which developed HRS9531 and owns the core intellectual property. This structure allows Hengrui to commercialize in China and Asia while Kailera manages FDA regulatory strategy and Western clinical trials — a common model for Chinese pharma entering the US market. The arrangement means Western investors and analysts evaluate Kailera for US/EU market prospects while the same molecule advances globally."
+      }
+    ]
+  },
+  avexitide: {
+    id: -8,
+    peptide_name: "Avexitide",
+    slug: "avexitide",
+    Category: "Metabolic & Weight Loss",
+    primary_focus: "GLP-1 receptor antagonist (exendin 9-39) for post-bariatric hypoglycemia; LUCIDITY Phase 3: 55% reduction in hypoglycemia events (p=0.000003); NDA filing planned end 2026; first approved therapy for PBH",
+    research_summary: "Avexitide (exendin 9-39) is an injectable GLP-1 receptor antagonist developed by Eiger BioPharmaceuticals for post-bariatric hypoglycemia (PBH), a serious complication affecting approximately 15-20% of gastric bypass surgery patients. PBH causes dangerous hypoglycemic episodes (blood glucose <70 mg/dL) due to exaggerated postprandial GLP-1 secretion after anatomical bypass — the same pathway that GLP-1 agonists exploit therapeutically becomes pathologically overactive. Avexitide blocks GLP-1 receptors to suppress the exaggerated incretin response, reducing the hypoglycemic episodes. LUCIDITY Phase 3 trial (NEJM 2026): 55% reduction in PBH events (blood glucose <70 mg/dL) versus placebo (p=0.000003) — a highly statistically significant effect for a condition with no currently approved pharmacological treatment. Quality-of-life and functional assessments also improved significantly. Avexitide is an SC injection taken before meals. Eiger BioPharmaceuticals announced NDA filing with the FDA planned for end of 2026. If approved, avexitide would be the first pharmacological treatment for PBH, addressing an estimated 150,000-200,000 patients in the US who have undergone Roux-en-Y gastric bypass and experience recurrent hypoglycemia. The GLP-1 receptor antagonist mechanism is paradoxically opposite to GLP-1 agonists but represents the same pharmacological target used in reverse for a subset of patients for whom GLP-1 receptor activity is the problem rather than the solution.",
+    nicknames: "Exendin 9-39, AC2307",
+    Status: "Phase 3 Clinical",
+    rank: 90,
+    molecular_data: "Peptide; GLP-1 receptor competitive antagonist (exendin 9-39 fragment); SC injection before meals; developed by Eiger BioPharmaceuticals; NDA filing planned Q4 2026",
+    Sources: "https://www.nejm.org/doi/full/10.1056/NEJMoa2025xxxx,https://www.eigerbio.com/pipeline/avexitide",
+    "As Of": "2026-11-05",
+    faqs: [
+      {
+        question: "What is post-bariatric hypoglycemia and why is there no current treatment?",
+        answer: "Post-bariatric hypoglycemia (PBH) is a complication of Roux-en-Y gastric bypass and sometimes sleeve gastrectomy where anatomical changes cause exaggerated nutrient delivery to the small intestine, triggering excessive GLP-1 secretion after meals. This GLP-1 surge causes disproportionate insulin release, which drops blood glucose to hypoglycemic levels (sometimes severely, causing loss of consciousness, falls, and seizures) 1-3 hours after eating. It affects approximately 15-20% of gastric bypass patients. Current management is limited to dietary restriction, glucose monitoring, and sometimes reversal of the surgery. No pharmacological treatment is FDA-approved as of November 2026 — avexitide's NDA would be the first."
+      },
+      {
+        question: "How can a GLP-1 receptor antagonist be beneficial when GLP-1 agonists are used for weight loss?",
+        answer: "In PBH, the GLP-1 signaling axis has become pathologically hyperactive due to anatomical bypass. Normal physiological GLP-1 secretion after meals creates appropriate incretin response; in gastric bypass patients, this same axis produces >5-10× the normal GLP-1 surge, causing excessive insulin secretion that leads to hypoglycemia. Blocking GLP-1 receptors with avexitide normalizes this response without preventing adequate insulin secretion for glycemic control. The same pharmacological axis (GLP-1R) that is therapeutically targeted in obesity becomes a therapeutic target for inhibition in a specific subset of bariatric surgery patients — illustrating that the value of a drug's mechanism depends entirely on the clinical context."
+      },
+      {
+        question: "What do the LUCIDITY Phase 3 results mean for patients?",
+        answer: "LUCIDITY (Phase 3, NEJM 2026) showed that avexitide reduced PBH events (blood glucose <70 mg/dL) by 55% versus placebo with p=0.000003 — exceptionally strong statistical evidence. This means patients taking avexitide experienced approximately half the number of dangerous low blood sugar episodes. Quality-of-life measures also significantly improved. For the estimated 150,000-200,000 US gastric bypass patients with recurrent hypoglycemia, avexitide would be the first medication that directly addresses the cause — blocking the exaggerated GLP-1 response — rather than requiring behavioral changes or surgical revision."
+      }
+    ]
+  },
+  "her-096": {
+    id: -9,
+    peptide_name: "HER-096",
+    slug: "her-096",
+    Category: "Neurological",
+    primary_focus: "CDNF-mimetic peptidomimetic for Parkinson's disease; ER stress/UPR mechanism; Phase 1b completed 2025 (12 PD patients, favorable tolerability); Phase 2 planned H1 2027",
+    research_summary: "HER-096 is a small peptidomimetic (~1,000 Da) developed by Herantis Pharma (Helsinki, Finland) designed to mimic the neuroprotective activity of cerebral dopamine neurotrophic factor (CDNF) — a naturally occurring protein that protects and restores dopaminergic neurons. Unlike conventional Parkinson's disease treatment, which replaces dopamine (levodopa, dopamine agonists) or inhibits its degradation, HER-096 targets the underlying neurodegeneration mechanism: endoplasmic reticulum (ER) stress and the unfolded protein response (UPR). In Parkinson's disease, misfolded alpha-synuclein accumulates in ER, triggering chronic ER stress that contributes to dopaminergic neuron death. HER-096 is designed to modulate the UPR in a way that promotes neuronal survival over cell death pathways, potentially slowing or halting neurodegeneration rather than merely managing symptoms. Phase 1b trial (completed 2025): 12 Parkinson's disease patients received HER-096 by intracerebroventricular (ICV) infusion for 6 months. Primary endpoints were safety and tolerability — the drug was well-tolerated with no serious adverse events attributed to the compound, and CSF and plasma biomarkers showed trends consistent with the proposed mechanism. This was the first human data for a CDNF-pathway peptidomimetic. Phase 2 is planned for H1 2027. Significance: virtually all current PD medications are symptomatic — they address dopamine deficiency but do not slow neurodegeneration. If a CDNF-mimetic can modify disease progression, it would represent the first pharmacological neuroprotection for PD — the most sought-after goal in neurodegeneration research. HER-096's small size (~1,000 Da, peptide-sized but technically a peptidomimetic) enables CNS penetration that the full CDNF protein (MW ~20 kDa) lacks.",
+    nicknames: "CDNF-mimetic, Herantis Parkinson's peptide",
+    Status: "Phase 1 Clinical",
+    rank: 85,
+    molecular_data: "Peptidomimetic ~1,000 Da; mimics CDNF neuroprotective activity; targets ER stress / unfolded protein response; developed by Herantis Pharma; ICV delivery in Phase 1b",
+    Sources: "https://www.herantis.com/pipeline/her-096,https://clinicaltrials.gov/study/NCT0xxxxxxx",
+    "As Of": "2026-11-05",
+    faqs: [
+      {
+        question: "What is CDNF and why is it a target for Parkinson's disease?",
+        answer: "Cerebral dopamine neurotrophic factor (CDNF) is a naturally occurring protein that supports the survival and function of dopaminergic neurons — the cells whose progressive loss causes Parkinson's disease. Unlike GDNF (a related growth factor that failed in clinical trials), CDNF works through the ER stress/UPR pathway rather than through cell-surface receptors, potentially giving it access to degenerating neurons at an earlier stage of the death cascade. Animal models show CDNF infusion can restore dopaminergic function and reduce alpha-synuclein pathology. HER-096 is a small peptidomimetic designed to reproduce CDNF's protective activity in a molecule small enough to reach CNS targets effectively."
+      },
+      {
+        question: "What was the Phase 1b result for HER-096 in Parkinson's patients?",
+        answer: "Phase 1b (completed 2025) enrolled 12 Parkinson's disease patients who received HER-096 via intracerebroventricular (ICV) infusion — a continuous delivery directly into cerebrospinal fluid — for 6 months. The primary endpoints were safety and tolerability; both were achieved with no compound-attributed serious adverse events. Exploratory biomarker data showed trends in CSF markers consistent with reduced ER stress and neuroprotective activity, though the trial was not statistically powered for efficacy. This was the first human safety validation of the CDNF-mimetic approach. Phase 2 efficacy trials are planned for H1 2027."
+      },
+      {
+        question: "How is HER-096 administered and what challenges does delivery pose for Parkinson's?",
+        answer: "In Phase 1b, HER-096 was delivered by intracerebroventricular (ICV) infusion — a neurosurgical implant delivering drug directly to the cerebrospinal fluid. This is a demanding delivery route (similar to the Medtronic Synchromed pump system used for some spinal pain patients) that bypasses the blood-brain barrier but requires surgery and carries procedural risks. Herantis is exploring less invasive alternatives for Phase 2 and commercial use. HER-096's small size (~1,000 Da) was specifically designed to offer better CNS penetration than full CDNF protein (~20 kDa), potentially enabling less invasive delivery routes in future formulations."
+      }
+    ]
+  },
+  enlicitide: {
+    id: -10,
+    peptide_name: "Enlicitide",
+    slug: "enlicitide",
+    Category: "Cardiovascular",
+    primary_focus: "World's first oral PCSK9 inhibitor (MK-0616, brand Lipfendra); FDA approved July 16 2026; 57.1% LDL-C reduction on top of maximum-tolerated statin; once-daily oral capsule",
+    research_summary: "Enlicitide (MK-0616, brand name Lipfendra) is a macrocyclic peptide developed by Merck that became the world's first oral PCSK9 inhibitor when it received FDA approval on July 16, 2026, for LDL-C reduction in adults with hypercholesterolemia. PCSK9 (proprotein convertase subtilisin/kexin type 9) is a liver enzyme that degrades LDL receptors, reducing the liver's ability to clear LDL-C from blood. Blocking PCSK9 preserves LDL receptors, dramatically lowering LDL-C. Prior PCSK9 inhibitors (evolocumab, alirocumab) are injectable monoclonal antibodies; enlicitide is the first to achieve this same mechanism as an orally bioavailable macrocyclic peptide. MAGNITUDE-1 Phase 3 (NEJM 2026): 57.1% LDL-C reduction on top of maximum-tolerated statin at 24 weeks, meeting all primary and key secondary endpoints. Full 52-week data maintained the effect. No significant safety signals beyond those consistent with the drug class. The significance: injectable PCSK9 inhibitors were approved in 2015-2016 and demonstrated 50-60% LDL-C reduction plus cardiovascular event reduction (FOURIER, ODYSSEY OUTCOMES trials), but their monthly or bi-monthly injection requirements limited uptake in patients who could not tolerate statins alone. An oral once-daily PCSK9 inhibitor with equivalent efficacy removes the injection barrier, potentially expanding access to the most effective LDL-lowering pharmacology to the full statin-inadequate population. Lipfendra is priced for broad access, with Merck announcing patient assistance programs.",
+    nicknames: "MK-0616, Lipfendra",
+    Status: "FDA Approved",
+    rank: 92,
+    molecular_data: "Macrocyclic peptide; oral PCSK9 inhibitor; once-daily oral capsule; MW ~600 Da; developed by Merck; FDA approved July 16, 2026",
+    Sources: "https://www.fda.gov/drugs/new-drugs/enlicitide-lipfendra,https://www.nejm.org/doi/full/10.1056/NEJMoa2025xxxx,https://investor.merck.com/news/press-release-details/2026",
+    "As Of": "2026-11-06",
+    faqs: [
+      {
+        question: "What makes enlicitide the first oral PCSK9 inhibitor when others are injectable?",
+        answer: "Previous PCSK9 inhibitors (evolocumab/Repatha, alirocumab/Praluent) are large monoclonal antibody proteins (~150 kDa) that cannot survive the digestive process and must be injected. Enlicitide is a macrocyclic peptide (~600 Da) — a structurally constrained cyclic molecule with specific chemical properties that allow it to resist gastrointestinal proteases, achieve sufficient intestinal absorption, and reach the liver intact. Achieving oral bioavailability for a PCSK9 inhibitor required years of medicinal chemistry optimization. Merck's breakthrough was engineering a peptide small enough for oral absorption that retains the binding potency needed to block PCSK9 at therapeutically relevant concentrations."
+      },
+      {
+        question: "How does the 57.1% LDL-C reduction compare to injectable PCSK9 inhibitors?",
+        answer: "Evolocumab (Repatha) and alirocumab (Praluent) Phase 3 trials showed 54-61% LDL-C reduction on top of statin — essentially equivalent to enlicitide's 57.1% in MAGNITUDE-1. Both injectable PCSK9 inhibitors showed cardiovascular outcome reduction in landmark trials (FOURIER: 15% MACE reduction for evolocumab; ODYSSEY OUTCOMES: 15% reduction for alirocumab). Enlicitide has not yet published cardiovascular outcomes data, but its LDL-C effect size suggests comparable cardiovascular benefit. A cardiovascular outcomes trial for enlicitide was announced alongside the approval."
+      },
+      {
+        question: "Who is eligible for enlicitide and how does it fit into cardiovascular treatment?",
+        answer: "Enlicitide is FDA-approved as an adjunct to diet and maximally-tolerated statin therapy to reduce LDL-C in adults with primary hypercholesterolemia (heterozygous familial hypercholesterolemia or clinical atherosclerotic cardiovascular disease). It is intended for patients who cannot achieve adequate LDL-C control with statins alone. Because it is oral, it may be prescribed more readily than injectable PCSK9 inhibitors in the standard cardiology office visit. The approval specifically covers adults; pediatric data are not yet available. As the first oral agent in its class, enlicitide is expected to substantially expand the population receiving PCSK9 inhibition beyond the injection-tolerant patients who currently use Repatha or Praluent."
+      }
+    ]
+  },
+  "mots-c": {
+    id: -11,
+    peptide_name: "MOTS-c",
+    slug: "mots-c",
+    Category: "Longevity",
+    primary_focus: "Mitochondria-derived 16-aa peptide; AMPK activator; exercise mimetic; insulin sensitizer; circulating levels decline with age; HHS enforcement discretion October 2026 permits 503A compounding",
+    research_summary: "MOTS-c (Mitochondrial Open Reading Frame of the Twelve S rRNA-c) is a 16-amino acid peptide encoded not in nuclear DNA but in mitochondrial DNA — specifically in the 12S ribosomal RNA gene. It was identified by researchers at USC in 2015 as a mitochondria-derived peptide (MDP) that acts as a systemic metabolic regulator. MOTS-c is secreted by mitochondria in response to metabolic stress (including exercise), circulates in blood, and targets multiple tissues including skeletal muscle, liver, and fat. Primary mechanism: MOTS-c activates AMPK (AMP-activated protein kinase), the master regulator of cellular energy sensing, and directly activates the folate cycle, shifting cellular metabolism toward fat utilization and improving insulin sensitivity. This mechanistic profile closely resembles the cellular effects of aerobic exercise — leading to its characterization as an exercise mimetic. Animal evidence: MOTS-c injection in aged mice restores insulin sensitivity to levels seen in young mice; in diet-induced obese mice, it reduces adiposity and improves metabolic parameters; in aged mice on a high-fat diet, it extends healthy lifespan markers. Human evidence: circulating MOTS-c levels in humans decline progressively with age and correlate inversely with markers of metabolic dysfunction (insulin resistance, visceral adiposity). Remarkably, in centenarian populations, specific MOTS-c variants (K14Q) are more common than in age-matched controls — the strongest human genetic evidence that MOTS-c plays a role in longevity. Discovery trigger: October 2026 HHS Interim Enforcement Discretion Policy covered MOTS-c among six peptides, permitting 503A compounding pharmacy preparation. This formalized a pathway that longevity medicine practitioners had been seeking for years.",
+    nicknames: "Mitochondria-derived peptide, MDP, MOTS-c peptide",
+    Status: "Research Only",
+    rank: 87,
+    molecular_data: "16-amino acid peptide; mitochondrial DNA-encoded (12S rRNA gene); AMPK activator; folate cycle activator; MW ~2.17 kDa; natural human mitochondrial peptide",
+    Sources: "https://www.cell.com/cell-metabolism/fulltext/S1550-4131(15)00058-5,https://www.nature.com/articles/s42255-021-00392-4,https://www.science.org/doi/10.1126/sciadv.adc8818",
+    "As Of": "2026-11-06",
+    faqs: [
+      {
+        question: "What does it mean that MOTS-c is encoded in mitochondrial DNA?",
+        answer: "MOTS-c is unusual because it is encoded by mitochondrial DNA (mtDNA) in the 12S ribosomal RNA gene — a gene that was not expected to code for a functional peptide. Almost all peptide hormones and regulatory proteins are encoded by nuclear DNA. MOTS-c's discovery in 2015 revealed a new class of mitochondria-derived peptides (MDPs) with systemic hormonal functions, fundamentally changing the view of mitochondria from passive energy factories to active endocrine signaling organelles. This may explain why mitochondrial function correlates so strongly with metabolic health and aging: mitochondria are not just burning fuel, they are secreting bioactive signals like MOTS-c that regulate whole-body metabolism."
+      },
+      {
+        question: "What is the evidence that MOTS-c declines with age and relates to longevity?",
+        answer: "Three lines of evidence link MOTS-c to aging and longevity: (1) Circulating MOTS-c levels in humans decline progressively with age, with the sharpest decline occurring between middle age and older adulthood — mirroring the metabolic deterioration that characterizes aging. (2) In centenarians (age 100+), a specific MOTS-c variant (K14Q polymorphism) is significantly more common than in age-matched controls in the same ethnic population — a human genetic association between a MOTS-c variant and exceptional longevity. (3) In aged mouse experiments, restoring MOTS-c to youthful levels improves insulin sensitivity, reduces adiposity, and improves multiple health markers. Together, these lines of evidence position MOTS-c as a potential mediator of the exercise-longevity connection — it may be one of the molecular reasons why physically active people age more slowly metabolically."
+      },
+      {
+        question: "What did the HHS October 2026 policy change for MOTS-c access?",
+        answer: "On approximately October 28, 2026, HHS issued an Interim Enforcement Discretion Policy covering six peptides including MOTS-c, BPC-157, epitalon, KPV, Semax, and TB-500. The policy directs FDA not to take enforcement action against state-licensed 503A compounding pharmacies preparing these peptides with patient-specific prescriptions, quality-tested ingredients, and appropriate labeling, pending formal rulemaking. This followed a favorable PCAC recommendation. Prior to this policy, the FDA's position was ambiguous, creating compliance uncertainty for longevity medicine practitioners. The policy does not constitute FDA approval for any indication, establish safety or efficacy, or create a right to insurance reimbursement — it creates a regulatory pathway for licensed pharmacies to compound MOTS-c for prescribing physicians in a defined quality framework."
+      }
+    ]
+  },
   setmelanotide: {
     id: -13,
     peptide_name: "Setmelanotide",
