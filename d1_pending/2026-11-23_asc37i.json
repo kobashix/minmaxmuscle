@@ -1,0 +1,29 @@
+{
+  "peptide_name": "ASC37i",
+  "slug": "asc37i",
+  "Category": "Metabolic & Weight Loss",
+  "primary_focus": "Once-monthly to once-quarterly GLP-1R/GIPR/GCGR triple peptide agonist for obesity; Phase 1 FIH US study initiated November 2026 using proprietary SALD/ULAP ultra-long-acting depot formulation",
+  "nicknames": "ASC37",
+  "Status": "Phase 1 Clinical",
+  "rank": 65,
+  "As Of": "2026-11-23",
+  "molecular_data": "GLP-1R/GIPR/GCGR triple peptide agonist biologic; Self-Assembling Lipid Depot (SALD) + Ultra-Long-Acting Peptide (ULAP) formulation; subcutaneous once-monthly to once-quarterly dosing; NHP half-life approximately 7× longer than retatrutide; 41.5% weight loss in DIO mice; BLA pathway; developed by Ascletis Pharma (NASDAQ: ASCL), Hangzhou, China; molecular weight not disclosed",
+  "Sources": "https://www.prnewswire.com/news-releases/ascletis-announces-initiation-of-us-phase-i-study-of-asc37i-a-potentially-first-in-class-once-monthly-to-once-quarterly-glp-1rgiprgcgr-triple-peptide-agonist-for-the-treatment-of-obesity-302947975.html,https://www.rttnews.com/3717093/ascletis-starts-phase-1-study-of-ultra-long-acting-obesity-candidate-stock-up.aspx",
+  "forum_topic_url": null,
+  "discovery_date": "2026-11-23",
+  "discovery_trigger": "Ascletis PR Newswire announcement — Phase 1 FIH US study initiated after FDA IND clearance",
+  "faqs": [
+    {
+      "question": "How is ASC37i different from retatrutide if both are triple agonists?",
+      "answer": "Both ASC37i and retatrutide (Lilly) target GLP-1R, GIPR, and GCGR, but they differ in two key ways. First, formulation and dosing: retatrutide requires weekly subcutaneous injection, while ASC37i uses Ascletis' proprietary SALD (Self-Assembling Lipid Depot) technology to extend the dosing interval to once monthly or even once quarterly. In non-human primate studies, ASC37i's half-life was approximately 7-fold longer than retatrutide's. Second, development stage: retatrutide is in Phase 3 with a BLA filing planned for Q1 2027; ASC37i initiated a Phase 1 first-in-human study in November 2026, so there are no human safety or efficacy data yet."
+    },
+    {
+      "question": "What is the SALD (Self-Assembling Lipid Depot) technology in ASC37i?",
+      "answer": "SALD stands for Self-Assembling Lipid Depot, a subcutaneous drug delivery platform developed by Ascletis as part of its Ultra-Long-Acting Peptide (ULAP) technology. After a standard subcutaneous injection, the SALD formulation spontaneously forms an in situ gel or depot at the injection site. The peptide drug is slowly and continuously released from this depot, extending the effective half-life far beyond what the peptide's intrinsic stability would allow. The rate of release — and therefore the dosing interval — can be tuned by adjusting the lipid composition and linker chemistry."
+    },
+    {
+      "question": "Why does ASC37i use the BLA pathway instead of the NDA pathway?",
+      "answer": "ASC37i is classified as a biologic because it is a large peptide molecule. Biologics require a Biologics License Application (BLA) rather than a New Drug Application (NDA). The BLA pathway confers twelve years of reference product exclusivity and, critically, FDA-regulated compounding pharmacies cannot compound biologic drugs — giving ASC37i manufacturing exclusivity protection that injectable semaglutide and tirzepatide lacked during the 2024–2026 compounding surge."
+    }
+  ]
+}
