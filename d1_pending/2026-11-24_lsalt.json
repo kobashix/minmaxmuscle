@@ -1,0 +1,29 @@
+{
+  "peptide_name": "LSALT Peptide",
+  "slug": "lsalt",
+  "Category": "Cardiovascular & Anti-inflammatory",
+  "primary_focus": "First-in-class DPEP1-inhibitor peptide for prevention of acute kidney injury; Phase II cardiac surgery trial (Arch Biopartners / Metablok); first US site joined November 24, 2026",
+  "nicknames": "Metablok",
+  "Status": "Phase 2 Clinical",
+  "rank": 42,
+  "As Of": "2026-11-24",
+  "molecular_data": "Synthetic peptide; DPEP1 (dipeptidase-1) inhibitor; intravenous perioperative administration; blocks neutrophil/monocyte adhesion to kidney microvasculature; first-in-class anti-inflammatory renoprotective peptide; developed by Arch Biopartners (TSXV: ARCH.V, OTCQB: ACHFF.US), Toronto; molecular sequence proprietary",
+  "Sources": "https://archbiopartners.com/our-science/lsaltpeptide/,https://clinicaltrials.gov/study/NCT05879432,https://www.globenewswire.com/news-release/2026/11/24/3409159/0/en/arch-biopartners-announces-first-u-s-site-to-join-the-phase-ii-trial-for-lsalt-peptide-targeting-cardiac-surgery-associated-acute-kidney-injury.html,https://www.clinicaltrialsarena.com/news/arch-phase-ii-cs-aki/",
+  "forum_topic_url": null,
+  "discovery_date": "2026-11-24",
+  "discovery_trigger": "Arch Biopartners GlobeNewsWire press release November 24, 2026 — Duke University (first US site) joins Phase II CS-AKI trial of LSALT peptide (NCT05879432)",
+  "faqs": [
+    {
+      "question": "What is DPEP1 and why does blocking it protect the kidneys?",
+      "answer": "DPEP1 (dipeptidase-1) is a cell-surface enzyme found on kidney microvasculature endothelial cells. Research published in Cell (2019) discovered that DPEP1 acts as an adhesion receptor for neutrophils and monocytes. During ischemia-reperfusion injury (IRI), which occurs when blood flow is temporarily cut off and then restored (such as during on-pump cardiac surgery), neutrophils and monocytes flood the kidney and bind to DPEP1 on the vessel wall. This adhesion triggers an inflammatory cascade that defines acute kidney injury. LSALT peptide was designed to block the DPEP1 adhesion site, physically preventing leukocytes from attaching. In mouse IRI models, LSALT reduced leukocyte adhesion, lowered inflammatory markers, and preserved kidney function."
+    },
+    {
+      "question": "Who is at risk for cardiac surgery-associated AKI and why does it matter?",
+      "answer": "Cardiac surgery-associated acute kidney injury (CS-AKI) occurs in 20–30% of patients undergoing heart surgery on cardiopulmonary bypass. Patients who develop CS-AKI have significantly higher rates of 30-day mortality, prolonged ICU stays, increased risk of progressing to chronic kidney disease, and higher lifetime cardiovascular risk. Despite this, there is currently no FDA-approved drug to prevent CS-AKI. If LSALT's Phase II trial succeeds, it would fill a major gap in perioperative medicine affecting 1–2 million at-risk cardiac surgery patients per year in North America."
+    },
+    {
+      "question": "Is LSALT only for cardiac surgery or could it apply to other types of kidney injury?",
+      "answer": "The current Phase II trial (NCT05879432) focuses on cardiac surgery-associated AKI because that population provides the most controlled ischemia-reperfusion event. However, the DPEP1 mechanism applies broadly to kidney IRI regardless of cause. Arch previously ran a completed trial of LSALT in COVID-19 patients at risk for ARDS and AKI (NCT04402957). Other potential applications include contrast-induced AKI, transplant-associated IRI, and sepsis-associated AKI — all requiring separate clinical trials. The CS-AKI Phase II is the company's pivotal path to initial approval."
+    }
+  ]
+}

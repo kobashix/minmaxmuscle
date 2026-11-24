@@ -1,0 +1,29 @@
+{
+  "peptide_name": "MET-233i",
+  "slug": "met-233i",
+  "Category": "Metabolic & Weight Loss",
+  "primary_focus": "Once-monthly amylin/calcitonin dual receptor agonist for obesity; Phase 2b SOLIS-1 trial ongoing (Pfizer, formerly Metsera); 8.4% weight loss in Phase 1",
+  "nicknames": "MET-233, PF-08653945, PF-3945",
+  "Status": "Phase 2 Clinical",
+  "rank": 72,
+  "As Of": "2026-11-24",
+  "molecular_data": "Amylin/calcitonin dual receptor agonist; ~19-day human half-life; once-monthly subcutaneous injection; large peptide biologic; developed by Metsera, acquired by Pfizer November 2025, recoded PF-08653945; NME status",
+  "Sources": "https://cdn.pfizer.com/pfizercom/product-pipeline/Q1%202026%20Pipeline%20Update_vFinal_0.pdf,https://klarityresearch.com/what-is-met-233i-pf-08653945-the-monthly-amylin-peptide-being-developed-alone-and-with-glp-1/,https://trial.medpath.com/news/metsera-s-met-233i-achieves-8-4-weight-loss-in-phase-1-trial-enabling-first-monthly-amylin-glp-1-combination,https://www.bioworld.com/articles/720983-metseras-long-acting-amylin-analogue-delivers-in-phase-i,https://clinicaltrials.gov/study/NCT07575932",
+  "forum_topic_url": null,
+  "discovery_date": "2026-11-24",
+  "discovery_trigger": "Watchlist graduation — MET-233i listed as 'no new data' in Nov 23 log; compound qualifies per Phase 1 (8.4% weight loss) and Phase 2b SOLIS-1 enrollment (940 patients, NCT07575932); Pfizer pipeline confirms Phase 2 status",
+  "faqs": [
+    {
+      "question": "How does MET-233i differ from semaglutide and tirzepatide as a weight-loss peptide?",
+      "answer": "MET-233i (PF-08653945) works through an entirely different receptor pathway than semaglutide and tirzepatide. Semaglutide is a GLP-1 receptor agonist; tirzepatide adds GIP receptor agonism. Both act primarily via hypothalamic neurons that express GLP-1 receptors. MET-233i is an amylin/calcitonin receptor agonist — it suppresses appetite and food intake via the area postrema and nucleus tractus solitarius in the brainstem, which largely lacks GLP-1 receptors. Because the pathways are distinct, amylin agonists and GLP-1 agonists show additive effects in combination studies. Pfizer's SOLIS-1 trial is specifically testing MET-233i plus berobenatide (a monthly GLP-1 agonist) for this additive benefit. The other key difference is dosing interval: MET-233i has a ~19-day half-life enabling once-monthly injections vs. weekly injections for semaglutide and tirzepatide."
+    },
+    {
+      "question": "What did MET-233i Phase 1 results actually show?",
+      "answer": "Metsera reported topline Phase 1 data in 2025. The study enrolled 80 adults with overweight or obesity (BMI ≥ 27 kg/m²) without type 2 diabetes. At the 1.2 mg dose, placebo-subtracted weight loss reached 8.4% at Day 36 — a pharmacokinetic window that represents early response before steady-state monthly dosing is achieved. Dose-dependent weight reduction was observed across all cohorts. The ~19-day human half-life confirmed that once-monthly dosing is feasible. Tolerability was acceptable; GI side effects (nausea, decreased appetite) were the most common, consistent with the amylin/calcitonin agonist class. No serious adverse events were reported."
+    },
+    {
+      "question": "Why did Pfizer acquire Metsera and what does that mean for MET-233i development?",
+      "answer": "Pfizer acquired Metsera in November 2025 for an undisclosed sum, outbidding Novo Nordisk in a competitive process. The strategic rationale: Pfizer needed a credible once-monthly obesity portfolio to compete with weekly-dosing leaders semaglutide (Novo) and tirzepatide (Lilly), and Metsera offered two key assets — MET-233i (monthly amylin) and MET-097i (monthly GLP-1 agonist, now berobenatide). Together, these two Metsera assets give Pfizer a potential fully monthly amylin + GLP-1 combination. For MET-233i specifically, Pfizer's backing means substantially greater Phase 2b/3 trial resources. The drug's code has changed from MET-233i to PF-08653945 on the Pfizer pipeline."
+    }
+  ]
+}
