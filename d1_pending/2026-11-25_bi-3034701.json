@@ -1,0 +1,35 @@
+{
+  "peptide_name": "BI 3034701",
+  "slug": "bi-3034701",
+  "Category": "Metabolic & Weight Loss",
+  "primary_focus": "First-in-class triple GLP-1/GIP/NPY2 receptor agonist for obesity; Phase 2 trial (NCT07662122) initiated July 2026 by Boehringer Ingelheim; Gubra-originated peptide with novel central appetite pathway targeting",
+  "nicknames": "BI3034701, GLP-1/GIP/NPY2 triple agonist, Gubra triple agonist",
+  "Status": "Phase 2 Clinical",
+  "molecular_data": "Peptide; triple agonist at GLP-1R, GIPR, and NPY2R; subcutaneous injection; Gubra-discovered long-acting peptide format; Boehringer Ingelheim global rights; exact molecular weight and sequence not publicly disclosed; peptide-based consistent with Gubra's peptide platform heritage",
+  "Sources": [
+    "https://www.gubra.dk/mfn_news/boehringer-ingelheim-initiates-phase-2-clinical-trial-of-gubra-originated-triple-receptor-agonist-for-people-living-with-overweight-and-obesity/",
+    "https://www.boehringer-ingelheim.com/human-health/crm-health/metabolic-health/obesity-potential-first-class-triple-receptor-agonist-phase-2",
+    "https://www.biospace.com/press-releases/boehringer-ingelheim-strengthens-obesity-pipeline-as-potential-first-class-triple-receptor-agonist-bi-3034701-enters-phase-ii-development",
+    "https://clinicaltrials.gov/study/NCT07662122",
+    "https://clinicaltrials.gov/study/NCT06352437"
+  ],
+  "rank": 73,
+  "As Of": "2026-11-25",
+  "forum_topic_url": null,
+  "discovery_date": "2026-11-25",
+  "discovery_trigger": "WebSearch — Boehringer Ingelheim/Gubra July 16, 2026 Phase 2 initiation (NCT07662122); first time captured by pipeline",
+  "faqs": [
+    {
+      "question": "What makes BI 3034701's NPY2 receptor targeting unique in obesity drug development?",
+      "answer": "BI 3034701 is the first obesity drug in clinical trials to combine GLP-1, GIP, and NPY2 receptor agonism in a single peptide. The NPY2 component is the novel element. Neuropeptide Y (NPY) is the brain's most potent appetite stimulant — when dieting or weight loss reduces energy intake, the brain compensates by increasing NPY secretion to drive hunger, which is one of the main reasons people struggle to maintain lost weight. NPY2R is a presynaptic autoreceptor: activating it suppresses NPY release from neurons in the arcuate nucleus of the hypothalamus, directly reducing the central appetite drive that counteracts the satiety effects of GLP-1 agonism. No approved drug targets NPY2R. If Boehringer Ingelheim's hypothesis is correct, adding NPY2R agonism to a GLP-1/GIP backbone could reduce compensatory hunger — a key limitation of current GLP-1 therapies — and potentially sustain weight loss more durably."
+    },
+    {
+      "question": "What data exists for BI 3034701, and what did Phase 1 show?",
+      "answer": "BI 3034701 completed a Phase 1 first-in-human dose-escalation study (NCT06352437) initiated in 2024. Boehringer Ingelheim reported 'encouraging Phase 1 safety and tolerability data' as the basis for advancing to Phase 2, but no detailed numerical results (weight loss percentages, dose levels, pharmacokinetics) have been publicly disclosed as of November 2026. Phase 2 (NCT07662122) initiated July 16, 2026, as a randomized, double-blind, dose-finding trial across 7 arms in people with overweight and obesity. Phase 2 results are not yet available. The main public evidence supporting the program is: (1) Gubra's published preclinical work on GLP-1/NPY2 co-agonism, (2) Phase 1 safety clearance, (3) Boehringer Ingelheim's decision to invest in Phase 2 and pay EUR 10M to Gubra."
+    },
+    {
+      "question": "Who is Gubra and why does their role matter for BI 3034701?",
+      "answer": "Gubra is a Danish biopharma company founded in 2010 and headquartered in Hørsholm, Denmark, that specializes in developing peptide-based drugs for metabolic diseases. BI 3034701 originated from Gubra's research into combining GLP-1R/GIPR agonism with NPY2R targeting, and was then licensed to Boehringer Ingelheim under a global development agreement. Gubra received a EUR 10 million milestone on Phase 2 initiation (July 2026) and retains milestones tied to future development stages. Gubra is listed on the Copenhagen Stock Exchange under the ticker GUBRA."
+    }
+  ]
+}
