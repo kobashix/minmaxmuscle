@@ -1,0 +1,35 @@
+{
+  "peptide_name": "8M2D",
+  "slug": "8m2d",
+  "Category": "Cognitive & Neuroprotective",
+  "primary_focus": "First-in-class amyloid precursor protein (APP)-targeting peptide designed to prevent Aβ production rather than clear plaques; FDA IND cleared June 2026; Phase 1a/1b trial (NCT07568041) in healthy volunteers and early Alzheimer's patients",
+  "nicknames": "Nubytide, P8, 8M2D peptide",
+  "Status": "Phase 1 Clinical",
+  "molecular_data": "Peptide; amyloid precursor protein (APP) ectodomain binder; subcutaneous administration; first-in-class production-blocking mechanism vs. clearance; developer: Cenna Biosciences (La Jolla, CA); molecular weight and amino acid sequence not publicly disclosed; designed to cross blood-brain barrier after SC injection; ClinicalTrials.gov: NCT07568041; IND cleared: June 2026",
+  "Sources": [
+    "https://www.biospace.com/press-releases/cenna-biosciences-receives-fda-clearance-to-begin-phase-1a-1b-clinical-trial-of-8m2d-a-first-in-class-peptide-designed-to-stop-the-production-of-amyloid-in-alzheimers-disease",
+    "https://clinicaltrials.gov/study/NCT07568041",
+    "https://allsci.com/news/clinical-trials/cenna-biosciences-amyloid-beta-targeting-peptide-8m2d-to-enters-clinical-testing-for-early-alzheimers/",
+    "https://nextgenbiomed.lifesciencexchange.com/market-insight/nubytide-a-novel-alzheimers-peptide-tackling-the-cause-of-amyloid-plaques",
+    "https://cennabiosciences.com/"
+  ],
+  "rank": 74,
+  "As Of": "2026-11-27",
+  "forum_topic_url": null,
+  "discovery_date": "2026-11-27",
+  "discovery_trigger": "WebSearch — FDA IND clearance June 2026 for Phase 1a/1b Alzheimer's peptide trial (NCT07568041); first capture by pipeline on automated run November 27, 2026",
+  "faqs": [
+    {
+      "question": "How does 8M2D differ from approved Alzheimer's drugs like lecanemab and donanemab?",
+      "answer": "Lecanemab (Leqembi) and donanemab (Kisunla) are monoclonal antibodies that work by clearing amyloid plaques that have already formed in the brain. They engage the immune system to remove existing aggregates — a mechanism that can cause amyloid-related imaging abnormalities (ARIA), including brain swelling and microhemorrhages. 8M2D takes the opposite approach: it is designed to prevent amyloid from being produced in the first place by binding the amyloid precursor protein (APP) before secretase enzymes can cleave it into the toxic Aβ fragments. Because 8M2D does not cause immune-mediated plaque clearance, Cenna Biosciences expects it to avoid ARIA. If this hypothesis holds in humans, 8M2D could be safer to use at higher doses and potentially used earlier in disease course — even in pre-symptomatic patients — before plaque accumulation becomes significant."
+    },
+    {
+      "question": "What stage of development is 8M2D in and when might we see human data?",
+      "answer": "The FDA cleared 8M2D's IND application in June 2026, authorizing a Phase 1a/1b clinical trial (NCT07568041). Phase 1a tests safety and tolerability in healthy volunteers using a single and multiple ascending dose design. Phase 1b tests multiple doses in people with early Alzheimer's disease, also prioritizing safety. The company expected to dose its first participant in late 2026. Phase 1 readouts — confirming the drug is safe and that it reaches the brain — are the near-term milestone. Efficacy signals (Aβ reduction in cerebrospinal fluid or on PET imaging) may emerge from Phase 1b, but a full picture of therapeutic efficacy would require Phase 2 trials. Human efficacy data are unlikely before 2028 at the earliest."
+    },
+    {
+      "question": "Is 8M2D (Nubytide) available for research or as a research compound?",
+      "answer": "8M2D is an investigational drug undergoing Phase 1 clinical trials and is not commercially available. It is administered only under strict clinical trial protocols to enrolled participants. Unlike some compounds in this database that exist in the research peptide market, 8M2D has not been reported as available from compounding pharmacies or research chemical suppliers as of November 2026. Access is limited to participants enrolled at registered trial sites under the FDA-approved IND. No research-grade synthesis of 8M2D has been publicly described, and the amino acid sequence has not been disclosed in public literature, making unauthorized replication or procurement unlikely."
+    }
+  ]
+}
