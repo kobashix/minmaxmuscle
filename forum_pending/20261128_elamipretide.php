@@ -54,7 +54,7 @@ $topic_content = '<p>Starting a research discussion thread for <strong>elamipret
 // Try REST API first
 $api_url = get_rest_url(null, 'asgaros-forum/v1/topics');
 $headers = [
-    'Authorization' => 'Basic ' . base64_encode('drew@teqh.com:FehTOmJZD27N2KGPmB7RoLTB'),
+    'Authorization' => 'Basic ' . base64_encode(defined('WP_FORUM_AUTH') ? WP_FORUM_AUTH : getenv('WP_FORUM_AUTH')),
     'Content-Type'  => 'application/json',
 ];
 $body = json_encode([
