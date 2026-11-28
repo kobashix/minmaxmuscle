@@ -1,0 +1,49 @@
+{
+  "peptide_name": "Elamipretide (SS-31)",
+  "slug": "elamipretide",
+  "Category": "Repair & Recovery",
+  "primary_focus": "Mitochondrial inner membrane stabilization via cardiolipin binding; FDA-approved for Barth syndrome (skeletal muscle weakness); research interest in cardiac repair, age-related sarcopenia, and cellular longevity",
+  "nicknames": ["SS-31", "Forzinity", "MTP-131", "Bendavia", "Szeto-Schiller 31", "elamipretide hydrochloride"],
+  "Status": "FDA Approved",
+  "rank": 75,
+  "As Of": "2026-11-28",
+  "molecular_data": {
+    "formula": "H-D-Arg-Dmt-Lys-Phe-NH2",
+    "full_name": "D-Arg-2',6'-dimethyltyrosine-Lys-Phe-NH2",
+    "cas": "736992-21-5",
+    "molecular_weight": "648.8 Da",
+    "structure_type": "Synthetic tetrapeptide",
+    "route": "Subcutaneous injection",
+    "approved_dose": "40 mg SC once daily (Barth syndrome)",
+    "half_life": "~4 hours (SC)",
+    "mechanism": "Cardiolipin binding in inner mitochondrial membrane; stabilizes cristae and ETC supercomplexes",
+    "nda": "NDA 215244",
+    "brand": "Forzinity (Stealth BioTherapeutics)",
+    "concentration": "40 mg/mL"
+  },
+  "Sources": [
+    "https://www.fda.gov/news-events/press-announcements/fda-grants-accelerated-approval-first-treatment-barth-syndrome",
+    "https://clinicaltrials.gov/study/NCT02616081",
+    "https://heibib.ub.uni-heidelberg.de/search/Record/1983246263",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC11565897",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6437430",
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=146bf34c-76f2-48db-ac07-fb29cce2cd75"
+  ],
+  "forum_topic_url": null,
+  "discovery_date": "2026-11-28",
+  "discovery_source": "WebSearch — FDA accelerated approval Sept 19 2025 (Barth syndrome); 2026 Circ Heart Fail HFpEF publication; compound not previously staged",
+  "faqs": [
+    {
+      "question": "Is elamipretide (SS-31) FDA approved, and for what?",
+      "answer": "Yes. The FDA granted accelerated approval to elamipretide (brand name Forzinity) on September 19, 2025, making it the first approved treatment for Barth syndrome — a rare X-linked genetic condition caused by mutations in the TAFAZZIN gene that cause cardiolipin deficiency, leading to severe cardiac and skeletal muscle weakness, usually in males from birth. The approval is specifically for patients weighing at least 30 kg, given as a 40 mg daily subcutaneous injection. The accelerated approval was based on improvements in knee extensor muscle strength in the TAZPOWER crossover trial (n=12). Forzinity is not approved for heart failure, aging, athletic performance, or any other condition. Continued approval depends on confirmatory clinical trials confirming that the knee strength improvement translates to meaningful patient benefit."
+    },
+    {
+      "question": "How does elamipretide differ from CoQ10 or NAD+ supplements as a mitochondrial support compound?",
+      "answer": "The key difference is structural versus biochemical. CoQ10 acts as a mobile electron carrier; NAD+ precursors raise substrate availability. Elamipretide binds cardiolipin to stabilize ETC supercomplex (respirasome) architecture directly. It penetrates mitochondria without requiring a healthy transmembrane potential, so it works in already-damaged mitochondria where other approaches are less effective."
+    },
+    {
+      "question": "What other conditions is elamipretide being studied for beyond Barth syndrome?",
+      "answer": "Heart failure (HFrEF and HFpEF), age-related sarcopenia, acute kidney injury, and Leber hereditary optic neuropathy (LHON). No human longevity or healthy-aging trials are registered as of November 2026, but aged-mouse data showing preserved muscle function without epigenetic aging changes make it a mechanistically credible longevity candidate."
+    }
+  ]
+}
